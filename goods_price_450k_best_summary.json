@@ -1,0 +1,65 @@
+{
+  "train_file": "C:\\Users\\UNITECH\\Downloads\\train.csv",
+  "test_file": "C:\\Users\\UNITECH\\Downloads\\test (1).csv",
+  "output_dir": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\goods_price_450k_experiment",
+  "task_type": "GPU",
+  "gpu_devices": "0",
+  "random_state": 42,
+  "n_splits": 5,
+  "iterations_max": 2000,
+  "learning_rate": 0.1,
+  "depth": 4,
+  "l2_leaf_reg": 15,
+  "early_stopping_rounds": 100,
+  "fixed_feature": "CREDIT_TERM",
+  "target_price": 450000.0,
+  "price_atol": 1e-08,
+  "nearby_price_interval_inclusive": [
+    440000.0,
+    460000.0
+  ],
+  "combinations": [
+    {
+      "combo_id": "A",
+      "combo_name": "CREDIT_TERM_ONLY",
+      "features": []
+    },
+    {
+      "combo_id": "B",
+      "combo_name": "CREDIT_TERM + GOODS_PRICE_450K",
+      "features": [
+        "GOODS_PRICE_450K"
+      ]
+    },
+    {
+      "combo_id": "C",
+      "combo_name": "CREDIT_TERM + GOODS_PRICE_450K_CASH",
+      "features": [
+        "GOODS_PRICE_450K_CASH"
+      ]
+    },
+    {
+      "combo_id": "D",
+      "combo_name": "CREDIT_TERM + BOTH_450K_FEATURES",
+      "features": [
+        "GOODS_PRICE_450K",
+        "GOODS_PRICE_450K_CASH"
+      ]
+    }
+  ],
+  "selection_rule": "highest mean of five fold ROC-AUC values",
+  "note": "The 450k feature was motivated by exploratory inspection of labeled data; treat CV result as screening and confirm independently.",
+  "selected_combo_id": "B",
+  "selected_combo_name": "CREDIT_TERM + GOODS_PRICE_450K",
+  "selected_added_features": [
+    "GOODS_PRICE_450K"
+  ],
+  "mean_5fold_auc": 0.7616767056492436,
+  "pooled_oof_auc": 0.7616380908308851,
+  "final_iterations_from_median_fold_best": 1010,
+  "final_predictor_count": 34,
+  "final_categorical_count": 8,
+  "model_file": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\goods_price_450k_experiment\\goods_price_450k_best_model.cbm",
+  "submission_file": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\goods_price_450k_experiment\\submission_goods_price_450k.csv",
+  "runtime_seconds": 751.58
+}
