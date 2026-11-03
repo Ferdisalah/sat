@@ -1,0 +1,3 @@
+comparison_id,scale_pos_weight,sampled_pairs,baseline_strict_wrong,comparison_strict_wrong,comparison_fixed_baseline_errors,comparison_introduced_new_errors,both_wrong,neither_strictly_wrong,fixed_pct_of_all_pairs,new_errors_pct_of_all_pairs,net_fixed_minus_new_pct_points
+W1,3.37,1500000,360513,359606,20277,19370,340236,1120117,1.3518000000000001,1.2913333333333334,0.060466666666666655
+W2,11.39,1500000,360513,363695,27547,30729,332966,1108758,1.836466666666667,2.0486,-0.21213333333333328

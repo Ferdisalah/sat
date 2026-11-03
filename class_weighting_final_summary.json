@@ -1,0 +1,114 @@
+{
+  "train_file": "C:\\Users\\UNITECH\\Downloads\\train.csv",
+  "test_file": "C:\\Users\\UNITECH\\Downloads\\test (1).csv",
+  "output_dir": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\class_weighting_scale_pos_weight",
+  "catboost_version": "1.2.10",
+  "task_type": "GPU",
+  "gpu_devices": "0",
+  "random_state": 42,
+  "n_splits": 5,
+  "iterations_max": 2000,
+  "learning_rate": 0.05,
+  "depth": 4,
+  "l2_leaf_reg": 15,
+  "early_stopping_rounds": 100,
+  "metric_period": 5,
+  "inner_validation_size": 0.15,
+  "feature_set": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_MOBIL",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR",
+    "CREDIT_TERM",
+    "GOODS_PRICE_450K"
+  ],
+  "engineered_features": [
+    "CREDIT_TERM",
+    "GOODS_PRICE_450K"
+  ],
+  "weight_configs": [
+    {
+      "weight_id": "W0",
+      "label": "BASELINE",
+      "scale_pos_weight": 1.0
+    },
+    {
+      "weight_id": "W1",
+      "label": "MODERATE",
+      "scale_pos_weight": 3.37
+    },
+    {
+      "weight_id": "W2",
+      "label": "BALANCED_RATIO",
+      "scale_pos_weight": 11.39
+    }
+  ],
+  "observed_negative_positive_ratio": 11.38709210621518,
+  "pairwise_sample_size_requested": 1500000,
+  "pairwise_random_state": 20261103,
+  "pairwise_sampling": "positive-negative pairs sampled with replacement within each outer validation fold; same indices for all weights, so each pair is scored by the same fold-specific model",
+  "early_stopping_design": "Within each outer fold, select tree count on a stratified inner split; refit on the full outer training partition; score once on untouched outer validation.",
+  "selection_rule": "highest mean outer-fold ROC-AUC; exploratory comparison across three weights",
+  "note": "Features are fixed to the previous B model: all original predictors + CREDIT_TERM + GOODS_PRICE_450K. Only scale_pos_weight changes. The three-weight CV comparison is a screening experiment; confirm a selected weight on an untouched validation set or nested outer evaluation.",
+  "best_screening_weight_id": "W1",
+  "best_screening_scale_pos_weight": 3.37,
+  "best_screening_mean_outer_fold_auc": 0.7611045091364825,
+  "best_screening_pooled_oof_auc": 0.7610400574333839,
+  "baseline_W0_mean_outer_fold_auc": 0.760535885805149,
+  "baseline_W0_pooled_oof_auc": 0.760497946286826,
+  "final_models": [
+    {
+      "weight_id": "W0",
+      "scale_pos_weight": 1.0,
+      "final_iterations": 1217,
+      "model_file": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\class_weighting_scale_pos_weight\\catboost_W0_scale_pos_weight_1.00.cbm",
+      "importance_file": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\class_weighting_scale_pos_weight\\feature_importance_W0.csv",
+      "submission_file": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\class_weighting_scale_pos_weight\\submission_W0_scale_pos_weight_1.00.csv"
+    },
+    {
+      "weight_id": "W1",
+      "scale_pos_weight": 3.37,
+      "final_iterations": 1081,
+      "model_file": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\class_weighting_scale_pos_weight\\catboost_W1_scale_pos_weight_3.37.cbm",
+      "importance_file": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\class_weighting_scale_pos_weight\\feature_importance_W1.csv",
+      "submission_file": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\class_weighting_scale_pos_weight\\submission_W1_scale_pos_weight_3.37.csv"
+    },
+    {
+      "weight_id": "W2",
+      "scale_pos_weight": 11.39,
+      "final_iterations": 748,
+      "model_file": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\class_weighting_scale_pos_weight\\catboost_W2_scale_pos_weight_11.39.cbm",
+      "importance_file": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\class_weighting_scale_pos_weight\\feature_importance_W2.csv",
+      "submission_file": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\class_weighting_scale_pos_weight\\submission_W2_scale_pos_weight_11.39.csv"
+    }
+  ],
+  "total_runtime_seconds": 955.9
+}
