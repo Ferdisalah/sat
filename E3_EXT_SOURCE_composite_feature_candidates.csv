@@ -1,0 +1,13 @@
+candidate,formula,purpose,test_group
+EXT_SOURCE_1_X_CREDIT_TERM,EXT_SOURCE_1 * CREDIT_TERM,Test whether external score meaning changes with loan duration proxy.,COMPOSITE_REPLACEMENT
+EXT_SOURCE_2_X_CREDIT_TERM,EXT_SOURCE_2 * CREDIT_TERM,Test external score conditioned on credit-term burden.,COMPOSITE_REPLACEMENT
+EXT_SOURCE_3_X_CREDIT_TERM,EXT_SOURCE_3 * CREDIT_TERM,Test external score conditioned on credit-term burden.,COMPOSITE_REPLACEMENT
+EXT_SOURCE_1_X_CREDIT_TO_GOODS,EXT_SOURCE_1 * CREDIT_TO_GOODS_RATIO,Test external score conditioned on financing ratio.,COMPOSITE_REPLACEMENT
+EXT_SOURCE_2_X_CREDIT_TO_GOODS,EXT_SOURCE_2 * CREDIT_TO_GOODS_RATIO,Test external score conditioned on financing ratio.,COMPOSITE_REPLACEMENT
+EXT_SOURCE_3_X_CREDIT_TO_GOODS,EXT_SOURCE_3 * CREDIT_TO_GOODS_RATIO,Test external score conditioned on financing ratio.,COMPOSITE_REPLACEMENT
+EXT_SOURCE_1_X_ANNUITY_TO_INCOME,EXT_SOURCE_1 * ANNUITY_TO_INCOME_RATIO,Test external score conditioned on payment-to-income burden.,COMPOSITE_REPLACEMENT
+EXT_SOURCE_2_X_ANNUITY_TO_INCOME,EXT_SOURCE_2 * ANNUITY_TO_INCOME_RATIO,Test external score conditioned on payment-to-income burden.,COMPOSITE_REPLACEMENT
+EXT_SOURCE_3_X_ANNUITY_TO_INCOME,EXT_SOURCE_3 * ANNUITY_TO_INCOME_RATIO,Test external score conditioned on payment-to-income burden.,COMPOSITE_REPLACEMENT
+EXT_SOURCE_MISSING_COUNT,"count_missing(EXT_SOURCE_1, EXT_SOURCE_2, EXT_SOURCE_3)",Preserve information carried by missingness when testing source removal.,MISSINGNESS_CONTROL
+EXT_SOURCE_MEAN_AVAILABLE,mean(non-missing EXT_SOURCE scores),Compact aggregate score candidate; test only after distribution checks.,AGGREGATE_REPLACEMENT
+EXT_SOURCE_RANGE,max(available EXT_SOURCE scores) - min(available EXT_SOURCE scores),Represent disagreement among external scores.,AGGREGATE_REPLACEMENT

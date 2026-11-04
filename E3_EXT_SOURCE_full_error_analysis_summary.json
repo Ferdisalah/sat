@@ -1,0 +1,34 @@
+{
+  "train_rows": 171202,
+  "oof_rows": 171202,
+  "merged_rows": 171202,
+  "threshold": 0.5,
+  "overall_default_rate_pct": 8.072919708881905,
+  "overall_oof_auc": 0.7612817239420968,
+  "overall_brier_score": 0.08724400836059489,
+  "overall_error_count_at_threshold": 17089,
+  "overall_error_rate_pct_at_threshold": 9.981775913832783,
+  "false_positive_count": 6325,
+  "false_negative_count": 10764,
+  "confusion_matrix_rows_true_0_1_cols_pred_0_1": [
+    [
+      151056,
+      6325
+    ],
+    [
+      10764,
+      3057
+    ]
+  ],
+  "ext_source_missing_counts": {
+    "EXT_SOURCE_1": 118928,
+    "EXT_SOURCE_2": 369,
+    "EXT_SOURCE_3": 54586
+  },
+  "ext_source_missing_pct": {
+    "EXT_SOURCE_1": 69.46647819534817,
+    "EXT_SOURCE_2": 0.21553486524690132,
+    "EXT_SOURCE_3": 31.883973318068715
+  },
+  "note": "Diagnostic analysis of regenerated E3 OOF probabilities. Threshold 0.50 is diagnostic, not a calibrated or optimal decision threshold. Composite candidates are only a plan; no new model was trained."
+}
