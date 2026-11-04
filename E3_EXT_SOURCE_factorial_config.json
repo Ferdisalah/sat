@@ -1,0 +1,132 @@
+{
+  "train_file": "C:\\Users\\UNITECH\\Downloads\\train.csv",
+  "output_dir": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\E3_EXT_SOURCE_factorial_experiment",
+  "rows": 171202,
+  "positive_rate_pct": 8.072919708881905,
+  "catboost_version": "1.2.10",
+  "task_type": "GPU",
+  "gpu_devices": "0",
+  "random_state": 42,
+  "n_splits": 5,
+  "inner_validation_size": 0.15,
+  "iterations_max": 2000,
+  "learning_rate": 0.05,
+  "depth": 4,
+  "l2_leaf_reg": 3,
+  "early_stopping_rounds": 100,
+  "scale_pos_weight": 3.37,
+  "base_features": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_MOBIL",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR",
+    "CREDIT_TERM",
+    "GOODS_PRICE_450K",
+    "CREDIT_TO_GOODS_RATIO"
+  ],
+  "candidate_features": {
+    "I1_EXT3_X_CREDIT_TO_GOODS": "EXT_SOURCE_3 * CREDIT_TO_GOODS_RATIO",
+    "I2_EXT2_X_CREDIT_TERM": "EXT_SOURCE_2 * CREDIT_TERM",
+    "EXT_SOURCE_RANGE": "max(available EXT_SOURCE_1/2/3) - min(available EXT_SOURCE_1/2/3), only when at least two scores are present"
+  },
+  "experiments": [
+    {
+      "experiment_id": "F0",
+      "mask": 0,
+      "added": [],
+      "name": "E3_BASE"
+    },
+    {
+      "experiment_id": "F1",
+      "mask": 1,
+      "added": [
+        "I1_EXT3_X_CREDIT_TO_GOODS"
+      ],
+      "name": "E3_PLUS_I1"
+    },
+    {
+      "experiment_id": "F2",
+      "mask": 2,
+      "added": [
+        "I2_EXT2_X_CREDIT_TERM"
+      ],
+      "name": "E3_PLUS_I2"
+    },
+    {
+      "experiment_id": "F3",
+      "mask": 4,
+      "added": [
+        "EXT_SOURCE_RANGE"
+      ],
+      "name": "E3_PLUS_RANGE"
+    },
+    {
+      "experiment_id": "F4",
+      "mask": 3,
+      "added": [
+        "I1_EXT3_X_CREDIT_TO_GOODS",
+        "I2_EXT2_X_CREDIT_TERM"
+      ],
+      "name": "E3_PLUS_I1_I2"
+    },
+    {
+      "experiment_id": "F5",
+      "mask": 5,
+      "added": [
+        "I1_EXT3_X_CREDIT_TO_GOODS",
+        "EXT_SOURCE_RANGE"
+      ],
+      "name": "E3_PLUS_I1_RANGE"
+    },
+    {
+      "experiment_id": "F6",
+      "mask": 6,
+      "added": [
+        "I2_EXT2_X_CREDIT_TERM",
+        "EXT_SOURCE_RANGE"
+      ],
+      "name": "E3_PLUS_I2_RANGE"
+    },
+    {
+      "experiment_id": "F7",
+      "mask": 7,
+      "added": [
+        "I1_EXT3_X_CREDIT_TO_GOODS",
+        "I2_EXT2_X_CREDIT_TERM",
+        "EXT_SOURCE_RANGE"
+      ],
+      "name": "E3_PLUS_ALL_THREE"
+    }
+  ],
+  "split_design": "One fixed StratifiedKFold(5, shuffle=True, random_state=42) plan; within each outer training fold, one fixed stratified 15% inner validation split; same splits reused for all eight variants.",
+  "selection_rule": "Screen by mean outer-fold ROC-AUC; also report pooled OOF AUC, mean PR-AUC, Brier and log loss.",
+  "important_caveat": "GOODS_PRICE_450K was selected after inspecting TARGET on the full labeled data. Results remain exploratory, not an unbiased final estimate."
+}
