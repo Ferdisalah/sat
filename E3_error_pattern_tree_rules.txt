@@ -1,0 +1,44 @@
+Target: IS_ERROR (1=CatBoost misclassified the case, 0=correct).
+Leaves describe OOF error rates in each segment.
+This is a surrogate error-analysis tree, not an internal CatBoost tree.
+
+|--- EXT_SOURCE_2 <= 0.2533
+|   |--- EXT_SOURCE_3 <= 0.3466
+|   |   |--- CREDIT_TO_GOODS_RATIO <= 1.1584
+|   |   |   |--- class: 0
+|   |   |--- CREDIT_TO_GOODS_RATIO >  1.1584
+|   |   |   |--- class: 0
+|   |--- EXT_SOURCE_3 >  0.3466
+|   |   |--- EXT_SOURCE_3 <= 0.5380
+|   |   |   |--- EXT_SOURCE_2 <= 0.1064
+|   |   |   |   |--- class: 0
+|   |   |   |--- EXT_SOURCE_2 >  0.1064
+|   |   |   |   |--- class: 0
+|   |   |--- EXT_SOURCE_3 >  0.5380
+|   |   |   |--- DAYS_BIRTH <= -14539.5000
+|   |   |   |   |--- class: 0
+|   |   |   |--- DAYS_BIRTH >  -14539.5000
+|   |   |   |   |--- class: 0
+|--- EXT_SOURCE_2 >  0.2533
+|   |--- EXT_SOURCE_3 <= 0.2629
+|   |   |--- EXT_SOURCE_2 <= 0.5837
+|   |   |   |--- CREDIT_TO_GOODS_RATIO <= 1.1980
+|   |   |   |   |--- class: 0
+|   |   |   |--- CREDIT_TO_GOODS_RATIO >  1.1980
+|   |   |   |   |--- class: 0
+|   |   |--- EXT_SOURCE_2 >  0.5837
+|   |   |   |--- CREDIT_TO_GOODS_RATIO <= 1.1584
+|   |   |   |   |--- class: 0
+|   |   |   |--- CREDIT_TO_GOODS_RATIO >  1.1584
+|   |   |   |   |--- class: 0
+|   |--- EXT_SOURCE_3 >  0.2629
+|   |   |--- EXT_SOURCE_2 <= 0.4732
+|   |   |   |--- GOODS_PRICE_450K <= 0.5000
+|   |   |   |   |--- class: 0
+|   |   |   |--- GOODS_PRICE_450K >  0.5000
+|   |   |   |   |--- class: 0
+|   |   |--- EXT_SOURCE_2 >  0.4732
+|   |   |   |--- EXT_SOURCE_3 <= 0.5380
+|   |   |   |   |--- class: 0
+|   |   |   |--- EXT_SOURCE_3 >  0.5380
+|   |   |   |   |--- class: 0

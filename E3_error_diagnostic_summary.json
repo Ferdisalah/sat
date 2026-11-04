@@ -1,0 +1,51 @@
+{
+  "model": "E3: original predictors + CREDIT_TERM + GOODS_PRICE_450K + CREDIT_TO_GOODS_RATIO",
+  "scale_pos_weight": 3.37,
+  "learning_rate": 0.05,
+  "depth": 4,
+  "l2_leaf_reg": 15,
+  "threshold_for_FP_FN_labels": 0.5,
+  "mean_outer_fold_auc": 0.7613456885405517,
+  "pooled_oof_auc": 0.7612817239420968,
+  "confusion_matrix_rows_true_0_1_cols_pred_0_1": [
+    [
+      151056,
+      6325
+    ],
+    [
+      10764,
+      3057
+    ]
+  ],
+  "classification_report_at_threshold": {
+    "non_default": {
+      "precision": 0.9334816462736374,
+      "recall": 0.9598109047470788,
+      "f1-score": 0.9464632003032571,
+      "support": 157381.0
+    },
+    "default": {
+      "precision": 0.3258367085909188,
+      "recall": 0.22118515302800087,
+      "f1-score": 0.2635004094298151,
+      "support": 13821.0
+    },
+    "accuracy": 0.9001822408616722,
+    "macro avg": {
+      "precision": 0.6296591774322781,
+      "recall": 0.5904980288875398,
+      "f1-score": 0.6049818048665361,
+      "support": 171202.0
+    },
+    "weighted avg": {
+      "precision": 0.884426958339426,
+      "recall": 0.9001822408616722,
+      "f1-score": 0.8913281625545051,
+      "support": 171202.0
+    }
+  },
+  "oof_error_count": 17089,
+  "oof_error_rate_pct": 9.981775913832783,
+  "important_note": "This is a diagnostic OOF rerun. The original E3 experiment config did not publish a per-applicant OOF prediction CSV, so these fold models and OOF errors are regenerated here. Inner split seed is RANDOM_STATE + fold number.",
+  "interpretation_note": "The 0.50 threshold is a configurable diagnostic convention, not a calibrated or utility-optimal decision threshold. ROC-AUC is threshold-independent."
+}
