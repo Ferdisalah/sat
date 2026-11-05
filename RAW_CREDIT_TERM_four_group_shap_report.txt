@@ -1,0 +1,92 @@
+RAW + CREDIT_TERM OOF SHAP ANALYSIS: TP, FN, FP, TN
+==============================================================================
+Rows: 171,202 | Features: 33 | Threshold: 0.50
+Pooled OOF AUC: 0.761367 | Mean fold AUC: 0.761383
+TP=3,075 | FN=10,746 | FP=6,331 | TN=151,050
+
+SHAP interpretation: positive values push toward default; negative values push away.
+SHAP values are raw-margin contributions, not probability-point changes or causal effects.
+
+------------------------------------------------------------------------------
+TRUE_POSITIVE: correctly predicted default (n=3,075)
+Top 12 features by mean absolute SHAP:
+        Feature  Mean_abs_SHAP  Mean_signed_SHAP  Pct_SHAP_toward_default  Pct_SHAP_toward_non_default  Top_abs_SHAP_count  Pct_SHAP_toward_predicted_class
+   EXT_SOURCE_2         0.6023            0.5666                  87.5122                      12.4878                1543                          87.5122
+   EXT_SOURCE_3         0.5005            0.4714                  94.8943                       5.1057                1177                          94.8943
+    CREDIT_TERM         0.2526            0.2265                  90.9268                       9.0732                 234                          90.9268
+AMT_GOODS_PRICE         0.2338            0.1678                  80.3577                      19.6423                  42                          80.3577
+    CODE_GENDER         0.1343            0.0595                  56.7154                      43.2846                   7                          56.7154
+    AMT_ANNUITY         0.1292            0.0164                  51.3496                      48.6504                   5                          51.3496
+     DAYS_BIRTH         0.1273            0.0399                  70.7642                      29.2358                   4                          70.7642
+   EXT_SOURCE_1         0.1232            0.1053                  95.0894                       4.9106                  54                          95.0894
+     AMT_CREDIT         0.0917           -0.0096                  45.1707                      54.8293                   0                          45.1707
+  DAYS_EMPLOYED         0.0903            0.0514                  81.1057                      18.8943                   0                          81.1057
+    OWN_CAR_AGE         0.0887            0.0244                  76.1626                      23.8374                   0                          76.1626
+DAYS_ID_PUBLISH         0.0846            0.0419                  79.2846                      20.7154                   7                          79.2846
+
+------------------------------------------------------------------------------
+FALSE_NEGATIVE: actual default predicted as non-default (n=10,746)
+Top 12 features by mean absolute SHAP:
+            Feature  Mean_abs_SHAP  Mean_signed_SHAP  Pct_SHAP_toward_default  Pct_SHAP_toward_non_default  Top_abs_SHAP_count  Pct_SHAP_toward_predicted_class
+       EXT_SOURCE_2         0.3239            0.0817                  51.7495                      48.2505                3505                          48.2505
+       EXT_SOURCE_3         0.3078            0.0865                  71.6639                      28.3361                3085                          28.3361
+    AMT_GOODS_PRICE         0.2500            0.0222                  55.4904                      44.5096                1538                          44.5096
+        CREDIT_TERM         0.1742            0.0565                  71.4219                      28.5781                1196                          28.5781
+        AMT_ANNUITY         0.1416           -0.0122                  46.8733                      53.1267                 183                          53.1267
+         AMT_CREDIT         0.1203            0.0097                  49.4323                      50.5677                  36                          50.5677
+        CODE_GENDER         0.1190            0.0097                  39.0471                      60.9529                  80                          60.9529
+         DAYS_BIRTH         0.1171            0.0059                  58.1053                      41.8947                 178                          41.8947
+       EXT_SOURCE_1         0.1123            0.0272                  84.3104                      15.6896                 411                          15.6896
+      DAYS_EMPLOYED         0.1019            0.0089                  66.3782                      33.6218                  91                          33.6218
+NAME_EDUCATION_TYPE         0.0995            0.0175                  79.5180                      20.4820                  88                          20.4820
+        OWN_CAR_AGE         0.0954            0.0029                  69.3002                      30.6998                  28                          30.6998
+
+------------------------------------------------------------------------------
+FALSE_POSITIVE: actual non-default predicted as default (n=6,331)
+Top 12 features by mean absolute SHAP:
+        Feature  Mean_abs_SHAP  Mean_signed_SHAP  Pct_SHAP_toward_default  Pct_SHAP_toward_non_default  Top_abs_SHAP_count  Pct_SHAP_toward_predicted_class
+   EXT_SOURCE_2         0.5536            0.5132                  85.1208                      14.8792                3087                          85.1208
+   EXT_SOURCE_3         0.4671            0.4372                  94.3453                       5.6547                2345                          94.3453
+    CREDIT_TERM         0.2374            0.2067                  89.1328                      10.8672                 571                          89.1328
+AMT_GOODS_PRICE         0.2318            0.1603                  78.4394                      21.5606                 135                          78.4394
+    CODE_GENDER         0.1315            0.0573                  56.5787                      43.4213                  16                          56.5787
+    AMT_ANNUITY         0.1300            0.0170                  52.0139                      47.9861                   9                          52.0139
+     DAYS_BIRTH         0.1272            0.0356                  70.1311                      29.8689                  14                          70.1311
+   EXT_SOURCE_1         0.1242            0.1015                  94.4243                       5.5757                 118                          94.4243
+     AMT_CREDIT         0.0925           -0.0103                  43.6424                      56.3576                   0                          43.6424
+  DAYS_EMPLOYED         0.0899            0.0488                  80.3665                      19.6335                   1                          80.3665
+    OWN_CAR_AGE         0.0893            0.0222                  75.2488                      24.7512                   1                          75.2488
+DAYS_ID_PUBLISH         0.0853            0.0425                  78.2183                      21.7817                  31                          78.2183
+
+------------------------------------------------------------------------------
+TRUE_NEGATIVE: correctly predicted non-default (n=151,050)
+Top 12 features by mean absolute SHAP:
+            Feature  Mean_abs_SHAP  Mean_signed_SHAP  Pct_SHAP_toward_default  Pct_SHAP_toward_non_default  Top_abs_SHAP_count  Pct_SHAP_toward_predicted_class
+       EXT_SOURCE_2         0.3243           -0.0827                  36.8646                      63.1354               46069                          63.1354
+       EXT_SOURCE_3         0.3129           -0.0721                  55.7881                      44.2119               43255                          44.2119
+    AMT_GOODS_PRICE         0.2652           -0.0247                  49.6213                      50.3787               23288                          50.3787
+        CREDIT_TERM         0.1825           -0.0333                  58.9076                      41.0924               17029                          41.0924
+        AMT_ANNUITY         0.1445           -0.0189                  46.1907                      53.8093                2572                          53.8093
+         AMT_CREDIT         0.1278            0.0137                  50.5164                      49.4836                 349                          49.4836
+       EXT_SOURCE_1         0.1196           -0.0203                  77.5015                      22.4985                7325                          22.4985
+        CODE_GENDER         0.1152           -0.0096                  32.5336                      67.4664                 741                          67.4664
+         DAYS_BIRTH         0.1129           -0.0064                  53.3605                      46.6395                2206                          46.6395
+      DAYS_EMPLOYED         0.1105           -0.0083                  60.8355                      39.1645                1144                          39.1645
+NAME_EDUCATION_TYPE         0.1082           -0.0035                  72.7547                      27.2453                1274                          27.2453
+        OWN_CAR_AGE         0.0993           -0.0064                  66.4760                      33.5240                 394                          33.5240
+
+------------------------------------------------------------------------------
+FEATURE-SET AND CONFIGURATION CHECK
+Feature set: All original raw predictors + CREDIT_TERM only
+Raw predictors: 32
+Engineered predictors: ['CREDIT_TERM']
+Selected tree counts by fold: [1640, 1423, 1452, 823, 1070]
+No GOODS_PRICE_450K, CREDIT_TO_GOODS_RATIO, or other engineered feature is used.
+
+IMPORTANT CAVEATS
+1. This report describes the raw predictors + CREDIT_TERM model only.
+2. The 0.50 threshold is a diagnostic convention, not necessarily an optimal or calibrated threshold.
+3. Positive SHAP pushes toward default; negative SHAP pushes toward non-default.
+   SHAP does not establish causality.
+4. Each applicant's prediction and SHAP values come from the outer-fold model that did not
+   train on that applicant.
