@@ -1,113 +1,34 @@
-TP-FN SIGNAL DISCOVERY: VALUE RANGES AND INTERACTION SCREEN
-======================================================================================
-Rows: 171,202 | Predictors: 33 | OOF folds: 5
-Threshold: 0.5
-TP=3,062 | FN=10,759 | FP=6,311 | TN=151,070
+EXACT 450K SEGMENT: TP-FN / TP-FP DIAGNOSTIC
+========================================================================================
+Rows: 171,202 | Folds: 5 | OOF threshold: 0.5
+Exact AMT_GOODS_PRICE=450,000: 14,400 applicants
 
-METHOD
-- Numeric bins are fold-specific quantiles fitted on the other four folds.
-- Categorical bins retain up to the 12 most frequent reference-fold levels;
-  rare levels are pooled as __OTHER__ and missing values are separate.
-- TP-vs-FN compares distributions among actual defaults only.
-- TP-vs-FP compares distributions among predicted defaults only.
-- Total variation (TV) ranges from 0 to 1; higher means stronger separation.
-- INTERACTION_RESIDUAL_LOG2 = joint-cell log2 lift minus the two marginal
-  log2 lifts. It highlights joint enrichment/depletion beyond main effects.
-  It is descriptive, approximate under smoothing, and not a fitted model term.
-- BALANCED_RESIDUAL_SCORE balances the mean absolute TP/FN and TP/FP residuals.
-  BALANCED_TV_SCORE is also retained, but can rise simply because a pair
-  creates a finer partition than either feature alone.
+OVERALL PRICE-GROUP RESULTS BY CONTRACT TYPE
+                    PRICE_GROUP   CONTRACT_TYPE      N  DEFAULTS  DEFAULT_RATE  DEFAULT_RATE_CI95_LOW  DEFAULT_RATE_CI95_HIGH   TP   FN   FP     TN  TP_CAPTURE_RATE_AMONG_DEFAULTS  TP_PRECISION_AMONG_PREDICTED_DEFAULTS  FALSE_POSITIVE_RATE_AMONG_NONDEFAULTS
+                     EXACT_450K      Cash loans  13718      1991        0.1451                 0.1393                  0.1511  875 1116 1694  10033                          0.4395                                 0.3406                                 0.1445
+                     EXACT_450K Revolving loans    682        23        0.0337                 0.0226                  0.0501    0   23    2    657                          0.0000                                 0.0000                                 0.0030
+NEARBY_440K_460K_EXCLUDING_450K      Cash loans   5954       373        0.0626                 0.0568                  0.0691   45  328  111   5470                          0.1206                                 0.2885                                 0.0199
+NEARBY_440K_460K_EXCLUDING_450K Revolving loans      5         0        0.0000                 0.0000                  0.4345    0    0    0      5                             NaN                                    NaN                                 0.0000
+                   OTHER_PRICES      Cash loans 135316     10557        0.0780                 0.0766                  0.0795 2082 8475 4338 120421                          0.1972                                 0.3243                                 0.0348
+                   OTHER_PRICES Revolving loans  15527       877        0.0565                 0.0530                  0.0602   60  817  166  14484                          0.0684                                 0.2655                                 0.0113
 
-TOP SINGLE FEATURES BY BALANCED DISTRIBUTION SEPARATION
-                   FEATURE  MEAN_TV_TP_VS_FN  MEAN_TV_TP_VS_FP  BALANCED_TV_SCORE  MIN_TV_TP_VS_FN  MIN_TV_TP_VS_FP
-              EXT_SOURCE_2            0.4477            0.0701             0.1771           0.3986           0.0188
-               CREDIT_TERM            0.2857            0.0701             0.1416           0.2750           0.0510
-              EXT_SOURCE_3            0.3306            0.0589             0.1396           0.3130           0.0479
-           AMT_GOODS_PRICE            0.2511            0.0637             0.1265           0.2317           0.0471
-             DAYS_EMPLOYED            0.2511            0.0619             0.1247           0.2339           0.0430
-           OCCUPATION_TYPE            0.1972            0.0688             0.1164           0.1779           0.0438
-                AMT_CREDIT            0.2229            0.0579             0.1136           0.2083           0.0515
-                DAYS_BIRTH            0.1960            0.0623             0.1105           0.1828           0.0302
-    DAYS_LAST_PHONE_CHANGE            0.1617            0.0621             0.1002           0.1415           0.0429
-               AMT_ANNUITY            0.1453            0.0583             0.0920           0.1385           0.0487
-         ORGANIZATION_TYPE            0.1541            0.0541             0.0913           0.1157           0.0355
-         DAYS_REGISTRATION            0.1211            0.0608             0.0858           0.1093           0.0465
-           DAYS_ID_PUBLISH            0.1306            0.0521             0.0825           0.1179           0.0213
-REGION_POPULATION_RELATIVE            0.1088            0.0618             0.0820           0.0810           0.0478
-              EXT_SOURCE_1            0.1170            0.0434             0.0712           0.0949           0.0340
+WHAT TO CHECK IN 450K_WITHIN_BIN_CONTRASTS.csv
+- DEFAULT_RATE_DIFF_PP_EXACT_MINUS_OTHER: risk difference within the same feature bin and contract type.
+- DEFAULT_RATE_RATIO_EXACT_TO_OTHER: relative default rate within that same stratum.
+- TP_CAPTURE_RATE_DIFF_PP_EXACT_MINUS_OTHER: whether exact-450K defaulters are more often detected.
+- TP_PRECISION_DIFF_PP_EXACT_MINUS_OTHER: whether flagged exact-450K cases are more credible.
+- FPR_DIFF_PP_EXACT_MINUS_OTHER: whether the 450K segment creates extra false alarms.
+- Inspect exact and other cell support flags before interpreting a contrast.
+- FOLD=0 rows are pooled summaries; FOLD=1..5 are held-out-fold summaries.
 
-TOP INTERACTIONS BY MAIN-EFFECT-ADJUSTED BALANCED RESIDUAL
-      FEATURE_A                  FEATURE_B  MEAN_ABS_TP_FN_INTERACTION_RESIDUAL_LOG2  MEAN_ABS_TP_FP_INTERACTION_RESIDUAL_LOG2  BALANCED_RESIDUAL_SCORE  FOLDS_TOP_QUARTILE_BALANCED_RESIDUAL  MEAN_TV_TP_VS_FN  MEAN_TV_TP_VS_FP
-    CREDIT_TERM            AMT_GOODS_PRICE                                    0.8296                                    0.2629                   0.4671                                     5            0.3689            0.1599
-    CREDIT_TERM                 AMT_CREDIT                                    0.7583                                    0.2792                   0.4601                                     5            0.3707            0.1586
-AMT_GOODS_PRICE                AMT_ANNUITY                                    0.7380                                    0.2712                   0.4474                                     5            0.3509            0.1550
-    CREDIT_TERM                AMT_ANNUITY                                    0.5901                                    0.3007                   0.4212                                     5            0.3716            0.1756
-AMT_GOODS_PRICE                 AMT_CREDIT                                    0.7673                                    0.2203                   0.4111                                     5            0.2721            0.1092
-AMT_GOODS_PRICE REGION_POPULATION_RELATIVE                                    0.4584                                    0.3651                   0.4091                                     5            0.3094            0.1919
-    CREDIT_TERM REGION_POPULATION_RELATIVE                                    0.4832                                    0.3381                   0.4042                                     5            0.3343            0.1785
-   EXT_SOURCE_2 REGION_POPULATION_RELATIVE                                    0.5476                                    0.2956                   0.4023                                     5            0.4658            0.1706
-AMT_GOODS_PRICE          DAYS_REGISTRATION                                    0.4541                                    0.3372                   0.3913                                     5            0.3166            0.1808
-   EXT_SOURCE_2                 AMT_CREDIT                                    0.5103                                    0.2778                   0.3765                                     4            0.5066            0.1595
-   EXT_SOURCE_2           AMT_INCOME_TOTAL                                    0.4966                                    0.2808                   0.3734                                     5            0.4703            0.1576
-    CREDIT_TERM                 DAYS_BIRTH                                    0.4973                                    0.2797                   0.3730                                     5            0.3518            0.1657
-    CREDIT_TERM           AMT_INCOME_TOTAL                                    0.4622                                    0.2988                   0.3716                                     4            0.3205            0.1797
-   EXT_SOURCE_2              DAYS_EMPLOYED                                    0.4870                                    0.2762                   0.3667                                     5            0.5078            0.1592
-   EXT_SOURCE_2     DAYS_LAST_PHONE_CHANGE                                    0.5269                                    0.2548                   0.3664                                     5            0.4784            0.1630
-    CREDIT_TERM     DAYS_LAST_PHONE_CHANGE                                    0.4406                                    0.2986                   0.3627                                     5            0.3390            0.1706
-   EXT_SOURCE_3              DAYS_EMPLOYED                                    0.4587                                    0.2862                   0.3623                                     5            0.4389            0.1532
-AMT_GOODS_PRICE            DAYS_ID_PUBLISH                                    0.4151                                    0.3161                   0.3622                                     4            0.3159            0.1793
-    CREDIT_TERM          DAYS_REGISTRATION                                    0.4359                                    0.2961                   0.3592                                     4            0.3276            0.1784
-   EXT_SOURCE_2                AMT_ANNUITY                                    0.5122                                    0.2494                   0.3574                                     4            0.4868            0.1616
-   EXT_SOURCE_2            DAYS_ID_PUBLISH                                    0.4628                                    0.2747                   0.3566                                     5            0.4754            0.1586
-AMT_GOODS_PRICE     DAYS_LAST_PHONE_CHANGE                                    0.4299                                    0.2934                   0.3551                                     4            0.3246            0.1736
-    CREDIT_TERM            DAYS_ID_PUBLISH                                    0.4282                                    0.2945                   0.3551                                     3            0.3288            0.1697
-AMT_GOODS_PRICE              DAYS_EMPLOYED                                    0.4491                                    0.2743                   0.3510                                     5            0.3694            0.1742
-   EXT_SOURCE_2          DAYS_REGISTRATION                                    0.4538                                    0.2682                   0.3489                                     4            0.4782            0.1653
+INTERPRETATION LIMITS
+- PRICE_FLAG is an explicit exact-value split; 450000 is not merged into a generic price quantile.
+- Numeric quantile boundaries are fit on the other four folds only; TARGET is never used to create bins.
+- TP-vs-FN is evaluated among actual defaults through TP capture and FN rates.
+- TP-vs-FP is evaluated among predicted defaults through precision and false-positive rates.
+- This is diagnostic association only, not causal evidence and not a model-improvement test.
+- The 450K hypothesis was found after inspecting labels; all CV-based interpretation is exploratory.
+- Do not claim a new signal generalizes until it is confirmed on an independent labeled sample.
 
-TOP INTERACTIONS FOR TP-VS-FN (FP CONTRAST SHOWN BESIDE EACH)
-   FEATURE_A                  FEATURE_B  MEAN_TV_TP_VS_FN  MEAN_TV_TP_VS_FP  BALANCED_TV_SCORE  FOLDS_TOP_QUARTILE_TP_FN
-EXT_SOURCE_2               EXT_SOURCE_3            0.5972            0.1306             0.2793                         5
-EXT_SOURCE_2                CREDIT_TERM            0.5235            0.1491             0.2794                         5
-EXT_SOURCE_2            AMT_GOODS_PRICE            0.5109            0.1607             0.2865                         5
-EXT_SOURCE_2              DAYS_EMPLOYED            0.5078            0.1592             0.2843                         5
-EXT_SOURCE_2                 AMT_CREDIT            0.5066            0.1595             0.2843                         5
-EXT_SOURCE_2            OCCUPATION_TYPE            0.5049            0.1705             0.2934                         5
-EXT_SOURCE_2          ORGANIZATION_TYPE            0.4994            0.1619             0.2843                         5
-EXT_SOURCE_2                 DAYS_BIRTH            0.4922            0.1537             0.2750                         5
-EXT_SOURCE_2                AMT_ANNUITY            0.4868            0.1616             0.2805                         5
-EXT_SOURCE_2               EXT_SOURCE_1            0.4838            0.1228             0.2437                         5
-EXT_SOURCE_2     DAYS_LAST_PHONE_CHANGE            0.4784            0.1630             0.2793                         5
-EXT_SOURCE_2          DAYS_REGISTRATION            0.4782            0.1653             0.2812                         5
-EXT_SOURCE_2            DAYS_ID_PUBLISH            0.4754            0.1586             0.2746                         5
-EXT_SOURCE_2           NAME_INCOME_TYPE            0.4752            0.1036             0.2219                         5
-EXT_SOURCE_2           AMT_INCOME_TOTAL            0.4703            0.1576             0.2723                         5
-EXT_SOURCE_2                CODE_GENDER            0.4701            0.0865             0.2016                         5
-EXT_SOURCE_2        NAME_EDUCATION_TYPE            0.4674            0.0918             0.2072                         5
-EXT_SOURCE_2                OWN_CAR_AGE            0.4671            0.1215             0.2383                         5
-EXT_SOURCE_2 REGION_POPULATION_RELATIVE            0.4658            0.1706             0.2819                         5
-EXT_SOURCE_2             FLAG_EMP_PHONE            0.4651            0.0792             0.1920                         5
-
-INTERPRETATION CHECKLIST
-1. Start with INTERACTION_SUMMARY.csv; inspect both TV columns, not only the rank.
-2. Prefer candidates with TP-vs-FN separation that persists across folds.
-3. Check TP-vs-FP separation beside it; a TP-vs-FN pattern alone may also
-   describe false alarms and is not enough to justify a new feature.
-4. Inspect INTERACTION_CELLS_POOLED.csv for the actual bin combinations,
-   their TP/FN/FP/TN counts, default rates, precision, and smoothed log2 lifts.
-5. Use INTERACTION_CELLS_BY_FOLD.csv and BIN_DEFINITIONS.csv to verify that
-   the same percentile/category patterns persist and to recover real cut points.
-6. Treat cells below the support flags cautiously. The script retains them
-   in the CSVs but marks the minimum-support checks explicitly.
-7. A large residual suggests a joint-bin pattern beyond the two marginal
-   bin enrichments, but still needs replication and a controlled model test.
-
-CAUTIONS
-- This is post-hoc diagnostic analysis of the existing OOF model.
-- High TV or interaction residual does not mean the feature improves AUC, AP, recall, or FPR.
-- Group membership depends on the current model and its saved threshold.
-- No causal interpretation is justified.
-- Confirm a discovered pattern with a controlled, fold-preserving model
-  experiment before claiming that a new interaction recovers FN safely.
-
-Runtime seconds: 55.79
-Output directory: C:\Users\UNITECH\Desktop\GCI 2026\competition\output\tp_fn_signal_discovery
+Runtime seconds: 22.48
+Output directory: C:\Users\UNITECH\Desktop\GCI 2026\competition\output\tp_fn_450k_signal_diagnostics

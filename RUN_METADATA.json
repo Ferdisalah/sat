@@ -1,9 +1,8 @@
 {
   "train_file": "C:\\Users\\UNITECH\\Downloads\\train.csv",
   "predictions_file": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\output\\raw_credit_term_oof_shap\\RAW_CREDIT_TERM_oof_predictions.csv",
-  "output_dir": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\output\\tp_fn_signal_discovery",
+  "output_dir": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\output\\tp_fn_450k_signal_diagnostics",
   "n_rows": 171202,
-  "n_features": 33,
   "fold_ids": [
     1,
     2,
@@ -12,25 +11,45 @@
     5
   ],
   "threshold": 0.5,
-  "counts": {
-    "TP": 3062,
-    "FN": 10759,
-    "FP": 6311,
-    "TN": 151070
-  },
-  "core_features": [
+  "target_price": 450000.0,
+  "price_absolute_tolerance": 1e-08,
+  "nearby_price_interval_inclusive": [
+    440000.0,
+    460000.0
+  ],
+  "exact_450k_rows": 14400,
+  "numeric_stratifiers": [
+    "EXT_SOURCE_1",
     "EXT_SOURCE_2",
     "EXT_SOURCE_3",
     "CREDIT_TERM",
-    "AMT_GOODS_PRICE"
+    "AMT_ANNUITY",
+    "AMT_CREDIT",
+    "AMT_INCOME_TOTAL",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "DAYS_LAST_PHONE_CHANGE",
+    "OWN_CAR_AGE",
+    "REGION_POPULATION_RELATIVE",
+    "CREDIT_TO_GOODS_RATIO",
+    "ANNUITY_TO_GOODS_PRICE"
   ],
-  "n_core_pairs": 6,
-  "n_anchor_support_pairs": 116,
-  "n_interactions": 122,
-  "n_quantile_bins_requested": 10,
-  "max_categories_per_fold": 12,
-  "minimum_actual_defaults_per_cell_for_support_flag": 20,
-  "minimum_predicted_defaults_per_cell_for_support_flag": 20,
-  "smoothing": 0.5,
-  "interpretation": "Diagnostic association only; no model fitting or causal inference."
+  "categorical_stratifiers": [
+    "REGION_RATING_CLIENT",
+    "NAME_INCOME_TYPE",
+    "OCCUPATION_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "ORGANIZATION_TYPE"
+  ],
+  "quantile_bins_requested": 5,
+  "minimum_cell_rows": 50,
+  "minimum_cell_defaults": 5,
+  "diagnostic_ratios_not_in_baseline": [
+    "CREDIT_TO_GOODS_RATIO",
+    "ANNUITY_TO_GOODS_PRICE"
+  ],
+  "method": "Exact 450K flag x fold-specific feature bins; no model fitting.",
+  "interpretation": "Post-hoc diagnostic association only. The exact 450K hypothesis was selected after inspecting labels; do not treat CV summaries as independent confirmation."
 }

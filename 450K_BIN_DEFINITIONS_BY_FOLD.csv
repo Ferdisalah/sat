@@ -1,0 +1,731 @@
+FOLD,FEATURE,BIN,BIN_TYPE,LOWER_BOUND,UPPER_BOUND,CATEGORY_VALUE,REFERENCE_ROWS_IN_BIN
+1,EXT_SOURCE_1,Q01,numeric_quantile_reference_fold,-inf,0.29619101416091753,,8368
+1,EXT_SOURCE_1,Q02,numeric_quantile_reference_fold,0.29619101416091753,0.4376742108882416,,8366
+1,EXT_SOURCE_1,Q03,numeric_quantile_reference_fold,0.4376742108882416,0.5738056851144044,,8368
+1,EXT_SOURCE_1,Q04,numeric_quantile_reference_fold,0.5738056851144044,0.7093995448464157,,8367
+1,EXT_SOURCE_1,Q05,numeric_quantile_reference_fold,0.7093995448464157,inf,,8368
+1,EXT_SOURCE_1,__MISSING__,missing,,,<missing>,95124
+1,EXT_SOURCE_2,Q01,numeric_quantile_reference_fold,-inf,0.3383661424037205,,27336
+1,EXT_SOURCE_2,Q02,numeric_quantile_reference_fold,0.3383661424037205,0.5125129942702344,,27336
+1,EXT_SOURCE_2,Q03,numeric_quantile_reference_fold,0.5125129942702344,0.6087447391503361,,27335
+1,EXT_SOURCE_2,Q04,numeric_quantile_reference_fold,0.6087447391503361,0.6829264777539054,,27336
+1,EXT_SOURCE_2,Q05,numeric_quantile_reference_fold,0.6829264777539054,inf,,27338
+1,EXT_SOURCE_2,__MISSING__,missing,,,<missing>,280
+1,EXT_SOURCE_3,Q01,numeric_quantile_reference_fold,-inf,0.3312508645909018,,18587
+1,EXT_SOURCE_3,Q02,numeric_quantile_reference_fold,0.3312508645909018,0.475849908720221,,18578
+1,EXT_SOURCE_3,Q03,numeric_quantile_reference_fold,0.475849908720221,0.5919766183185521,,18670
+1,EXT_SOURCE_3,Q04,numeric_quantile_reference_fold,0.5919766183185521,0.6940926425266661,,18586
+1,EXT_SOURCE_3,Q05,numeric_quantile_reference_fold,0.6940926425266661,inf,,18712
+1,EXT_SOURCE_3,__MISSING__,missing,,,<missing>,43828
+1,CREDIT_TERM,Q01,numeric_quantile_reference_fold,-inf,14.367953945790358,,27392
+1,CREDIT_TERM,Q02,numeric_quantile_reference_fold,14.367953945790358,19.53249906611879,,27392
+1,CREDIT_TERM,Q03,numeric_quantile_reference_fold,19.53249906611879,21.581196581196583,,27390
+1,CREDIT_TERM,Q04,numeric_quantile_reference_fold,21.581196581196583,30.14311735623211,,27349
+1,CREDIT_TERM,Q05,numeric_quantile_reference_fold,30.14311735623211,inf,,27438
+1,CREDIT_TERM,__MISSING__,missing,,,<missing>,0
+1,AMT_ANNUITY,Q01,numeric_quantile_reference_fold,-inf,14670.0,,27352
+1,AMT_ANNUITY,Q02,numeric_quantile_reference_fold,14670.0,21865.5,,27398
+1,AMT_ANNUITY,Q03,numeric_quantile_reference_fold,21865.5,28084.5,,27416
+1,AMT_ANNUITY,Q04,numeric_quantile_reference_fold,28084.5,37557.0,,27401
+1,AMT_ANNUITY,Q05,numeric_quantile_reference_fold,37557.0,inf,,27394
+1,AMT_ANNUITY,__MISSING__,missing,,,<missing>,0
+1,AMT_CREDIT,Q01,numeric_quantile_reference_fold,-inf,254700.0,,27024
+1,AMT_CREDIT,Q02,numeric_quantile_reference_fold,254700.0,432000.0,,27749
+1,AMT_CREDIT,Q03,numeric_quantile_reference_fold,432000.0,604152.0,,27225
+1,AMT_CREDIT,Q04,numeric_quantile_reference_fold,604152.0,900000.0,,26009
+1,AMT_CREDIT,Q05,numeric_quantile_reference_fold,900000.0,inf,,28954
+1,AMT_CREDIT,__MISSING__,missing,,,<missing>,0
+1,AMT_INCOME_TOTAL,Q01,numeric_quantile_reference_fold,-inf,99000.0,,26541
+1,AMT_INCOME_TOTAL,Q02,numeric_quantile_reference_fold,99000.0,135000.0,,24027
+1,AMT_INCOME_TOTAL,Q03,numeric_quantile_reference_fold,135000.0,162000.0,,31061
+1,AMT_INCOME_TOTAL,Q04,numeric_quantile_reference_fold,162000.0,225000.0,,25277
+1,AMT_INCOME_TOTAL,Q05,numeric_quantile_reference_fold,225000.0,inf,,30055
+1,AMT_INCOME_TOTAL,__MISSING__,missing,,,<missing>,0
+1,DAYS_BIRTH,Q01,numeric_quantile_reference_fold,-inf,-20480.0,,27385
+1,DAYS_BIRTH,Q02,numeric_quantile_reference_fold,-20480.0,-17253.0,,27398
+1,DAYS_BIRTH,Q03,numeric_quantile_reference_fold,-17253.0,-14437.0,,27389
+1,DAYS_BIRTH,Q04,numeric_quantile_reference_fold,-14437.0,-11700.0,,27396
+1,DAYS_BIRTH,Q05,numeric_quantile_reference_fold,-11700.0,inf,,27393
+1,DAYS_BIRTH,__MISSING__,missing,,,<missing>,0
+1,DAYS_EMPLOYED,Q01,numeric_quantile_reference_fold,-inf,-3250.0,,27382
+1,DAYS_EMPLOYED,Q02,numeric_quantile_reference_fold,-3250.0,-1698.0,,27384
+1,DAYS_EMPLOYED,Q03,numeric_quantile_reference_fold,-1698.0,-824.0,,27395
+1,DAYS_EMPLOYED,Q04,numeric_quantile_reference_fold,-824.0,-143.0,,27393
+1,DAYS_EMPLOYED,Q05,numeric_quantile_reference_fold,-143.0,inf,,27407
+1,DAYS_EMPLOYED,__MISSING__,missing,,,<missing>,0
+1,DAYS_REGISTRATION,Q01,numeric_quantile_reference_fold,-inf,-8241.0,,27388
+1,DAYS_REGISTRATION,Q02,numeric_quantile_reference_fold,-8241.0,-5470.0,,27391
+1,DAYS_REGISTRATION,Q03,numeric_quantile_reference_fold,-5470.0,-3542.9999999999854,,27398
+1,DAYS_REGISTRATION,Q04,numeric_quantile_reference_fold,-3542.9999999999854,-1492.0,,27387
+1,DAYS_REGISTRATION,Q05,numeric_quantile_reference_fold,-1492.0,inf,,27397
+1,DAYS_REGISTRATION,__MISSING__,missing,,,<missing>,0
+1,DAYS_ID_PUBLISH,Q01,numeric_quantile_reference_fold,-inf,-4427.0,,27363
+1,DAYS_ID_PUBLISH,Q02,numeric_quantile_reference_fold,-4427.0,-3872.0,,27417
+1,DAYS_ID_PUBLISH,Q03,numeric_quantile_reference_fold,-3872.0,-2650.0,,27385
+1,DAYS_ID_PUBLISH,Q04,numeric_quantile_reference_fold,-2650.0,-1377.0,,27390
+1,DAYS_ID_PUBLISH,Q05,numeric_quantile_reference_fold,-1377.0,inf,,27406
+1,DAYS_ID_PUBLISH,__MISSING__,missing,,,<missing>,0
+1,DAYS_LAST_PHONE_CHANGE,Q01,numeric_quantile_reference_fold,-inf,-1717.0,,27373
+1,DAYS_LAST_PHONE_CHANGE,Q02,numeric_quantile_reference_fold,-1717.0,-1059.0,,27399
+1,DAYS_LAST_PHONE_CHANGE,Q03,numeric_quantile_reference_fold,-1059.0,-548.0,,27363
+1,DAYS_LAST_PHONE_CHANGE,Q04,numeric_quantile_reference_fold,-548.0,-163.0,,27404
+1,DAYS_LAST_PHONE_CHANGE,Q05,numeric_quantile_reference_fold,-163.0,inf,,27422
+1,DAYS_LAST_PHONE_CHANGE,__MISSING__,missing,,,<missing>,0
+1,OWN_CAR_AGE,Q01,numeric_quantile_reference_fold,-inf,4.0,,8835
+1,OWN_CAR_AGE,Q02,numeric_quantile_reference_fold,4.0,7.0,,6790
+1,OWN_CAR_AGE,Q03,numeric_quantile_reference_fold,7.0,12.0,,11994
+1,OWN_CAR_AGE,Q04,numeric_quantile_reference_fold,12.0,17.0,,9017
+1,OWN_CAR_AGE,Q05,numeric_quantile_reference_fold,17.0,inf,,9714
+1,OWN_CAR_AGE,__MISSING__,missing,,,<missing>,90611
+1,REGION_POPULATION_RELATIVE,Q01,numeric_quantile_reference_fold,-inf,0.008625,,26544
+1,REGION_POPULATION_RELATIVE,Q02,numeric_quantile_reference_fold,0.008625,0.016612,,26707
+1,REGION_POPULATION_RELATIVE,Q03,numeric_quantile_reference_fold,0.016612,0.020713,,26516
+1,REGION_POPULATION_RELATIVE,Q04,numeric_quantile_reference_fold,0.020713,0.030755,,26831
+1,REGION_POPULATION_RELATIVE,Q05,numeric_quantile_reference_fold,0.030755,inf,,30363
+1,REGION_POPULATION_RELATIVE,__MISSING__,missing,,,<missing>,0
+1,CREDIT_TO_GOODS_RATIO,Q01,numeric_quantile_reference_fold,-inf,1.0,,210
+1,CREDIT_TO_GOODS_RATIO,Q02,numeric_quantile_reference_fold,1.0,1.0792,,54555
+1,CREDIT_TO_GOODS_RATIO,Q03,numeric_quantile_reference_fold,1.0792,1.1452,,26948
+1,CREDIT_TO_GOODS_RATIO,Q04,numeric_quantile_reference_fold,1.1452,1.2112,,27507
+1,CREDIT_TO_GOODS_RATIO,Q05,numeric_quantile_reference_fold,1.2112,inf,,27741
+1,CREDIT_TO_GOODS_RATIO,__MISSING__,missing,,,<missing>,0
+1,ANNUITY_TO_GOODS_PRICE,Q01,numeric_quantile_reference_fold,-inf,0.03879,,27385
+1,ANNUITY_TO_GOODS_PRICE,Q02,numeric_quantile_reference_fold,0.03879,0.05,,25650
+1,ANNUITY_TO_GOODS_PRICE,Q03,numeric_quantile_reference_fold,0.05,0.05914,,29108
+1,ANNUITY_TO_GOODS_PRICE,Q04,numeric_quantile_reference_fold,0.05914,0.07915,,27393
+1,ANNUITY_TO_GOODS_PRICE,Q05,numeric_quantile_reference_fold,0.07915,inf,,27425
+1,ANNUITY_TO_GOODS_PRICE,__MISSING__,missing,,,<missing>,0
+1,REGION_RATING_CLIENT,CAT::2,category_reference_fold,,,2,101121
+1,REGION_RATING_CLIENT,CAT::3,category_reference_fold,,,3,21642
+1,REGION_RATING_CLIENT,CAT::1,category_reference_fold,,,1,14198
+1,REGION_RATING_CLIENT,__OTHER__,category_other,,,<not in top levels>,0
+1,REGION_RATING_CLIENT,__MISSING__,missing,,,<missing>,0
+1,NAME_INCOME_TYPE,CAT::Working,category_reference_fold,,,Working,70669
+1,NAME_INCOME_TYPE,CAT::Commercial associate,category_reference_fold,,,Commercial associate,31981
+1,NAME_INCOME_TYPE,CAT::Pensioner,category_reference_fold,,,Pensioner,24762
+1,NAME_INCOME_TYPE,CAT::State servant,category_reference_fold,,,State servant,9530
+1,NAME_INCOME_TYPE,CAT::Unemployed,category_reference_fold,,,Unemployed,9
+1,NAME_INCOME_TYPE,CAT::Student,category_reference_fold,,,Student,5
+1,NAME_INCOME_TYPE,CAT::Businessman,category_reference_fold,,,Businessman,3
+1,NAME_INCOME_TYPE,CAT::Maternity leave,category_reference_fold,,,Maternity leave,2
+1,NAME_INCOME_TYPE,__OTHER__,category_other,,,<not in top levels>,0
+1,NAME_INCOME_TYPE,__MISSING__,missing,,,<missing>,0
+1,OCCUPATION_TYPE,CAT::Other,category_reference_fold,,,Other,43129
+1,OCCUPATION_TYPE,CAT::Laborers,category_reference_fold,,,Laborers,24503
+1,OCCUPATION_TYPE,CAT::Sales staff,category_reference_fold,,,Sales staff,14211
+1,OCCUPATION_TYPE,CAT::Core staff,category_reference_fold,,,Core staff,12232
+1,OCCUPATION_TYPE,CAT::Managers,category_reference_fold,,,Managers,9426
+1,OCCUPATION_TYPE,CAT::Drivers,category_reference_fold,,,Drivers,8201
+1,OCCUPATION_TYPE,CAT::High skill tech staff,category_reference_fold,,,High skill tech staff,5172
+1,OCCUPATION_TYPE,CAT::Accountants,category_reference_fold,,,Accountants,4412
+1,OCCUPATION_TYPE,CAT::Medicine staff,category_reference_fold,,,Medicine staff,3805
+1,OCCUPATION_TYPE,CAT::Security staff,category_reference_fold,,,Security staff,2984
+1,OCCUPATION_TYPE,CAT::Cooking staff,category_reference_fold,,,Cooking staff,2709
+1,OCCUPATION_TYPE,CAT::Cleaning staff,category_reference_fold,,,Cleaning staff,2056
+1,OCCUPATION_TYPE,__OTHER__,category_other,,,<not in top levels>,4121
+1,OCCUPATION_TYPE,__MISSING__,missing,,,<missing>,0
+1,NAME_EDUCATION_TYPE,CAT::Secondary / secondary special,category_reference_fold,,,Secondary / secondary special,97135
+1,NAME_EDUCATION_TYPE,CAT::Higher education,category_reference_fold,,,Higher education,33434
+1,NAME_EDUCATION_TYPE,CAT::Incomplete higher,category_reference_fold,,,Incomplete higher,4612
+1,NAME_EDUCATION_TYPE,CAT::Lower secondary,category_reference_fold,,,Lower secondary,1706
+1,NAME_EDUCATION_TYPE,CAT::Academic degree,category_reference_fold,,,Academic degree,74
+1,NAME_EDUCATION_TYPE,__OTHER__,category_other,,,<not in top levels>,0
+1,NAME_EDUCATION_TYPE,__MISSING__,missing,,,<missing>,0
+1,ORGANIZATION_TYPE,CAT::Business Entity Type 3,category_reference_fold,,,Business Entity Type 3,30400
+1,ORGANIZATION_TYPE,CAT::XNA,category_reference_fold,,,XNA,24768
+1,ORGANIZATION_TYPE,CAT::Self-employed,category_reference_fold,,,Self-employed,17064
+1,ORGANIZATION_TYPE,CAT::Other,category_reference_fold,,,Other,7327
+1,ORGANIZATION_TYPE,CAT::Medicine,category_reference_fold,,,Medicine,5003
+1,ORGANIZATION_TYPE,CAT::Business Entity Type 2,category_reference_fold,,,Business Entity Type 2,4711
+1,ORGANIZATION_TYPE,CAT::Government,category_reference_fold,,,Government,4571
+1,ORGANIZATION_TYPE,CAT::School,category_reference_fold,,,School,4051
+1,ORGANIZATION_TYPE,CAT::Trade: type 7,category_reference_fold,,,Trade: type 7,3473
+1,ORGANIZATION_TYPE,CAT::Kindergarten,category_reference_fold,,,Kindergarten,3108
+1,ORGANIZATION_TYPE,CAT::Construction,category_reference_fold,,,Construction,2956
+1,ORGANIZATION_TYPE,CAT::Business Entity Type 1,category_reference_fold,,,Business Entity Type 1,2625
+1,ORGANIZATION_TYPE,__OTHER__,category_other,,,<not in top levels>,26904
+1,ORGANIZATION_TYPE,__MISSING__,missing,,,<missing>,0
+2,EXT_SOURCE_1,Q01,numeric_quantile_reference_fold,-inf,0.29569151772344554,,8387
+2,EXT_SOURCE_1,Q02,numeric_quantile_reference_fold,0.29569151772344554,0.43773251633493643,,8387
+2,EXT_SOURCE_1,Q03,numeric_quantile_reference_fold,0.43773251633493643,0.5744061036005851,,8387
+2,EXT_SOURCE_1,Q04,numeric_quantile_reference_fold,0.5744061036005851,0.7103476735398815,,8387
+2,EXT_SOURCE_1,Q05,numeric_quantile_reference_fold,0.7103476735398815,inf,,8387
+2,EXT_SOURCE_1,__MISSING__,missing,,,<missing>,95026
+2,EXT_SOURCE_2,Q01,numeric_quantile_reference_fold,-inf,0.3392763402736934,,27332
+2,EXT_SOURCE_2,Q02,numeric_quantile_reference_fold,0.3392763402736934,0.5122715059200345,,27331
+2,EXT_SOURCE_2,Q03,numeric_quantile_reference_fold,0.5122715059200345,0.6087405724986001,,27332
+2,EXT_SOURCE_2,Q04,numeric_quantile_reference_fold,0.6087405724986001,0.6828042979899737,,27331
+2,EXT_SOURCE_2,Q05,numeric_quantile_reference_fold,0.6828042979899737,inf,,27332
+2,EXT_SOURCE_2,__MISSING__,missing,,,<missing>,303
+2,EXT_SOURCE_3,Q01,numeric_quantile_reference_fold,-inf,0.3312508645909018,,18643
+2,EXT_SOURCE_3,Q02,numeric_quantile_reference_fold,0.3312508645909018,0.475849908720221,,18594
+2,EXT_SOURCE_3,Q03,numeric_quantile_reference_fold,0.475849908720221,0.5919766183185521,,18636
+2,EXT_SOURCE_3,Q04,numeric_quantile_reference_fold,0.5919766183185521,0.6940926425266661,,18637
+2,EXT_SOURCE_3,Q05,numeric_quantile_reference_fold,0.6940926425266661,inf,,18772
+2,EXT_SOURCE_3,__MISSING__,missing,,,<missing>,43679
+2,CREDIT_TERM,Q01,numeric_quantile_reference_fold,-inf,14.367816091954023,,27365
+2,CREDIT_TERM,Q02,numeric_quantile_reference_fold,14.367816091954023,19.529342837613513,,27298
+2,CREDIT_TERM,Q03,numeric_quantile_reference_fold,19.529342837613513,21.58215638994144,,27513
+2,CREDIT_TERM,Q04,numeric_quantile_reference_fold,21.58215638994144,30.14311735623211,,27295
+2,CREDIT_TERM,Q05,numeric_quantile_reference_fold,30.14311735623211,inf,,27490
+2,CREDIT_TERM,__MISSING__,missing,,,<missing>,0
+2,AMT_ANNUITY,Q01,numeric_quantile_reference_fold,-inf,14751.0,,27307
+2,AMT_ANNUITY,Q02,numeric_quantile_reference_fold,14751.0,21888.0,,27457
+2,AMT_ANNUITY,Q03,numeric_quantile_reference_fold,21888.0,28084.5,,27401
+2,AMT_ANNUITY,Q04,numeric_quantile_reference_fold,28084.5,37669.5,,27365
+2,AMT_ANNUITY,Q05,numeric_quantile_reference_fold,37669.5,inf,,27431
+2,AMT_ANNUITY,__MISSING__,missing,,,<missing>,0
+2,AMT_CREDIT,Q01,numeric_quantile_reference_fold,-inf,254700.0,,26989
+2,AMT_CREDIT,Q02,numeric_quantile_reference_fold,254700.0,431730.0,,27794
+2,AMT_CREDIT,Q03,numeric_quantile_reference_fold,431730.0,604683.0,,27389
+2,AMT_CREDIT,Q04,numeric_quantile_reference_fold,604683.0,900000.0,,25829
+2,AMT_CREDIT,Q05,numeric_quantile_reference_fold,900000.0,inf,,28960
+2,AMT_CREDIT,__MISSING__,missing,,,<missing>,0
+2,AMT_INCOME_TOTAL,Q01,numeric_quantile_reference_fold,-inf,99000.0,,26517
+2,AMT_INCOME_TOTAL,Q02,numeric_quantile_reference_fold,99000.0,135000.0,,24001
+2,AMT_INCOME_TOTAL,Q03,numeric_quantile_reference_fold,135000.0,162000.0,,31173
+2,AMT_INCOME_TOTAL,Q04,numeric_quantile_reference_fold,162000.0,225000.0,,25084
+2,AMT_INCOME_TOTAL,Q05,numeric_quantile_reference_fold,225000.0,inf,,30186
+2,AMT_INCOME_TOTAL,__MISSING__,missing,,,<missing>,0
+2,DAYS_BIRTH,Q01,numeric_quantile_reference_fold,-inf,-20475.0,,27392
+2,DAYS_BIRTH,Q02,numeric_quantile_reference_fold,-20475.0,-17238.0,,27390
+2,DAYS_BIRTH,Q03,numeric_quantile_reference_fold,-17238.0,-14429.999999999985,,27395
+2,DAYS_BIRTH,Q04,numeric_quantile_reference_fold,-14429.999999999985,-11697.0,,27387
+2,DAYS_BIRTH,Q05,numeric_quantile_reference_fold,-11697.0,inf,,27397
+2,DAYS_BIRTH,__MISSING__,missing,,,<missing>,0
+2,DAYS_EMPLOYED,Q01,numeric_quantile_reference_fold,-inf,-3249.0,,27386
+2,DAYS_EMPLOYED,Q02,numeric_quantile_reference_fold,-3249.0,-1696.0,,27380
+2,DAYS_EMPLOYED,Q03,numeric_quantile_reference_fold,-1696.0,-825.0,,27382
+2,DAYS_EMPLOYED,Q04,numeric_quantile_reference_fold,-825.0,-143.0,,27386
+2,DAYS_EMPLOYED,Q05,numeric_quantile_reference_fold,-143.0,inf,,27427
+2,DAYS_EMPLOYED,__MISSING__,missing,,,<missing>,0
+2,DAYS_REGISTRATION,Q01,numeric_quantile_reference_fold,-inf,-8238.0,,27388
+2,DAYS_REGISTRATION,Q02,numeric_quantile_reference_fold,-8238.0,-5468.0,,27395
+2,DAYS_REGISTRATION,Q03,numeric_quantile_reference_fold,-5468.0,-3550.0,,27384
+2,DAYS_REGISTRATION,Q04,numeric_quantile_reference_fold,-3550.0,-1494.0,,27393
+2,DAYS_REGISTRATION,Q05,numeric_quantile_reference_fold,-1494.0,inf,,27401
+2,DAYS_REGISTRATION,__MISSING__,missing,,,<missing>,0
+2,DAYS_ID_PUBLISH,Q01,numeric_quantile_reference_fold,-inf,-4431.0,,27369
+2,DAYS_ID_PUBLISH,Q02,numeric_quantile_reference_fold,-4431.0,-3882.0,,27399
+2,DAYS_ID_PUBLISH,Q03,numeric_quantile_reference_fold,-3882.0,-2649.0,,27402
+2,DAYS_ID_PUBLISH,Q04,numeric_quantile_reference_fold,-2649.0,-1374.0,,27386
+2,DAYS_ID_PUBLISH,Q05,numeric_quantile_reference_fold,-1374.0,inf,,27405
+2,DAYS_ID_PUBLISH,__MISSING__,missing,,,<missing>,0
+2,DAYS_LAST_PHONE_CHANGE,Q01,numeric_quantile_reference_fold,-inf,-1717.0,,27389
+2,DAYS_LAST_PHONE_CHANGE,Q02,numeric_quantile_reference_fold,-1717.0,-1060.0,,27372
+2,DAYS_LAST_PHONE_CHANGE,Q03,numeric_quantile_reference_fold,-1060.0,-547.0,,27363
+2,DAYS_LAST_PHONE_CHANGE,Q04,numeric_quantile_reference_fold,-547.0,-162.0,,27422
+2,DAYS_LAST_PHONE_CHANGE,Q05,numeric_quantile_reference_fold,-162.0,inf,,27415
+2,DAYS_LAST_PHONE_CHANGE,__MISSING__,missing,,,<missing>,0
+2,OWN_CAR_AGE,Q01,numeric_quantile_reference_fold,-inf,4.0,,8895
+2,OWN_CAR_AGE,Q02,numeric_quantile_reference_fold,4.0,7.0,,6855
+2,OWN_CAR_AGE,Q03,numeric_quantile_reference_fold,7.0,12.0,,12091
+2,OWN_CAR_AGE,Q04,numeric_quantile_reference_fold,12.0,17.0,,9157
+2,OWN_CAR_AGE,Q05,numeric_quantile_reference_fold,17.0,inf,,9685
+2,OWN_CAR_AGE,__MISSING__,missing,,,<missing>,90278
+2,REGION_POPULATION_RELATIVE,Q01,numeric_quantile_reference_fold,-inf,0.008625,,26577
+2,REGION_POPULATION_RELATIVE,Q02,numeric_quantile_reference_fold,0.008625,0.016612,,26872
+2,REGION_POPULATION_RELATIVE,Q03,numeric_quantile_reference_fold,0.016612,0.020713,,26406
+2,REGION_POPULATION_RELATIVE,Q04,numeric_quantile_reference_fold,0.020713,0.030755,,26809
+2,REGION_POPULATION_RELATIVE,Q05,numeric_quantile_reference_fold,0.030755,inf,,30297
+2,REGION_POPULATION_RELATIVE,__MISSING__,missing,,,<missing>,0
+2,CREDIT_TO_GOODS_RATIO,Q01,numeric_quantile_reference_fold,-inf,1.0,,220
+2,CREDIT_TO_GOODS_RATIO,Q02,numeric_quantile_reference_fold,1.0,1.0792,,54484
+2,CREDIT_TO_GOODS_RATIO,Q03,numeric_quantile_reference_fold,1.0792,1.1452,,26963
+2,CREDIT_TO_GOODS_RATIO,Q04,numeric_quantile_reference_fold,1.1452,1.2112,,27613
+2,CREDIT_TO_GOODS_RATIO,Q05,numeric_quantile_reference_fold,1.2112,inf,,27681
+2,CREDIT_TO_GOODS_RATIO,__MISSING__,missing,,,<missing>,0
+2,ANNUITY_TO_GOODS_PRICE,Q01,numeric_quantile_reference_fold,-inf,0.038746666666666665,,27350
+2,ANNUITY_TO_GOODS_PRICE,Q02,numeric_quantile_reference_fold,0.038746666666666665,0.05,,25691
+2,ANNUITY_TO_GOODS_PRICE,Q03,numeric_quantile_reference_fold,0.05,0.0592,,29106
+2,ANNUITY_TO_GOODS_PRICE,Q04,numeric_quantile_reference_fold,0.0592,0.07915,,27368
+2,ANNUITY_TO_GOODS_PRICE,Q05,numeric_quantile_reference_fold,0.07915,inf,,27446
+2,ANNUITY_TO_GOODS_PRICE,__MISSING__,missing,,,<missing>,0
+2,REGION_RATING_CLIENT,CAT::2,category_reference_fold,,,2,101094
+2,REGION_RATING_CLIENT,CAT::3,category_reference_fold,,,3,21640
+2,REGION_RATING_CLIENT,CAT::1,category_reference_fold,,,1,14227
+2,REGION_RATING_CLIENT,__OTHER__,category_other,,,<not in top levels>,0
+2,REGION_RATING_CLIENT,__MISSING__,missing,,,<missing>,0
+2,NAME_INCOME_TYPE,CAT::Working,category_reference_fold,,,Working,70643
+2,NAME_INCOME_TYPE,CAT::Commercial associate,category_reference_fold,,,Commercial associate,31930
+2,NAME_INCOME_TYPE,CAT::Pensioner,category_reference_fold,,,Pensioner,24763
+2,NAME_INCOME_TYPE,CAT::State servant,category_reference_fold,,,State servant,9604
+2,NAME_INCOME_TYPE,CAT::Student,category_reference_fold,,,Student,8
+2,NAME_INCOME_TYPE,CAT::Unemployed,category_reference_fold,,,Unemployed,7
+2,NAME_INCOME_TYPE,CAT::Businessman,category_reference_fold,,,Businessman,3
+2,NAME_INCOME_TYPE,CAT::Maternity leave,category_reference_fold,,,Maternity leave,3
+2,NAME_INCOME_TYPE,__OTHER__,category_other,,,<not in top levels>,0
+2,NAME_INCOME_TYPE,__MISSING__,missing,,,<missing>,0
+2,OCCUPATION_TYPE,CAT::Other,category_reference_fold,,,Other,42940
+2,OCCUPATION_TYPE,CAT::Laborers,category_reference_fold,,,Laborers,24504
+2,OCCUPATION_TYPE,CAT::Sales staff,category_reference_fold,,,Sales staff,14256
+2,OCCUPATION_TYPE,CAT::Core staff,category_reference_fold,,,Core staff,12270
+2,OCCUPATION_TYPE,CAT::Managers,category_reference_fold,,,Managers,9519
+2,OCCUPATION_TYPE,CAT::Drivers,category_reference_fold,,,Drivers,8308
+2,OCCUPATION_TYPE,CAT::High skill tech staff,category_reference_fold,,,High skill tech staff,5104
+2,OCCUPATION_TYPE,CAT::Accountants,category_reference_fold,,,Accountants,4437
+2,OCCUPATION_TYPE,CAT::Medicine staff,category_reference_fold,,,Medicine staff,3766
+2,OCCUPATION_TYPE,CAT::Security staff,category_reference_fold,,,Security staff,3011
+2,OCCUPATION_TYPE,CAT::Cooking staff,category_reference_fold,,,Cooking staff,2686
+2,OCCUPATION_TYPE,CAT::Cleaning staff,category_reference_fold,,,Cleaning staff,2040
+2,OCCUPATION_TYPE,__OTHER__,category_other,,,<not in top levels>,4120
+2,OCCUPATION_TYPE,__MISSING__,missing,,,<missing>,0
+2,NAME_EDUCATION_TYPE,CAT::Secondary / secondary special,category_reference_fold,,,Secondary / secondary special,97148
+2,NAME_EDUCATION_TYPE,CAT::Higher education,category_reference_fold,,,Higher education,33422
+2,NAME_EDUCATION_TYPE,CAT::Incomplete higher,category_reference_fold,,,Incomplete higher,4600
+2,NAME_EDUCATION_TYPE,CAT::Lower secondary,category_reference_fold,,,Lower secondary,1707
+2,NAME_EDUCATION_TYPE,CAT::Academic degree,category_reference_fold,,,Academic degree,84
+2,NAME_EDUCATION_TYPE,__OTHER__,category_other,,,<not in top levels>,0
+2,NAME_EDUCATION_TYPE,__MISSING__,missing,,,<missing>,0
+2,ORGANIZATION_TYPE,CAT::Business Entity Type 3,category_reference_fold,,,Business Entity Type 3,30316
+2,ORGANIZATION_TYPE,CAT::XNA,category_reference_fold,,,XNA,24764
+2,ORGANIZATION_TYPE,CAT::Self-employed,category_reference_fold,,,Self-employed,17019
+2,ORGANIZATION_TYPE,CAT::Other,category_reference_fold,,,Other,7461
+2,ORGANIZATION_TYPE,CAT::Medicine,category_reference_fold,,,Medicine,5011
+2,ORGANIZATION_TYPE,CAT::Business Entity Type 2,category_reference_fold,,,Business Entity Type 2,4783
+2,ORGANIZATION_TYPE,CAT::Government,category_reference_fold,,,Government,4597
+2,ORGANIZATION_TYPE,CAT::School,category_reference_fold,,,School,3960
+2,ORGANIZATION_TYPE,CAT::Trade: type 7,category_reference_fold,,,Trade: type 7,3450
+2,ORGANIZATION_TYPE,CAT::Kindergarten,category_reference_fold,,,Kindergarten,3140
+2,ORGANIZATION_TYPE,CAT::Construction,category_reference_fold,,,Construction,2948
+2,ORGANIZATION_TYPE,CAT::Business Entity Type 1,category_reference_fold,,,Business Entity Type 1,2711
+2,ORGANIZATION_TYPE,__OTHER__,category_other,,,<not in top levels>,26801
+2,ORGANIZATION_TYPE,__MISSING__,missing,,,<missing>,0
+3,EXT_SOURCE_1,Q01,numeric_quantile_reference_fold,-inf,0.2968478051266493,,8328
+3,EXT_SOURCE_1,Q02,numeric_quantile_reference_fold,0.2968478051266493,0.4367976634948951,,8328
+3,EXT_SOURCE_1,Q03,numeric_quantile_reference_fold,0.4367976634948951,0.5734303669812546,,8329
+3,EXT_SOURCE_1,Q04,numeric_quantile_reference_fold,0.5734303669812546,0.7097139702939929,,8327
+3,EXT_SOURCE_1,Q05,numeric_quantile_reference_fold,0.7097139702939929,inf,,8329
+3,EXT_SOURCE_1,__MISSING__,missing,,,<missing>,95321
+3,EXT_SOURCE_2,Q01,numeric_quantile_reference_fold,-inf,0.33913125590002763,,27332
+3,EXT_SOURCE_2,Q02,numeric_quantile_reference_fold,0.33913125590002763,0.5126495801244039,,27330
+3,EXT_SOURCE_2,Q03,numeric_quantile_reference_fold,0.5126495801244039,0.6088093201910024,,27334
+3,EXT_SOURCE_2,Q04,numeric_quantile_reference_fold,0.6088093201910024,0.6825769197920923,,27332
+3,EXT_SOURCE_2,Q05,numeric_quantile_reference_fold,0.6825769197920923,inf,,27332
+3,EXT_SOURCE_2,__MISSING__,missing,,,<missing>,302
+3,EXT_SOURCE_3,Q01,numeric_quantile_reference_fold,-inf,0.3312508645909018,,18533
+3,EXT_SOURCE_3,Q02,numeric_quantile_reference_fold,0.3312508645909018,0.475849908720221,,18544
+3,EXT_SOURCE_3,Q03,numeric_quantile_reference_fold,0.475849908720221,0.5919766183185521,,18738
+3,EXT_SOURCE_3,Q04,numeric_quantile_reference_fold,0.5919766183185521,0.6940926425266661,,18523
+3,EXT_SOURCE_3,Q05,numeric_quantile_reference_fold,0.6940926425266661,inf,,18876
+3,EXT_SOURCE_3,__MISSING__,missing,,,<missing>,43748
+3,CREDIT_TERM,Q01,numeric_quantile_reference_fold,-inf,14.371286218350248,,27393
+3,CREDIT_TERM,Q02,numeric_quantile_reference_fold,14.371286218350248,19.535533438100227,,27308
+3,CREDIT_TERM,Q03,numeric_quantile_reference_fold,19.535533438100227,22.046065509591543,,27465
+3,CREDIT_TERM,Q04,numeric_quantile_reference_fold,22.046065509591543,30.14311735623211,,27296
+3,CREDIT_TERM,Q05,numeric_quantile_reference_fold,30.14311735623211,inf,,27500
+3,CREDIT_TERM,__MISSING__,missing,,,<missing>,0
+3,AMT_ANNUITY,Q01,numeric_quantile_reference_fold,-inf,14710.5,,27383
+3,AMT_ANNUITY,Q02,numeric_quantile_reference_fold,14710.5,21865.5,,27354
+3,AMT_ANNUITY,Q03,numeric_quantile_reference_fold,21865.5,28075.5,,27438
+3,AMT_ANNUITY,Q04,numeric_quantile_reference_fold,28075.5,37561.5,,27386
+3,AMT_ANNUITY,Q05,numeric_quantile_reference_fold,37561.5,inf,,27401
+3,AMT_ANNUITY,__MISSING__,missing,,,<missing>,0
+3,AMT_CREDIT,Q01,numeric_quantile_reference_fold,-inf,254700.0,,26871
+3,AMT_CREDIT,Q02,numeric_quantile_reference_fold,254700.0,431280.0,,27865
+3,AMT_CREDIT,Q03,numeric_quantile_reference_fold,431280.0,604683.0,,27439
+3,AMT_CREDIT,Q04,numeric_quantile_reference_fold,604683.0,900000.0,,25880
+3,AMT_CREDIT,Q05,numeric_quantile_reference_fold,900000.0,inf,,28907
+3,AMT_CREDIT,__MISSING__,missing,,,<missing>,0
+3,AMT_INCOME_TOTAL,Q01,numeric_quantile_reference_fold,-inf,99000.0,,26612
+3,AMT_INCOME_TOTAL,Q02,numeric_quantile_reference_fold,99000.0,135000.0,,24013
+3,AMT_INCOME_TOTAL,Q03,numeric_quantile_reference_fold,135000.0,162000.0,,30946
+3,AMT_INCOME_TOTAL,Q04,numeric_quantile_reference_fold,162000.0,225000.0,,25142
+3,AMT_INCOME_TOTAL,Q05,numeric_quantile_reference_fold,225000.0,inf,,30249
+3,AMT_INCOME_TOTAL,__MISSING__,missing,,,<missing>,0
+3,DAYS_BIRTH,Q01,numeric_quantile_reference_fold,-inf,-20470.0,,27387
+3,DAYS_BIRTH,Q02,numeric_quantile_reference_fold,-20470.0,-17248.0,,27393
+3,DAYS_BIRTH,Q03,numeric_quantile_reference_fold,-17248.0,-14443.0,,27394
+3,DAYS_BIRTH,Q04,numeric_quantile_reference_fold,-14443.0,-11708.0,,27387
+3,DAYS_BIRTH,Q05,numeric_quantile_reference_fold,-11708.0,inf,,27401
+3,DAYS_BIRTH,__MISSING__,missing,,,<missing>,0
+3,DAYS_EMPLOYED,Q01,numeric_quantile_reference_fold,-inf,-3254.0,,27384
+3,DAYS_EMPLOYED,Q02,numeric_quantile_reference_fold,-3254.0,-1700.0,,27396
+3,DAYS_EMPLOYED,Q03,numeric_quantile_reference_fold,-1700.0,-823.0,,27390
+3,DAYS_EMPLOYED,Q04,numeric_quantile_reference_fold,-823.0,-145.0,,27368
+3,DAYS_EMPLOYED,Q05,numeric_quantile_reference_fold,-145.0,inf,,27424
+3,DAYS_EMPLOYED,__MISSING__,missing,,,<missing>,0
+3,DAYS_REGISTRATION,Q01,numeric_quantile_reference_fold,-inf,-8252.8,,27393
+3,DAYS_REGISTRATION,Q02,numeric_quantile_reference_fold,-8252.8,-5477.0,,27386
+3,DAYS_REGISTRATION,Q03,numeric_quantile_reference_fold,-5477.0,-3554.0,,27389
+3,DAYS_REGISTRATION,Q04,numeric_quantile_reference_fold,-3554.0,-1495.0,,27395
+3,DAYS_REGISTRATION,Q05,numeric_quantile_reference_fold,-1495.0,inf,,27399
+3,DAYS_REGISTRATION,__MISSING__,missing,,,<missing>,0
+3,DAYS_ID_PUBLISH,Q01,numeric_quantile_reference_fold,-inf,-4431.0,,27352
+3,DAYS_ID_PUBLISH,Q02,numeric_quantile_reference_fold,-4431.0,-3879.0,,27423
+3,DAYS_ID_PUBLISH,Q03,numeric_quantile_reference_fold,-3879.0,-2649.0,,27387
+3,DAYS_ID_PUBLISH,Q04,numeric_quantile_reference_fold,-2649.0,-1375.0,,27393
+3,DAYS_ID_PUBLISH,Q05,numeric_quantile_reference_fold,-1375.0,inf,,27407
+3,DAYS_ID_PUBLISH,__MISSING__,missing,,,<missing>,0
+3,DAYS_LAST_PHONE_CHANGE,Q01,numeric_quantile_reference_fold,-inf,-1718.0,,27364
+3,DAYS_LAST_PHONE_CHANGE,Q02,numeric_quantile_reference_fold,-1718.0,-1057.0,,27412
+3,DAYS_LAST_PHONE_CHANGE,Q03,numeric_quantile_reference_fold,-1057.0,-548.0,,27357
+3,DAYS_LAST_PHONE_CHANGE,Q04,numeric_quantile_reference_fold,-548.0,-161.0,,27433
+3,DAYS_LAST_PHONE_CHANGE,Q05,numeric_quantile_reference_fold,-161.0,inf,,27396
+3,DAYS_LAST_PHONE_CHANGE,__MISSING__,missing,,,<missing>,0
+3,OWN_CAR_AGE,Q01,numeric_quantile_reference_fold,-inf,4.0,,8847
+3,OWN_CAR_AGE,Q02,numeric_quantile_reference_fold,4.0,7.0,,6843
+3,OWN_CAR_AGE,Q03,numeric_quantile_reference_fold,7.0,12.0,,12077
+3,OWN_CAR_AGE,Q04,numeric_quantile_reference_fold,12.0,17.0,,9093
+3,OWN_CAR_AGE,Q05,numeric_quantile_reference_fold,17.0,inf,,9681
+3,OWN_CAR_AGE,__MISSING__,missing,,,<missing>,90421
+3,REGION_POPULATION_RELATIVE,Q01,numeric_quantile_reference_fold,-inf,0.008625,,26427
+3,REGION_POPULATION_RELATIVE,Q02,numeric_quantile_reference_fold,0.008625,0.016612,,26898
+3,REGION_POPULATION_RELATIVE,Q03,numeric_quantile_reference_fold,0.016612,0.020713,,26462
+3,REGION_POPULATION_RELATIVE,Q04,numeric_quantile_reference_fold,0.020713,0.030755,,26607
+3,REGION_POPULATION_RELATIVE,Q05,numeric_quantile_reference_fold,0.030755,inf,,30568
+3,REGION_POPULATION_RELATIVE,__MISSING__,missing,,,<missing>,0
+3,CREDIT_TO_GOODS_RATIO,Q01,numeric_quantile_reference_fold,-inf,1.0,,230
+3,CREDIT_TO_GOODS_RATIO,Q02,numeric_quantile_reference_fold,1.0,1.0792,,54514
+3,CREDIT_TO_GOODS_RATIO,Q03,numeric_quantile_reference_fold,1.0792,1.1452,,26652
+3,CREDIT_TO_GOODS_RATIO,Q04,numeric_quantile_reference_fold,1.1452,1.2112,,27754
+3,CREDIT_TO_GOODS_RATIO,Q05,numeric_quantile_reference_fold,1.2112,inf,,27812
+3,CREDIT_TO_GOODS_RATIO,__MISSING__,missing,,,<missing>,0
+3,ANNUITY_TO_GOODS_PRICE,Q01,numeric_quantile_reference_fold,-inf,0.038746666666666665,,27340
+3,ANNUITY_TO_GOODS_PRICE,Q02,numeric_quantile_reference_fold,0.038746666666666665,0.05,,25845
+3,ANNUITY_TO_GOODS_PRICE,Q03,numeric_quantile_reference_fold,0.05,0.059133333333333336,,28989
+3,ANNUITY_TO_GOODS_PRICE,Q04,numeric_quantile_reference_fold,0.059133333333333336,0.07901,,27295
+3,ANNUITY_TO_GOODS_PRICE,Q05,numeric_quantile_reference_fold,0.07901,inf,,27493
+3,ANNUITY_TO_GOODS_PRICE,__MISSING__,missing,,,<missing>,0
+3,REGION_RATING_CLIENT,CAT::2,category_reference_fold,,,2,101054
+3,REGION_RATING_CLIENT,CAT::3,category_reference_fold,,,3,21584
+3,REGION_RATING_CLIENT,CAT::1,category_reference_fold,,,1,14324
+3,REGION_RATING_CLIENT,__OTHER__,category_other,,,<not in top levels>,0
+3,REGION_RATING_CLIENT,__MISSING__,missing,,,<missing>,0
+3,NAME_INCOME_TYPE,CAT::Working,category_reference_fold,,,Working,70585
+3,NAME_INCOME_TYPE,CAT::Commercial associate,category_reference_fold,,,Commercial associate,32002
+3,NAME_INCOME_TYPE,CAT::Pensioner,category_reference_fold,,,Pensioner,24692
+3,NAME_INCOME_TYPE,CAT::State servant,category_reference_fold,,,State servant,9664
+3,NAME_INCOME_TYPE,CAT::Student,category_reference_fold,,,Student,8
+3,NAME_INCOME_TYPE,CAT::Unemployed,category_reference_fold,,,Unemployed,8
+3,NAME_INCOME_TYPE,CAT::Maternity leave,category_reference_fold,,,Maternity leave,2
+3,NAME_INCOME_TYPE,CAT::Businessman,category_reference_fold,,,Businessman,1
+3,NAME_INCOME_TYPE,__OTHER__,category_other,,,<not in top levels>,0
+3,NAME_INCOME_TYPE,__MISSING__,missing,,,<missing>,0
+3,OCCUPATION_TYPE,CAT::Other,category_reference_fold,,,Other,42946
+3,OCCUPATION_TYPE,CAT::Laborers,category_reference_fold,,,Laborers,24753
+3,OCCUPATION_TYPE,CAT::Sales staff,category_reference_fold,,,Sales staff,14193
+3,OCCUPATION_TYPE,CAT::Core staff,category_reference_fold,,,Core staff,12198
+3,OCCUPATION_TYPE,CAT::Managers,category_reference_fold,,,Managers,9517
+3,OCCUPATION_TYPE,CAT::Drivers,category_reference_fold,,,Drivers,8301
+3,OCCUPATION_TYPE,CAT::High skill tech staff,category_reference_fold,,,High skill tech staff,5086
+3,OCCUPATION_TYPE,CAT::Accountants,category_reference_fold,,,Accountants,4358
+3,OCCUPATION_TYPE,CAT::Medicine staff,category_reference_fold,,,Medicine staff,3828
+3,OCCUPATION_TYPE,CAT::Security staff,category_reference_fold,,,Security staff,2942
+3,OCCUPATION_TYPE,CAT::Cooking staff,category_reference_fold,,,Cooking staff,2654
+3,OCCUPATION_TYPE,CAT::Cleaning staff,category_reference_fold,,,Cleaning staff,2050
+3,OCCUPATION_TYPE,__OTHER__,category_other,,,<not in top levels>,4136
+3,OCCUPATION_TYPE,__MISSING__,missing,,,<missing>,0
+3,NAME_EDUCATION_TYPE,CAT::Secondary / secondary special,category_reference_fold,,,Secondary / secondary special,97445
+3,NAME_EDUCATION_TYPE,CAT::Higher education,category_reference_fold,,,Higher education,33215
+3,NAME_EDUCATION_TYPE,CAT::Incomplete higher,category_reference_fold,,,Incomplete higher,4523
+3,NAME_EDUCATION_TYPE,CAT::Lower secondary,category_reference_fold,,,Lower secondary,1702
+3,NAME_EDUCATION_TYPE,CAT::Academic degree,category_reference_fold,,,Academic degree,77
+3,NAME_EDUCATION_TYPE,__OTHER__,category_other,,,<not in top levels>,0
+3,NAME_EDUCATION_TYPE,__MISSING__,missing,,,<missing>,0
+3,ORGANIZATION_TYPE,CAT::Business Entity Type 3,category_reference_fold,,,Business Entity Type 3,30261
+3,ORGANIZATION_TYPE,CAT::XNA,category_reference_fold,,,XNA,24693
+3,ORGANIZATION_TYPE,CAT::Self-employed,category_reference_fold,,,Self-employed,17078
+3,ORGANIZATION_TYPE,CAT::Other,category_reference_fold,,,Other,7423
+3,ORGANIZATION_TYPE,CAT::Medicine,category_reference_fold,,,Medicine,5030
+3,ORGANIZATION_TYPE,CAT::Business Entity Type 2,category_reference_fold,,,Business Entity Type 2,4746
+3,ORGANIZATION_TYPE,CAT::Government,category_reference_fold,,,Government,4609
+3,ORGANIZATION_TYPE,CAT::School,category_reference_fold,,,School,3952
+3,ORGANIZATION_TYPE,CAT::Trade: type 7,category_reference_fold,,,Trade: type 7,3501
+3,ORGANIZATION_TYPE,CAT::Kindergarten,category_reference_fold,,,Kindergarten,3079
+3,ORGANIZATION_TYPE,CAT::Construction,category_reference_fold,,,Construction,2981
+3,ORGANIZATION_TYPE,CAT::Business Entity Type 1,category_reference_fold,,,Business Entity Type 1,2625
+3,ORGANIZATION_TYPE,__OTHER__,category_other,,,<not in top levels>,26984
+3,ORGANIZATION_TYPE,__MISSING__,missing,,,<missing>,0
+4,EXT_SOURCE_1,Q01,numeric_quantile_reference_fold,-inf,0.29403667159386265,,8375
+4,EXT_SOURCE_1,Q02,numeric_quantile_reference_fold,0.29403667159386265,0.43570764216614244,,8374
+4,EXT_SOURCE_1,Q03,numeric_quantile_reference_fold,0.43570764216614244,0.572887995364546,,8374
+4,EXT_SOURCE_1,Q04,numeric_quantile_reference_fold,0.572887995364546,0.709449108580246,,8374
+4,EXT_SOURCE_1,Q05,numeric_quantile_reference_fold,0.709449108580246,inf,,8375
+4,EXT_SOURCE_1,__MISSING__,missing,,,<missing>,95090
+4,EXT_SOURCE_2,Q01,numeric_quantile_reference_fold,-inf,0.3397775055006922,,27332
+4,EXT_SOURCE_2,Q02,numeric_quantile_reference_fold,0.3397775055006922,0.5125424969733017,,27333
+4,EXT_SOURCE_2,Q03,numeric_quantile_reference_fold,0.5125424969733017,0.6087551557053642,,27331
+4,EXT_SOURCE_2,Q04,numeric_quantile_reference_fold,0.6087551557053642,0.6828980661093552,,27332
+4,EXT_SOURCE_2,Q05,numeric_quantile_reference_fold,0.6828980661093552,inf,,27334
+4,EXT_SOURCE_2,__MISSING__,missing,,,<missing>,300
+4,EXT_SOURCE_3,Q01,numeric_quantile_reference_fold,-inf,0.3296550543128238,,18587
+4,EXT_SOURCE_3,Q02,numeric_quantile_reference_fold,0.3296550543128238,0.475849908720221,,18780
+4,EXT_SOURCE_3,Q03,numeric_quantile_reference_fold,0.475849908720221,0.5919766183185521,,18682
+4,EXT_SOURCE_3,Q04,numeric_quantile_reference_fold,0.5919766183185521,0.6940926425266661,,18619
+4,EXT_SOURCE_3,Q05,numeric_quantile_reference_fold,0.6940926425266661,inf,,18757
+4,EXT_SOURCE_3,__MISSING__,missing,,,<missing>,43537
+4,CREDIT_TERM,Q01,numeric_quantile_reference_fold,-inf,14.370725030353174,,27393
+4,CREDIT_TERM,Q02,numeric_quantile_reference_fold,14.370725030353174,19.535533438100227,,27353
+4,CREDIT_TERM,Q03,numeric_quantile_reference_fold,19.535533438100227,22.037361354349095,,27418
+4,CREDIT_TERM,Q04,numeric_quantile_reference_fold,22.037361354349095,30.14311735623211,,27363
+4,CREDIT_TERM,Q05,numeric_quantile_reference_fold,30.14311735623211,inf,,27435
+4,CREDIT_TERM,__MISSING__,missing,,,<missing>,0
+4,AMT_ANNUITY,Q01,numeric_quantile_reference_fold,-inf,14751.0,,27374
+4,AMT_ANNUITY,Q02,numeric_quantile_reference_fold,14751.0,21865.5,,27397
+4,AMT_ANNUITY,Q03,numeric_quantile_reference_fold,21865.5,27994.5,,27401
+4,AMT_ANNUITY,Q04,numeric_quantile_reference_fold,27994.5,37543.5,,27395
+4,AMT_ANNUITY,Q05,numeric_quantile_reference_fold,37543.5,inf,,27395
+4,AMT_ANNUITY,__MISSING__,missing,,,<missing>,0
+4,AMT_CREDIT,Q01,numeric_quantile_reference_fold,-inf,254700.0,,26915
+4,AMT_CREDIT,Q02,numeric_quantile_reference_fold,254700.0,432000.0,,27866
+4,AMT_CREDIT,Q03,numeric_quantile_reference_fold,432000.0,604413.0,,27395
+4,AMT_CREDIT,Q04,numeric_quantile_reference_fold,604413.0,900000.0,,25894
+4,AMT_CREDIT,Q05,numeric_quantile_reference_fold,900000.0,inf,,28892
+4,AMT_CREDIT,__MISSING__,missing,,,<missing>,0
+4,AMT_INCOME_TOTAL,Q01,numeric_quantile_reference_fold,-inf,99000.0,,26617
+4,AMT_INCOME_TOTAL,Q02,numeric_quantile_reference_fold,99000.0,135000.0,,23990
+4,AMT_INCOME_TOTAL,Q03,numeric_quantile_reference_fold,135000.0,162000.0,,31041
+4,AMT_INCOME_TOTAL,Q04,numeric_quantile_reference_fold,162000.0,225000.0,,25152
+4,AMT_INCOME_TOTAL,Q05,numeric_quantile_reference_fold,225000.0,inf,,30162
+4,AMT_INCOME_TOTAL,__MISSING__,missing,,,<missing>,0
+4,DAYS_BIRTH,Q01,numeric_quantile_reference_fold,-inf,-20476.0,,27380
+4,DAYS_BIRTH,Q02,numeric_quantile_reference_fold,-20476.0,-17235.0,,27400
+4,DAYS_BIRTH,Q03,numeric_quantile_reference_fold,-17235.0,-14423.0,,27392
+4,DAYS_BIRTH,Q04,numeric_quantile_reference_fold,-14423.0,-11686.0,,27391
+4,DAYS_BIRTH,Q05,numeric_quantile_reference_fold,-11686.0,inf,,27399
+4,DAYS_BIRTH,__MISSING__,missing,,,<missing>,0
+4,DAYS_EMPLOYED,Q01,numeric_quantile_reference_fold,-inf,-3240.0,,27383
+4,DAYS_EMPLOYED,Q02,numeric_quantile_reference_fold,-3240.0,-1693.0,,27374
+4,DAYS_EMPLOYED,Q03,numeric_quantile_reference_fold,-1693.0,-823.0,,27415
+4,DAYS_EMPLOYED,Q04,numeric_quantile_reference_fold,-823.0,-145.0,,27370
+4,DAYS_EMPLOYED,Q05,numeric_quantile_reference_fold,-145.0,inf,,27420
+4,DAYS_EMPLOYED,__MISSING__,missing,,,<missing>,0
+4,DAYS_REGISTRATION,Q01,numeric_quantile_reference_fold,-inf,-8238.8,,27393
+4,DAYS_REGISTRATION,Q02,numeric_quantile_reference_fold,-8238.8,-5478.0,,27381
+4,DAYS_REGISTRATION,Q03,numeric_quantile_reference_fold,-5478.0,-3561.0,,27399
+4,DAYS_REGISTRATION,Q04,numeric_quantile_reference_fold,-3561.0,-1496.0,,27390
+4,DAYS_REGISTRATION,Q05,numeric_quantile_reference_fold,-1496.0,inf,,27399
+4,DAYS_REGISTRATION,__MISSING__,missing,,,<missing>,0
+4,DAYS_ID_PUBLISH,Q01,numeric_quantile_reference_fold,-inf,-4428.0,,27370
+4,DAYS_ID_PUBLISH,Q02,numeric_quantile_reference_fold,-4428.0,-3871.0,,27404
+4,DAYS_ID_PUBLISH,Q03,numeric_quantile_reference_fold,-3871.0,-2647.0,,27392
+4,DAYS_ID_PUBLISH,Q04,numeric_quantile_reference_fold,-2647.0,-1373.0,,27398
+4,DAYS_ID_PUBLISH,Q05,numeric_quantile_reference_fold,-1373.0,inf,,27398
+4,DAYS_ID_PUBLISH,__MISSING__,missing,,,<missing>,0
+4,DAYS_LAST_PHONE_CHANGE,Q01,numeric_quantile_reference_fold,-inf,-1716.0,,27387
+4,DAYS_LAST_PHONE_CHANGE,Q02,numeric_quantile_reference_fold,-1716.0,-1060.0,,27375
+4,DAYS_LAST_PHONE_CHANGE,Q03,numeric_quantile_reference_fold,-1060.0,-550.0,,27394
+4,DAYS_LAST_PHONE_CHANGE,Q04,numeric_quantile_reference_fold,-550.0,-164.0,,27395
+4,DAYS_LAST_PHONE_CHANGE,Q05,numeric_quantile_reference_fold,-164.0,inf,,27411
+4,DAYS_LAST_PHONE_CHANGE,__MISSING__,missing,,,<missing>,0
+4,OWN_CAR_AGE,Q01,numeric_quantile_reference_fold,-inf,4.0,,8947
+4,OWN_CAR_AGE,Q02,numeric_quantile_reference_fold,4.0,7.0,,6902
+4,OWN_CAR_AGE,Q03,numeric_quantile_reference_fold,7.0,12.0,,12067
+4,OWN_CAR_AGE,Q04,numeric_quantile_reference_fold,12.0,17.0,,9076
+4,OWN_CAR_AGE,Q05,numeric_quantile_reference_fold,17.0,inf,,9668
+4,OWN_CAR_AGE,__MISSING__,missing,,,<missing>,90302
+4,REGION_POPULATION_RELATIVE,Q01,numeric_quantile_reference_fold,-inf,0.008625,,26480
+4,REGION_POPULATION_RELATIVE,Q02,numeric_quantile_reference_fold,0.008625,0.016612,,26901
+4,REGION_POPULATION_RELATIVE,Q03,numeric_quantile_reference_fold,0.016612,0.020713,,26458
+4,REGION_POPULATION_RELATIVE,Q04,numeric_quantile_reference_fold,0.020713,0.030755,,26729
+4,REGION_POPULATION_RELATIVE,Q05,numeric_quantile_reference_fold,0.030755,inf,,30394
+4,REGION_POPULATION_RELATIVE,__MISSING__,missing,,,<missing>,0
+4,CREDIT_TO_GOODS_RATIO,Q01,numeric_quantile_reference_fold,-inf,1.0,,227
+4,CREDIT_TO_GOODS_RATIO,Q02,numeric_quantile_reference_fold,1.0,1.0792,,54502
+4,CREDIT_TO_GOODS_RATIO,Q03,numeric_quantile_reference_fold,1.0792,1.1452,,26611
+4,CREDIT_TO_GOODS_RATIO,Q04,numeric_quantile_reference_fold,1.1452,1.2112,,27817
+4,CREDIT_TO_GOODS_RATIO,Q05,numeric_quantile_reference_fold,1.2112,inf,,27805
+4,CREDIT_TO_GOODS_RATIO,__MISSING__,missing,,,<missing>,0
+4,ANNUITY_TO_GOODS_PRICE,Q01,numeric_quantile_reference_fold,-inf,0.038746666666666665,,27351
+4,ANNUITY_TO_GOODS_PRICE,Q02,numeric_quantile_reference_fold,0.038746666666666665,0.05,,25705
+4,ANNUITY_TO_GOODS_PRICE,Q03,numeric_quantile_reference_fold,0.05,0.059082608695652176,,29120
+4,ANNUITY_TO_GOODS_PRICE,Q04,numeric_quantile_reference_fold,0.059082608695652176,0.07901,,27375
+4,ANNUITY_TO_GOODS_PRICE,Q05,numeric_quantile_reference_fold,0.07901,inf,,27411
+4,ANNUITY_TO_GOODS_PRICE,__MISSING__,missing,,,<missing>,0
+4,REGION_RATING_CLIENT,CAT::2,category_reference_fold,,,2,101266
+4,REGION_RATING_CLIENT,CAT::3,category_reference_fold,,,3,21478
+4,REGION_RATING_CLIENT,CAT::1,category_reference_fold,,,1,14218
+4,REGION_RATING_CLIENT,__OTHER__,category_other,,,<not in top levels>,0
+4,REGION_RATING_CLIENT,__MISSING__,missing,,,<missing>,0
+4,NAME_INCOME_TYPE,CAT::Working,category_reference_fold,,,Working,70569
+4,NAME_INCOME_TYPE,CAT::Commercial associate,category_reference_fold,,,Commercial associate,32106
+4,NAME_INCOME_TYPE,CAT::Pensioner,category_reference_fold,,,Pensioner,24684
+4,NAME_INCOME_TYPE,CAT::State servant,category_reference_fold,,,State servant,9582
+4,NAME_INCOME_TYPE,CAT::Student,category_reference_fold,,,Student,9
+4,NAME_INCOME_TYPE,CAT::Unemployed,category_reference_fold,,,Unemployed,7
+4,NAME_INCOME_TYPE,CAT::Businessman,category_reference_fold,,,Businessman,3
+4,NAME_INCOME_TYPE,CAT::Maternity leave,category_reference_fold,,,Maternity leave,2
+4,NAME_INCOME_TYPE,__OTHER__,category_other,,,<not in top levels>,0
+4,NAME_INCOME_TYPE,__MISSING__,missing,,,<missing>,0
+4,OCCUPATION_TYPE,CAT::Other,category_reference_fold,,,Other,43012
+4,OCCUPATION_TYPE,CAT::Laborers,category_reference_fold,,,Laborers,24503
+4,OCCUPATION_TYPE,CAT::Sales staff,category_reference_fold,,,Sales staff,14296
+4,OCCUPATION_TYPE,CAT::Core staff,category_reference_fold,,,Core staff,12218
+4,OCCUPATION_TYPE,CAT::Managers,category_reference_fold,,,Managers,9466
+4,OCCUPATION_TYPE,CAT::Drivers,category_reference_fold,,,Drivers,8264
+4,OCCUPATION_TYPE,CAT::High skill tech staff,category_reference_fold,,,High skill tech staff,5112
+4,OCCUPATION_TYPE,CAT::Accountants,category_reference_fold,,,Accountants,4434
+4,OCCUPATION_TYPE,CAT::Medicine staff,category_reference_fold,,,Medicine staff,3796
+4,OCCUPATION_TYPE,CAT::Security staff,category_reference_fold,,,Security staff,3032
+4,OCCUPATION_TYPE,CAT::Cooking staff,category_reference_fold,,,Cooking staff,2666
+4,OCCUPATION_TYPE,CAT::Cleaning staff,category_reference_fold,,,Cleaning staff,2042
+4,OCCUPATION_TYPE,__OTHER__,category_other,,,<not in top levels>,4121
+4,OCCUPATION_TYPE,__MISSING__,missing,,,<missing>,0
+4,NAME_EDUCATION_TYPE,CAT::Secondary / secondary special,category_reference_fold,,,Secondary / secondary special,97253
+4,NAME_EDUCATION_TYPE,CAT::Higher education,category_reference_fold,,,Higher education,33337
+4,NAME_EDUCATION_TYPE,CAT::Incomplete higher,category_reference_fold,,,Incomplete higher,4590
+4,NAME_EDUCATION_TYPE,CAT::Lower secondary,category_reference_fold,,,Lower secondary,1697
+4,NAME_EDUCATION_TYPE,CAT::Academic degree,category_reference_fold,,,Academic degree,85
+4,NAME_EDUCATION_TYPE,__OTHER__,category_other,,,<not in top levels>,0
+4,NAME_EDUCATION_TYPE,__MISSING__,missing,,,<missing>,0
+4,ORGANIZATION_TYPE,CAT::Business Entity Type 3,category_reference_fold,,,Business Entity Type 3,30301
+4,ORGANIZATION_TYPE,CAT::XNA,category_reference_fold,,,XNA,24684
+4,ORGANIZATION_TYPE,CAT::Self-employed,category_reference_fold,,,Self-employed,17076
+4,ORGANIZATION_TYPE,CAT::Other,category_reference_fold,,,Other,7486
+4,ORGANIZATION_TYPE,CAT::Medicine,category_reference_fold,,,Medicine,4985
+4,ORGANIZATION_TYPE,CAT::Business Entity Type 2,category_reference_fold,,,Business Entity Type 2,4720
+4,ORGANIZATION_TYPE,CAT::Government,category_reference_fold,,,Government,4555
+4,ORGANIZATION_TYPE,CAT::School,category_reference_fold,,,School,3986
+4,ORGANIZATION_TYPE,CAT::Trade: type 7,category_reference_fold,,,Trade: type 7,3493
+4,ORGANIZATION_TYPE,CAT::Kindergarten,category_reference_fold,,,Kindergarten,3058
+4,ORGANIZATION_TYPE,CAT::Construction,category_reference_fold,,,Construction,2969
+4,ORGANIZATION_TYPE,CAT::Business Entity Type 1,category_reference_fold,,,Business Entity Type 1,2670
+4,ORGANIZATION_TYPE,__OTHER__,category_other,,,<not in top levels>,26979
+4,ORGANIZATION_TYPE,__MISSING__,missing,,,<missing>,0
+5,EXT_SOURCE_1,Q01,numeric_quantile_reference_fold,-inf,0.2946072803236096,,8362
+5,EXT_SOURCE_1,Q02,numeric_quantile_reference_fold,0.2946072803236096,0.4370629788681533,,8362
+5,EXT_SOURCE_1,Q03,numeric_quantile_reference_fold,0.4370629788681533,0.5732941418636353,,8363
+5,EXT_SOURCE_1,Q04,numeric_quantile_reference_fold,0.5732941418636353,0.7091126343695566,,8361
+5,EXT_SOURCE_1,Q05,numeric_quantile_reference_fold,0.7091126343695566,inf,,8363
+5,EXT_SOURCE_1,__MISSING__,missing,,,<missing>,95151
+5,EXT_SOURCE_2,Q01,numeric_quantile_reference_fold,-inf,0.3378914327196534,,27334
+5,EXT_SOURCE_2,Q02,numeric_quantile_reference_fold,0.3378914327196534,0.5121360076784102,,27333
+5,EXT_SOURCE_2,Q03,numeric_quantile_reference_fold,0.5121360076784102,0.6084426159885252,,27336
+5,EXT_SOURCE_2,Q04,numeric_quantile_reference_fold,0.6084426159885252,0.6822015552113555,,27332
+5,EXT_SOURCE_2,Q05,numeric_quantile_reference_fold,0.6822015552113555,inf,,27336
+5,EXT_SOURCE_2,__MISSING__,missing,,,<missing>,291
+5,EXT_SOURCE_3,Q01,numeric_quantile_reference_fold,-inf,0.3312508645909018,,18619
+5,EXT_SOURCE_3,Q02,numeric_quantile_reference_fold,0.3312508645909018,0.475849908720221,,18607
+5,EXT_SOURCE_3,Q03,numeric_quantile_reference_fold,0.475849908720221,0.5919766183185521,,18738
+5,EXT_SOURCE_3,Q04,numeric_quantile_reference_fold,0.5919766183185521,0.6940926425266661,,18627
+5,EXT_SOURCE_3,Q05,numeric_quantile_reference_fold,0.6940926425266661,inf,,18819
+5,EXT_SOURCE_3,__MISSING__,missing,,,<missing>,43552
+5,CREDIT_TERM,Q01,numeric_quantile_reference_fold,-inf,14.530018192844148,,27392
+5,CREDIT_TERM,Q02,numeric_quantile_reference_fold,14.530018192844148,19.533246656760774,,27392
+5,CREDIT_TERM,Q03,numeric_quantile_reference_fold,19.533246656760774,21.92899780081684,,27392
+5,CREDIT_TERM,Q04,numeric_quantile_reference_fold,21.92899780081684,30.14311735623211,,27281
+5,CREDIT_TERM,Q05,numeric_quantile_reference_fold,30.14311735623211,inf,,27505
+5,CREDIT_TERM,__MISSING__,missing,,,<missing>,0
+5,AMT_ANNUITY,Q01,numeric_quantile_reference_fold,-inf,14724.0,,27385
+5,AMT_ANNUITY,Q02,numeric_quantile_reference_fold,14724.0,21874.5,,27398
+5,AMT_ANNUITY,Q03,numeric_quantile_reference_fold,21874.5,28084.5,,27369
+5,AMT_ANNUITY,Q04,numeric_quantile_reference_fold,28084.5,37596.60000000001,,27417
+5,AMT_ANNUITY,Q05,numeric_quantile_reference_fold,37596.60000000001,inf,,27393
+5,AMT_ANNUITY,__MISSING__,missing,,,<missing>,0
+5,AMT_CREDIT,Q01,numeric_quantile_reference_fold,-inf,254700.0,,26889
+5,AMT_CREDIT,Q02,numeric_quantile_reference_fold,254700.0,431280.0,,27850
+5,AMT_CREDIT,Q03,numeric_quantile_reference_fold,431280.0,607050.0,,27430
+5,AMT_CREDIT,Q04,numeric_quantile_reference_fold,607050.0,900000.0,,25714
+5,AMT_CREDIT,Q05,numeric_quantile_reference_fold,900000.0,inf,,29079
+5,AMT_CREDIT,__MISSING__,missing,,,<missing>,0
+5,AMT_INCOME_TOTAL,Q01,numeric_quantile_reference_fold,-inf,99000.0,,26661
+5,AMT_INCOME_TOTAL,Q02,numeric_quantile_reference_fold,99000.0,135000.0,,23897
+5,AMT_INCOME_TOTAL,Q03,numeric_quantile_reference_fold,135000.0,162000.0,,30999
+5,AMT_INCOME_TOTAL,Q04,numeric_quantile_reference_fold,162000.0,225000.0,,25197
+5,AMT_INCOME_TOTAL,Q05,numeric_quantile_reference_fold,225000.0,inf,,30208
+5,AMT_INCOME_TOTAL,__MISSING__,missing,,,<missing>,0
+5,DAYS_BIRTH,Q01,numeric_quantile_reference_fold,-inf,-20464.0,,27390
+5,DAYS_BIRTH,Q02,numeric_quantile_reference_fold,-20464.0,-17232.0,,27387
+5,DAYS_BIRTH,Q03,numeric_quantile_reference_fold,-17232.0,-14432.0,,27390
+5,DAYS_BIRTH,Q04,numeric_quantile_reference_fold,-14432.0,-11697.199999999997,,27402
+5,DAYS_BIRTH,Q05,numeric_quantile_reference_fold,-11697.199999999997,inf,,27393
+5,DAYS_BIRTH,__MISSING__,missing,,,<missing>,0
+5,DAYS_EMPLOYED,Q01,numeric_quantile_reference_fold,-inf,-3243.0,,27380
+5,DAYS_EMPLOYED,Q02,numeric_quantile_reference_fold,-3243.0,-1694.0,,27385
+5,DAYS_EMPLOYED,Q03,numeric_quantile_reference_fold,-1694.0,-823.0,,27399
+5,DAYS_EMPLOYED,Q04,numeric_quantile_reference_fold,-823.0,-144.0,,27397
+5,DAYS_EMPLOYED,Q05,numeric_quantile_reference_fold,-144.0,inf,,27401
+5,DAYS_EMPLOYED,__MISSING__,missing,,,<missing>,0
+5,DAYS_REGISTRATION,Q01,numeric_quantile_reference_fold,-inf,-8241.0,,27391
+5,DAYS_REGISTRATION,Q02,numeric_quantile_reference_fold,-8241.0,-5467.0,,27385
+5,DAYS_REGISTRATION,Q03,numeric_quantile_reference_fold,-5467.0,-3544.0,,27395
+5,DAYS_REGISTRATION,Q04,numeric_quantile_reference_fold,-3544.0,-1491.0,,27389
+5,DAYS_REGISTRATION,Q05,numeric_quantile_reference_fold,-1491.0,inf,,27402
+5,DAYS_REGISTRATION,__MISSING__,missing,,,<missing>,0
+5,DAYS_ID_PUBLISH,Q01,numeric_quantile_reference_fold,-inf,-4428.0,,27373
+5,DAYS_ID_PUBLISH,Q02,numeric_quantile_reference_fold,-4428.0,-3871.0,,27410
+5,DAYS_ID_PUBLISH,Q03,numeric_quantile_reference_fold,-3871.0,-2647.0,,27386
+5,DAYS_ID_PUBLISH,Q04,numeric_quantile_reference_fold,-2647.0,-1372.0,,27395
+5,DAYS_ID_PUBLISH,Q05,numeric_quantile_reference_fold,-1372.0,inf,,27398
+5,DAYS_ID_PUBLISH,__MISSING__,missing,,,<missing>,0
+5,DAYS_LAST_PHONE_CHANGE,Q01,numeric_quantile_reference_fold,-inf,-1716.0,,27385
+5,DAYS_LAST_PHONE_CHANGE,Q02,numeric_quantile_reference_fold,-1716.0,-1059.0,,27384
+5,DAYS_LAST_PHONE_CHANGE,Q03,numeric_quantile_reference_fold,-1059.0,-547.0,,27376
+5,DAYS_LAST_PHONE_CHANGE,Q04,numeric_quantile_reference_fold,-547.0,-162.0,,27365
+5,DAYS_LAST_PHONE_CHANGE,Q05,numeric_quantile_reference_fold,-162.0,inf,,27452
+5,DAYS_LAST_PHONE_CHANGE,__MISSING__,missing,,,<missing>,0
+5,OWN_CAR_AGE,Q01,numeric_quantile_reference_fold,-inf,4.0,,8868
+5,OWN_CAR_AGE,Q02,numeric_quantile_reference_fold,4.0,7.0,,6906
+5,OWN_CAR_AGE,Q03,numeric_quantile_reference_fold,7.0,12.0,,11979
+5,OWN_CAR_AGE,Q04,numeric_quantile_reference_fold,12.0,17.0,,9149
+5,OWN_CAR_AGE,Q05,numeric_quantile_reference_fold,17.0,inf,,9704
+5,OWN_CAR_AGE,__MISSING__,missing,,,<missing>,90356
+5,REGION_POPULATION_RELATIVE,Q01,numeric_quantile_reference_fold,-inf,0.008625,,26560
+5,REGION_POPULATION_RELATIVE,Q02,numeric_quantile_reference_fold,0.008625,0.016612,,26834
+5,REGION_POPULATION_RELATIVE,Q03,numeric_quantile_reference_fold,0.016612,0.020713,,26486
+5,REGION_POPULATION_RELATIVE,Q04,numeric_quantile_reference_fold,0.020713,0.030755,,26780
+5,REGION_POPULATION_RELATIVE,Q05,numeric_quantile_reference_fold,0.030755,inf,,30302
+5,REGION_POPULATION_RELATIVE,__MISSING__,missing,,,<missing>,0
+5,CREDIT_TO_GOODS_RATIO,Q01,numeric_quantile_reference_fold,-inf,1.0,,221
+5,CREDIT_TO_GOODS_RATIO,Q02,numeric_quantile_reference_fold,1.0,1.0792,,54437
+5,CREDIT_TO_GOODS_RATIO,Q03,numeric_quantile_reference_fold,1.0792,1.1452,,26834
+5,CREDIT_TO_GOODS_RATIO,Q04,numeric_quantile_reference_fold,1.1452,1.2112,,27561
+5,CREDIT_TO_GOODS_RATIO,Q05,numeric_quantile_reference_fold,1.2112,inf,,27909
+5,CREDIT_TO_GOODS_RATIO,__MISSING__,missing,,,<missing>,0
+5,ANNUITY_TO_GOODS_PRICE,Q01,numeric_quantile_reference_fold,-inf,0.038746666666666665,,27340
+5,ANNUITY_TO_GOODS_PRICE,Q02,numeric_quantile_reference_fold,0.038746666666666665,0.05,,25763
+5,ANNUITY_TO_GOODS_PRICE,Q03,numeric_quantile_reference_fold,0.05,0.05914666666666667,,29071
+5,ANNUITY_TO_GOODS_PRICE,Q04,numeric_quantile_reference_fold,0.05914666666666667,0.07901,,27375
+5,ANNUITY_TO_GOODS_PRICE,Q05,numeric_quantile_reference_fold,0.07901,inf,,27413
+5,ANNUITY_TO_GOODS_PRICE,__MISSING__,missing,,,<missing>,0
+5,REGION_RATING_CLIENT,CAT::2,category_reference_fold,,,2,101073
+5,REGION_RATING_CLIENT,CAT::3,category_reference_fold,,,3,21652
+5,REGION_RATING_CLIENT,CAT::1,category_reference_fold,,,1,14237
+5,REGION_RATING_CLIENT,__OTHER__,category_other,,,<not in top levels>,0
+5,REGION_RATING_CLIENT,__MISSING__,missing,,,<missing>,0
+5,NAME_INCOME_TYPE,CAT::Working,category_reference_fold,,,Working,70606
+5,NAME_INCOME_TYPE,CAT::Commercial associate,category_reference_fold,,,Commercial associate,32009
+5,NAME_INCOME_TYPE,CAT::Pensioner,category_reference_fold,,,Pensioner,24679
+5,NAME_INCOME_TYPE,CAT::State servant,category_reference_fold,,,State servant,9648
+5,NAME_INCOME_TYPE,CAT::Unemployed,category_reference_fold,,,Unemployed,9
+5,NAME_INCOME_TYPE,CAT::Student,category_reference_fold,,,Student,6
+5,NAME_INCOME_TYPE,CAT::Maternity leave,category_reference_fold,,,Maternity leave,3
+5,NAME_INCOME_TYPE,CAT::Businessman,category_reference_fold,,,Businessman,2
+5,NAME_INCOME_TYPE,__OTHER__,category_other,,,<not in top levels>,0
+5,NAME_INCOME_TYPE,__MISSING__,missing,,,<missing>,0
+5,OCCUPATION_TYPE,CAT::Other,category_reference_fold,,,Other,42953
+5,OCCUPATION_TYPE,CAT::Laborers,category_reference_fold,,,Laborers,24629
+5,OCCUPATION_TYPE,CAT::Sales staff,category_reference_fold,,,Sales staff,14216
+5,OCCUPATION_TYPE,CAT::Core staff,category_reference_fold,,,Core staff,12166
+5,OCCUPATION_TYPE,CAT::Managers,category_reference_fold,,,Managers,9492
+5,OCCUPATION_TYPE,CAT::Drivers,category_reference_fold,,,Drivers,8338
+5,OCCUPATION_TYPE,CAT::High skill tech staff,category_reference_fold,,,High skill tech staff,5066
+5,OCCUPATION_TYPE,CAT::Accountants,category_reference_fold,,,Accountants,4383
+5,OCCUPATION_TYPE,CAT::Medicine staff,category_reference_fold,,,Medicine staff,3781
+5,OCCUPATION_TYPE,CAT::Security staff,category_reference_fold,,,Security staff,3039
+5,OCCUPATION_TYPE,CAT::Cooking staff,category_reference_fold,,,Cooking staff,2697
+5,OCCUPATION_TYPE,CAT::Cleaning staff,category_reference_fold,,,Cleaning staff,2080
+5,OCCUPATION_TYPE,__OTHER__,category_other,,,<not in top levels>,4122
+5,OCCUPATION_TYPE,__MISSING__,missing,,,<missing>,0
+5,NAME_EDUCATION_TYPE,CAT::Secondary / secondary special,category_reference_fold,,,Secondary / secondary special,97467
+5,NAME_EDUCATION_TYPE,CAT::Higher education,category_reference_fold,,,Higher education,33172
+5,NAME_EDUCATION_TYPE,CAT::Incomplete higher,category_reference_fold,,,Incomplete higher,4519
+5,NAME_EDUCATION_TYPE,CAT::Lower secondary,category_reference_fold,,,Lower secondary,1720
+5,NAME_EDUCATION_TYPE,CAT::Academic degree,category_reference_fold,,,Academic degree,84
+5,NAME_EDUCATION_TYPE,__OTHER__,category_other,,,<not in top levels>,0
+5,NAME_EDUCATION_TYPE,__MISSING__,missing,,,<missing>,0
+5,ORGANIZATION_TYPE,CAT::Business Entity Type 3,category_reference_fold,,,Business Entity Type 3,30494
+5,ORGANIZATION_TYPE,CAT::XNA,category_reference_fold,,,XNA,24683
+5,ORGANIZATION_TYPE,CAT::Self-employed,category_reference_fold,,,Self-employed,17123
+5,ORGANIZATION_TYPE,CAT::Other,category_reference_fold,,,Other,7391
+5,ORGANIZATION_TYPE,CAT::Medicine,category_reference_fold,,,Medicine,5059
+5,ORGANIZATION_TYPE,CAT::Business Entity Type 2,category_reference_fold,,,Business Entity Type 2,4732
+5,ORGANIZATION_TYPE,CAT::Government,category_reference_fold,,,Government,4552
+5,ORGANIZATION_TYPE,CAT::School,category_reference_fold,,,School,4015
+5,ORGANIZATION_TYPE,CAT::Trade: type 7,category_reference_fold,,,Trade: type 7,3427
+5,ORGANIZATION_TYPE,CAT::Kindergarten,category_reference_fold,,,Kindergarten,3079
+5,ORGANIZATION_TYPE,CAT::Construction,category_reference_fold,,,Construction,2946
+5,ORGANIZATION_TYPE,CAT::Business Entity Type 1,category_reference_fold,,,Business Entity Type 1,2657
+5,ORGANIZATION_TYPE,__OTHER__,category_other,,,<not in top levels>,26804
+5,ORGANIZATION_TYPE,__MISSING__,missing,,,<missing>,0
