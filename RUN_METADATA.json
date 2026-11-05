@@ -1,0 +1,36 @@
+{
+  "train_file": "C:\\Users\\UNITECH\\Downloads\\train.csv",
+  "predictions_file": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\output\\raw_credit_term_oof_shap\\RAW_CREDIT_TERM_oof_predictions.csv",
+  "output_dir": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\output\\tp_fn_signal_discovery",
+  "n_rows": 171202,
+  "n_features": 33,
+  "fold_ids": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "threshold": 0.5,
+  "counts": {
+    "TP": 3062,
+    "FN": 10759,
+    "FP": 6311,
+    "TN": 151070
+  },
+  "core_features": [
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "CREDIT_TERM",
+    "AMT_GOODS_PRICE"
+  ],
+  "n_core_pairs": 6,
+  "n_anchor_support_pairs": 116,
+  "n_interactions": 122,
+  "n_quantile_bins_requested": 10,
+  "max_categories_per_fold": 12,
+  "minimum_actual_defaults_per_cell_for_support_flag": 20,
+  "minimum_predicted_defaults_per_cell_for_support_flag": 20,
+  "smoothing": 0.5,
+  "interpretation": "Diagnostic association only; no model fitting or causal inference."
+}
