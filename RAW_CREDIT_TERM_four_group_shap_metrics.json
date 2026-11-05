@@ -9,6 +9,12 @@
   "catboost_version": "1.2.10",
   "n_rows": 171202,
   "n_features": 33,
+  "negative_class_count": 157381,
+  "positive_class_count": 13821,
+  "negative_to_positive_ratio": 11.38709210621518,
+  "scale_pos_weight": 3.37,
+  "weighted_positive_count_equivalent": 46576.770000000004,
+  "negative_to_weighted_positive_ratio": 3.378959081962961,
   "threshold": 0.5,
   "random_state": 42,
   "n_splits": 5,
@@ -18,54 +24,54 @@
   "learning_rate": 0.05,
   "depth": 4,
   "l2_leaf_reg": 15.0,
-  "scale_pos_weight": 3.37,
   "early_stopping_rounds": 100,
-  "mean_outer_fold_auc": 0.7613826393261336,
-  "pooled_oof_auc": 0.7613670292810419,
-  "average_precision": 0.2429546471602883,
-  "brier_score": 0.087289436357566,
-  "log_loss": 0.3080651794913495,
+  "mean_outer_fold_auc": 0.7612042710725377,
+  "pooled_oof_auc": 0.7611376648400122,
+  "average_precision": 0.2427107679092588,
+  "brier_score": 0.08733806216511972,
+  "log_loss": 0.30837803885056286,
   "confusion_matrix_rows_true_0_1_cols_pred_0_1": [
     [
-      151050,
-      6331
+      151070,
+      6311
     ],
     [
-      10746,
-      3075
+      10759,
+      3062
     ]
   ],
-  "true_positives": 3075,
-  "false_negatives": 10746,
-  "false_positives": 6331,
-  "true_negatives": 151050,
+  "true_positives": 3062,
+  "false_negatives": 10759,
+  "false_positives": 6311,
+  "true_negatives": 151070,
   "classification_report": {
     "non_default": {
-      "precision": 0.9335830304828302,
-      "recall": 0.9597727807041511,
-      "f1-score": 0.946496771383903,
+      "precision": 0.933516242453454,
+      "recall": 0.9598998608472433,
+      "f1-score": 0.946524231697002,
       "support": 157381.0
     },
     "default": {
-      "precision": 0.32691898788007656,
-      "recall": 0.22248751899283697,
-      "f1-score": 0.2647780600163603,
+      "precision": 0.3266830257121519,
+      "recall": 0.22154692135156645,
+      "f1-score": 0.26403380184530484,
       "support": 13821.0
     },
-    "accuracy": 0.9002523335007768,
+    "accuracy": 0.9002932208735879,
     "macro avg": {
-      "precision": 0.6302510091814534,
-      "recall": 0.591130149848494,
-      "f1-score": 0.6056374157001316,
+      "precision": 0.6300996340828029,
+      "recall": 0.5907233910994049,
+      "f1-score": 0.6052790167711534,
       "support": 171202.0
     },
     "weighted avg": {
-      "precision": 0.8846075294208529,
-      "recall": 0.9002523335007768,
-      "f1-score": 0.8914621671747768,
+      "precision": 0.8845270840991033,
+      "recall": 0.9002932208735879,
+      "f1-score": 0.8914273272742714,
       "support": 171202.0
     }
   },
+  "nan_mode": "Min",
   "shap_scale": "CatBoost raw prediction margin (log-odds/logit) for class 1",
   "shap_direction": "positive=toward default; negative=toward non-default",
   "caveat": "This experiment uses only original raw predictors plus CREDIT_TERM; no GOODS_PRICE_450K, CREDIT_TO_GOODS_RATIO, or other engineered features are included. The 0.50 threshold is a diagnostic convention, not necessarily an optimal or calibrated threshold."

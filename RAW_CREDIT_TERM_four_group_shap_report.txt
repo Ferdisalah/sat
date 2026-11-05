@@ -1,86 +1,151 @@
 RAW + CREDIT_TERM OOF SHAP ANALYSIS: TP, FN, FP, TN
 ==============================================================================
 Rows: 171,202 | Features: 33 | Threshold: 0.50
-Pooled OOF AUC: 0.761367 | Mean fold AUC: 0.761383
-TP=3,075 | FN=10,746 | FP=6,331 | TN=151,050
+Pooled OOF AUC: 0.761138 | Mean fold AUC: 0.761204
+TP=3,062 | FN=10,759 | FP=6,311 | TN=151,070
+Class counts: TARGET=0: 157,381; TARGET=1: 13,821; ratio 0:1 = 11.387:1
+scale_pos_weight=3.37; weighted positive count equivalent=46,576.8; negative/weighted-positive ratio=3.379:1
 
 SHAP interpretation: positive values push toward default; negative values push away.
 SHAP values are raw-margin contributions, not probability-point changes or causal effects.
 
 ------------------------------------------------------------------------------
-TRUE_POSITIVE: correctly predicted default (n=3,075)
-Top 12 features by mean absolute SHAP:
-        Feature  Mean_abs_SHAP  Mean_signed_SHAP  Pct_SHAP_toward_default  Pct_SHAP_toward_non_default  Top_abs_SHAP_count  Pct_SHAP_toward_predicted_class
-   EXT_SOURCE_2         0.6023            0.5666                  87.5122                      12.4878                1543                          87.5122
-   EXT_SOURCE_3         0.5005            0.4714                  94.8943                       5.1057                1177                          94.8943
-    CREDIT_TERM         0.2526            0.2265                  90.9268                       9.0732                 234                          90.9268
-AMT_GOODS_PRICE         0.2338            0.1678                  80.3577                      19.6423                  42                          80.3577
-    CODE_GENDER         0.1343            0.0595                  56.7154                      43.2846                   7                          56.7154
-    AMT_ANNUITY         0.1292            0.0164                  51.3496                      48.6504                   5                          51.3496
-     DAYS_BIRTH         0.1273            0.0399                  70.7642                      29.2358                   4                          70.7642
-   EXT_SOURCE_1         0.1232            0.1053                  95.0894                       4.9106                  54                          95.0894
-     AMT_CREDIT         0.0917           -0.0096                  45.1707                      54.8293                   0                          45.1707
-  DAYS_EMPLOYED         0.0903            0.0514                  81.1057                      18.8943                   0                          81.1057
-    OWN_CAR_AGE         0.0887            0.0244                  76.1626                      23.8374                   0                          76.1626
-DAYS_ID_PUBLISH         0.0846            0.0419                  79.2846                      20.7154                   7                          79.2846
-
-------------------------------------------------------------------------------
-FALSE_NEGATIVE: actual default predicted as non-default (n=10,746)
+TRUE_POSITIVE: correctly predicted default (n=3,062)
 Top 12 features by mean absolute SHAP:
             Feature  Mean_abs_SHAP  Mean_signed_SHAP  Pct_SHAP_toward_default  Pct_SHAP_toward_non_default  Top_abs_SHAP_count  Pct_SHAP_toward_predicted_class
-       EXT_SOURCE_2         0.3239            0.0817                  51.7495                      48.2505                3505                          48.2505
-       EXT_SOURCE_3         0.3078            0.0865                  71.6639                      28.3361                3085                          28.3361
-    AMT_GOODS_PRICE         0.2500            0.0222                  55.4904                      44.5096                1538                          44.5096
-        CREDIT_TERM         0.1742            0.0565                  71.4219                      28.5781                1196                          28.5781
-        AMT_ANNUITY         0.1416           -0.0122                  46.8733                      53.1267                 183                          53.1267
-         AMT_CREDIT         0.1203            0.0097                  49.4323                      50.5677                  36                          50.5677
-        CODE_GENDER         0.1190            0.0097                  39.0471                      60.9529                  80                          60.9529
-         DAYS_BIRTH         0.1171            0.0059                  58.1053                      41.8947                 178                          41.8947
-       EXT_SOURCE_1         0.1123            0.0272                  84.3104                      15.6896                 411                          15.6896
-      DAYS_EMPLOYED         0.1019            0.0089                  66.3782                      33.6218                  91                          33.6218
-NAME_EDUCATION_TYPE         0.0995            0.0175                  79.5180                      20.4820                  88                          20.4820
-        OWN_CAR_AGE         0.0954            0.0029                  69.3002                      30.6998                  28                          30.6998
+       EXT_SOURCE_2         0.6021            0.5682                  87.2306                      12.7694                1539                          87.2306
+       EXT_SOURCE_3         0.4993            0.4712                  94.9706                       5.0294                1172                          94.9706
+        CREDIT_TERM         0.2495            0.2230                  90.8883                       9.1117                 234                          90.8883
+    AMT_GOODS_PRICE         0.2295            0.1655                  80.4376                      19.5624                  39                          80.4376
+        CODE_GENDER         0.1344            0.0587                  56.7276                      43.2724                   7                          56.7276
+        AMT_ANNUITY         0.1274            0.0170                  51.6329                      48.3671                   6                          51.6329
+         DAYS_BIRTH         0.1262            0.0407                  71.0973                      28.9027                   4                          71.0973
+       EXT_SOURCE_1         0.1235            0.1044                  94.9379                       5.0621                  53                          94.9379
+      DAYS_EMPLOYED         0.0909            0.0514                  81.2214                      18.7786                   0                          81.2214
+        OWN_CAR_AGE         0.0878            0.0246                  76.2573                      23.7427                   0                          76.2573
+         AMT_CREDIT         0.0870           -0.0100                  43.6969                      56.3031                   0                          43.6969
+NAME_EDUCATION_TYPE         0.0843            0.0512                  90.8556                       9.1444                   0                          90.8556
 
 ------------------------------------------------------------------------------
-FALSE_POSITIVE: actual non-default predicted as default (n=6,331)
-Top 12 features by mean absolute SHAP:
-        Feature  Mean_abs_SHAP  Mean_signed_SHAP  Pct_SHAP_toward_default  Pct_SHAP_toward_non_default  Top_abs_SHAP_count  Pct_SHAP_toward_predicted_class
-   EXT_SOURCE_2         0.5536            0.5132                  85.1208                      14.8792                3087                          85.1208
-   EXT_SOURCE_3         0.4671            0.4372                  94.3453                       5.6547                2345                          94.3453
-    CREDIT_TERM         0.2374            0.2067                  89.1328                      10.8672                 571                          89.1328
-AMT_GOODS_PRICE         0.2318            0.1603                  78.4394                      21.5606                 135                          78.4394
-    CODE_GENDER         0.1315            0.0573                  56.5787                      43.4213                  16                          56.5787
-    AMT_ANNUITY         0.1300            0.0170                  52.0139                      47.9861                   9                          52.0139
-     DAYS_BIRTH         0.1272            0.0356                  70.1311                      29.8689                  14                          70.1311
-   EXT_SOURCE_1         0.1242            0.1015                  94.4243                       5.5757                 118                          94.4243
-     AMT_CREDIT         0.0925           -0.0103                  43.6424                      56.3576                   0                          43.6424
-  DAYS_EMPLOYED         0.0899            0.0488                  80.3665                      19.6335                   1                          80.3665
-    OWN_CAR_AGE         0.0893            0.0222                  75.2488                      24.7512                   1                          75.2488
-DAYS_ID_PUBLISH         0.0853            0.0425                  78.2183                      21.7817                  31                          78.2183
-
-------------------------------------------------------------------------------
-TRUE_NEGATIVE: correctly predicted non-default (n=151,050)
+FALSE_NEGATIVE: actual default predicted as non-default (n=10,759)
 Top 12 features by mean absolute SHAP:
             Feature  Mean_abs_SHAP  Mean_signed_SHAP  Pct_SHAP_toward_default  Pct_SHAP_toward_non_default  Top_abs_SHAP_count  Pct_SHAP_toward_predicted_class
-       EXT_SOURCE_2         0.3243           -0.0827                  36.8646                      63.1354               46069                          63.1354
-       EXT_SOURCE_3         0.3129           -0.0721                  55.7881                      44.2119               43255                          44.2119
-    AMT_GOODS_PRICE         0.2652           -0.0247                  49.6213                      50.3787               23288                          50.3787
-        CREDIT_TERM         0.1825           -0.0333                  58.9076                      41.0924               17029                          41.0924
-        AMT_ANNUITY         0.1445           -0.0189                  46.1907                      53.8093                2572                          53.8093
-         AMT_CREDIT         0.1278            0.0137                  50.5164                      49.4836                 349                          49.4836
-       EXT_SOURCE_1         0.1196           -0.0203                  77.5015                      22.4985                7325                          22.4985
-        CODE_GENDER         0.1152           -0.0096                  32.5336                      67.4664                 741                          67.4664
-         DAYS_BIRTH         0.1129           -0.0064                  53.3605                      46.6395                2206                          46.6395
-      DAYS_EMPLOYED         0.1105           -0.0083                  60.8355                      39.1645                1144                          39.1645
-NAME_EDUCATION_TYPE         0.1082           -0.0035                  72.7547                      27.2453                1274                          27.2453
-        OWN_CAR_AGE         0.0993           -0.0064                  66.4760                      33.5240                 394                          33.5240
+       EXT_SOURCE_2         0.3224            0.0810                  51.6033                      48.3967                3502                          48.3967
+       EXT_SOURCE_3         0.3077            0.0857                  71.6052                      28.3948                3170                          28.3948
+    AMT_GOODS_PRICE         0.2426            0.0226                  55.6743                      44.3257                1479                          44.3257
+        CREDIT_TERM         0.1716            0.0565                  71.3821                      28.6179                1192                          28.6179
+        AMT_ANNUITY         0.1385           -0.0126                  46.8445                      53.1555                 175                          53.1555
+        CODE_GENDER         0.1191            0.0093                  39.0650                      60.9350                  94                          60.9350
+         AMT_CREDIT         0.1169            0.0094                  48.8893                      51.1107                  29                          51.1107
+         DAYS_BIRTH         0.1165            0.0047                  58.1281                      41.8719                 183                          41.8719
+       EXT_SOURCE_1         0.1123            0.0278                  84.3759                      15.6241                 410                          15.6241
+      DAYS_EMPLOYED         0.1026            0.0090                  66.5675                      33.4325                  93                          33.4325
+NAME_EDUCATION_TYPE         0.1002            0.0186                  79.5706                      20.4294                  77                          20.4294
+        OWN_CAR_AGE         0.0945            0.0028                  69.1793                      30.8207                  29                          30.8207
+
+------------------------------------------------------------------------------
+FALSE_POSITIVE: actual non-default predicted as default (n=6,311)
+Top 12 features by mean absolute SHAP:
+            Feature  Mean_abs_SHAP  Mean_signed_SHAP  Pct_SHAP_toward_default  Pct_SHAP_toward_non_default  Top_abs_SHAP_count  Pct_SHAP_toward_predicted_class
+       EXT_SOURCE_2         0.5560            0.5160                  85.1846                      14.8154                3110                          85.1846
+       EXT_SOURCE_3         0.4692            0.4387                  94.3907                       5.6093                2343                          94.3907
+        CREDIT_TERM         0.2339            0.2037                  88.9558                      11.0442                 540                          88.9558
+    AMT_GOODS_PRICE         0.2276            0.1581                  78.6405                      21.3595                 128                          78.6405
+        CODE_GENDER         0.1315            0.0561                  56.6630                      43.3370                  15                          56.6630
+        AMT_ANNUITY         0.1292            0.0175                  52.4956                      47.5044                   4                          52.4956
+         DAYS_BIRTH         0.1268            0.0341                  70.1949                      29.8051                  17                          70.1949
+       EXT_SOURCE_1         0.1244            0.1012                  94.2640                       5.7360                 119                          94.2640
+      DAYS_EMPLOYED         0.0900            0.0485                  80.2725                      19.7275                   1                          80.2725
+         AMT_CREDIT         0.0885           -0.0113                  42.4814                      57.5186                   0                          42.4814
+        OWN_CAR_AGE         0.0882            0.0226                  75.3605                      24.6395                   1                          75.3605
+NAME_EDUCATION_TYPE         0.0861            0.0513                  90.7305                       9.2695                   0                          90.7305
+
+------------------------------------------------------------------------------
+TRUE_NEGATIVE: correctly predicted non-default (n=151,070)
+Top 12 features by mean absolute SHAP:
+            Feature  Mean_abs_SHAP  Mean_signed_SHAP  Pct_SHAP_toward_default  Pct_SHAP_toward_non_default  Top_abs_SHAP_count  Pct_SHAP_toward_predicted_class
+       EXT_SOURCE_2         0.3219           -0.0820                  36.7479                      63.2521               46327                          63.2521
+       EXT_SOURCE_3         0.3124           -0.0730                  55.7556                      44.2444               44527                          44.2444
+    AMT_GOODS_PRICE         0.2573           -0.0237                  49.6571                      50.3429               21560                          50.3429
+        CREDIT_TERM         0.1789           -0.0329                  58.7218                      41.2782               16974                          41.2782
+        AMT_ANNUITY         0.1405           -0.0192                  46.2766                      53.7234                2628                          53.7234
+         AMT_CREDIT         0.1254            0.0130                  50.0662                      49.9338                 302                          49.9338
+       EXT_SOURCE_1         0.1198           -0.0190                  77.5197                      22.4803                7365                          22.4803
+        CODE_GENDER         0.1150           -0.0096                  32.5286                      67.4714                 833                          67.4714
+         DAYS_BIRTH         0.1131           -0.0081                  53.4401                      46.5599                2344                          46.5599
+      DAYS_EMPLOYED         0.1114           -0.0082                  60.9883                      39.0117                1259                          39.0117
+NAME_EDUCATION_TYPE         0.1083           -0.0026                  72.8477                      27.1523                1206                          27.1523
+        OWN_CAR_AGE         0.0985           -0.0063                  66.4222                      33.5778                 379                          33.5778
+
+------------------------------------------------------------------------------
+MISSING-VALUE ANALYSIS
+High-importance feature set: union of top 10 SHAP features in each group
+Features selected: ['CODE_GENDER', 'AMT_CREDIT', 'AMT_ANNUITY', 'AMT_GOODS_PRICE', 'DAYS_BIRTH', 'DAYS_EMPLOYED', 'OWN_CAR_AGE', 'EXT_SOURCE_1', 'EXT_SOURCE_2', 'EXT_SOURCE_3', 'CREDIT_TERM']
+Numeric missing rules: explicit CatBoost FloatFeature splits with extreme-negative border (< -1e30), under nan_mode=Min.
+Missing-branch rule traversals count OOF applicants with that feature missing at each such split in their own fold model.
+Categorical missingness: represented by the __MISSING__ category; not counted as numeric NaN split rules.
+Counterfactual: replace one missing feature at a time with outer-training median (numeric) or mode (categorical).
+Positive missing-minus-imputed logit means the missing value raises the model's default score.
+This is a model sensitivity analysis, not a causal effect or proof that missingness caused the outcome.
+
+TRUE_POSITIVE: largest missing-vs-imputed model effects
+        Feature  N_missing_applicants  Missing_pct_within_group  Mean_abs_delta_logit_missing_vs_imputed  Mean_delta_logit_missing_minus_imputed  Pct_missing_raises_default_logit  Explicit_missing_split_count_across_5_models
+   EXT_SOURCE_1                  2276                   74.3305                                   0.4377                                  0.4373                           99.3849                                           167
+   EXT_SOURCE_2                     3                    0.0980                                   0.3567                                  0.3567                          100.0000                                           132
+   EXT_SOURCE_3                   979                   31.9726                                   0.3269                                  0.3269                          100.0000                                           362
+    OWN_CAR_AGE                  2272                   74.1999                                   0.2453                                  0.2453                           99.9560                                           225
+    CODE_GENDER                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+     AMT_CREDIT                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+    AMT_ANNUITY                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+AMT_GOODS_PRICE                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+     DAYS_BIRTH                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+  DAYS_EMPLOYED                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+
+FALSE_NEGATIVE: largest missing-vs-imputed model effects
+        Feature  N_missing_applicants  Missing_pct_within_group  Mean_abs_delta_logit_missing_vs_imputed  Mean_delta_logit_missing_minus_imputed  Pct_missing_raises_default_logit  Explicit_missing_split_count_across_5_models
+   EXT_SOURCE_2                    26                    0.2417                                   0.3502                                  0.3502                          100.0000                                           132
+   EXT_SOURCE_3                  3856                   35.8398                                   0.3067                                  0.3066                           99.9741                                           362
+   EXT_SOURCE_1                  7631                   70.9267                                   0.2962                                  0.2835                           90.6696                                           167
+    OWN_CAR_AGE                  7328                   68.1104                                   0.2345                                  0.2344                           99.7271                                           225
+    CODE_GENDER                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+     AMT_CREDIT                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+    AMT_ANNUITY                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+AMT_GOODS_PRICE                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+     DAYS_BIRTH                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+  DAYS_EMPLOYED                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+
+FALSE_POSITIVE: largest missing-vs-imputed model effects
+        Feature  N_missing_applicants  Missing_pct_within_group  Mean_abs_delta_logit_missing_vs_imputed  Mean_delta_logit_missing_minus_imputed  Pct_missing_raises_default_logit  Explicit_missing_split_count_across_5_models
+   EXT_SOURCE_2                    12                    0.1901                                   0.6422                                  0.6422                          100.0000                                           132
+   EXT_SOURCE_1                  4537                   71.8904                                   0.4433                                  0.4424                           99.3388                                           167
+   EXT_SOURCE_3                  2032                   32.1977                                   0.3310                                  0.3310                          100.0000                                           362
+    OWN_CAR_AGE                  4646                   73.6175                                   0.2450                                  0.2449                           99.8278                                           225
+    CODE_GENDER                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+     AMT_CREDIT                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+    AMT_ANNUITY                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+AMT_GOODS_PRICE                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+     DAYS_BIRTH                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+  DAYS_EMPLOYED                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+
+TRUE_NEGATIVE: largest missing-vs-imputed model effects
+        Feature  N_missing_applicants  Missing_pct_within_group  Mean_abs_delta_logit_missing_vs_imputed  Mean_delta_logit_missing_minus_imputed  Pct_missing_raises_default_logit  Explicit_missing_split_count_across_5_models
+   EXT_SOURCE_2                   328                    0.2171                                   0.4153                                  0.3934                           93.9024                                           132
+   EXT_SOURCE_3                 47719                   31.5873                                   0.2909                                  0.2908                           99.8135                                           362
+    OWN_CAR_AGE                 98746                   65.3644                                   0.2311                                  0.2310                           99.8440                                           225
+   EXT_SOURCE_1                104484                   69.1626                                   0.2310                                  0.2088                           83.5822                                           167
+    CODE_GENDER                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+     AMT_CREDIT                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+    AMT_ANNUITY                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+AMT_GOODS_PRICE                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+     DAYS_BIRTH                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
+  DAYS_EMPLOYED                     0                    0.0000                                      NaN                                     NaN                               NaN                                             0
 
 ------------------------------------------------------------------------------
 FEATURE-SET AND CONFIGURATION CHECK
 Feature set: All original raw predictors + CREDIT_TERM only
 Raw predictors: 32
 Engineered predictors: ['CREDIT_TERM']
-Selected tree counts by fold: [1640, 1423, 1452, 823, 1070]
+Selected tree counts by fold: [1424, 897, 1116, 1261, 1070]
 No GOODS_PRICE_450K, CREDIT_TO_GOODS_RATIO, or other engineered feature is used.
 
 IMPORTANT CAVEATS
@@ -90,3 +155,13 @@ IMPORTANT CAVEATS
    SHAP does not establish causality.
 4. Each applicant's prediction and SHAP values come from the outer-fold model that did not
    train on that applicant.
+5. Missing-value counterfactuals replace one missing feature at a time with the fold-training
+   median/mode. This is model sensitivity, not a causal effect.
+6. Explicit missing split counts include only numeric FloatFeature splits with an extreme
+   negative border. Categorical missing values are encoded as __MISSING__ and analyzed via
+   SHAP/counterfactuals, not counted as numeric NaN split rules.
+7. The missing-branch traversal count is an exposure count: each validation applicant traverses
+   each split level in a symmetric CatBoost tree. It is not a sum of split-level causal effects.
+8. This run reports the class imbalance and uses scale_pos_weight=3.37. It does not isolate
+   the causal effect of class weighting on learned rules; that requires a separate same-feature-set
+   control run with a different weight (for example scale_pos_weight=1.0).

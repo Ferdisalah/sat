@@ -1,0 +1,16 @@
+{
+  "selection_rule": "Union of top 10 features by mean absolute SHAP within each of TP/FN/FP/TN",
+  "features": [
+    "CODE_GENDER",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "OWN_CAR_AGE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "CREDIT_TERM"
+  ]
+}
