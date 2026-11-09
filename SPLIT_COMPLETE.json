@@ -1,0 +1,14 @@
+{
+  "split_key": "r1_f1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136961,
+  "n_validation_rows": 34241,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793510286.9646633
+}

@@ -41,20 +41,20 @@
   "outer_cv": {
     "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
     "repetition": 1,
-    "fold": 5,
-    "n_train": 136962,
-    "n_validation": 34240
+    "fold": 1,
+    "n_train": 136961,
+    "n_validation": 34241
   },
   "inner_cv": {
     "type": "KFold",
     "n_splits": 5,
     "shuffle": true,
-    "random_state": 20261136,
+    "random_state": 20261132,
     "uses_TARGET": false
   },
   "seed_manifest": {
-    "outer_split_seed_base": 20261136,
-    "inner_split_seed": 20261136,
+    "outer_split_seed_base": 20261132,
+    "inner_split_seed": 20261132,
     "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
   },
   "numeric_dependency_model": {
