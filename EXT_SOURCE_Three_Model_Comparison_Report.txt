@@ -1,0 +1,60 @@
+CATBOOST vs LIGHTGBM vs XGBOOST — EXT_SOURCE IMPUTATION COMPARISON
+========================================================================================
+Splits checked: 25 / 25
+Integrity PASS: 25 / 25
+TARGET loaded by any imputation process: NO (verified in configs/markers)
+Metrics are recomputed from the saved prediction files.
+R2/RMSE/MAE use observed source values only; imputation distributions use missing rows only.
+
+OVERALL VALIDATION PERFORMANCE (mean across 25 paired outer splits)
+----------------------------------------------------------------------------------------
+EXT_SOURCE_1 | LightGBM: R2=0.488198 ± 0.006619; RMSE=0.150898; MAE=0.119901; splits=25
+EXT_SOURCE_1 | CatBoost: R2=0.487906 ± 0.006347; RMSE=0.150942; MAE=0.120120; splits=25
+EXT_SOURCE_1 | XGBoost: R2=0.485455 ± 0.006768; RMSE=0.151302; MAE=0.120149; splits=25
+EXT_SOURCE_2 | XGBoost: R2=0.243595 ± 0.003773; RMSE=0.166350; MAE=0.131744; splits=25
+EXT_SOURCE_2 | LightGBM: R2=0.240091 ± 0.003531; RMSE=0.166735; MAE=0.132321; splits=25
+EXT_SOURCE_2 | CatBoost: R2=0.225217 ± 0.003245; RMSE=0.168358; MAE=0.134129; splits=25
+EXT_SOURCE_3 | XGBoost: R2=0.118831 ± 0.003405; RMSE=0.182832; MAE=0.150426; splits=25
+EXT_SOURCE_3 | LightGBM: R2=0.117933 ± 0.003284; RMSE=0.182925; MAE=0.150705; splits=25
+EXT_SOURCE_3 | CatBoost: R2=0.112561 ± 0.002462; RMSE=0.183481; MAE=0.151467; splits=25
+
+PAIRWISE VALIDATION PERFORMANCE
+Positive delta R2 favours model_b; negative delta RMSE/MAE favours model_b.
+----------------------------------------------------------------------------------------
+EXT_SOURCE_1 | LightGBM minus CatBoost: delta R2=+0.000292 (LightGBM wins 16/25); RMSE delta=-0.000043; MAE delta=-0.000219
+EXT_SOURCE_1 | XGBoost minus CatBoost: delta R2=-0.002451 (XGBoost wins 1/25); RMSE delta=+0.000360; MAE delta=+0.000029
+EXT_SOURCE_1 | XGBoost minus LightGBM: delta R2=-0.002743 (XGBoost wins 0/25); RMSE delta=+0.000404; MAE delta=+0.000248
+EXT_SOURCE_2 | LightGBM minus CatBoost: delta R2=+0.014874 (LightGBM wins 25/25); RMSE delta=-0.001624; MAE delta=-0.001807
+EXT_SOURCE_2 | XGBoost minus CatBoost: delta R2=+0.018378 (XGBoost wins 25/25); RMSE delta=-0.002009; MAE delta=-0.002385
+EXT_SOURCE_2 | XGBoost minus LightGBM: delta R2=+0.003504 (XGBoost wins 25/25); RMSE delta=-0.000385; MAE delta=-0.000578
+EXT_SOURCE_3 | LightGBM minus CatBoost: delta R2=+0.005372 (LightGBM wins 25/25); RMSE delta=-0.000556; MAE delta=-0.000761
+EXT_SOURCE_3 | XGBoost minus CatBoost: delta R2=+0.006270 (XGBoost wins 25/25); RMSE delta=-0.000649; MAE delta=-0.001040
+EXT_SOURCE_3 | XGBoost minus LightGBM: delta R2=+0.000899 (XGBoost wins 18/25); RMSE delta=-0.000093; MAE delta=-0.000279
+
+IMPUTED-VALUE DISTRIBUTION (validation missing rows only)
+----------------------------------------------------------------------------------------
+EXT_SOURCE_1 | CatBoost: n_missing/split=23785.6; mean=0.543921; SD=0.153231; mean split-min/max=[0.152904, 0.868201]; observed mean=0.501687; SD ratio=0.7265
+EXT_SOURCE_1 | LightGBM: n_missing/split=23785.6; mean=0.544102; SD=0.155541; mean split-min/max=[0.135894, 0.869025]; observed mean=0.501687; SD ratio=0.7374
+EXT_SOURCE_1 | XGBoost: n_missing/split=23785.6; mean=0.544150; SD=0.156663; mean split-min/max=[0.117617, 0.891491]; observed mean=0.501687; SD ratio=0.7427
+EXT_SOURCE_2 | CatBoost: n_missing/split=73.8; mean=0.507332; SD=0.082995; mean split-min/max=[0.306526, 0.690582]; observed mean=0.514508; SD ratio=0.4339
+EXT_SOURCE_2 | LightGBM: n_missing/split=73.8; mean=0.508710; SD=0.089635; mean split-min/max=[0.299649, 0.697038]; observed mean=0.514508; SD ratio=0.4686
+EXT_SOURCE_2 | XGBoost: n_missing/split=73.8; mean=0.508708; SD=0.092549; mean split-min/max=[0.292453, 0.700966]; observed mean=0.514508; SD ratio=0.4838
+EXT_SOURCE_3 | CatBoost: n_missing/split=10917.2; mean=0.508914; SD=0.063682; mean split-min/max=[0.267004, 0.680989]; observed mean=0.511176; SD ratio=0.3270
+EXT_SOURCE_3 | LightGBM: n_missing/split=10917.2; mean=0.509016; SD=0.069193; mean split-min/max=[0.232127, 0.703014]; observed mean=0.511176; SD ratio=0.3553
+EXT_SOURCE_3 | XGBoost: n_missing/split=10917.2; mean=0.444724; SD=0.106702; mean split-min/max=[0.081565, 0.720872]; observed mean=0.511176; SD ratio=0.5478
+
+PAIRWISE AGREEMENT (validation missing rows only)
+----------------------------------------------------------------------------------------
+EXT_SOURCE_1 | LightGBM vs CatBoost: MAE between predictions=0.014629; RMSE between predictions=0.019013; correlation=0.992530
+EXT_SOURCE_1 | XGBoost vs CatBoost: MAE between predictions=0.018648; RMSE between predictions=0.024371; correlation=0.987877
+EXT_SOURCE_1 | XGBoost vs LightGBM: MAE between predictions=0.012715; RMSE between predictions=0.016647; correlation=0.994340
+EXT_SOURCE_2 | LightGBM vs CatBoost: MAE between predictions=0.014131; RMSE between predictions=0.017921; correlation=0.981368
+EXT_SOURCE_2 | XGBoost vs CatBoost: MAE between predictions=0.019078; RMSE between predictions=0.024038; correlation=0.968227
+EXT_SOURCE_2 | XGBoost vs LightGBM: MAE between predictions=0.010467; RMSE between predictions=0.013665; correlation=0.989213
+EXT_SOURCE_3 | LightGBM vs CatBoost: MAE between predictions=0.014145; RMSE between predictions=0.018398; correlation=0.965052
+EXT_SOURCE_3 | XGBoost vs CatBoost: MAE between predictions=0.075187; RMSE between predictions=0.104014; correlation=0.643810
+EXT_SOURCE_3 | XGBoost vs LightGBM: MAE between predictions=0.071187; RMSE between predictions=0.102569; correlation=0.663256
+
+Important: PREDICTED values are the stored bounded predictions used by FILLED on missing rows.
+Observed values in FILLED are checked to be exactly preserved within tolerance.
+Detailed CSV reports: C:\Users\UNITECH\Desktop\GCI 2026\competition\Nouveau dossier\EXT_SOURCE_Imputation_Three_Model_Comparison

@@ -1,0 +1,6 @@
+repetition,validation_rows_total,unique_row_indices,duplicate_rows,expected_rows,full_partition_coverage
+1,171202,171202,0,171202,True
+2,171202,171202,0,171202,True
+3,171202,171202,0,171202,True
+4,171202,171202,0,171202,True
+5,171202,171202,0,171202,True
