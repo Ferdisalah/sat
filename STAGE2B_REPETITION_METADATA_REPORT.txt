@@ -1,0 +1,3012 @@
+====================================================================================================
+STAGE II-B REPETITION / FOLD METADATA INSPECTION
+====================================================================================================
+Generated: 2026-11-11T17:17:08
+Root: C:\Users\UNITECH\Desktop\GCI 2026\competition\Nouveau dossier\Stage_II_B_31_all
+Root exists: True
+
+Found Stage_II_B_31_* folders: 15
+
+####################################################################################################
+FOLDER: Stage_II_B_31_r1_f1
+####################################################################################################
+FILE Dependency_Config.json | 0.004 MB
+FILE Dependency_Metrics.csv | 0.015 MB
+FILE Dependency_Train_OOF.csv.gz | 52.968 MB
+FILE Dependency_Validation.csv.gz | 13.092 MB
+FILE Feature_Column_List.txt | 0.002 MB
+FILE Inner_Fold_Assignments.csv | 1.921 MB
+FILE SPLIT_COMPLETE.json | 0.000 MB
+
+--- Dependency_Config.json ---
+{
+  "script_version": "stage2b_full31_v1.1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "stage": "II-B full 31-predictor dependency generation",
+  "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+  "rows": 171202,
+  "predictors": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "target_was_loaded": false,
+  "outer_cv": {
+    "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
+    "repetition": 1,
+    "fold": 1,
+    "n_train": 136961,
+    "n_validation": 34241
+  },
+  "inner_cv": {
+    "type": "KFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261132,
+    "uses_TARGET": false
+  },
+  "seed_manifest": {
+    "outer_split_seed_base": 20261132,
+    "inner_split_seed": 20261132,
+    "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
+  },
+  "numeric_dependency_model": {
+    "library": "CatBoost",
+    "iterations": 200,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "thread_count": 4
+  },
+  "classification_dependency_model": {
+    "library": "LightGBM",
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 50,
+    "learning_rate": 0.05,
+    "max_bin": 127,
+    "thread_count": 2
+  },
+  "feature_semantics": {
+    "log1p_regression_targets": [
+      "AMT_ANNUITY",
+      "AMT_CREDIT",
+      "AMT_GOODS_PRICE",
+      "AMT_INCOME_TOTAL",
+      "CNT_FAM_MEMBERS",
+      "OWN_CAR_AGE"
+    ],
+    "identity_regression_targets": [
+      "DAYS_BIRTH",
+      "DAYS_ID_PUBLISH",
+      "DAYS_LAST_PHONE_CHANGE",
+      "DAYS_REGISTRATION",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "REGION_POPULATION_RELATIVE"
+    ],
+    "hurdle_counts": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "hurdle_positive_magnitude_models": [
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "binary_targets": [
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE"
+    ],
+    "ordinal_targets": [
+      "REGION_RATING_CLIENT"
+    ],
+    "nominal_targets": [
+      "CODE_GENDER",
+      "NAME_CONTRACT_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "NAME_INCOME_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "separate_missingness_targets": [
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_3",
+      "OWN_CAR_AGE"
+    ],
+    "shared_bureau_missingness_group": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "days_employed_sentinel": 365243
+  },
+  "target_usage": "TARGET is not loaded, predicted, or used in dependency model fitting or inner splitting.",
+  "checkpointing": "One compressed target checkpoint is written after each completed target and shared group event; checkpoint directory is persistent on Drive.",
+  "final_outputs": "Written under /content and downloadable to the user's PC.",
+  "baseline_config": "/content/baseline_artifacts/Baseline_Run_Config.json"
+}
+
+--- SPLIT_COMPLETE.json ---
+{
+  "split_key": "r1_f1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136961,
+  "n_validation_rows": 34241,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793510286.9646633
+}
+
+--- Dependency_Validation.csv.gz structure ---
+File: Dependency_Validation.csv.gz
+Compressed size: 13.092 MB
+Header (50 columns): ['row_index', 'SK_ID_CURR', 'BUREAU_MISSINGNESS_SURPRISAL', 'COND_SURPRISAL__NAME_CONTRACT_TYPE', 'COND_SURPRISAL__CODE_GENDER', 'HURDLE_SURPRISAL__CNT_CHILDREN', 'HURDLE_RESIDUAL_PROB__CNT_CHILDREN', 'POSITIVE_LOG_RESIDUAL__CNT_CHILDREN', 'RESIDUAL__AMT_INCOME_TOTAL', 'RESIDUAL__AMT_CREDIT', 'RESIDUAL__AMT_ANNUITY', 'RESIDUAL__AMT_GOODS_PRICE', 'COND_SURPRISAL__NAME_INCOME_TYPE', 'COND_SURPRISAL__NAME_EDUCATION_TYPE', 'COND_SURPRISAL__NAME_FAMILY_STATUS', 'COND_SURPRISAL__NAME_HOUSING_TYPE', 'RESIDUAL__REGION_POPULATION_RELATIVE', 'RESIDUAL__DAYS_BIRTH', 'SENTINEL_SURPRISAL__DAYS_EMPLOYED', 'VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED', 'RESIDUAL__DAYS_REGISTRATION', 'RESIDUAL__DAYS_ID_PUBLISH', 'RESIDUAL__OWN_CAR_AGE', 'MISSINGNESS_SURPRISAL__OWN_CAR_AGE', 'BINARY_SURPRISAL__FLAG_EMP_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE', 'BINARY_SURPRISAL__FLAG_WORK_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE', 'COND_SURPRISAL__OCCUPATION_TYPE', 'RESIDUAL__CNT_FAM_MEMBERS', 'ORDINAL_SURPRISAL__REGION_RATING_CLIENT', 'ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT', 'COND_SURPRISAL__ORGANIZATION_TYPE', 'RESIDUAL__EXT_SOURCE_1', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_1', 'RESIDUAL__EXT_SOURCE_2', 'RESIDUAL__EXT_SOURCE_3', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_3', 'RESIDUAL__DAYS_LAST_PHONE_CHANGE', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR']
+Sample row 1: ['2', '2', '0.4822837128091338', '0.0022085877610771836', '0.04038272923829181', '0.00013552413782666283', '-0.0001355149548455725', '', '-0.5425321131772982', '0.11143080274595363', '0.08693419213029863', '-0.04157592125142351', '1.107654451001644', '0.09269198396889296', '0.0511537984843664', '0.04794338624983214', '-0.012250790505897939', '-4150.800265989154', '4.810170146043703e-05', '-1.618038968165851', '2224.569996419562', '-165.80361466645627', '', '0.08336770290875704', '5.4787094519407454e-05', '5.478559373395253e-05', '1.0391615862705712', '0.6462488525201195', '0.4765685907515369', '-0.00016067268999431228', '0.004164198633892773', '-0.004140955677247149', '1.204869861878553', '', '0.2799450024371692', '0.05978879181028163', '', '0.00028227837670547244', '179.2531115351594', '', '', '', '', '', '', '', '', '', '', '']
+Sample row 2: ['13', '13', '6.438042425448597e-05', '0.001805023627417063', '0.14310467250789075', '8.682375533996938e-05', '-8.681998626677869e-05', '', '0.7153893664188509', '0.04908933219723366', '-0.28718467024652305', '-0.016579402215532113', '5.197479042850689e-05', '0.2063886371909528', '0.2116045678027104', '0.07863887119340539', '-0.008288178776408254', '1109.0105348847937', '0.00018538830892048374', '', '2007.1473168111106', '-82.16976064576602', '', '0.19795091431067996', '0.00011989744669010672', '-0.00011989025927853815', '0.0006355867043580717', '-0.0006353847619148885', '9.655001932144364e-05', '-0.00013063672935564874', '0.0014005022152160772', '-0.0012506379295875725', '4.707783428853008e-05', '', '0.2244697277914009', '0.024654372754088993', '0.20572772665091443', '0.21082593342301453', '-317.28796429689623', '0.004501649572200439', '-0.004491532334877437', '0.1411171175129318', '-0.13161239765443655', '', '0.23377429709349795', '-0.20845955128425872', '', '0.29106101701921605', '0.25252993176889815', '-0.17096613601506938']
+
+--- Inner_Fold_Assignments.csv structure ---
+File: Inner_Fold_Assignments.csv
+Size: 1966.7 KB
+Header (3 columns): ['row_index', 'SK_ID_CURR', 'inner_fold']
+Sample row 1: ['0', '0', '3']
+Sample row 2: ['1', '1', '1']
+Sample row 3: ['3', '3', '3']
+Sample row 4: ['4', '4', '1']
+Sample row 5: ['5', '5', '3']
+
+--- Dependency_Metrics.csv structure ---
+File: Dependency_Metrics.csv
+Size: 14.9 KB
+Header (19 columns): ['target_feature', 'component', 'partition', 'n_rows', 'n_classes_eval', 'mean_surprisal_nats', 'frequency_baseline_mean_surprisal_nats', 'surprisal_improvement_vs_frequency_nats', 'top1_accuracy', 'frequency_baseline_top1_accuracy', 'unknown_category_rate', 'frequency_unknown_rate', 'brier', 'roc_auc', 'positive_rate', 'target_scale', 'rmse', 'mae', 'r2']
+Sample row 1: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_train_inner_oof', '136961', '2.0', '0.20588572024953666', '0.3957339483132249', '0.18984822806368823', '0.8810026211841328', '0.8650272705368681', '0.0', '0.0', '0.07245183268927985', '0.9251448575731059', '0.13497272946313185', '', '', '', '']
+Sample row 2: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_validation', '34241', '2.0', '0.20878427959703857', '0.3961871536150793', '0.1874028740180407', '0.8799100493560351', '0.8647819865074035', '0.0', '0.0', '0.07346667056159333', '0.92291737068991', '0.1352180134925966', '', '', '', '']
+Sample row 3: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_train_inner_oof', '136961', '2.0', '0.030997439937517666', '0.3131153523871749', '0.2821179124496572', '0.9935821146165696', '0.9053745226743379', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 4: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_validation', '34241', '2.0', '0.028940722757019952', '0.31402952210596624', '0.28508879934894626', '0.9943342776203966', '0.9049677287462399', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 5: ['CODE_GENDER', 'nominal_conditional_probability', 'outer_train_inner_oof', '136961', '3.0', '0.38123020026116555', '0.6430415236507974', '0.2618113233896318', '0.8288782938208688', '0.6574280269565789', '0.0', '0.0', '', '', '', '', '', '', '']
+
+####################################################################################################
+FOLDER: Stage_II_B_31_r1_f2
+####################################################################################################
+FILE Dependency_Config.json | 0.004 MB
+FILE Dependency_Metrics.csv | 0.015 MB
+FILE Dependency_Train_OOF.csv.gz | 52.591 MB
+FILE Dependency_Validation.csv.gz | 13.060 MB
+FILE Feature_Column_List.txt | 0.002 MB
+FILE Inner_Fold_Assignments.csv | 1.920 MB
+FILE SPLIT_COMPLETE.json | 0.000 MB
+
+--- Dependency_Config.json ---
+{
+  "script_version": "stage2b_full31_v1.1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "stage": "II-B full 31-predictor dependency generation",
+  "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+  "rows": 171202,
+  "predictors": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "target_was_loaded": false,
+  "outer_cv": {
+    "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
+    "repetition": 1,
+    "fold": 2,
+    "n_train": 136961,
+    "n_validation": 34241
+  },
+  "inner_cv": {
+    "type": "KFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261133,
+    "uses_TARGET": false
+  },
+  "seed_manifest": {
+    "outer_split_seed_base": 20261133,
+    "inner_split_seed": 20261133,
+    "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
+  },
+  "numeric_dependency_model": {
+    "library": "CatBoost",
+    "iterations": 200,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "thread_count": 4
+  },
+  "classification_dependency_model": {
+    "library": "LightGBM",
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 50,
+    "learning_rate": 0.05,
+    "max_bin": 127,
+    "thread_count": 2
+  },
+  "feature_semantics": {
+    "log1p_regression_targets": [
+      "AMT_ANNUITY",
+      "AMT_CREDIT",
+      "AMT_GOODS_PRICE",
+      "AMT_INCOME_TOTAL",
+      "CNT_FAM_MEMBERS",
+      "OWN_CAR_AGE"
+    ],
+    "identity_regression_targets": [
+      "DAYS_BIRTH",
+      "DAYS_ID_PUBLISH",
+      "DAYS_LAST_PHONE_CHANGE",
+      "DAYS_REGISTRATION",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "REGION_POPULATION_RELATIVE"
+    ],
+    "hurdle_counts": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "hurdle_positive_magnitude_models": [
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "binary_targets": [
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE"
+    ],
+    "ordinal_targets": [
+      "REGION_RATING_CLIENT"
+    ],
+    "nominal_targets": [
+      "CODE_GENDER",
+      "NAME_CONTRACT_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "NAME_INCOME_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "separate_missingness_targets": [
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_3",
+      "OWN_CAR_AGE"
+    ],
+    "shared_bureau_missingness_group": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "days_employed_sentinel": 365243
+  },
+  "target_usage": "TARGET is not loaded, predicted, or used in dependency model fitting or inner splitting.",
+  "checkpointing": "One compressed target checkpoint is written after each completed target and shared group event; checkpoint directory is persistent on Drive.",
+  "final_outputs": "Written under /content and downloadable to the user's PC.",
+  "baseline_config": "/content/baseline_artifacts/Baseline_Run_Config.json"
+}
+
+--- SPLIT_COMPLETE.json ---
+{
+  "split_key": "r1_f2",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136961,
+  "n_validation_rows": 34241,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793518750.419617
+}
+
+--- Dependency_Validation.csv.gz structure ---
+File: Dependency_Validation.csv.gz
+Compressed size: 13.060 MB
+Header (50 columns): ['row_index', 'SK_ID_CURR', 'BUREAU_MISSINGNESS_SURPRISAL', 'COND_SURPRISAL__NAME_CONTRACT_TYPE', 'COND_SURPRISAL__CODE_GENDER', 'HURDLE_SURPRISAL__CNT_CHILDREN', 'HURDLE_RESIDUAL_PROB__CNT_CHILDREN', 'POSITIVE_LOG_RESIDUAL__CNT_CHILDREN', 'RESIDUAL__AMT_INCOME_TOTAL', 'RESIDUAL__AMT_CREDIT', 'RESIDUAL__AMT_ANNUITY', 'RESIDUAL__AMT_GOODS_PRICE', 'COND_SURPRISAL__NAME_INCOME_TYPE', 'COND_SURPRISAL__NAME_EDUCATION_TYPE', 'COND_SURPRISAL__NAME_FAMILY_STATUS', 'COND_SURPRISAL__NAME_HOUSING_TYPE', 'RESIDUAL__REGION_POPULATION_RELATIVE', 'RESIDUAL__DAYS_BIRTH', 'SENTINEL_SURPRISAL__DAYS_EMPLOYED', 'VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED', 'RESIDUAL__DAYS_REGISTRATION', 'RESIDUAL__DAYS_ID_PUBLISH', 'RESIDUAL__OWN_CAR_AGE', 'MISSINGNESS_SURPRISAL__OWN_CAR_AGE', 'BINARY_SURPRISAL__FLAG_EMP_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE', 'BINARY_SURPRISAL__FLAG_WORK_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE', 'COND_SURPRISAL__OCCUPATION_TYPE', 'RESIDUAL__CNT_FAM_MEMBERS', 'ORDINAL_SURPRISAL__REGION_RATING_CLIENT', 'ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT', 'COND_SURPRISAL__ORGANIZATION_TYPE', 'RESIDUAL__EXT_SOURCE_1', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_1', 'RESIDUAL__EXT_SOURCE_2', 'RESIDUAL__EXT_SOURCE_3', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_3', 'RESIDUAL__DAYS_LAST_PHONE_CHANGE', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR']
+Sample row 1: ['1', '1', '7.859105930966385e-05', '0.011882108671719899', '0.1759387866596853', '9.860695292644066e-05', '-9.860209142064104e-05', '', '0.7968170057214454', '-0.0761267898712159', '-0.4974821136618388', '0.1802108487983407', '0.00021206469959823783', '0.20328283339043926', '0.24203484233648298', '0.05011552460959703', '-0.00945934114814956', '623.1006085730769', '0.00017574343939622702', '', '1652.4649222207645', '-222.3022972364456', '', '0.18537580771926557', '0.00011037684505704157', '-0.00011037075375716508', '0.0007465055341378565', '-0.0007462269682029217', '0.00012283566837350968', '-5.5540002566800695e-05', '0.006764448271205048', '-0.006582409706643144', '4.482469352535081e-05', '', '0.1915274030135199', '-0.07808751304995654', '0.041289056423188364', '0.19741516578225704', '281.8030275085388', '0.006220972996126868', '-0.006201662807089177', '0.16197814219554477', '-0.14954020647906105', '', '0.2851846890747433', '-0.24812462167260746', '', '0.10173547172814024', '0.09673153988675609', '-0.6213415694878238']
+Sample row 2: ['5', '5', '0.5472065834058013', '0.006274817025046495', '0.11130275827034178', '0.00020390562806686706', '-0.00020388484072719865', '', '0.23310286465224195', '-0.12309260651311327', '0.07067616108070318', '0.0740999902287296', '1.1044561897851513', '0.08893129372086166', '0.30477246891660387', '0.06885248031879056', '0.004389416667896138', '-1442.7735189015712', '3.8508532327893034e-05', '-1.0157625407120427', '2117.5232776545035', '-72.26348887362019', '', '0.16687107020076514', '2.9171830650505772e-05', '2.9171405156791508e-05', '0.15806650372418712', '-0.14620700033377734', '2.1401492980330987', '-5.4586492362673766e-05', '0.0018140331911032422', '0.001818720561723275', '3.400843008093546', '', '0.25179468255954524', '0.1781640367532854', '', '0.0003186864834368154', '529.1601035694878', '', '', '', '', '', '', '', '', '', '', '']
+
+--- Inner_Fold_Assignments.csv structure ---
+File: Inner_Fold_Assignments.csv
+Size: 1966.5 KB
+Header (3 columns): ['row_index', 'SK_ID_CURR', 'inner_fold']
+Sample row 1: ['0', '0', '2']
+Sample row 2: ['2', '2', '5']
+Sample row 3: ['3', '3', '5']
+Sample row 4: ['4', '4', '4']
+Sample row 5: ['6', '6', '3']
+
+--- Dependency_Metrics.csv structure ---
+File: Dependency_Metrics.csv
+Size: 14.9 KB
+Header (19 columns): ['target_feature', 'component', 'partition', 'n_rows', 'n_classes_eval', 'mean_surprisal_nats', 'frequency_baseline_mean_surprisal_nats', 'surprisal_improvement_vs_frequency_nats', 'top1_accuracy', 'frequency_baseline_top1_accuracy', 'unknown_category_rate', 'frequency_unknown_rate', 'brier', 'roc_auc', 'positive_rate', 'target_scale', 'rmse', 'mae', 'r2']
+Sample row 1: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_train_inner_oof', '136961', '2.0', '0.20647193356410715', '0.39651057074273294', '0.1900386371786258', '0.8813676886120867', '0.8646110936690007', '0.0', '0.0', '0.07259666929293841', '0.9253039094909212', '0.13538890633099934', '', '', '', '']
+Sample row 2: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_validation', '34241', '2.0', '0.2066765234914906', '0.3931006018076479', '0.1864240783161573', '0.8792967495108204', '0.8664466575158436', '0.0', '0.0', '0.07292853394409789', '0.9224595399231339', '0.13355334248415643', '', '', '', '']
+Sample row 3: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_train_inner_oof', '136961', '2.0', '0.03090801837516331', '0.31333926979591864', '0.2824312514207553', '0.9935602105708925', '0.905286906491629', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 4: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_validation', '34241', '2.0', '0.03124421972351618', '0.3132380596568237', '0.2819938399333075', '0.9934873397389095', '0.9053181858006484', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 5: ['CODE_GENDER', 'nominal_conditional_probability', 'outer_train_inner_oof', '136961', '3.0', '0.3810699772682839', '0.6429608476484496', '0.26189087038016573', '0.829279867991618', '0.6574499310022561', '0.0', '0.0', '', '', '', '', '', '', '']
+
+####################################################################################################
+FOLDER: Stage_II_B_31_r1_f3
+####################################################################################################
+FILE Dependency_Config.json | 0.004 MB
+FILE Dependency_Metrics.csv | 0.015 MB
+FILE Dependency_Train_OOF.csv.gz | 52.173 MB
+FILE Dependency_Validation.csv.gz | 12.944 MB
+FILE Feature_Column_List.txt | 0.002 MB
+FILE Inner_Fold_Assignments.csv | 1.920 MB
+FILE SPLIT_COMPLETE.json | 0.000 MB
+
+--- Dependency_Config.json ---
+{
+  "script_version": "stage2b_full31_v1.1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "stage": "II-B full 31-predictor dependency generation",
+  "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+  "rows": 171202,
+  "predictors": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "target_was_loaded": false,
+  "outer_cv": {
+    "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
+    "repetition": 1,
+    "fold": 3,
+    "n_train": 136962,
+    "n_validation": 34240
+  },
+  "inner_cv": {
+    "type": "KFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261134,
+    "uses_TARGET": false
+  },
+  "seed_manifest": {
+    "outer_split_seed_base": 20261134,
+    "inner_split_seed": 20261134,
+    "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
+  },
+  "numeric_dependency_model": {
+    "library": "CatBoost",
+    "iterations": 200,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "thread_count": 4
+  },
+  "classification_dependency_model": {
+    "library": "LightGBM",
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 50,
+    "learning_rate": 0.05,
+    "max_bin": 127,
+    "thread_count": 2
+  },
+  "feature_semantics": {
+    "log1p_regression_targets": [
+      "AMT_ANNUITY",
+      "AMT_CREDIT",
+      "AMT_GOODS_PRICE",
+      "AMT_INCOME_TOTAL",
+      "CNT_FAM_MEMBERS",
+      "OWN_CAR_AGE"
+    ],
+    "identity_regression_targets": [
+      "DAYS_BIRTH",
+      "DAYS_ID_PUBLISH",
+      "DAYS_LAST_PHONE_CHANGE",
+      "DAYS_REGISTRATION",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "REGION_POPULATION_RELATIVE"
+    ],
+    "hurdle_counts": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "hurdle_positive_magnitude_models": [
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "binary_targets": [
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE"
+    ],
+    "ordinal_targets": [
+      "REGION_RATING_CLIENT"
+    ],
+    "nominal_targets": [
+      "CODE_GENDER",
+      "NAME_CONTRACT_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "NAME_INCOME_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "separate_missingness_targets": [
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_3",
+      "OWN_CAR_AGE"
+    ],
+    "shared_bureau_missingness_group": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "days_employed_sentinel": 365243
+  },
+  "target_usage": "TARGET is not loaded, predicted, or used in dependency model fitting or inner splitting.",
+  "checkpointing": "One compressed target checkpoint is written after each completed target and shared group event; checkpoint directory is persistent on Drive.",
+  "final_outputs": "Written under /content and downloadable to the user's PC.",
+  "baseline_config": "/content/baseline_artifacts/Baseline_Run_Config.json"
+}
+
+--- SPLIT_COMPLETE.json ---
+{
+  "split_key": "r1_f3",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136962,
+  "n_validation_rows": 34240,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793525988.214368
+}
+
+--- Dependency_Validation.csv.gz structure ---
+File: Dependency_Validation.csv.gz
+Compressed size: 12.944 MB
+Header (50 columns): ['row_index', 'SK_ID_CURR', 'BUREAU_MISSINGNESS_SURPRISAL', 'COND_SURPRISAL__NAME_CONTRACT_TYPE', 'COND_SURPRISAL__CODE_GENDER', 'HURDLE_SURPRISAL__CNT_CHILDREN', 'HURDLE_RESIDUAL_PROB__CNT_CHILDREN', 'POSITIVE_LOG_RESIDUAL__CNT_CHILDREN', 'RESIDUAL__AMT_INCOME_TOTAL', 'RESIDUAL__AMT_CREDIT', 'RESIDUAL__AMT_ANNUITY', 'RESIDUAL__AMT_GOODS_PRICE', 'COND_SURPRISAL__NAME_INCOME_TYPE', 'COND_SURPRISAL__NAME_EDUCATION_TYPE', 'COND_SURPRISAL__NAME_FAMILY_STATUS', 'COND_SURPRISAL__NAME_HOUSING_TYPE', 'RESIDUAL__REGION_POPULATION_RELATIVE', 'RESIDUAL__DAYS_BIRTH', 'SENTINEL_SURPRISAL__DAYS_EMPLOYED', 'VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED', 'RESIDUAL__DAYS_REGISTRATION', 'RESIDUAL__DAYS_ID_PUBLISH', 'RESIDUAL__OWN_CAR_AGE', 'MISSINGNESS_SURPRISAL__OWN_CAR_AGE', 'BINARY_SURPRISAL__FLAG_EMP_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE', 'BINARY_SURPRISAL__FLAG_WORK_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE', 'COND_SURPRISAL__OCCUPATION_TYPE', 'RESIDUAL__CNT_FAM_MEMBERS', 'ORDINAL_SURPRISAL__REGION_RATING_CLIENT', 'ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT', 'COND_SURPRISAL__ORGANIZATION_TYPE', 'RESIDUAL__EXT_SOURCE_1', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_1', 'RESIDUAL__EXT_SOURCE_2', 'RESIDUAL__EXT_SOURCE_3', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_3', 'RESIDUAL__DAYS_LAST_PHONE_CHANGE', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR']
+Sample row 1: ['9', '9', '0.9110796432637193', '0.0015238516863057333', '0.09407130165400372', '0.00021178245520130426', '0.00021176003088019257', '2.966134820547861e-05', '0.6666336350157298', '-0.001723585804247918', '0.06655245840509139', '-0.03100903540748412', '0.15184163262425568', '0.12621836535972922', '0.2776111674810975', '0.057855676218513855', '0.0068528262653722825', '-3439.45137831622', '2.7662185563153385e-05', '1.421897695259136', '4828.180859042013', '-41.71823794930606', '', '0.2954336486766051', '3.321362681834441e-05', '3.321307525194772e-05', '0.17642822863937546', '-0.16174106001907548', '0.6941678782651995', '0.0007971095314907028', '0.0010210749820121713', '0.001023858257164445', '0.5113036488746276', '-0.0528196800242704', '1.3914203925459039', '-0.17653447197205907', '', '0.000378898356037877', '-52.67987312618504', '', '', '', '', '', '', '', '', '', '', '']
+Sample row 2: ['15', '15', '7.714019186736394e-05', '0.002113180614475655', '0.10173893770737574', '0.00019881232896606308', '-0.00019879256710464633', '', '-0.3706100524768754', '-0.07446323804009225', '-0.15091858837835304', '0.15407906596359489', '0.08906675769672409', '0.13784065627575276', '1.3796922153970863', '3.8483692103968954', '-0.0022195599789782295', '2191.9693538157644', '2.7662185563153385e-05', '0.39607856106959183', '-1388.1751463199043', '-142.5866567277708', '0.34179703491065094', '1.7266862661230709', '3.026047413233697e-05', '3.026001628880781e-05', '1.3906209869646318', '0.7510793198708505', '4.305758283142505', '-0.00013772901083108913', '0.0009361798682010818', '-0.0007928950140461133', '3.208633191808841', '', '0.3102918556979429', '-0.1400526338482858', '-0.0865029312296614', '0.2776880349037172', '-1264.1190071465983', '0.0027053530803248177', '-0.002701696910500204', '0.19451466917722718', '-0.1767658979989927', '', '0.21546117882408974', '-0.19383043389881816', '', '0.3010230287236978', '0.2599392701035975', '0.5021906612222875']
+
+--- Inner_Fold_Assignments.csv structure ---
+File: Inner_Fold_Assignments.csv
+Size: 1966.4 KB
+Header (3 columns): ['row_index', 'SK_ID_CURR', 'inner_fold']
+Sample row 1: ['0', '0', '2']
+Sample row 2: ['1', '1', '3']
+Sample row 3: ['2', '2', '1']
+Sample row 4: ['3', '3', '3']
+Sample row 5: ['4', '4', '1']
+
+--- Dependency_Metrics.csv structure ---
+File: Dependency_Metrics.csv
+Size: 14.9 KB
+Header (19 columns): ['target_feature', 'component', 'partition', 'n_rows', 'n_classes_eval', 'mean_surprisal_nats', 'frequency_baseline_mean_surprisal_nats', 'surprisal_improvement_vs_frequency_nats', 'top1_accuracy', 'frequency_baseline_top1_accuracy', 'unknown_category_rate', 'frequency_unknown_rate', 'brier', 'roc_auc', 'positive_rate', 'target_scale', 'rmse', 'mae', 'r2']
+Sample row 1: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_train_inner_oof', '136962', '2.0', '0.2067780466297518', '0.3961165186995462', '0.18933847206979443', '0.880492399351645', '0.8648238197456228', '0.0', '0.0', '0.07282466045747273', '0.92424565247169', '0.13517618025437714', '', '', '', '']
+Sample row 2: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_validation', '34240', '2.0', '0.2054493611411487', '0.3946765657800887', '0.18922720463894', '0.881892523364486', '0.8655957943925233', '0.0', '0.0', '0.07208989300973005', '0.9257097720285153', '0.13440420560747662', '', '', '', '']
+Sample row 3: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '2.0', '0.030798430228466813', '0.3117211273454354', '0.2809226971169686', '0.9937500912661906', '0.9059958236591171', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 4: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_validation', '34240', '2.0', '0.030594839854320086', '0.3196653507339045', '0.2890705108795844', '0.9938960280373832', '0.9024824766355141', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 5: ['CODE_GENDER', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '3.0', '0.3809419736958141', '0.6428371571231374', '0.26189518342732326', '0.8298579167944393', '0.6576276631474424', '0.0', '0.0', '', '', '', '', '', '', '']
+
+####################################################################################################
+FOLDER: Stage_II_B_31_r1_f4
+####################################################################################################
+FILE Dependency_Config.json | 0.004 MB
+FILE Dependency_Metrics.csv | 0.015 MB
+FILE Dependency_Train_OOF.csv.gz | 52.683 MB
+FILE Dependency_Validation.csv.gz | 13.109 MB
+FILE Feature_Column_List.txt | 0.002 MB
+FILE Inner_Fold_Assignments.csv | 1.920 MB
+FILE SPLIT_COMPLETE.json | 0.000 MB
+
+--- Dependency_Config.json ---
+{
+  "script_version": "stage2b_full31_v1.1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "stage": "II-B full 31-predictor dependency generation",
+  "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+  "rows": 171202,
+  "predictors": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "target_was_loaded": false,
+  "outer_cv": {
+    "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
+    "repetition": 1,
+    "fold": 4,
+    "n_train": 136962,
+    "n_validation": 34240
+  },
+  "inner_cv": {
+    "type": "KFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261135,
+    "uses_TARGET": false
+  },
+  "seed_manifest": {
+    "outer_split_seed_base": 20261135,
+    "inner_split_seed": 20261135,
+    "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
+  },
+  "numeric_dependency_model": {
+    "library": "CatBoost",
+    "iterations": 200,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "thread_count": 4
+  },
+  "classification_dependency_model": {
+    "library": "LightGBM",
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 50,
+    "learning_rate": 0.05,
+    "max_bin": 127,
+    "thread_count": 2
+  },
+  "feature_semantics": {
+    "log1p_regression_targets": [
+      "AMT_ANNUITY",
+      "AMT_CREDIT",
+      "AMT_GOODS_PRICE",
+      "AMT_INCOME_TOTAL",
+      "CNT_FAM_MEMBERS",
+      "OWN_CAR_AGE"
+    ],
+    "identity_regression_targets": [
+      "DAYS_BIRTH",
+      "DAYS_ID_PUBLISH",
+      "DAYS_LAST_PHONE_CHANGE",
+      "DAYS_REGISTRATION",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "REGION_POPULATION_RELATIVE"
+    ],
+    "hurdle_counts": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "hurdle_positive_magnitude_models": [
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "binary_targets": [
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE"
+    ],
+    "ordinal_targets": [
+      "REGION_RATING_CLIENT"
+    ],
+    "nominal_targets": [
+      "CODE_GENDER",
+      "NAME_CONTRACT_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "NAME_INCOME_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "separate_missingness_targets": [
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_3",
+      "OWN_CAR_AGE"
+    ],
+    "shared_bureau_missingness_group": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "days_employed_sentinel": 365243
+  },
+  "target_usage": "TARGET is not loaded, predicted, or used in dependency model fitting or inner splitting.",
+  "checkpointing": "One compressed target checkpoint is written after each completed target and shared group event; checkpoint directory is persistent on Drive.",
+  "final_outputs": "Written under /content and downloadable to the user's PC.",
+  "baseline_config": "/content/baseline_artifacts/Baseline_Run_Config.json"
+}
+
+--- SPLIT_COMPLETE.json ---
+{
+  "split_key": "r1_f4",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136962,
+  "n_validation_rows": 34240,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793533266.9202585
+}
+
+--- Dependency_Validation.csv.gz structure ---
+File: Dependency_Validation.csv.gz
+Compressed size: 13.109 MB
+Header (50 columns): ['row_index', 'SK_ID_CURR', 'BUREAU_MISSINGNESS_SURPRISAL', 'COND_SURPRISAL__NAME_CONTRACT_TYPE', 'COND_SURPRISAL__CODE_GENDER', 'HURDLE_SURPRISAL__CNT_CHILDREN', 'HURDLE_RESIDUAL_PROB__CNT_CHILDREN', 'POSITIVE_LOG_RESIDUAL__CNT_CHILDREN', 'RESIDUAL__AMT_INCOME_TOTAL', 'RESIDUAL__AMT_CREDIT', 'RESIDUAL__AMT_ANNUITY', 'RESIDUAL__AMT_GOODS_PRICE', 'COND_SURPRISAL__NAME_INCOME_TYPE', 'COND_SURPRISAL__NAME_EDUCATION_TYPE', 'COND_SURPRISAL__NAME_FAMILY_STATUS', 'COND_SURPRISAL__NAME_HOUSING_TYPE', 'RESIDUAL__REGION_POPULATION_RELATIVE', 'RESIDUAL__DAYS_BIRTH', 'SENTINEL_SURPRISAL__DAYS_EMPLOYED', 'VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED', 'RESIDUAL__DAYS_REGISTRATION', 'RESIDUAL__DAYS_ID_PUBLISH', 'RESIDUAL__OWN_CAR_AGE', 'MISSINGNESS_SURPRISAL__OWN_CAR_AGE', 'BINARY_SURPRISAL__FLAG_EMP_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE', 'BINARY_SURPRISAL__FLAG_WORK_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE', 'COND_SURPRISAL__OCCUPATION_TYPE', 'RESIDUAL__CNT_FAM_MEMBERS', 'ORDINAL_SURPRISAL__REGION_RATING_CLIENT', 'ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT', 'COND_SURPRISAL__ORGANIZATION_TYPE', 'RESIDUAL__EXT_SOURCE_1', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_1', 'RESIDUAL__EXT_SOURCE_2', 'RESIDUAL__EXT_SOURCE_3', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_3', 'RESIDUAL__DAYS_LAST_PHONE_CHANGE', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR']
+Sample row 1: ['3', '3', '7.146098287576261e-05', '0.01257967117250317', '0.08122943516082291', '0.00011177330343570351', '-0.0001117670570327321', '', '-0.047874397607612806', '0.002391160702734041', '-0.21780739454279363', '0.034500163868425915', '5.478621762021915e-05', '2.7015443688195577', '0.44039376946005454', '0.22388679006481882', '-0.008916042756796243', '-1116.282482829498', '0.00018147292241257643', '', '2387.76258627694', '248.1147232271269', '', '0.034237018957223815', '9.59988370821698e-05', '-9.599422934120293e-05', '0.0005148845471210188', '-0.0005147520168195328', '7.242419350770827e-05', '-4.50799113027589e-05', '0.019767581824375553', '0.02025923419530251', '4.9130787739075744e-05', '', '0.06630873251965945', '-0.31309625600422775', '0.1642762378153394', '0.29762101655280765', '449.1595900395442', '0.007027061729013101', '-0.007002429661531807', '0.056949527910451825', '-0.05535825379385621', '', '0.12035833759639275', '-0.11339732328424955', '', '0.7553980288296245', '-0.5301764258181196', '']
+Sample row 2: ['8', '8', '6.10864027537852e-05', '0.00615676807545737', '0.12883112231658775', '0.000125971948407845', '0.00012596401427511505', '-0.00028064421499662817', '0.32535199087250355', '0.06483167334949869', '-0.32592774979897854', '0.004688997609433088', '0.5824312463847547', '0.25098167086691064', '0.0311631111573614', '0.17321671636650773', '-0.006160614253053538', '-1037.2812124731936', '3.115957062641753e-05', '-1.6341544145097044', '-1750.8744196612633', '96.81159911155191', '-1.1706992403142142', '0.2955722726748632', '6.529750254916536e-05', '6.529537071364722e-05', '0.21597960541654296', '-0.19424826532309247', '0.7367715692789446', '-1.0008116731130556e-05', '0.0011452922137964638', '-0.0006273231188762551', '1.6758295385216557', '', '0.5425604814540808', '0.15076549464765943', '0.12283630021515579', '0.20117954625413756', '962.0203344190902', '0.0020744131178486607', '-0.0020722630099512603', '0.14072803574736453', '-0.13127445813412988', '', '0.06716442255059016', '-0.06495855320282375', '', '0.18169423092483672', '-0.16614373110071376', '']
+
+--- Inner_Fold_Assignments.csv structure ---
+File: Inner_Fold_Assignments.csv
+Size: 1966.2 KB
+Header (3 columns): ['row_index', 'SK_ID_CURR', 'inner_fold']
+Sample row 1: ['0', '0', '2']
+Sample row 2: ['1', '1', '3']
+Sample row 3: ['2', '2', '1']
+Sample row 4: ['4', '4', '1']
+Sample row 5: ['5', '5', '2']
+
+--- Dependency_Metrics.csv structure ---
+File: Dependency_Metrics.csv
+Size: 14.9 KB
+Header (19 columns): ['target_feature', 'component', 'partition', 'n_rows', 'n_classes_eval', 'mean_surprisal_nats', 'frequency_baseline_mean_surprisal_nats', 'surprisal_improvement_vs_frequency_nats', 'top1_accuracy', 'frequency_baseline_top1_accuracy', 'unknown_category_rate', 'frequency_unknown_rate', 'brier', 'roc_auc', 'positive_rate', 'target_scale', 'rmse', 'mae', 'r2']
+Sample row 1: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_train_inner_oof', '136962', '2.0', '0.20736346498840064', '0.3958693215684043', '0.18850585658000368', '0.8798060775981659', '0.8649552430601188', '0.0', '0.0', '0.07300949650070507', '0.9235054003237875', '0.13504475693988113', '', '', '', '']
+Sample row 2: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_validation', '34240', '2.0', '0.2024586624707615', '0.39565200577019727', '0.19319334329943577', '0.8853679906542056', '0.865070093457944', '0.0', '0.0', '0.07108022095771034', '0.9289361713011273', '0.13492990654205608', '', '', '', '']
+Sample row 3: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '2.0', '0.029431725746436616', '0.31459529502144784', '0.28516356927501124', '0.9941370599144288', '0.9047180969904061', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 4: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_validation', '34240', '2.0', '0.027186339400113196', '0.30811919654936576', '0.28093285714925254', '0.9950058411214954', '0.9075934579439252', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 5: ['CODE_GENDER', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '3.0', '0.38140680893354517', '0.6433074758634232', '0.261900666929878', '0.8291569924504607', '0.6569121362129642', '0.0', '0.0', '', '', '', '', '', '', '']
+
+####################################################################################################
+FOLDER: Stage_II_B_31_r1_f5
+####################################################################################################
+FILE Dependency_Config.json | 0.004 MB
+FILE Dependency_Metrics.csv | 0.015 MB
+FILE Dependency_Train_OOF.csv.gz | 53.083 MB
+FILE Dependency_Validation.csv.gz | 13.086 MB
+FILE Feature_Column_List.txt | 0.002 MB
+FILE Inner_Fold_Assignments.csv | 1.920 MB
+FILE SPLIT_COMPLETE.json | 0.000 MB
+
+--- Dependency_Config.json ---
+{
+  "script_version": "stage2b_full31_v1.1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "stage": "II-B full 31-predictor dependency generation",
+  "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+  "rows": 171202,
+  "predictors": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "target_was_loaded": false,
+  "outer_cv": {
+    "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
+    "repetition": 1,
+    "fold": 5,
+    "n_train": 136962,
+    "n_validation": 34240
+  },
+  "inner_cv": {
+    "type": "KFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261136,
+    "uses_TARGET": false
+  },
+  "seed_manifest": {
+    "outer_split_seed_base": 20261136,
+    "inner_split_seed": 20261136,
+    "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
+  },
+  "numeric_dependency_model": {
+    "library": "CatBoost",
+    "iterations": 200,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "thread_count": 4
+  },
+  "classification_dependency_model": {
+    "library": "LightGBM",
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 50,
+    "learning_rate": 0.05,
+    "max_bin": 127,
+    "thread_count": 2
+  },
+  "feature_semantics": {
+    "log1p_regression_targets": [
+      "AMT_ANNUITY",
+      "AMT_CREDIT",
+      "AMT_GOODS_PRICE",
+      "AMT_INCOME_TOTAL",
+      "CNT_FAM_MEMBERS",
+      "OWN_CAR_AGE"
+    ],
+    "identity_regression_targets": [
+      "DAYS_BIRTH",
+      "DAYS_ID_PUBLISH",
+      "DAYS_LAST_PHONE_CHANGE",
+      "DAYS_REGISTRATION",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "REGION_POPULATION_RELATIVE"
+    ],
+    "hurdle_counts": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "hurdle_positive_magnitude_models": [
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "binary_targets": [
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE"
+    ],
+    "ordinal_targets": [
+      "REGION_RATING_CLIENT"
+    ],
+    "nominal_targets": [
+      "CODE_GENDER",
+      "NAME_CONTRACT_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "NAME_INCOME_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "separate_missingness_targets": [
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_3",
+      "OWN_CAR_AGE"
+    ],
+    "shared_bureau_missingness_group": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "days_employed_sentinel": 365243
+  },
+  "target_usage": "TARGET is not loaded, predicted, or used in dependency model fitting or inner splitting.",
+  "checkpointing": "One compressed target checkpoint is written after each completed target and shared group event; checkpoint directory is persistent on Drive.",
+  "final_outputs": "Written under /content and downloadable to the user's PC.",
+  "baseline_config": "/content/baseline_artifacts/Baseline_Run_Config.json"
+}
+
+--- SPLIT_COMPLETE.json ---
+{
+  "split_key": "r1_f5",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136962,
+  "n_validation_rows": 34240,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793540698.333013
+}
+
+--- Dependency_Validation.csv.gz structure ---
+File: Dependency_Validation.csv.gz
+Compressed size: 13.086 MB
+Header (50 columns): ['row_index', 'SK_ID_CURR', 'BUREAU_MISSINGNESS_SURPRISAL', 'COND_SURPRISAL__NAME_CONTRACT_TYPE', 'COND_SURPRISAL__CODE_GENDER', 'HURDLE_SURPRISAL__CNT_CHILDREN', 'HURDLE_RESIDUAL_PROB__CNT_CHILDREN', 'POSITIVE_LOG_RESIDUAL__CNT_CHILDREN', 'RESIDUAL__AMT_INCOME_TOTAL', 'RESIDUAL__AMT_CREDIT', 'RESIDUAL__AMT_ANNUITY', 'RESIDUAL__AMT_GOODS_PRICE', 'COND_SURPRISAL__NAME_INCOME_TYPE', 'COND_SURPRISAL__NAME_EDUCATION_TYPE', 'COND_SURPRISAL__NAME_FAMILY_STATUS', 'COND_SURPRISAL__NAME_HOUSING_TYPE', 'RESIDUAL__REGION_POPULATION_RELATIVE', 'RESIDUAL__DAYS_BIRTH', 'SENTINEL_SURPRISAL__DAYS_EMPLOYED', 'VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED', 'RESIDUAL__DAYS_REGISTRATION', 'RESIDUAL__DAYS_ID_PUBLISH', 'RESIDUAL__OWN_CAR_AGE', 'MISSINGNESS_SURPRISAL__OWN_CAR_AGE', 'BINARY_SURPRISAL__FLAG_EMP_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE', 'BINARY_SURPRISAL__FLAG_WORK_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE', 'COND_SURPRISAL__OCCUPATION_TYPE', 'RESIDUAL__CNT_FAM_MEMBERS', 'ORDINAL_SURPRISAL__REGION_RATING_CLIENT', 'ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT', 'COND_SURPRISAL__ORGANIZATION_TYPE', 'RESIDUAL__EXT_SOURCE_1', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_1', 'RESIDUAL__EXT_SOURCE_2', 'RESIDUAL__EXT_SOURCE_3', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_3', 'RESIDUAL__DAYS_LAST_PHONE_CHANGE', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR']
+Sample row 1: ['0', '0', '0.45623348878419323', '0.004659909655795209', '0.04175082226692908', '0.00020448300595846654', '-0.00020446210073355033', '', '-0.20202084403524267', '0.020086907997159287', '0.11719555469372267', '-0.009997300973282108', '0.37960094455853755', '0.4440007310767863', '0.10046589207509478', '0.14166168761595568', '-0.007797774493380486', '4282.531908600575', '3.559479106298354e-05', '0.0296117655628656', '3321.674930380739', '354.10197760288247', '', '0.26503447540973', '3.6609490935810594e-05', '3.6608820816574905e-05', '1.1519494390256177', '0.6839798934275568', '0.3359669568515011', '-6.886235694869569e-05', '0.0016470556895022816', '-0.0015406201879368808', '1.8444363329232196', '', '0.6732443531882916', '-0.07886982640490486', '', '0.0003431990714692996', '113.22117002972072', '', '', '', '', '', '', '', '', '', '', '']
+Sample row 2: ['4', '4', '7.87818794558423e-05', '0.0009369030358903484', '0.02801009837589512', '0.00025655872343022213', '-0.0002565258150553262', '', '0.14192699189582214', '0.012668148745648367', '0.055706586713256456', '-0.054188174648306386', '1.8585420667673207', '0.25566007795845985', '0.4152103796860445', '1.5237368122322297', '-0.007084543177255937', '1093.2081640538236', '3.559479106298354e-05', '-0.33803447340781556', '-1621.5674122451305', '-308.48564913208384', '', '1.0273378079534237', '2.9154458841389013e-05', '2.9154033854283945e-05', '2.2989892654538773', '0.8996397699716018', '1.85280363529291', '-8.805085486485176e-05', '0.010036201154548455', '0.010325946983067436', '1.0913075065186058', '0.11758670546065675', '1.267127890850669', '-0.2721192939989591', '0.24989105621310975', '0.2322569400849182', '-403.81630119027886', '0.010094069875124102', '-0.0100432957346512', '0.18403095603695074', '-0.16808994921020418', '', '0.25178732547857', '-0.22258994419953948', '', '0.22945859073561573', '0.2050361131739573', '0.49817560222000146']
+
+--- Inner_Fold_Assignments.csv structure ---
+File: Inner_Fold_Assignments.csv
+Size: 1966.3 KB
+Header (3 columns): ['row_index', 'SK_ID_CURR', 'inner_fold']
+Sample row 1: ['1', '1', '5']
+Sample row 2: ['2', '2', '2']
+Sample row 3: ['3', '3', '2']
+Sample row 4: ['5', '5', '3']
+Sample row 5: ['8', '8', '3']
+
+--- Dependency_Metrics.csv structure ---
+File: Dependency_Metrics.csv
+Size: 14.9 KB
+Header (19 columns): ['target_feature', 'component', 'partition', 'n_rows', 'n_classes_eval', 'mean_surprisal_nats', 'frequency_baseline_mean_surprisal_nats', 'surprisal_improvement_vs_frequency_nats', 'top1_accuracy', 'frequency_baseline_top1_accuracy', 'unknown_category_rate', 'frequency_unknown_rate', 'brier', 'roc_auc', 'positive_rate', 'target_scale', 'rmse', 'mae', 'r2']
+Sample row 1: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_train_inner_oof', '136962', '2.0', '0.20609944647943831', '0.3949031275193228', '0.1888036810398845', '0.8806457265518903', '0.865473635022853', '0.0', '0.0', '0.07251399291426606', '0.9244982005801645', '0.13452636497714696', '', '', '', '']
+Sample row 2: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_validation', '34240', '2.0', '0.20712520794143965', '0.39951256682720027', '0.1923873588857606', '0.8807535046728971', '0.8629964953271028', '0.0', '0.0', '0.07284845491430854', '0.9258639720001879', '0.1370035046728972', '', '', '', '']
+Sample row 3: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '2.0', '0.029848289207808285', '0.3137600847861268', '0.2839117955783185', '0.9940275404856822', '0.9050904630481448', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 4: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_validation', '34240', '2.0', '0.03158192184979872', '0.3114663888562009', '0.2798844670064022', '0.9935455607476635', '0.9061039719626168', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 5: ['CODE_GENDER', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '3.0', '0.3807904874942727', '0.64286128135684', '0.26207079386256726', '0.829901724565938', '0.6576057592616931', '0.0', '0.0', '', '', '', '', '', '', '']
+
+####################################################################################################
+FOLDER: Stage_II_B_31_r2_f1
+####################################################################################################
+FILE Dependency_Config.json | 0.004 MB
+FILE Dependency_Metrics.csv | 0.015 MB
+FILE Dependency_Train_OOF.csv.gz | 52.813 MB
+FILE Dependency_Validation.csv.gz | 13.188 MB
+FILE Feature_Column_List.txt | 0.002 MB
+FILE Inner_Fold_Assignments.csv | 1.920 MB
+FILE SPLIT_COMPLETE.json | 0.000 MB
+
+--- Dependency_Config.json ---
+{
+  "script_version": "stage2b_full31_v1.1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "stage": "II-B full 31-predictor dependency generation",
+  "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+  "rows": 171202,
+  "predictors": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "target_was_loaded": false,
+  "outer_cv": {
+    "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
+    "repetition": 2,
+    "fold": 1,
+    "n_train": 136961,
+    "n_validation": 34241
+  },
+  "inner_cv": {
+    "type": "KFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261232,
+    "uses_TARGET": false
+  },
+  "seed_manifest": {
+    "outer_split_seed_base": 20261232,
+    "inner_split_seed": 20261232,
+    "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
+  },
+  "numeric_dependency_model": {
+    "library": "CatBoost",
+    "iterations": 200,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "thread_count": 4
+  },
+  "classification_dependency_model": {
+    "library": "LightGBM",
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 50,
+    "learning_rate": 0.05,
+    "max_bin": 127,
+    "thread_count": 2
+  },
+  "feature_semantics": {
+    "log1p_regression_targets": [
+      "AMT_ANNUITY",
+      "AMT_CREDIT",
+      "AMT_GOODS_PRICE",
+      "AMT_INCOME_TOTAL",
+      "CNT_FAM_MEMBERS",
+      "OWN_CAR_AGE"
+    ],
+    "identity_regression_targets": [
+      "DAYS_BIRTH",
+      "DAYS_ID_PUBLISH",
+      "DAYS_LAST_PHONE_CHANGE",
+      "DAYS_REGISTRATION",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "REGION_POPULATION_RELATIVE"
+    ],
+    "hurdle_counts": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "hurdle_positive_magnitude_models": [
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "binary_targets": [
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE"
+    ],
+    "ordinal_targets": [
+      "REGION_RATING_CLIENT"
+    ],
+    "nominal_targets": [
+      "CODE_GENDER",
+      "NAME_CONTRACT_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "NAME_INCOME_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "separate_missingness_targets": [
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_3",
+      "OWN_CAR_AGE"
+    ],
+    "shared_bureau_missingness_group": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "days_employed_sentinel": 365243
+  },
+  "target_usage": "TARGET is not loaded, predicted, or used in dependency model fitting or inner splitting.",
+  "checkpointing": "One compressed target checkpoint is written after each completed target and shared group event; checkpoint directory is persistent on Drive.",
+  "final_outputs": "Written under /content and downloadable to the user's PC.",
+  "baseline_config": "/content/baseline_artifacts/Baseline_Run_Config.json"
+}
+
+--- SPLIT_COMPLETE.json ---
+{
+  "split_key": "r2_f1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136961,
+  "n_validation_rows": 34241,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793612588.0656624
+}
+
+--- Dependency_Validation.csv.gz structure ---
+File: Dependency_Validation.csv.gz
+Compressed size: 13.188 MB
+Header (50 columns): ['row_index', 'SK_ID_CURR', 'BUREAU_MISSINGNESS_SURPRISAL', 'COND_SURPRISAL__NAME_CONTRACT_TYPE', 'COND_SURPRISAL__CODE_GENDER', 'HURDLE_SURPRISAL__CNT_CHILDREN', 'HURDLE_RESIDUAL_PROB__CNT_CHILDREN', 'POSITIVE_LOG_RESIDUAL__CNT_CHILDREN', 'RESIDUAL__AMT_INCOME_TOTAL', 'RESIDUAL__AMT_CREDIT', 'RESIDUAL__AMT_ANNUITY', 'RESIDUAL__AMT_GOODS_PRICE', 'COND_SURPRISAL__NAME_INCOME_TYPE', 'COND_SURPRISAL__NAME_EDUCATION_TYPE', 'COND_SURPRISAL__NAME_FAMILY_STATUS', 'COND_SURPRISAL__NAME_HOUSING_TYPE', 'RESIDUAL__REGION_POPULATION_RELATIVE', 'RESIDUAL__DAYS_BIRTH', 'SENTINEL_SURPRISAL__DAYS_EMPLOYED', 'VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED', 'RESIDUAL__DAYS_REGISTRATION', 'RESIDUAL__DAYS_ID_PUBLISH', 'RESIDUAL__OWN_CAR_AGE', 'MISSINGNESS_SURPRISAL__OWN_CAR_AGE', 'BINARY_SURPRISAL__FLAG_EMP_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE', 'BINARY_SURPRISAL__FLAG_WORK_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE', 'COND_SURPRISAL__OCCUPATION_TYPE', 'RESIDUAL__CNT_FAM_MEMBERS', 'ORDINAL_SURPRISAL__REGION_RATING_CLIENT', 'ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT', 'COND_SURPRISAL__ORGANIZATION_TYPE', 'RESIDUAL__EXT_SOURCE_1', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_1', 'RESIDUAL__EXT_SOURCE_2', 'RESIDUAL__EXT_SOURCE_3', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_3', 'RESIDUAL__DAYS_LAST_PHONE_CHANGE', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR']
+Sample row 1: ['9', '9', '0.9766283656395666', '0.0014799291611672523', '0.07836170895017816', '0.0002287435012444879', '0.0002287173414444732', '-0.00023667753251477297', '0.6470600425264585', '-0.00701682106311452', '0.05022604397623631', '-0.031088344552197', '0.1513256131756702', '0.1243440938531575', '0.2847424034862589', '0.05743223268833268', '0.006721317055718344', '-3470.1294258584694', '3.647054756937003e-05', '1.4053585764335343', '4867.664540052239', '-121.62634162352651', '', '0.30924779521360046', '4.482722490146357e-05', '4.4826220176430454e-05', '0.207405767931856', '-0.18731018039254171', '0.7986992058415012', '0.0003784663205910199', '0.0010996553235600617', '0.0011017800116168708', '0.5458268142247008', '-0.04640942032407913', '1.383793510513431', '-0.18052011062880896', '', '0.00031293707552802074', '-34.892337398308655', '', '', '', '', '', '', '', '', '', '', '']
+Sample row 2: ['19', '19', '7.051855403784855e-05', '0.00432158884226654', '0.24748209207775312', '0.00013609093544268008', '0.00013608167549139516', '-0.0003347015152432853', '0.13666084572540171', '0.04041750199315608', '-0.3667074712136795', '-0.005230221349854958', '0.6451008656135662', '0.28329317415926386', '0.07551891629409499', '0.13219905743484148', '-0.0008673987530542493', '2036.928853814874', '3.187299947478471e-05', '0.2609364608841309', '4854.694649374707', '-765.2876958685265', '', '1.050664960943915', '3.3663210818746825e-05', '3.366264421922338e-05', '1.8700084042395388', '0.8458776334715981', '0.8141929285349103', '0.0003010201648778743', '0.0003103889801555665', '-0.00031403795200168894', '0.7614040372968932', '', '0.4964343386509537', '0.04753787372614027', '0.30410490339859', '0.18374572317695162', '-372.7459163745991', '0.003881649130151923', '-0.003874125268312543', '1.5554297788900597', '0.7889013625959023', '0.314825458601935', '0.29966033486703925', '-0.25893010645902653', '', '0.2938384556331631', '0.25460310361267435', '-0.3583573757211359']
+
+--- Inner_Fold_Assignments.csv structure ---
+File: Inner_Fold_Assignments.csv
+Size: 1966.3 KB
+Header (3 columns): ['row_index', 'SK_ID_CURR', 'inner_fold']
+Sample row 1: ['0', '0', '4']
+Sample row 2: ['1', '1', '5']
+Sample row 3: ['2', '2', '1']
+Sample row 4: ['3', '3', '2']
+Sample row 5: ['4', '4', '2']
+
+--- Dependency_Metrics.csv structure ---
+File: Dependency_Metrics.csv
+Size: 14.9 KB
+Header (19 columns): ['target_feature', 'component', 'partition', 'n_rows', 'n_classes_eval', 'mean_surprisal_nats', 'frequency_baseline_mean_surprisal_nats', 'surprisal_improvement_vs_frequency_nats', 'top1_accuracy', 'frequency_baseline_top1_accuracy', 'unknown_category_rate', 'frequency_unknown_rate', 'brier', 'roc_auc', 'positive_rate', 'target_scale', 'rmse', 'mae', 'r2']
+Sample row 1: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_train_inner_oof', '136961', '2.0', '0.20640047064627415', '0.39641779743074484', '0.1900173267844707', '0.8808492928643921', '0.8646622031089142', '0.0', '0.0', '0.07264168965148167', '0.9249724357483293', '0.13533779689108577', '', '', '', '']
+Sample row 2: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_validation', '34241', '2.0', '0.20706459035064284', '0.3934789346398784', '0.18641434428923553', '0.8806985777284542', '0.8662422242341054', '0.0', '0.0', '0.07282923219733625', '0.9232605811021163', '0.13375777576589468', '', '', '', '']
+Sample row 3: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_train_inner_oof', '136961', '2.0', '0.030695383894447575', '0.3141184588658532', '0.2834230749714056', '0.9936478267536014', '0.9049291404122342', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 4: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_validation', '34241', '2.0', '0.028600700193757916', '0.3100146052573219', '0.28141390506356395', '0.9948307584474753', '0.9067492187728162', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 5: ['CODE_GENDER', 'nominal_conditional_probability', 'outer_train_inner_oof', '136961', '3.0', '0.3810284224595798', '0.6432512456032774', '0.2622228231436976', '0.829557319236863', '0.6570045487401523', '0.0', '0.0', '', '', '', '', '', '', '']
+
+####################################################################################################
+FOLDER: Stage_II_B_31_r2_f2
+####################################################################################################
+FILE Dependency_Config.json | 0.004 MB
+FILE Dependency_Metrics.csv | 0.015 MB
+FILE Dependency_Train_OOF.csv.gz | 52.620 MB
+FILE Dependency_Validation.csv.gz | 12.983 MB
+FILE Feature_Column_List.txt | 0.002 MB
+FILE Inner_Fold_Assignments.csv | 1.920 MB
+FILE SPLIT_COMPLETE.json | 0.000 MB
+
+--- Dependency_Config.json ---
+{
+  "script_version": "stage2b_full31_v1.1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "stage": "II-B full 31-predictor dependency generation",
+  "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+  "rows": 171202,
+  "predictors": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "target_was_loaded": false,
+  "outer_cv": {
+    "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
+    "repetition": 2,
+    "fold": 2,
+    "n_train": 136961,
+    "n_validation": 34241
+  },
+  "inner_cv": {
+    "type": "KFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261233,
+    "uses_TARGET": false
+  },
+  "seed_manifest": {
+    "outer_split_seed_base": 20261233,
+    "inner_split_seed": 20261233,
+    "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
+  },
+  "numeric_dependency_model": {
+    "library": "CatBoost",
+    "iterations": 200,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "thread_count": 4
+  },
+  "classification_dependency_model": {
+    "library": "LightGBM",
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 50,
+    "learning_rate": 0.05,
+    "max_bin": 127,
+    "thread_count": 2
+  },
+  "feature_semantics": {
+    "log1p_regression_targets": [
+      "AMT_ANNUITY",
+      "AMT_CREDIT",
+      "AMT_GOODS_PRICE",
+      "AMT_INCOME_TOTAL",
+      "CNT_FAM_MEMBERS",
+      "OWN_CAR_AGE"
+    ],
+    "identity_regression_targets": [
+      "DAYS_BIRTH",
+      "DAYS_ID_PUBLISH",
+      "DAYS_LAST_PHONE_CHANGE",
+      "DAYS_REGISTRATION",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "REGION_POPULATION_RELATIVE"
+    ],
+    "hurdle_counts": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "hurdle_positive_magnitude_models": [
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "binary_targets": [
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE"
+    ],
+    "ordinal_targets": [
+      "REGION_RATING_CLIENT"
+    ],
+    "nominal_targets": [
+      "CODE_GENDER",
+      "NAME_CONTRACT_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "NAME_INCOME_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "separate_missingness_targets": [
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_3",
+      "OWN_CAR_AGE"
+    ],
+    "shared_bureau_missingness_group": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "days_employed_sentinel": 365243
+  },
+  "target_usage": "TARGET is not loaded, predicted, or used in dependency model fitting or inner splitting.",
+  "checkpointing": "One compressed target checkpoint is written after each completed target and shared group event; checkpoint directory is persistent on Drive.",
+  "final_outputs": "Written under /content and downloadable to the user's PC.",
+  "baseline_config": "/content/baseline_artifacts/Baseline_Run_Config.json"
+}
+
+--- SPLIT_COMPLETE.json ---
+{
+  "split_key": "r2_f2",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136961,
+  "n_validation_rows": 34241,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793612650.5997114
+}
+
+--- Dependency_Validation.csv.gz structure ---
+File: Dependency_Validation.csv.gz
+Compressed size: 12.983 MB
+Header (50 columns): ['row_index', 'SK_ID_CURR', 'BUREAU_MISSINGNESS_SURPRISAL', 'COND_SURPRISAL__NAME_CONTRACT_TYPE', 'COND_SURPRISAL__CODE_GENDER', 'HURDLE_SURPRISAL__CNT_CHILDREN', 'HURDLE_RESIDUAL_PROB__CNT_CHILDREN', 'POSITIVE_LOG_RESIDUAL__CNT_CHILDREN', 'RESIDUAL__AMT_INCOME_TOTAL', 'RESIDUAL__AMT_CREDIT', 'RESIDUAL__AMT_ANNUITY', 'RESIDUAL__AMT_GOODS_PRICE', 'COND_SURPRISAL__NAME_INCOME_TYPE', 'COND_SURPRISAL__NAME_EDUCATION_TYPE', 'COND_SURPRISAL__NAME_FAMILY_STATUS', 'COND_SURPRISAL__NAME_HOUSING_TYPE', 'RESIDUAL__REGION_POPULATION_RELATIVE', 'RESIDUAL__DAYS_BIRTH', 'SENTINEL_SURPRISAL__DAYS_EMPLOYED', 'VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED', 'RESIDUAL__DAYS_REGISTRATION', 'RESIDUAL__DAYS_ID_PUBLISH', 'RESIDUAL__OWN_CAR_AGE', 'MISSINGNESS_SURPRISAL__OWN_CAR_AGE', 'BINARY_SURPRISAL__FLAG_EMP_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE', 'BINARY_SURPRISAL__FLAG_WORK_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE', 'COND_SURPRISAL__OCCUPATION_TYPE', 'RESIDUAL__CNT_FAM_MEMBERS', 'ORDINAL_SURPRISAL__REGION_RATING_CLIENT', 'ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT', 'COND_SURPRISAL__ORGANIZATION_TYPE', 'RESIDUAL__EXT_SOURCE_1', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_1', 'RESIDUAL__EXT_SOURCE_2', 'RESIDUAL__EXT_SOURCE_3', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_3', 'RESIDUAL__DAYS_LAST_PHONE_CHANGE', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR']
+Sample row 1: ['4', '4', '7.474028216371707e-05', '0.0007007478714760367', '0.028997128665828778', '0.0003043886911794525', '-0.0003043423696418833', '', '0.10623718827084616', '0.02268525026210888', '0.043811893955735925', '-0.05121948324068448', '1.8055128169455552', '0.23851137905672806', '0.5198946158524808', '1.4168181135379263', '-0.006852139656498796', '828.7457004705702', '3.1772558668523315e-05', '-0.30228668937439185', '-1567.527795706069', '-303.66151201196226', '', '0.8836995236008951', '3.0301252253204917e-05', '3.0300793174897755e-05', '2.2543669155613735', '0.8950600414342708', '1.8732852883832465', '-8.346708570750039e-05', '0.013003968814255147', '0.013299045324707048', '1.0356338683588653', '0.10452568020652675', '1.2650046096245526', '-0.2755649203584955', '0.2504553884257481', '0.23237105061238947', '-453.768855788765', '0.007557036511529465', '-0.007528553904306133', '0.19611308420266466', '-0.17808071666418937', '', '0.2694933603083134', '-0.23623364932138227', '', '0.23340082794721256', '0.20816388014003828', '0.49138358932508797']
+Sample row 2: ['5', '5', '0.5498874140582607', '0.0031818533476220944', '0.08517950752937874', '0.00022190576216788948', '-0.00022188114290536988', '', '0.23457487498226648', '-0.14376489059163866', '0.04641584267418253', '0.07463317868509733', '1.1658350952696264', '0.10134320759307416', '0.3316880793795144', '0.06792889165353518', '0.004576771409777598', '-1311.5853925983247', '3.366259521799287e-05', '-0.9967147542107861', '2217.474383625561', '-29.118604686942035', '', '0.14842560343527514', '4.327635716947175e-05', '4.327542076143498e-05', '0.14062909458123238', '-0.13118850116369749', '2.2183419894740743', '-5.51180084773506e-05', '0.0034821960926107137', '0.0034822851352194206', '3.364763411371311', '', '0.24575488462503178', '0.17605516957145756', '', '0.00028444741654901675', '501.0210701891144', '', '', '', '', '', '', '', '', '', '', '']
+
+--- Inner_Fold_Assignments.csv structure ---
+File: Inner_Fold_Assignments.csv
+Size: 1966.5 KB
+Header (3 columns): ['row_index', 'SK_ID_CURR', 'inner_fold']
+Sample row 1: ['0', '0', '2']
+Sample row 2: ['1', '1', '2']
+Sample row 3: ['2', '2', '2']
+Sample row 4: ['3', '3', '1']
+Sample row 5: ['6', '6', '5']
+
+--- Dependency_Metrics.csv structure ---
+File: Dependency_Metrics.csv
+Size: 14.9 KB
+Header (19 columns): ['target_feature', 'component', 'partition', 'n_rows', 'n_classes_eval', 'mean_surprisal_nats', 'frequency_baseline_mean_surprisal_nats', 'surprisal_improvement_vs_frequency_nats', 'top1_accuracy', 'frequency_baseline_top1_accuracy', 'unknown_category_rate', 'frequency_unknown_rate', 'brier', 'roc_auc', 'positive_rate', 'target_scale', 'rmse', 'mae', 'r2']
+Sample row 1: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_train_inner_oof', '136961', '2.0', '0.20591459642461613', '0.3952024121050412', '0.18928781568042508', '0.880659457801856', '0.8653193244792313', '0.0', '0.0', '0.07243238742673376', '0.9249990397404462', '0.13468067552076868', '', '', '', '']
+Sample row 2: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_validation', '34241', '2.0', '0.20811072291865085', '0.3983611246053982', '0.19025040168674734', '0.8804065301831138', '0.8636137963260418', '0.0', '0.0', '0.07326754828599796', '0.9242431799718125', '0.13638620367395812', '', '', '', '']
+Sample row 3: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_train_inner_oof', '136961', '2.0', '0.03132340397300283', '0.31355907556095863', '0.2822356715879558', '0.9935237038280971', '0.9051846876118019', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 4: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_validation', '34241', '2.0', '0.03031690856702923', '0.3123157050065163', '0.28199879643948705', '0.9939838205659881', '0.9057270523641249', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 5: ['CODE_GENDER', 'nominal_conditional_probability', 'outer_train_inner_oof', '136961', '3.0', '0.38055126317015303', '0.6427916248044295', '0.2622403616342765', '0.8300611122874395', '0.657712779550383', '0.0', '0.0', '', '', '', '', '', '', '']
+
+####################################################################################################
+FOLDER: Stage_II_B_31_r2_f3
+####################################################################################################
+FILE Dependency_Config.json | 0.004 MB
+FILE Dependency_Metrics.csv | 0.015 MB
+FILE Dependency_Train_OOF.csv.gz | 52.236 MB
+FILE Dependency_Validation.csv.gz | 12.907 MB
+FILE Feature_Column_List.txt | 0.002 MB
+FILE Inner_Fold_Assignments.csv | 1.920 MB
+FILE SPLIT_COMPLETE.json | 0.000 MB
+
+--- Dependency_Config.json ---
+{
+  "script_version": "stage2b_full31_v1.1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "stage": "II-B full 31-predictor dependency generation",
+  "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+  "rows": 171202,
+  "predictors": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "target_was_loaded": false,
+  "outer_cv": {
+    "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
+    "repetition": 2,
+    "fold": 3,
+    "n_train": 136962,
+    "n_validation": 34240
+  },
+  "inner_cv": {
+    "type": "KFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261234,
+    "uses_TARGET": false
+  },
+  "seed_manifest": {
+    "outer_split_seed_base": 20261234,
+    "inner_split_seed": 20261234,
+    "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
+  },
+  "numeric_dependency_model": {
+    "library": "CatBoost",
+    "iterations": 200,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "thread_count": 4
+  },
+  "classification_dependency_model": {
+    "library": "LightGBM",
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 50,
+    "learning_rate": 0.05,
+    "max_bin": 127,
+    "thread_count": 2
+  },
+  "feature_semantics": {
+    "log1p_regression_targets": [
+      "AMT_ANNUITY",
+      "AMT_CREDIT",
+      "AMT_GOODS_PRICE",
+      "AMT_INCOME_TOTAL",
+      "CNT_FAM_MEMBERS",
+      "OWN_CAR_AGE"
+    ],
+    "identity_regression_targets": [
+      "DAYS_BIRTH",
+      "DAYS_ID_PUBLISH",
+      "DAYS_LAST_PHONE_CHANGE",
+      "DAYS_REGISTRATION",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "REGION_POPULATION_RELATIVE"
+    ],
+    "hurdle_counts": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "hurdle_positive_magnitude_models": [
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "binary_targets": [
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE"
+    ],
+    "ordinal_targets": [
+      "REGION_RATING_CLIENT"
+    ],
+    "nominal_targets": [
+      "CODE_GENDER",
+      "NAME_CONTRACT_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "NAME_INCOME_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "separate_missingness_targets": [
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_3",
+      "OWN_CAR_AGE"
+    ],
+    "shared_bureau_missingness_group": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "days_employed_sentinel": 365243
+  },
+  "target_usage": "TARGET is not loaded, predicted, or used in dependency model fitting or inner splitting.",
+  "checkpointing": "One compressed target checkpoint is written after each completed target and shared group event; checkpoint directory is persistent on Drive.",
+  "final_outputs": "Written under /content and downloadable to the user's PC.",
+  "baseline_config": "/content/baseline_artifacts/Baseline_Run_Config.json"
+}
+
+--- SPLIT_COMPLETE.json ---
+{
+  "split_key": "r2_f3",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136962,
+  "n_validation_rows": 34240,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793612712.3150704
+}
+
+--- Dependency_Validation.csv.gz structure ---
+File: Dependency_Validation.csv.gz
+Compressed size: 12.907 MB
+Header (50 columns): ['row_index', 'SK_ID_CURR', 'BUREAU_MISSINGNESS_SURPRISAL', 'COND_SURPRISAL__NAME_CONTRACT_TYPE', 'COND_SURPRISAL__CODE_GENDER', 'HURDLE_SURPRISAL__CNT_CHILDREN', 'HURDLE_RESIDUAL_PROB__CNT_CHILDREN', 'POSITIVE_LOG_RESIDUAL__CNT_CHILDREN', 'RESIDUAL__AMT_INCOME_TOTAL', 'RESIDUAL__AMT_CREDIT', 'RESIDUAL__AMT_ANNUITY', 'RESIDUAL__AMT_GOODS_PRICE', 'COND_SURPRISAL__NAME_INCOME_TYPE', 'COND_SURPRISAL__NAME_EDUCATION_TYPE', 'COND_SURPRISAL__NAME_FAMILY_STATUS', 'COND_SURPRISAL__NAME_HOUSING_TYPE', 'RESIDUAL__REGION_POPULATION_RELATIVE', 'RESIDUAL__DAYS_BIRTH', 'SENTINEL_SURPRISAL__DAYS_EMPLOYED', 'VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED', 'RESIDUAL__DAYS_REGISTRATION', 'RESIDUAL__DAYS_ID_PUBLISH', 'RESIDUAL__OWN_CAR_AGE', 'MISSINGNESS_SURPRISAL__OWN_CAR_AGE', 'BINARY_SURPRISAL__FLAG_EMP_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE', 'BINARY_SURPRISAL__FLAG_WORK_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE', 'COND_SURPRISAL__OCCUPATION_TYPE', 'RESIDUAL__CNT_FAM_MEMBERS', 'ORDINAL_SURPRISAL__REGION_RATING_CLIENT', 'ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT', 'COND_SURPRISAL__ORGANIZATION_TYPE', 'RESIDUAL__EXT_SOURCE_1', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_1', 'RESIDUAL__EXT_SOURCE_2', 'RESIDUAL__EXT_SOURCE_3', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_3', 'RESIDUAL__DAYS_LAST_PHONE_CHANGE', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR']
+Sample row 1: ['3', '3', '8.835687814714324e-05', '0.004934863596231661', '0.09778023340759527', '0.0001045467665751702', '-0.00010454130175241827', '', '-0.053808358328007344', '0.004789839705082954', '-0.2301694094391742', '0.0340876056899031', '4.1280305511614926e-05', '2.7319715465069674', '0.4290666411539312', '0.31228571663981686', '-0.008852318226046554', '-1033.2377292273013', '0.00017365391994660494', '', '2086.4582526974064', '265.6288896357946', '', '0.03968745385699334', '9.981739758478406e-05', '-9.981241599412421e-05', '0.0005564709771506514', '-0.0005563161758919671', '9.772195084329719e-05', '-0.0003067372864399287', '0.021042275880595738', '0.021371116651034416', '4.9931919047022106e-05', '', '0.05755647245601667', '-0.31240049983848805', '0.17013851688573578', '0.2746050837316141', '477.12833097767697', '0.0074979321269528386', '-0.007469892756726398', '0.05509225537654426', '-0.05360216636256462', '', '0.10543574756561536', '-0.10006770617014601', '', '0.8128911650430075', '-0.5564262344100704', '']
+Sample row 2: ['6', '6', '7.922401253225724e-05', '0.0035359083656488033', '0.044179395119394', '0.000333131852736147', '-0.000333076370481672', '', '0.2904966033540646', '0.12778958210261848', '-0.07722162260770027', '-0.1345746084333097', '1.2502413633203642', '0.08468469544553725', '0.42400721437228667', '0.2787090669457347', '-0.03448742040540964', '2700.1298093133228', '2.8455962660026425e-05', '1.286631853746444', '-2885.969821237576', '-1511.3371074703591', '', '0.1900652450591302', '3.2805941867633245e-05', '3.2805403758606744e-05', '0.16866372364045804', '-0.1552070604796922', '3.630450705396566', '-7.090962218159191e-05', '0.0019834929549082795', '-0.001993469350255017', '4.44446788384165', '', '0.3285405587715402', '0.037581724658153126', '-0.1432979468816833', '0.17661590649024034', '-592.378740115304', '0.0031553651072834528', '-0.0031503921746510776', '0.2632256583131103', '-0.23143155611726404', '', '0.2291423114168615', '-0.20478464277205038', '', '0.15530814247751454', '0.14384867975605775', '0.10413513632482663']
+
+--- Inner_Fold_Assignments.csv structure ---
+File: Inner_Fold_Assignments.csv
+Size: 1966.5 KB
+Header (3 columns): ['row_index', 'SK_ID_CURR', 'inner_fold']
+Sample row 1: ['0', '0', '4']
+Sample row 2: ['1', '1', '1']
+Sample row 3: ['2', '2', '1']
+Sample row 4: ['4', '4', '5']
+Sample row 5: ['5', '5', '1']
+
+--- Dependency_Metrics.csv structure ---
+File: Dependency_Metrics.csv
+Size: 14.9 KB
+Header (19 columns): ['target_feature', 'component', 'partition', 'n_rows', 'n_classes_eval', 'mean_surprisal_nats', 'frequency_baseline_mean_surprisal_nats', 'surprisal_improvement_vs_frequency_nats', 'top1_accuracy', 'frequency_baseline_top1_accuracy', 'unknown_category_rate', 'frequency_unknown_rate', 'brier', 'roc_auc', 'positive_rate', 'target_scale', 'rmse', 'mae', 'r2']
+Sample row 1: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_train_inner_oof', '136962', '2.0', '0.2078009026967098', '0.39653947132479195', '0.18873856862808214', '0.8794337115404273', '0.8646047808881295', '0.0', '0.0', '0.07314850706604331', '0.92375866308306', '0.13539521911187044', '', '', '', '']
+Sample row 2: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_validation', '34240', '2.0', '0.2020431171643966', '0.39305378485618736', '0.19101066769179076', '0.8839077102803738', '0.8664719626168225', '0.0', '0.0', '0.07109605186291719', '0.9271498208048922', '0.13352803738317756', '', '', '', '']
+Sample row 3: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '2.0', '0.02975559999250003', '0.3134090835636281', '0.2836534835711281', '0.9939107197616858', '0.9052437902483901', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 4: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_validation', '34240', '2.0', '0.028339539139193487', '0.3128488576811822', '0.2845093185419887', '0.9944509345794392', '0.9054906542056075', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 5: ['CODE_GENDER', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '3.0', '0.379248067986298', '0.6424051485784568', '0.26315708059215875', '0.8302083789664286', '0.6581825615864254', '0.0', '0.0', '', '', '', '', '', '', '']
+
+####################################################################################################
+FOLDER: Stage_II_B_31_r2_f4
+####################################################################################################
+FILE Dependency_Config.json | 0.004 MB
+FILE Dependency_Metrics.csv | 0.015 MB
+FILE Dependency_Train_OOF.csv.gz | 52.664 MB
+FILE Dependency_Validation.csv.gz | 13.086 MB
+FILE Feature_Column_List.txt | 0.002 MB
+FILE Inner_Fold_Assignments.csv | 1.920 MB
+FILE SPLIT_COMPLETE.json | 0.000 MB
+
+--- Dependency_Config.json ---
+{
+  "script_version": "stage2b_full31_v1.1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "stage": "II-B full 31-predictor dependency generation",
+  "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+  "rows": 171202,
+  "predictors": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "target_was_loaded": false,
+  "outer_cv": {
+    "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
+    "repetition": 2,
+    "fold": 4,
+    "n_train": 136962,
+    "n_validation": 34240
+  },
+  "inner_cv": {
+    "type": "KFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261235,
+    "uses_TARGET": false
+  },
+  "seed_manifest": {
+    "outer_split_seed_base": 20261235,
+    "inner_split_seed": 20261235,
+    "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
+  },
+  "numeric_dependency_model": {
+    "library": "CatBoost",
+    "iterations": 200,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "thread_count": 4
+  },
+  "classification_dependency_model": {
+    "library": "LightGBM",
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 50,
+    "learning_rate": 0.05,
+    "max_bin": 127,
+    "thread_count": 2
+  },
+  "feature_semantics": {
+    "log1p_regression_targets": [
+      "AMT_ANNUITY",
+      "AMT_CREDIT",
+      "AMT_GOODS_PRICE",
+      "AMT_INCOME_TOTAL",
+      "CNT_FAM_MEMBERS",
+      "OWN_CAR_AGE"
+    ],
+    "identity_regression_targets": [
+      "DAYS_BIRTH",
+      "DAYS_ID_PUBLISH",
+      "DAYS_LAST_PHONE_CHANGE",
+      "DAYS_REGISTRATION",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "REGION_POPULATION_RELATIVE"
+    ],
+    "hurdle_counts": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "hurdle_positive_magnitude_models": [
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "binary_targets": [
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE"
+    ],
+    "ordinal_targets": [
+      "REGION_RATING_CLIENT"
+    ],
+    "nominal_targets": [
+      "CODE_GENDER",
+      "NAME_CONTRACT_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "NAME_INCOME_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "separate_missingness_targets": [
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_3",
+      "OWN_CAR_AGE"
+    ],
+    "shared_bureau_missingness_group": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "days_employed_sentinel": 365243
+  },
+  "target_usage": "TARGET is not loaded, predicted, or used in dependency model fitting or inner splitting.",
+  "checkpointing": "One compressed target checkpoint is written after each completed target and shared group event; checkpoint directory is persistent on Drive.",
+  "final_outputs": "Written under /content and downloadable to the user's PC.",
+  "baseline_config": "/content/baseline_artifacts/Baseline_Run_Config.json"
+}
+
+--- SPLIT_COMPLETE.json ---
+{
+  "split_key": "r2_f4",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136962,
+  "n_validation_rows": 34240,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793612781.004581
+}
+
+--- Dependency_Validation.csv.gz structure ---
+File: Dependency_Validation.csv.gz
+Compressed size: 13.086 MB
+Header (50 columns): ['row_index', 'SK_ID_CURR', 'BUREAU_MISSINGNESS_SURPRISAL', 'COND_SURPRISAL__NAME_CONTRACT_TYPE', 'COND_SURPRISAL__CODE_GENDER', 'HURDLE_SURPRISAL__CNT_CHILDREN', 'HURDLE_RESIDUAL_PROB__CNT_CHILDREN', 'POSITIVE_LOG_RESIDUAL__CNT_CHILDREN', 'RESIDUAL__AMT_INCOME_TOTAL', 'RESIDUAL__AMT_CREDIT', 'RESIDUAL__AMT_ANNUITY', 'RESIDUAL__AMT_GOODS_PRICE', 'COND_SURPRISAL__NAME_INCOME_TYPE', 'COND_SURPRISAL__NAME_EDUCATION_TYPE', 'COND_SURPRISAL__NAME_FAMILY_STATUS', 'COND_SURPRISAL__NAME_HOUSING_TYPE', 'RESIDUAL__REGION_POPULATION_RELATIVE', 'RESIDUAL__DAYS_BIRTH', 'SENTINEL_SURPRISAL__DAYS_EMPLOYED', 'VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED', 'RESIDUAL__DAYS_REGISTRATION', 'RESIDUAL__DAYS_ID_PUBLISH', 'RESIDUAL__OWN_CAR_AGE', 'MISSINGNESS_SURPRISAL__OWN_CAR_AGE', 'BINARY_SURPRISAL__FLAG_EMP_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE', 'BINARY_SURPRISAL__FLAG_WORK_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE', 'COND_SURPRISAL__OCCUPATION_TYPE', 'RESIDUAL__CNT_FAM_MEMBERS', 'ORDINAL_SURPRISAL__REGION_RATING_CLIENT', 'ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT', 'COND_SURPRISAL__ORGANIZATION_TYPE', 'RESIDUAL__EXT_SOURCE_1', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_1', 'RESIDUAL__EXT_SOURCE_2', 'RESIDUAL__EXT_SOURCE_3', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_3', 'RESIDUAL__DAYS_LAST_PHONE_CHANGE', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR']
+Sample row 1: ['2', '2', '0.4656578807251315', '0.0023936437009303216', '0.033920621841235066', '0.00014087944109683728', '-0.00014086951805431547', '', '-0.5358056182779034', '0.11767330050550484', '0.08512043837072092', '-0.03678402461842545', '1.3573809497853684', '0.0905321011700647', '0.06741775982161205', '0.04855050991375389', '-0.012266282030183345', '-4006.8687195489165', '4.532993300170484e-05', '-1.6389378974431033', '2166.6220990884403', '-218.69398762732385', '', '0.09149152154076326', '3.1888137128335146e-05', '3.1887628707094606e-05', '1.0680606496468055', '0.6563256234334977', '0.5348817594023058', '9.464680175952367e-05', '0.005762668012512095', '-0.005725920834218634', '1.5255994763612954', '', '0.18863143952203892', '0.06117604783245201', '', '0.000299753322241339', '187.14112709741607', '', '', '', '', '', '', '', '', '', '', '']
+Sample row 2: ['7', '7', '0.39821341323790604', '0.0005703101675469844', '0.8521990997401875', '0.00011817171525876962', '-0.00011816473325667118', '', '0.11797259037360064', '0.01600506970506821', '0.32061038354407323', '-0.009939875388065289', '0.6729684381904805', '1.9032014139930455', '0.010430461133417158', '0.5010283017529058', '-0.011435358745370106', '2038.868501711664', '3.0789284902504935e-05', '-0.2507509247630466', '2374.9109253494335', '-73.19168672637602', '', '0.4109252247978568', '3.416555964069967e-05', '3.4164976004613656e-05', '0.14270444117372544', '-0.13298971642785015', '1.3560517611891416', '-0.0007547903256489574', '0.006169429838512856', '-0.006118523987304947', '0.6818460666052675', '', '0.35402604986314995', '-0.08919335681779111', '', '0.0003691941203339108', '311.35767859850137', '', '', '', '', '', '', '', '', '', '', '']
+
+--- Inner_Fold_Assignments.csv structure ---
+File: Inner_Fold_Assignments.csv
+Size: 1966.5 KB
+Header (3 columns): ['row_index', 'SK_ID_CURR', 'inner_fold']
+Sample row 1: ['0', '0', '2']
+Sample row 2: ['1', '1', '3']
+Sample row 3: ['3', '3', '2']
+Sample row 4: ['4', '4', '4']
+Sample row 5: ['5', '5', '4']
+
+--- Dependency_Metrics.csv structure ---
+File: Dependency_Metrics.csv
+Size: 14.9 KB
+Header (19 columns): ['target_feature', 'component', 'partition', 'n_rows', 'n_classes_eval', 'mean_surprisal_nats', 'frequency_baseline_mean_surprisal_nats', 'surprisal_improvement_vs_frequency_nats', 'top1_accuracy', 'frequency_baseline_top1_accuracy', 'unknown_category_rate', 'frequency_unknown_rate', 'brier', 'roc_auc', 'positive_rate', 'target_scale', 'rmse', 'mae', 'r2']
+Sample row 1: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_train_inner_oof', '136962', '2.0', '0.20616747215198597', '0.3954885264405004', '0.18932105428851445', '0.880390181218148', '0.8651596793271127', '0.0', '0.0', '0.07259327540065405', '0.9246355863443814', '0.13484032067288737', '', '', '', '']
+Sample row 2: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_validation', '34240', '2.0', '0.20776215139069157', '0.39717200236539246', '0.1894098509747009', '0.881892523364486', '0.8642523364485981', '0.0', '0.0', '0.07296292263945796', '0.9243795146406504', '0.13574766355140186', '', '', '', '']
+Sample row 3: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '2.0', '0.03144085795072233', '0.31230644231716714', '0.2808655843664448', '0.9935091485229479', '0.9057329770301251', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 4: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_validation', '34240', '2.0', '0.02948760813782293', '0.3172761025149361', '0.2877884943771132', '0.994071261682243', '0.9035338785046729', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 5: ['CODE_GENDER', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '3.0', '0.381946341783579', '0.6434855169131772', '0.26153917512959823', '0.828689709554475', '0.6567588090127189', '0.0', '0.0', '', '', '', '', '', '', '']
+
+####################################################################################################
+FOLDER: Stage_II_B_31_r2_f5
+####################################################################################################
+FILE Dependency_Config.json | 0.004 MB
+FILE Dependency_Metrics.csv | 0.014 MB
+FILE Dependency_Train_OOF.csv.gz | 53.019 MB
+FILE Dependency_Validation.csv.gz | 13.111 MB
+FILE Feature_Column_List.txt | 0.002 MB
+FILE Inner_Fold_Assignments.csv | 1.920 MB
+FILE SPLIT_COMPLETE.json | 0.000 MB
+
+--- Dependency_Config.json ---
+{
+  "script_version": "stage2b_full31_v1.1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "stage": "II-B full 31-predictor dependency generation",
+  "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+  "rows": 171202,
+  "predictors": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "target_was_loaded": false,
+  "outer_cv": {
+    "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
+    "repetition": 2,
+    "fold": 5,
+    "n_train": 136962,
+    "n_validation": 34240
+  },
+  "inner_cv": {
+    "type": "KFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261236,
+    "uses_TARGET": false
+  },
+  "seed_manifest": {
+    "outer_split_seed_base": 20261236,
+    "inner_split_seed": 20261236,
+    "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
+  },
+  "numeric_dependency_model": {
+    "library": "CatBoost",
+    "iterations": 200,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "thread_count": 4
+  },
+  "classification_dependency_model": {
+    "library": "LightGBM",
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 50,
+    "learning_rate": 0.05,
+    "max_bin": 127,
+    "thread_count": 2
+  },
+  "feature_semantics": {
+    "log1p_regression_targets": [
+      "AMT_ANNUITY",
+      "AMT_CREDIT",
+      "AMT_GOODS_PRICE",
+      "AMT_INCOME_TOTAL",
+      "CNT_FAM_MEMBERS",
+      "OWN_CAR_AGE"
+    ],
+    "identity_regression_targets": [
+      "DAYS_BIRTH",
+      "DAYS_ID_PUBLISH",
+      "DAYS_LAST_PHONE_CHANGE",
+      "DAYS_REGISTRATION",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "REGION_POPULATION_RELATIVE"
+    ],
+    "hurdle_counts": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "hurdle_positive_magnitude_models": [
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "binary_targets": [
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE"
+    ],
+    "ordinal_targets": [
+      "REGION_RATING_CLIENT"
+    ],
+    "nominal_targets": [
+      "CODE_GENDER",
+      "NAME_CONTRACT_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "NAME_INCOME_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "separate_missingness_targets": [
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_3",
+      "OWN_CAR_AGE"
+    ],
+    "shared_bureau_missingness_group": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "days_employed_sentinel": 365243
+  },
+  "target_usage": "TARGET is not loaded, predicted, or used in dependency model fitting or inner splitting.",
+  "checkpointing": "One compressed target checkpoint is written after each completed target and shared group event; checkpoint directory is persistent on Drive.",
+  "final_outputs": "Written under /content and downloadable to the user's PC.",
+  "baseline_config": "/content/baseline_artifacts/Baseline_Run_Config.json"
+}
+
+--- SPLIT_COMPLETE.json ---
+{
+  "split_key": "r2_f5",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136962,
+  "n_validation_rows": 34240,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793612844.8566887
+}
+
+--- Dependency_Validation.csv.gz structure ---
+File: Dependency_Validation.csv.gz
+Compressed size: 13.111 MB
+Header (50 columns): ['row_index', 'SK_ID_CURR', 'BUREAU_MISSINGNESS_SURPRISAL', 'COND_SURPRISAL__NAME_CONTRACT_TYPE', 'COND_SURPRISAL__CODE_GENDER', 'HURDLE_SURPRISAL__CNT_CHILDREN', 'HURDLE_RESIDUAL_PROB__CNT_CHILDREN', 'POSITIVE_LOG_RESIDUAL__CNT_CHILDREN', 'RESIDUAL__AMT_INCOME_TOTAL', 'RESIDUAL__AMT_CREDIT', 'RESIDUAL__AMT_ANNUITY', 'RESIDUAL__AMT_GOODS_PRICE', 'COND_SURPRISAL__NAME_INCOME_TYPE', 'COND_SURPRISAL__NAME_EDUCATION_TYPE', 'COND_SURPRISAL__NAME_FAMILY_STATUS', 'COND_SURPRISAL__NAME_HOUSING_TYPE', 'RESIDUAL__REGION_POPULATION_RELATIVE', 'RESIDUAL__DAYS_BIRTH', 'SENTINEL_SURPRISAL__DAYS_EMPLOYED', 'VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED', 'RESIDUAL__DAYS_REGISTRATION', 'RESIDUAL__DAYS_ID_PUBLISH', 'RESIDUAL__OWN_CAR_AGE', 'MISSINGNESS_SURPRISAL__OWN_CAR_AGE', 'BINARY_SURPRISAL__FLAG_EMP_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE', 'BINARY_SURPRISAL__FLAG_WORK_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE', 'COND_SURPRISAL__OCCUPATION_TYPE', 'RESIDUAL__CNT_FAM_MEMBERS', 'ORDINAL_SURPRISAL__REGION_RATING_CLIENT', 'ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT', 'COND_SURPRISAL__ORGANIZATION_TYPE', 'RESIDUAL__EXT_SOURCE_1', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_1', 'RESIDUAL__EXT_SOURCE_2', 'RESIDUAL__EXT_SOURCE_3', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_3', 'RESIDUAL__DAYS_LAST_PHONE_CHANGE', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR']
+Sample row 1: ['0', '0', '0.5067717496000004', '0.00467519766524427', '0.04383432874186699', '0.00020035404213384624', '-0.0002003339726031363', '', '-0.23035574192378405', '0.025326062599294374', '0.08848956606969693', '-0.023334064281833378', '0.37549898372099083', '0.45289558915851597', '0.08619682984333958', '0.16768896505137917', '-0.0076568096608148895', '4253.160650312262', '3.6549635558849756e-05', '-0.0018072459485987125', '3302.3000123542424', '244.9803382190671', '', '0.2310411400371427', '3.264357105890408e-05', '3.264303826333581e-05', '1.1087407882253923', '0.670025793014196', '0.3034312052532109', '5.956558324515804e-05', '0.002423844936571551', '-0.002228628332302307', '2.0101200242239776', '', '0.6646983600719332', '-0.0883600057813208', '', '0.0003082012166782206', '158.43529055543883', '', '', '', '', '', '', '', '', '', '', '']
+Sample row 2: ['1', '1', '7.650562843287905e-05', '0.012253149607269927', '0.15167491123227572', '9.64446510064109e-05', '-9.64400003705145e-05', '', '0.7902045044892283', '-0.08160342217128758', '-0.4954431440376048', '0.18742275820626908', '0.00017247536634688596', '0.2237692422058341', '0.22592647450494116', '0.05303539018846727', '-0.009694105982497014', '618.9549152346226', '0.0002079092221094992', '', '1764.3161632288147', '-253.93782674067097', '', '0.18793119969729177', '0.00010293978409486836', '-0.00010293448597712652', '0.0007380913119853805', '-0.0007378189895966523', '9.125312964812722e-05', '2.5862499313911158e-05', '0.008176221907119648', '-0.007921413673125599', '4.545278414623199e-05', '', '0.20523208279640595', '-0.07351078755869822', '0.036567514632744436', '0.20704761046457826', '278.50868064174756', '0.0036653231933812544', '-0.0036586140958320295', '0.17115487437015778', '-0.15730894788125985', '', '0.31388857646749874', '-0.2693995702949585', '', '0.11732056145473882', '0.1106999278583769', '-0.603649685008821']
+
+--- Inner_Fold_Assignments.csv structure ---
+File: Inner_Fold_Assignments.csv
+Size: 1966.5 KB
+Header (3 columns): ['row_index', 'SK_ID_CURR', 'inner_fold']
+Sample row 1: ['2', '2', '2']
+Sample row 2: ['3', '3', '1']
+Sample row 3: ['4', '4', '4']
+Sample row 4: ['5', '5', '5']
+Sample row 5: ['6', '6', '4']
+
+--- Dependency_Metrics.csv structure ---
+File: Dependency_Metrics.csv
+Size: 14.8 KB
+Header (19 columns): ['target_feature', 'component', 'partition', 'n_rows', 'n_classes_eval', 'mean_surprisal_nats', 'frequency_baseline_mean_surprisal_nats', 'surprisal_improvement_vs_frequency_nats', 'top1_accuracy', 'frequency_baseline_top1_accuracy', 'unknown_category_rate', 'frequency_unknown_rate', 'brier', 'roc_auc', 'positive_rate', 'target_scale', 'rmse', 'mae', 'r2']
+Sample row 1: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_train_inner_oof', '136962', '2.0', '0.2065619105255059', '0.3955227202830661', '0.18896080975756022', '0.8815875936391115', '0.8651450767366131', '0.0', '0.0', '0.07266552031427852', '0.9244633449173343', '0.1348549232633869', '', '', '', '']
+Sample row 2: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_validation', '34240', '2.0', '0.20695533672711336', '0.39706332426285357', '0.1901079875357402', '0.8791179906542056', '0.8643107476635514', '0.0', '0.0', '0.07297280127408703', '0.9241924744143231', '0.1356892523364486', '', '', '', '']
+Sample row 3: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '2.0', '0.030951030992033703', '0.3131212155843056', '0.2821701845922719', '0.9934580394561995', '0.9053752135628861', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 4: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_validation', '34240', '2.0', '0.03202157645827056', '0.3140357933662717', '0.2820142169080011', '0.9929906542056075', '0.904964953271028', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 5: ['CODE_GENDER', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '3.0', '0.381252692358929', '0.6430788126609237', '0.2618261203019947', '0.8295950701654473', '0.6573648165184504', '0.0', '0.0', '', '', '', '', '', '', '']
+
+####################################################################################################
+FOLDER: Stage_II_B_31_r3_f1
+####################################################################################################
+FILE Dependency_Config.json | 0.004 MB
+FILE Dependency_Metrics.csv | 0.014 MB
+FILE Dependency_Train_OOF.csv.gz | 52.823 MB
+FILE Dependency_Validation.csv.gz | 13.157 MB
+FILE Feature_Column_List.txt | 0.002 MB
+FILE Inner_Fold_Assignments.csv | 1.920 MB
+FILE SPLIT_COMPLETE.json | 0.000 MB
+
+--- Dependency_Config.json ---
+{
+  "script_version": "stage2b_full31_v1.1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "stage": "II-B full 31-predictor dependency generation",
+  "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+  "rows": 171202,
+  "predictors": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "target_was_loaded": false,
+  "outer_cv": {
+    "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
+    "repetition": 3,
+    "fold": 1,
+    "n_train": 136961,
+    "n_validation": 34241
+  },
+  "inner_cv": {
+    "type": "KFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261332,
+    "uses_TARGET": false
+  },
+  "seed_manifest": {
+    "outer_split_seed_base": 20261332,
+    "inner_split_seed": 20261332,
+    "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
+  },
+  "numeric_dependency_model": {
+    "library": "CatBoost",
+    "iterations": 200,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "thread_count": 4
+  },
+  "classification_dependency_model": {
+    "library": "LightGBM",
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 50,
+    "learning_rate": 0.05,
+    "max_bin": 127,
+    "thread_count": 2
+  },
+  "feature_semantics": {
+    "log1p_regression_targets": [
+      "AMT_ANNUITY",
+      "AMT_CREDIT",
+      "AMT_GOODS_PRICE",
+      "AMT_INCOME_TOTAL",
+      "CNT_FAM_MEMBERS",
+      "OWN_CAR_AGE"
+    ],
+    "identity_regression_targets": [
+      "DAYS_BIRTH",
+      "DAYS_ID_PUBLISH",
+      "DAYS_LAST_PHONE_CHANGE",
+      "DAYS_REGISTRATION",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "REGION_POPULATION_RELATIVE"
+    ],
+    "hurdle_counts": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "hurdle_positive_magnitude_models": [
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "binary_targets": [
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE"
+    ],
+    "ordinal_targets": [
+      "REGION_RATING_CLIENT"
+    ],
+    "nominal_targets": [
+      "CODE_GENDER",
+      "NAME_CONTRACT_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "NAME_INCOME_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "separate_missingness_targets": [
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_3",
+      "OWN_CAR_AGE"
+    ],
+    "shared_bureau_missingness_group": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "days_employed_sentinel": 365243
+  },
+  "target_usage": "TARGET is not loaded, predicted, or used in dependency model fitting or inner splitting.",
+  "checkpointing": "One compressed target checkpoint is written after each completed target and shared group event; checkpoint directory is persistent on Drive.",
+  "final_outputs": "Written under /content and downloadable to the user's PC.",
+  "baseline_config": "/content/baseline_artifacts/Baseline_Run_Config.json"
+}
+
+--- SPLIT_COMPLETE.json ---
+{
+  "split_key": "r3_f1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136961,
+  "n_validation_rows": 34241,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793612906.5801976
+}
+
+--- Dependency_Validation.csv.gz structure ---
+File: Dependency_Validation.csv.gz
+Compressed size: 13.157 MB
+Header (50 columns): ['row_index', 'SK_ID_CURR', 'BUREAU_MISSINGNESS_SURPRISAL', 'COND_SURPRISAL__NAME_CONTRACT_TYPE', 'COND_SURPRISAL__CODE_GENDER', 'HURDLE_SURPRISAL__CNT_CHILDREN', 'HURDLE_RESIDUAL_PROB__CNT_CHILDREN', 'POSITIVE_LOG_RESIDUAL__CNT_CHILDREN', 'RESIDUAL__AMT_INCOME_TOTAL', 'RESIDUAL__AMT_CREDIT', 'RESIDUAL__AMT_ANNUITY', 'RESIDUAL__AMT_GOODS_PRICE', 'COND_SURPRISAL__NAME_INCOME_TYPE', 'COND_SURPRISAL__NAME_EDUCATION_TYPE', 'COND_SURPRISAL__NAME_FAMILY_STATUS', 'COND_SURPRISAL__NAME_HOUSING_TYPE', 'RESIDUAL__REGION_POPULATION_RELATIVE', 'RESIDUAL__DAYS_BIRTH', 'SENTINEL_SURPRISAL__DAYS_EMPLOYED', 'VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED', 'RESIDUAL__DAYS_REGISTRATION', 'RESIDUAL__DAYS_ID_PUBLISH', 'RESIDUAL__OWN_CAR_AGE', 'MISSINGNESS_SURPRISAL__OWN_CAR_AGE', 'BINARY_SURPRISAL__FLAG_EMP_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE', 'BINARY_SURPRISAL__FLAG_WORK_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE', 'COND_SURPRISAL__OCCUPATION_TYPE', 'RESIDUAL__CNT_FAM_MEMBERS', 'ORDINAL_SURPRISAL__REGION_RATING_CLIENT', 'ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT', 'COND_SURPRISAL__ORGANIZATION_TYPE', 'RESIDUAL__EXT_SOURCE_1', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_1', 'RESIDUAL__EXT_SOURCE_2', 'RESIDUAL__EXT_SOURCE_3', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_3', 'RESIDUAL__DAYS_LAST_PHONE_CHANGE', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR']
+Sample row 1: ['0', '0', '0.5051287558167158', '0.006320008652468346', '0.039792419959967976', '0.00020668799445256944', '-0.00020666663596060185', '', '-0.20125747359924162', '0.02177197342235182', '0.11061820204471218', '-0.015374703895759012', '0.4796369297657589', '0.5189805700285003', '0.09872891953158384', '0.23570524247604963', '-0.007637934919053065', '4263.001974924755', '3.548536483029436e-05', '0.00821130982935081', '3294.7275217907236', '313.2171547419225', '', '0.28402493267001133', '3.221233735783677e-05', '3.221181854606847e-05', '1.1863192102975013', '0.6946568980792021', '0.3600714006728349', '-0.00012036074832910693', '0.0023527167189161943', '-0.0021964222724237814', '2.2599838886964214', '', '0.6352784200238808', '-0.06950750121232158', '', '0.0002896650068250449', '105.48179733818165', '', '', '', '', '', '', '', '', '', '', '']
+Sample row 2: ['5', '5', '0.5633527147984623', '0.004209909461281467', '0.11715967220913738', '0.0001950651248498632', '-0.00019504610088537087', '', '0.21656437928445627', '-0.14378075614058616', '0.05580998876610899', '0.07042231153508993', '1.1799622665936853', '0.1005468779412061', '0.3495586928348733', '0.07280096911875851', '0.004350687470732393', '-1365.560808689288', '3.548536483029436e-05', '-0.9912630959146078', '2206.8064327944294', '19.44155753225823', '', '0.18014809020858938', '3.642428146593477e-05', '3.642361810984873e-05', '0.14041480113898835', '-0.13100230060688411', '2.0558285582286264', '-7.180238164350428e-05', '0.002297316694334809', '0.0023032990901321604', '3.948247669483768', '', '0.3086009655170296', '0.1827832107334691', '', '0.00037716096555833416', '525.6223173189655', '', '', '', '', '', '', '', '', '', '', '']
+
+--- Inner_Fold_Assignments.csv structure ---
+File: Inner_Fold_Assignments.csv
+Size: 1966.4 KB
+Header (3 columns): ['row_index', 'SK_ID_CURR', 'inner_fold']
+Sample row 1: ['1', '1', '2']
+Sample row 2: ['2', '2', '3']
+Sample row 3: ['3', '3', '1']
+Sample row 4: ['4', '4', '5']
+Sample row 5: ['6', '6', '5']
+
+--- Dependency_Metrics.csv structure ---
+File: Dependency_Metrics.csv
+Size: 14.8 KB
+Header (19 columns): ['target_feature', 'component', 'partition', 'n_rows', 'n_classes_eval', 'mean_surprisal_nats', 'frequency_baseline_mean_surprisal_nats', 'surprisal_improvement_vs_frequency_nats', 'top1_accuracy', 'frequency_baseline_top1_accuracy', 'unknown_category_rate', 'frequency_unknown_rate', 'brier', 'roc_auc', 'positive_rate', 'target_scale', 'rmse', 'mae', 'r2']
+Sample row 1: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_train_inner_oof', '136961', '2.0', '0.20624580418673621', '0.3958822902248451', '0.1896364860381089', '0.8814772088404729', '0.8649469557027183', '0.0', '0.0', '0.07255908125001666', '0.9249709932593213', '0.1350530442972817', '', '', '', '']
+Sample row 2: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_validation', '34241', '2.0', '0.2072813311594194', '0.39559046516997437', '0.18830913401055496', '0.8802020969013755', '0.8651032388072778', '0.0', '0.0', '0.07293815115759172', '0.923807010257512', '0.13489676119272218', '', '', '', '']
+Sample row 3: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_train_inner_oof', '136961', '2.0', '0.02998059881393767', '0.3134383592173086', '0.28345776040337095', '0.9940859076671461', '0.9052357970517154', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 4: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_validation', '34241', '2.0', '0.028327582294789065', '0.31277674535849914', '0.2844491630637101', '0.9940714348295903', '0.9055226190823866', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 5: ['CODE_GENDER', 'nominal_conditional_probability', 'outer_train_inner_oof', '136961', '3.0', '0.38053939315481267', '0.6424984965442819', '0.26195910338946926', '0.8299004826191397', '0.6582603806923139', '0.0', '0.0', '', '', '', '', '', '', '']
+
+####################################################################################################
+FOLDER: Stage_II_B_31_r3_f2
+####################################################################################################
+FILE Dependency_Config.json | 0.004 MB
+FILE Dependency_Metrics.csv | 0.015 MB
+FILE Dependency_Train_OOF.csv.gz | 52.756 MB
+FILE Dependency_Validation.csv.gz | 13.021 MB
+FILE Feature_Column_List.txt | 0.002 MB
+FILE Inner_Fold_Assignments.csv | 1.920 MB
+FILE SPLIT_COMPLETE.json | 0.000 MB
+
+--- Dependency_Config.json ---
+{
+  "script_version": "stage2b_full31_v1.1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "stage": "II-B full 31-predictor dependency generation",
+  "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+  "rows": 171202,
+  "predictors": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "target_was_loaded": false,
+  "outer_cv": {
+    "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
+    "repetition": 3,
+    "fold": 2,
+    "n_train": 136961,
+    "n_validation": 34241
+  },
+  "inner_cv": {
+    "type": "KFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261333,
+    "uses_TARGET": false
+  },
+  "seed_manifest": {
+    "outer_split_seed_base": 20261333,
+    "inner_split_seed": 20261333,
+    "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
+  },
+  "numeric_dependency_model": {
+    "library": "CatBoost",
+    "iterations": 200,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "thread_count": 4
+  },
+  "classification_dependency_model": {
+    "library": "LightGBM",
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 50,
+    "learning_rate": 0.05,
+    "max_bin": 127,
+    "thread_count": 2
+  },
+  "feature_semantics": {
+    "log1p_regression_targets": [
+      "AMT_ANNUITY",
+      "AMT_CREDIT",
+      "AMT_GOODS_PRICE",
+      "AMT_INCOME_TOTAL",
+      "CNT_FAM_MEMBERS",
+      "OWN_CAR_AGE"
+    ],
+    "identity_regression_targets": [
+      "DAYS_BIRTH",
+      "DAYS_ID_PUBLISH",
+      "DAYS_LAST_PHONE_CHANGE",
+      "DAYS_REGISTRATION",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "REGION_POPULATION_RELATIVE"
+    ],
+    "hurdle_counts": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "hurdle_positive_magnitude_models": [
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "binary_targets": [
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE"
+    ],
+    "ordinal_targets": [
+      "REGION_RATING_CLIENT"
+    ],
+    "nominal_targets": [
+      "CODE_GENDER",
+      "NAME_CONTRACT_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "NAME_INCOME_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "separate_missingness_targets": [
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_3",
+      "OWN_CAR_AGE"
+    ],
+    "shared_bureau_missingness_group": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "days_employed_sentinel": 365243
+  },
+  "target_usage": "TARGET is not loaded, predicted, or used in dependency model fitting or inner splitting.",
+  "checkpointing": "One compressed target checkpoint is written after each completed target and shared group event; checkpoint directory is persistent on Drive.",
+  "final_outputs": "Written under /content and downloadable to the user's PC.",
+  "baseline_config": "/content/baseline_artifacts/Baseline_Run_Config.json"
+}
+
+--- SPLIT_COMPLETE.json ---
+{
+  "split_key": "r3_f2",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136961,
+  "n_validation_rows": 34241,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793612968.6933959
+}
+
+--- Dependency_Validation.csv.gz structure ---
+File: Dependency_Validation.csv.gz
+Compressed size: 13.021 MB
+Header (50 columns): ['row_index', 'SK_ID_CURR', 'BUREAU_MISSINGNESS_SURPRISAL', 'COND_SURPRISAL__NAME_CONTRACT_TYPE', 'COND_SURPRISAL__CODE_GENDER', 'HURDLE_SURPRISAL__CNT_CHILDREN', 'HURDLE_RESIDUAL_PROB__CNT_CHILDREN', 'POSITIVE_LOG_RESIDUAL__CNT_CHILDREN', 'RESIDUAL__AMT_INCOME_TOTAL', 'RESIDUAL__AMT_CREDIT', 'RESIDUAL__AMT_ANNUITY', 'RESIDUAL__AMT_GOODS_PRICE', 'COND_SURPRISAL__NAME_INCOME_TYPE', 'COND_SURPRISAL__NAME_EDUCATION_TYPE', 'COND_SURPRISAL__NAME_FAMILY_STATUS', 'COND_SURPRISAL__NAME_HOUSING_TYPE', 'RESIDUAL__REGION_POPULATION_RELATIVE', 'RESIDUAL__DAYS_BIRTH', 'SENTINEL_SURPRISAL__DAYS_EMPLOYED', 'VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED', 'RESIDUAL__DAYS_REGISTRATION', 'RESIDUAL__DAYS_ID_PUBLISH', 'RESIDUAL__OWN_CAR_AGE', 'MISSINGNESS_SURPRISAL__OWN_CAR_AGE', 'BINARY_SURPRISAL__FLAG_EMP_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE', 'BINARY_SURPRISAL__FLAG_WORK_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE', 'COND_SURPRISAL__OCCUPATION_TYPE', 'RESIDUAL__CNT_FAM_MEMBERS', 'ORDINAL_SURPRISAL__REGION_RATING_CLIENT', 'ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT', 'COND_SURPRISAL__ORGANIZATION_TYPE', 'RESIDUAL__EXT_SOURCE_1', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_1', 'RESIDUAL__EXT_SOURCE_2', 'RESIDUAL__EXT_SOURCE_3', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_3', 'RESIDUAL__DAYS_LAST_PHONE_CHANGE', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR']
+Sample row 1: ['1', '1', '8.143955745878102e-05', '0.030660404883702388', '0.1830733677971314', '9.446022254929387e-05', '-9.445576132291781e-05', '', '0.8072554765248121', '-0.09358934755374371', '-0.49206696157280305', '0.1826813158295817', '7.797848428240471e-05', '0.22181762909162803', '0.22594974748133662', '0.06000900279328092', '-0.009846769504293086', '719.3237015059494', '0.00016840502852047323', '', '1550.1690506313798', '-247.20498683336564', '', '0.19692432260722262', '9.221957753010411e-05', '-9.221532543561521e-05', '0.0007722090425481803', '-0.0007719109658763031', '9.645861979186416e-05', '-5.232576459057725e-05', '0.008458482062086181', '-0.008281128181951036', '4.725571112673403e-05', '', '0.20126708759430015', '-0.0705978229338704', '0.03396212079095107', '0.21611353336504707', '242.9487723216871', '0.006550941543891498', '-0.006529530905128783', '0.1459903211734871', '-0.13583393274239117', '', '0.2896333454799828', '-0.2514620278994629', '', '0.10877810701564102', '0.10307058223569543', '-0.6063553314850773']
+Sample row 2: ['3', '3', '8.220212441047873e-05', '0.013529361399881165', '0.06760817040643403', '0.00011921857242460066', '-0.0001192114661730451', '', '-0.018705736726989386', '0.003345811409968036', '-0.25803198129758087', '0.052928647607634716', '4.488786059134877e-05', '2.3432062820015043', '0.37043257865668155', '0.34533869009243195', '-0.00876992706420221', '-1291.2596643391298', '0.00018676954521267813', '', '2701.9341120927', '274.62894877464623', '', '0.035341836542623344', '9.221957753010411e-05', '-9.221532543561521e-05', '0.0004692509220095974', '-0.00046914084101495705', '8.317687140407812e-05', '-0.0001962719231982657', '0.020578110564147656', '0.02096965246027649', '4.629259736773222e-05', '', '0.0493880599714965', '-0.2928224572608118', '0.15737332947380078', '0.34104792593837624', '479.85617780039337', '0.01020533955112429', '-0.010153441768318675', '0.0498583964770857', '-0.04863586852441093', '', '0.10520283710234296', '-0.09985807811133986', '', '0.7715185562756866', '-0.537689509502394', '']
+
+--- Inner_Fold_Assignments.csv structure ---
+File: Inner_Fold_Assignments.csv
+Size: 1966.4 KB
+Header (3 columns): ['row_index', 'SK_ID_CURR', 'inner_fold']
+Sample row 1: ['0', '0', '2']
+Sample row 2: ['2', '2', '2']
+Sample row 3: ['5', '5', '4']
+Sample row 4: ['7', '7', '1']
+Sample row 5: ['8', '8', '3']
+
+--- Dependency_Metrics.csv structure ---
+File: Dependency_Metrics.csv
+Size: 14.8 KB
+Header (19 columns): ['target_feature', 'component', 'partition', 'n_rows', 'n_classes_eval', 'mean_surprisal_nats', 'frequency_baseline_mean_surprisal_nats', 'surprisal_improvement_vs_frequency_nats', 'top1_accuracy', 'frequency_baseline_top1_accuracy', 'unknown_category_rate', 'frequency_unknown_rate', 'brier', 'roc_auc', 'positive_rate', 'target_scale', 'rmse', 'mae', 'r2']
+Sample row 1: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_train_inner_oof', '136961', '2.0', '0.20680699730908886', '0.3961790821597186', '0.18937208485062973', '0.8808346901672739', '0.8647863260344185', '0.0', '0.0', '0.07278009479546273', '0.9244761284777202', '0.13521367396558145', '', '', '', '']
+Sample row 2: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_validation', '34241', '2.0', '0.204605506839096', '0.3943985785666677', '0.1897930717275717', '0.8807277824829882', '0.8657457434070267', '0.0', '0.0', '0.07193930806850198', '0.9261821310660414', '0.13425425659297333', '', '', '', '']
+Sample row 3: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_train_inner_oof', '136961', '2.0', '0.029736353602038634', '0.31259716689916933', '0.2828608132971307', '0.9942392359868868', '0.9056081658282285', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 4: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_validation', '34241', '2.0', '0.027581417527204288', '0.31614403538980856', '0.2885626178626043', '0.9951520107473497', '0.9040331766011507', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 5: ['CODE_GENDER', 'nominal_conditional_probability', 'outer_train_inner_oof', '136961', '3.0', '0.38130282370755586', '0.6438649419032465', '0.26256211819569064', '0.8296084286767766', '0.6561721950044174', '0.0', '0.0', '', '', '', '', '', '', '']
+
+####################################################################################################
+FOLDER: Stage_II_B_31_r3_f3
+####################################################################################################
+FILE Dependency_Config.json | 0.004 MB
+FILE Dependency_Metrics.csv | 0.015 MB
+FILE Dependency_Train_OOF.csv.gz | 52.690 MB
+FILE Dependency_Validation.csv.gz | 13.058 MB
+FILE Feature_Column_List.txt | 0.002 MB
+FILE Inner_Fold_Assignments.csv | 1.920 MB
+FILE SPLIT_COMPLETE.json | 0.000 MB
+
+--- Dependency_Config.json ---
+{
+  "script_version": "stage2b_full31_v1.1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "stage": "II-B full 31-predictor dependency generation",
+  "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+  "rows": 171202,
+  "predictors": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "target_was_loaded": false,
+  "outer_cv": {
+    "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
+    "repetition": 3,
+    "fold": 3,
+    "n_train": 136962,
+    "n_validation": 34240
+  },
+  "inner_cv": {
+    "type": "KFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261334,
+    "uses_TARGET": false
+  },
+  "seed_manifest": {
+    "outer_split_seed_base": 20261334,
+    "inner_split_seed": 20261334,
+    "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
+  },
+  "numeric_dependency_model": {
+    "library": "CatBoost",
+    "iterations": 200,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "thread_count": 4
+  },
+  "classification_dependency_model": {
+    "library": "LightGBM",
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 50,
+    "learning_rate": 0.05,
+    "max_bin": 127,
+    "thread_count": 2
+  },
+  "feature_semantics": {
+    "log1p_regression_targets": [
+      "AMT_ANNUITY",
+      "AMT_CREDIT",
+      "AMT_GOODS_PRICE",
+      "AMT_INCOME_TOTAL",
+      "CNT_FAM_MEMBERS",
+      "OWN_CAR_AGE"
+    ],
+    "identity_regression_targets": [
+      "DAYS_BIRTH",
+      "DAYS_ID_PUBLISH",
+      "DAYS_LAST_PHONE_CHANGE",
+      "DAYS_REGISTRATION",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "REGION_POPULATION_RELATIVE"
+    ],
+    "hurdle_counts": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "hurdle_positive_magnitude_models": [
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "binary_targets": [
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE"
+    ],
+    "ordinal_targets": [
+      "REGION_RATING_CLIENT"
+    ],
+    "nominal_targets": [
+      "CODE_GENDER",
+      "NAME_CONTRACT_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "NAME_INCOME_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "separate_missingness_targets": [
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_3",
+      "OWN_CAR_AGE"
+    ],
+    "shared_bureau_missingness_group": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "days_employed_sentinel": 365243
+  },
+  "target_usage": "TARGET is not loaded, predicted, or used in dependency model fitting or inner splitting.",
+  "checkpointing": "One compressed target checkpoint is written after each completed target and shared group event; checkpoint directory is persistent on Drive.",
+  "final_outputs": "Written under /content and downloadable to the user's PC.",
+  "baseline_config": "/content/baseline_artifacts/Baseline_Run_Config.json"
+}
+
+--- SPLIT_COMPLETE.json ---
+{
+  "split_key": "r3_f3",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136962,
+  "n_validation_rows": 34240,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793613031.2793155
+}
+
+--- Dependency_Validation.csv.gz structure ---
+File: Dependency_Validation.csv.gz
+Compressed size: 13.058 MB
+Header (50 columns): ['row_index', 'SK_ID_CURR', 'BUREAU_MISSINGNESS_SURPRISAL', 'COND_SURPRISAL__NAME_CONTRACT_TYPE', 'COND_SURPRISAL__CODE_GENDER', 'HURDLE_SURPRISAL__CNT_CHILDREN', 'HURDLE_RESIDUAL_PROB__CNT_CHILDREN', 'POSITIVE_LOG_RESIDUAL__CNT_CHILDREN', 'RESIDUAL__AMT_INCOME_TOTAL', 'RESIDUAL__AMT_CREDIT', 'RESIDUAL__AMT_ANNUITY', 'RESIDUAL__AMT_GOODS_PRICE', 'COND_SURPRISAL__NAME_INCOME_TYPE', 'COND_SURPRISAL__NAME_EDUCATION_TYPE', 'COND_SURPRISAL__NAME_FAMILY_STATUS', 'COND_SURPRISAL__NAME_HOUSING_TYPE', 'RESIDUAL__REGION_POPULATION_RELATIVE', 'RESIDUAL__DAYS_BIRTH', 'SENTINEL_SURPRISAL__DAYS_EMPLOYED', 'VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED', 'RESIDUAL__DAYS_REGISTRATION', 'RESIDUAL__DAYS_ID_PUBLISH', 'RESIDUAL__OWN_CAR_AGE', 'MISSINGNESS_SURPRISAL__OWN_CAR_AGE', 'BINARY_SURPRISAL__FLAG_EMP_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE', 'BINARY_SURPRISAL__FLAG_WORK_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE', 'COND_SURPRISAL__OCCUPATION_TYPE', 'RESIDUAL__CNT_FAM_MEMBERS', 'ORDINAL_SURPRISAL__REGION_RATING_CLIENT', 'ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT', 'COND_SURPRISAL__ORGANIZATION_TYPE', 'RESIDUAL__EXT_SOURCE_1', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_1', 'RESIDUAL__EXT_SOURCE_2', 'RESIDUAL__EXT_SOURCE_3', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_3', 'RESIDUAL__DAYS_LAST_PHONE_CHANGE', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR']
+Sample row 1: ['2', '2', '0.42260870813143236', '0.001735036913222044', '0.03241956676852828', '0.00014356113951747524', '-0.0001435508351101732', '', '-0.5564266661687611', '0.11739266580178942', '0.09270378401783574', '-0.04343646082228503', '1.3584626682798198', '0.096902450900613', '0.04475793139857263', '0.04703797173798465', '-0.012220075845038168', '-3991.012419884217', '4.887854320962379e-05', '-1.646933193114954', '2133.536059029656', '-236.30411816711148', '', '0.07336364138585802', '2.9461183166141893e-05', '2.946074918974695e-05', '0.8893776379928456', '0.5890885911620568', '0.7708674782373037', '-8.076296113568304e-05', '0.005759153759169287', '-0.005722849326247115', '1.4722461701197964', '', '0.22977542934939266', '0.0494226171884673', '', '0.0002971658913817657', '220.03791582185033', '', '', '', '', '', '', '', '', '', '', '']
+Sample row 2: ['8', '8', '5.511808614196969e-05', '0.005538887805981328', '0.1027098094887873', '0.00015298923955563327', '0.00015297753729870411', '-0.0001275848465810414', '0.31116334229956166', '0.07480373136487906', '-0.3387129333180141', '0.005643757845549047', '0.7721775267200068', '0.2724502635546068', '0.03922090169806044', '0.22503858304999233', '-0.006507796356208895', '-1004.6193270389485', '3.2518237415201725e-05', '-1.7183059170734412', '-1795.6809473823596', '122.5281585576513', '-1.1347271476110743', '0.2864029985187433', '2.7782312090340712e-05', '2.778192616548214e-05', '0.21154975886867158', '-0.19067099124507653', '0.8243301086266281', '1.5648556927372326e-05', '0.0014083360878405975', '-0.0008792466431626345', '1.717064034315261', '', '0.5037327291523372', '0.15338792353765485', '0.12689032750734186', '0.18619461008164417', '959.7750459763536', '0.0023384497504713854', '-0.0023357177068507916', '0.19260325066477743', '-0.17519084828629822', '', '0.06665835476795877', '-0.06448523909676611', '', '0.19337280194556627', '-0.17582533705826986', '']
+
+--- Inner_Fold_Assignments.csv structure ---
+File: Inner_Fold_Assignments.csv
+Size: 1966.6 KB
+Header (3 columns): ['row_index', 'SK_ID_CURR', 'inner_fold']
+Sample row 1: ['0', '0', '3']
+Sample row 2: ['1', '1', '5']
+Sample row 3: ['3', '3', '5']
+Sample row 4: ['4', '4', '5']
+Sample row 5: ['5', '5', '3']
+
+--- Dependency_Metrics.csv structure ---
+File: Dependency_Metrics.csv
+Size: 14.9 KB
+Header (19 columns): ['target_feature', 'component', 'partition', 'n_rows', 'n_classes_eval', 'mean_surprisal_nats', 'frequency_baseline_mean_surprisal_nats', 'surprisal_improvement_vs_frequency_nats', 'top1_accuracy', 'frequency_baseline_top1_accuracy', 'unknown_category_rate', 'frequency_unknown_rate', 'brier', 'roc_auc', 'positive_rate', 'target_scale', 'rmse', 'mae', 'r2']
+Sample row 1: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_train_inner_oof', '136962', '2.0', '0.20684929602134333', '0.39550515023664845', '0.18865585421530512', '0.8804485915801463', '0.8651523780318628', '0.0', '0.0', '0.07280369283831815', '0.9240546988252997', '0.13484762196813715', '', '', '', '']
+Sample row 2: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_validation', '34240', '2.0', '0.20520493082107316', '0.3971176612567082', '0.19191273043563506', '0.8824766355140187', '0.8642815420560748', '0.0', '0.0', '0.07216005762356364', '0.9266028174457854', '0.13571845794392523', '', '', '', '']
+Sample row 3: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '2.0', '0.0310482315586541', '0.3128678056431929', '0.2818195740845388', '0.9934288342752005', '0.9054847329916327', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 4: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_validation', '34240', '2.0', '0.030364768554023088', '0.3150262928622978', '0.2846615243082747', '0.9933995327102804', '0.9045268691588785', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 5: ['CODE_GENDER', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '3.0', '0.38022416947437837', '0.6428697900096645', '0.2626456205352861', '0.8295293585081993', '0.6576860735094405', '0.0', '0.0', '', '', '', '', '', '', '']
+
+####################################################################################################
+FOLDER: Stage_II_B_31_r3_f4
+####################################################################################################
+FILE Dependency_Config.json | 0.004 MB
+FILE Dependency_Metrics.csv | 0.015 MB
+FILE Dependency_Train_OOF.csv.gz | 52.560 MB
+FILE Dependency_Validation.csv.gz | 13.020 MB
+FILE Feature_Column_List.txt | 0.002 MB
+FILE Inner_Fold_Assignments.csv | 1.920 MB
+FILE SPLIT_COMPLETE.json | 0.000 MB
+
+--- Dependency_Config.json ---
+{
+  "script_version": "stage2b_full31_v1.1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "stage": "II-B full 31-predictor dependency generation",
+  "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+  "rows": 171202,
+  "predictors": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "target_was_loaded": false,
+  "outer_cv": {
+    "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
+    "repetition": 3,
+    "fold": 4,
+    "n_train": 136962,
+    "n_validation": 34240
+  },
+  "inner_cv": {
+    "type": "KFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261335,
+    "uses_TARGET": false
+  },
+  "seed_manifest": {
+    "outer_split_seed_base": 20261335,
+    "inner_split_seed": 20261335,
+    "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
+  },
+  "numeric_dependency_model": {
+    "library": "CatBoost",
+    "iterations": 200,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "thread_count": 4
+  },
+  "classification_dependency_model": {
+    "library": "LightGBM",
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 50,
+    "learning_rate": 0.05,
+    "max_bin": 127,
+    "thread_count": 2
+  },
+  "feature_semantics": {
+    "log1p_regression_targets": [
+      "AMT_ANNUITY",
+      "AMT_CREDIT",
+      "AMT_GOODS_PRICE",
+      "AMT_INCOME_TOTAL",
+      "CNT_FAM_MEMBERS",
+      "OWN_CAR_AGE"
+    ],
+    "identity_regression_targets": [
+      "DAYS_BIRTH",
+      "DAYS_ID_PUBLISH",
+      "DAYS_LAST_PHONE_CHANGE",
+      "DAYS_REGISTRATION",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "REGION_POPULATION_RELATIVE"
+    ],
+    "hurdle_counts": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "hurdle_positive_magnitude_models": [
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "binary_targets": [
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE"
+    ],
+    "ordinal_targets": [
+      "REGION_RATING_CLIENT"
+    ],
+    "nominal_targets": [
+      "CODE_GENDER",
+      "NAME_CONTRACT_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "NAME_INCOME_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "separate_missingness_targets": [
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_3",
+      "OWN_CAR_AGE"
+    ],
+    "shared_bureau_missingness_group": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "days_employed_sentinel": 365243
+  },
+  "target_usage": "TARGET is not loaded, predicted, or used in dependency model fitting or inner splitting.",
+  "checkpointing": "One compressed target checkpoint is written after each completed target and shared group event; checkpoint directory is persistent on Drive.",
+  "final_outputs": "Written under /content and downloadable to the user's PC.",
+  "baseline_config": "/content/baseline_artifacts/Baseline_Run_Config.json"
+}
+
+--- SPLIT_COMPLETE.json ---
+{
+  "split_key": "r3_f4",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136962,
+  "n_validation_rows": 34240,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793613095.3371925
+}
+
+--- Dependency_Validation.csv.gz structure ---
+File: Dependency_Validation.csv.gz
+Compressed size: 13.020 MB
+Header (50 columns): ['row_index', 'SK_ID_CURR', 'BUREAU_MISSINGNESS_SURPRISAL', 'COND_SURPRISAL__NAME_CONTRACT_TYPE', 'COND_SURPRISAL__CODE_GENDER', 'HURDLE_SURPRISAL__CNT_CHILDREN', 'HURDLE_RESIDUAL_PROB__CNT_CHILDREN', 'POSITIVE_LOG_RESIDUAL__CNT_CHILDREN', 'RESIDUAL__AMT_INCOME_TOTAL', 'RESIDUAL__AMT_CREDIT', 'RESIDUAL__AMT_ANNUITY', 'RESIDUAL__AMT_GOODS_PRICE', 'COND_SURPRISAL__NAME_INCOME_TYPE', 'COND_SURPRISAL__NAME_EDUCATION_TYPE', 'COND_SURPRISAL__NAME_FAMILY_STATUS', 'COND_SURPRISAL__NAME_HOUSING_TYPE', 'RESIDUAL__REGION_POPULATION_RELATIVE', 'RESIDUAL__DAYS_BIRTH', 'SENTINEL_SURPRISAL__DAYS_EMPLOYED', 'VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED', 'RESIDUAL__DAYS_REGISTRATION', 'RESIDUAL__DAYS_ID_PUBLISH', 'RESIDUAL__OWN_CAR_AGE', 'MISSINGNESS_SURPRISAL__OWN_CAR_AGE', 'BINARY_SURPRISAL__FLAG_EMP_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE', 'BINARY_SURPRISAL__FLAG_WORK_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE', 'COND_SURPRISAL__OCCUPATION_TYPE', 'RESIDUAL__CNT_FAM_MEMBERS', 'ORDINAL_SURPRISAL__REGION_RATING_CLIENT', 'ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT', 'COND_SURPRISAL__ORGANIZATION_TYPE', 'RESIDUAL__EXT_SOURCE_1', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_1', 'RESIDUAL__EXT_SOURCE_2', 'RESIDUAL__EXT_SOURCE_3', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_3', 'RESIDUAL__DAYS_LAST_PHONE_CHANGE', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR']
+Sample row 1: ['7', '7', '0.3868093628873916', '0.0005967233025189798', '0.6905799438189237', '0.00012987432444326198', '-0.00012986589113828115', '', '0.0956569210887821', '0.0035825757790330925', '0.3362101567006768', '-0.006081012875759129', '0.6569667501970784', '1.792747541636622', '0.007976324621390253', '0.5779998133860053', '-0.01127524047354956', '1924.8297931943416', '2.679772709233885e-05', '-0.27268463610489135', '2466.017478974877', '-101.53134637563448', '', '0.4654492413778927', '3.646772494588265e-05', '3.646706000648425e-05', '0.14679814481152761', '-0.1365317446262989', '1.3335688695300483', '-0.0006895623038535303', '0.004421345293466173', '-0.004394025910100741', '0.6897848573211285', '', '0.3451680084188488', '-0.07866840886873333', '', '0.0003567972483634379', '286.8958576830513', '', '', '', '', '', '', '', '', '', '', '']
+Sample row 2: ['10', '10', '8.86821646759326e-05', '0.121313233731038', '0.041010466979282886', '0.0002065035777953819', '0.00020648225739916537', '0.0001505561348070783', '0.05084469611802511', '-0.00019265537279089529', '-0.0830757737771961', '0.043697961786890005', '0.15784073160541204', '0.09210214151128517', '0.17021623109729525', '0.06299114101077395', '0.004228764831055394', '-5109.128670871254', '2.866515276088112e-05', '0.5285946249719', '1604.866182313961', '-35.578767162840904', '', '0.20175530686651708', '3.5644083554438324e-05', '3.564344831163968e-05', '0.997868880960406', '0.6313357279602356', '1.5465392120430452', '0.00020168457703340081', '0.0002639051488382727', '-0.00013968938442454615', '1.2528908990444667', '', '0.283003166806958', '-0.04093949690356774', '0.03294399668332848', '0.2412091925921841', '759.8535937866232', '0.006919502438496315', '-0.006895617803180528', '0.09626884726530646', '-0.09178018916921718', '', '0.08456883803789533', '-0.08109160265150162', '', '0.6328770533565217', '-0.46893829188696057', '']
+
+--- Inner_Fold_Assignments.csv structure ---
+File: Inner_Fold_Assignments.csv
+Size: 1966.4 KB
+Header (3 columns): ['row_index', 'SK_ID_CURR', 'inner_fold']
+Sample row 1: ['0', '0', '3']
+Sample row 2: ['1', '1', '5']
+Sample row 3: ['2', '2', '3']
+Sample row 4: ['3', '3', '3']
+Sample row 5: ['4', '4', '1']
+
+--- Dependency_Metrics.csv structure ---
+File: Dependency_Metrics.csv
+Size: 14.9 KB
+Header (19 columns): ['target_feature', 'component', 'partition', 'n_rows', 'n_classes_eval', 'mean_surprisal_nats', 'frequency_baseline_mean_surprisal_nats', 'surprisal_improvement_vs_frequency_nats', 'top1_accuracy', 'frequency_baseline_top1_accuracy', 'unknown_category_rate', 'frequency_unknown_rate', 'brier', 'roc_auc', 'positive_rate', 'target_scale', 'rmse', 'mae', 'r2']
+Sample row 1: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_train_inner_oof', '136962', '2.0', '0.2067277169205106', '0.39649004786187864', '0.18976233094136805', '0.8807479446853872', '0.8646193834786291', '0.0', '0.0', '0.07275204151891353', '0.9245839705586031', '0.1353806165213709', '', '', '', '']
+Sample row 2: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_validation', '34240', '2.0', '0.2058597790755654', '0.393161855560432', '0.18730207648486658', '0.880286214953271', '0.8664135514018692', '0.0', '0.0', '0.07244882129735887', '0.9241882832482942', '0.13358644859813085', '', '', '', '']
+Sample row 3: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '2.0', '0.0311483671975581', '0.31407121634963847', '0.2829228491520804', '0.993472642046699', '0.9049517384383989', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 4: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_validation', '34240', '2.0', '0.02923579789134727', '0.3102177038740743', '0.28098190598272704', '0.9942757009345794', '0.9066588785046729', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 5: ['CODE_GENDER', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '3.0', '0.3811755064549465', '0.6435568852484187', '0.2623813787934722', '0.829047473021714', '0.6565397701552256', '0.0', '0.0', '', '', '', '', '', '', '']
+
+####################################################################################################
+FOLDER: Stage_II_B_31_r4_f5
+####################################################################################################
+FILE Dependency_Config.json | 0.004 MB
+FILE Dependency_Metrics.csv | 0.015 MB
+FILE Dependency_Train_OOF.csv.gz | 52.735 MB
+FILE Dependency_Validation.csv.gz | 13.048 MB
+FILE Feature_Column_List.txt | 0.002 MB
+FILE Inner_Fold_Assignments.csv | 1.920 MB
+FILE SPLIT_COMPLETE.json | 0.000 MB
+
+--- Dependency_Config.json ---
+{
+  "script_version": "stage2b_full31_v1.1",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "stage": "II-B full 31-predictor dependency generation",
+  "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+  "rows": 171202,
+  "predictors": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "CNT_CHILDREN",
+    "AMT_INCOME_TOTAL",
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "AMT_GOODS_PRICE",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "REGION_POPULATION_RELATIVE",
+    "DAYS_BIRTH",
+    "DAYS_EMPLOYED",
+    "DAYS_REGISTRATION",
+    "DAYS_ID_PUBLISH",
+    "OWN_CAR_AGE",
+    "FLAG_EMP_PHONE",
+    "FLAG_WORK_PHONE",
+    "OCCUPATION_TYPE",
+    "CNT_FAM_MEMBERS",
+    "REGION_RATING_CLIENT",
+    "ORGANIZATION_TYPE",
+    "EXT_SOURCE_1",
+    "EXT_SOURCE_2",
+    "EXT_SOURCE_3",
+    "DAYS_LAST_PHONE_CHANGE",
+    "AMT_REQ_CREDIT_BUREAU_HOUR",
+    "AMT_REQ_CREDIT_BUREAU_MON",
+    "AMT_REQ_CREDIT_BUREAU_QRT",
+    "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "target_was_loaded": false,
+  "outer_cv": {
+    "source": "/content/baseline_artifacts/Baseline_CV_Fold_Assignments.csv",
+    "repetition": 3,
+    "fold": 5,
+    "n_train": 136962,
+    "n_validation": 34240
+  },
+  "inner_cv": {
+    "type": "KFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 20261336,
+    "uses_TARGET": false
+  },
+  "seed_manifest": {
+    "outer_split_seed_base": 20261336,
+    "inner_split_seed": 20261336,
+    "target_model_seed_rule": "seed_base + crc32(target/component) mod 100000 + fixed fit offset"
+  },
+  "numeric_dependency_model": {
+    "library": "CatBoost",
+    "iterations": 200,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "thread_count": 4
+  },
+  "classification_dependency_model": {
+    "library": "LightGBM",
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "min_child_samples": 50,
+    "learning_rate": 0.05,
+    "max_bin": 127,
+    "thread_count": 2
+  },
+  "feature_semantics": {
+    "log1p_regression_targets": [
+      "AMT_ANNUITY",
+      "AMT_CREDIT",
+      "AMT_GOODS_PRICE",
+      "AMT_INCOME_TOTAL",
+      "CNT_FAM_MEMBERS",
+      "OWN_CAR_AGE"
+    ],
+    "identity_regression_targets": [
+      "DAYS_BIRTH",
+      "DAYS_ID_PUBLISH",
+      "DAYS_LAST_PHONE_CHANGE",
+      "DAYS_REGISTRATION",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "REGION_POPULATION_RELATIVE"
+    ],
+    "hurdle_counts": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "hurdle_positive_magnitude_models": [
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR",
+      "CNT_CHILDREN"
+    ],
+    "binary_targets": [
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE"
+    ],
+    "ordinal_targets": [
+      "REGION_RATING_CLIENT"
+    ],
+    "nominal_targets": [
+      "CODE_GENDER",
+      "NAME_CONTRACT_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "NAME_INCOME_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "separate_missingness_targets": [
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_3",
+      "OWN_CAR_AGE"
+    ],
+    "shared_bureau_missingness_group": [
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "days_employed_sentinel": 365243
+  },
+  "target_usage": "TARGET is not loaded, predicted, or used in dependency model fitting or inner splitting.",
+  "checkpointing": "One compressed target checkpoint is written after each completed target and shared group event; checkpoint directory is persistent on Drive.",
+  "final_outputs": "Written under /content and downloadable to the user's PC.",
+  "baseline_config": "/content/baseline_artifacts/Baseline_Run_Config.json"
+}
+
+--- SPLIT_COMPLETE.json ---
+{
+  "split_key": "r3_f5",
+  "run_signature": "0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634",
+  "status": "complete",
+  "n_train_rows": 136962,
+  "n_validation_rows": 34240,
+  "n_predictor_targets_completed": 31,
+  "n_generated_features": 48,
+  "train_feature_file": "Dependency_Train_OOF.csv.gz",
+  "validation_feature_file": "Dependency_Validation.csv.gz",
+  "metrics_file": "Dependency_Metrics.csv",
+  "target_was_loaded": false,
+  "completed_unix_time": 1793613157.5111992
+}
+
+--- Dependency_Validation.csv.gz structure ---
+File: Dependency_Validation.csv.gz
+Compressed size: 13.048 MB
+Header (50 columns): ['row_index', 'SK_ID_CURR', 'BUREAU_MISSINGNESS_SURPRISAL', 'COND_SURPRISAL__NAME_CONTRACT_TYPE', 'COND_SURPRISAL__CODE_GENDER', 'HURDLE_SURPRISAL__CNT_CHILDREN', 'HURDLE_RESIDUAL_PROB__CNT_CHILDREN', 'POSITIVE_LOG_RESIDUAL__CNT_CHILDREN', 'RESIDUAL__AMT_INCOME_TOTAL', 'RESIDUAL__AMT_CREDIT', 'RESIDUAL__AMT_ANNUITY', 'RESIDUAL__AMT_GOODS_PRICE', 'COND_SURPRISAL__NAME_INCOME_TYPE', 'COND_SURPRISAL__NAME_EDUCATION_TYPE', 'COND_SURPRISAL__NAME_FAMILY_STATUS', 'COND_SURPRISAL__NAME_HOUSING_TYPE', 'RESIDUAL__REGION_POPULATION_RELATIVE', 'RESIDUAL__DAYS_BIRTH', 'SENTINEL_SURPRISAL__DAYS_EMPLOYED', 'VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED', 'RESIDUAL__DAYS_REGISTRATION', 'RESIDUAL__DAYS_ID_PUBLISH', 'RESIDUAL__OWN_CAR_AGE', 'MISSINGNESS_SURPRISAL__OWN_CAR_AGE', 'BINARY_SURPRISAL__FLAG_EMP_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE', 'BINARY_SURPRISAL__FLAG_WORK_PHONE', 'BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE', 'COND_SURPRISAL__OCCUPATION_TYPE', 'RESIDUAL__CNT_FAM_MEMBERS', 'ORDINAL_SURPRISAL__REGION_RATING_CLIENT', 'ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT', 'COND_SURPRISAL__ORGANIZATION_TYPE', 'RESIDUAL__EXT_SOURCE_1', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_1', 'RESIDUAL__EXT_SOURCE_2', 'RESIDUAL__EXT_SOURCE_3', 'MISSINGNESS_SURPRISAL__EXT_SOURCE_3', 'RESIDUAL__DAYS_LAST_PHONE_CHANGE', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT', 'HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR', 'HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR', 'POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR']
+Sample row 1: ['13', '13', '7.280879150508504e-05', '0.0014983522723234625', '0.1569910047242384', '8.343659871884058e-05', '-8.343311798267856e-05', '', '0.7259287079913577', '0.04422905517934517', '-0.2720542237754824', '-0.0034174987601076623', '5.121107442866118e-05', '0.20651260056463583', '0.20694278197600166', '0.06612841446544579', '-0.008318619235922923', '1109.9999749189483', '0.000183606282687686', '', '2073.427850224679', '-44.013599727870314', '', '0.20448029942749182', '0.0001015477873769525', '-0.00010154263157491477', '0.000639782517937396', '-0.0006395779007414508', '0.0001306455365235237', '-4.9140702246486256e-05', '0.0014221850086615893', '-0.0012871788720572042', '4.76782718112075e-05', '', '0.23062112815564767', '0.018253211877619857', '0.21423398231609914', '0.20011615795117224', '-292.2941369114751', '0.004792961856291853', '-0.004781493943685475', '0.15013708690095365', '-0.13941000727686156', '', '0.2493209732670367', '-0.22067021079290897', '', '0.2748459121074565', '0.2403108268895755', '-0.17362878939413418']
+Sample row 2: ['16', '16', '0.43573628993265245', '0.0018026096888293982', '0.04163442004511846', '0.00028335908741242345', '-0.0002833189450179042', '', '-0.1816527125388152', '0.18332023804213549', '-0.15798716397787338', '-0.15706261877202365', '1.0575788081138402', '0.4054792436262822', '0.4803378273608075', '0.21056305746825588', '0.007086088636344995', '687.6429363837142', '3.325655594713394e-05', '0.4214443298858921', '4591.636006055656', '-344.6176715848187', '0.6514776235353086', '2.090455796391812', '3.119977944515107e-05', '3.11992927370941e-05', '0.14004969454550764', '-0.1306849658901426', '0.5324224503429612', '-0.0002476433373853615', '0.0004079267429963324', '-0.00041526567423888494', '1.261105942292189', '', '0.5506710745189384', '0.08816482023294858', '', '1.5190920177871463', '447.19347825258274', '0.004087130467271504', '-0.004078789516930016', '1.549693171860206', '0.7876868925303664', '-0.27042644712534747', '0.15042872247841843', '-0.13966094934275408', '', '0.19157181096309037', '0.1743396684860482', '0.4324988388643427']
+
+--- Inner_Fold_Assignments.csv structure ---
+File: Inner_Fold_Assignments.csv
+Size: 1966.3 KB
+Header (3 columns): ['row_index', 'SK_ID_CURR', 'inner_fold']
+Sample row 1: ['0', '0', '3']
+Sample row 2: ['1', '1', '3']
+Sample row 3: ['2', '2', '5']
+Sample row 4: ['3', '3', '3']
+Sample row 5: ['4', '4', '4']
+
+--- Dependency_Metrics.csv structure ---
+File: Dependency_Metrics.csv
+Size: 15.0 KB
+Header (19 columns): ['target_feature', 'component', 'partition', 'n_rows', 'n_classes_eval', 'mean_surprisal_nats', 'frequency_baseline_mean_surprisal_nats', 'surprisal_improvement_vs_frequency_nats', 'top1_accuracy', 'frequency_baseline_top1_accuracy', 'unknown_category_rate', 'frequency_unknown_rate', 'brier', 'roc_auc', 'positive_rate', 'target_scale', 'rmse', 'mae', 'r2']
+Sample row 1: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_train_inner_oof', '136962', '2.0', '0.2059990048138215', '0.3950687408674329', '0.18906973605361138', '0.8804850980563952', '0.8653860194798557', '0.0', '0.0', '0.07249283121169432', '0.9246971854431408', '0.13461398052014428', '', '', '', '']
+Sample row 2: ['BUREAU_MISSINGNESS_SHARED', 'shared_bureau_missingness_surprisal', 'outer_validation', '34240', '2.0', '0.20804186484518902', '0.3988586192887279', '0.19081675444353888', '0.8800525700934579', '0.8633469626168224', '0.0', '0.0', '0.0732164743272852', '0.924427267117388', '0.13665303738317758', '', '', '', '']
+Sample row 3: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '2.0', '0.031192045686529783', '0.3135405667571599', '0.28234852107063013', '0.9933996290942013', '0.9051853798863918', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 4: ['NAME_CONTRACT_TYPE', 'nominal_conditional_probability', 'outer_validation', '34240', '2.0', '0.030459174275806387', '0.31232191243402857', '0.28186273815822216', '0.9938668224299065', '0.9057242990654205', '0.0', '0.0', '', '', '', '', '', '', '']
+Sample row 5: ['CODE_GENDER', 'nominal_conditional_probability', 'outer_train_inner_oof', '136962', '3.0', '0.3825648169132932', '0.6423317189522855', '0.2597669020389923', '0.8295220572129496', '0.6583650939676698', '7.30129524977731e-06', '7.30129524977731e-06', '', '', '', '', '', '', '']
+
+====================================================================================================
+END OF REPORT
+====================================================================================================
