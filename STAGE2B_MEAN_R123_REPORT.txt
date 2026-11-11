@@ -1,0 +1,58 @@
+STAGE II-B MEAN FEATURES — THREE REPETITIONS
+========================================================================================
+Rows: 171,202
+Generated feature count: 48
+Run signature: 0be983309fdff231d2c8746b2cee55cf955940fceb65e22f66b356ff687bc634
+Mean definition: per row and feature, arithmetic mean over available r1/r2/r3 validation values.
+TARGET was not used to generate, align, average, or select the Stage II-B features.
+TARGET remains present only as an original column in the merged training file.
+
+LOGICAL SPLIT -> PHYSICAL FOLDER
+----------------------------------------------------------------------------------------
+r1_f1  -> Stage_II_B_31_r1_f1
+r1_f2  -> Stage_II_B_31_r1_f2
+r1_f3  -> Stage_II_B_31_r1_f3
+r1_f4  -> Stage_II_B_31_r1_f4
+r1_f5  -> Stage_II_B_31_r1_f5
+r2_f1  -> Stage_II_B_31_r2_f1
+r2_f2  -> Stage_II_B_31_r2_f2
+r2_f3  -> Stage_II_B_31_r2_f3
+r2_f4  -> Stage_II_B_31_r2_f4
+r2_f5  -> Stage_II_B_31_r2_f5
+r3_f1  -> Stage_II_B_31_r3_f1
+r3_f2  -> Stage_II_B_31_r3_f2
+r3_f3  -> Stage_II_B_31_r3_f3
+r3_f4  -> Stage_II_B_31_r3_f4
+r3_f5  -> Stage_II_B_31_r4_f5
+
+NOTES / FOLDER-NAME WARNINGS
+----------------------------------------------------------------------------------------
+FOLDER NAME MISMATCH (accepted by metadata): Stage_II_B_31_r4_f5 -> r3_f5
+
+FEATURE QUALITY
+----------------------------------------------------------------------------------------
+Features with any valid value: 48 / 48
+Features with 100% missing: 0
+Maximum feature missingness: 85.7753%
+
+STABILITY (within-row standard deviation across repetitions)
+----------------------------------------------------------------------------------------
+RESIDUAL__DAYS_BIRTH: mean_std=80.90938, p95_std=183.12247, rows_2plus=171,202
+RESIDUAL__DAYS_REGISTRATION: mean_std=49.494201, p95_std=109.86722, rows_2plus=171,202
+RESIDUAL__DAYS_ID_PUBLISH: mean_std=24.706567, p95_std=51.485054, rows_2plus=171,202
+RESIDUAL__DAYS_LAST_PHONE_CHANGE: mean_std=12.08529, p95_std=25.0353, rows_2plus=171,202
+COND_SURPRISAL__ORGANIZATION_TYPE: mean_std=0.098599339, p95_std=0.3300287, rows_2plus=171,202
+COND_SURPRISAL__OCCUPATION_TYPE: mean_std=0.068904648, p95_std=0.21628716, rows_2plus=171,202
+COND_SURPRISAL__NAME_EDUCATION_TYPE: mean_std=0.03268886, p95_std=0.11240209, rows_2plus=171,202
+COND_SURPRISAL__NAME_FAMILY_STATUS: mean_std=0.030754145, p95_std=0.1177935, rows_2plus=171,202
+COND_SURPRISAL__NAME_INCOME_TYPE: mean_std=0.030120538, p95_std=0.096710184, rows_2plus=171,202
+HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR: mean_std=0.025891155, p95_std=0.077206265, rows_2plus=148,086
+
+OUTPUT FILES
+----------------------------------------------------------------------------------------
+Dependency_Mean_R123.csv.gz
+Train_With_Dependency_Mean_R123.csv.gz
+Mean_Feature_Quality.csv
+Mean_Feature_Correlation.csv
+Mean_Feature_Stability.csv
+Pairwise_Repetition_Stability.csv
