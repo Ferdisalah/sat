@@ -1,0 +1,508 @@
+{
+  "root_dir": "/content/drive/MyDrive/Competition",
+  "expected_rows": 171202,
+  "expected_raw_features": 32,
+  "expected_t2_features": 36,
+  "expected_stage2b_feature_count": 48,
+  "expected_stage2b_feature_names": [
+    "HURDLE_RESIDUAL_PROB__CNT_CHILDREN",
+    "POSITIVE_LOG_RESIDUAL__CNT_CHILDREN",
+    "RESIDUAL__AMT_INCOME_TOTAL",
+    "RESIDUAL__AMT_CREDIT",
+    "RESIDUAL__AMT_ANNUITY",
+    "RESIDUAL__AMT_GOODS_PRICE",
+    "RESIDUAL__REGION_POPULATION_RELATIVE",
+    "RESIDUAL__DAYS_BIRTH",
+    "VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED",
+    "RESIDUAL__DAYS_REGISTRATION",
+    "RESIDUAL__DAYS_ID_PUBLISH",
+    "RESIDUAL__OWN_CAR_AGE",
+    "BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE",
+    "BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE",
+    "RESIDUAL__CNT_FAM_MEMBERS",
+    "ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT",
+    "RESIDUAL__EXT_SOURCE_1",
+    "RESIDUAL__EXT_SOURCE_2",
+    "RESIDUAL__EXT_SOURCE_3",
+    "RESIDUAL__DAYS_LAST_PHONE_CHANGE",
+    "HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR",
+    "HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON",
+    "POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON",
+    "HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT",
+    "POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT",
+    "HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR",
+    "POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR",
+    "BUREAU_MISSINGNESS_SURPRISAL",
+    "COND_SURPRISAL__NAME_CONTRACT_TYPE",
+    "COND_SURPRISAL__CODE_GENDER",
+    "HURDLE_SURPRISAL__CNT_CHILDREN",
+    "COND_SURPRISAL__NAME_INCOME_TYPE",
+    "COND_SURPRISAL__NAME_EDUCATION_TYPE",
+    "COND_SURPRISAL__NAME_FAMILY_STATUS",
+    "COND_SURPRISAL__NAME_HOUSING_TYPE",
+    "SENTINEL_SURPRISAL__DAYS_EMPLOYED",
+    "MISSINGNESS_SURPRISAL__OWN_CAR_AGE",
+    "BINARY_SURPRISAL__FLAG_EMP_PHONE",
+    "BINARY_SURPRISAL__FLAG_WORK_PHONE",
+    "COND_SURPRISAL__OCCUPATION_TYPE",
+    "ORDINAL_SURPRISAL__REGION_RATING_CLIENT",
+    "COND_SURPRISAL__ORGANIZATION_TYPE",
+    "MISSINGNESS_SURPRISAL__EXT_SOURCE_1",
+    "MISSINGNESS_SURPRISAL__EXT_SOURCE_3",
+    "HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR",
+    "HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON",
+    "HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT",
+    "HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "residual_feature_count_expected": 27,
+  "surprisal_missingness_feature_count_expected": 21,
+  "status": "PASS",
+  "rows": 171202,
+  "train_columns": 34,
+  "stage2b_columns": 82,
+  "stage2b_feature_count": 48,
+  "residual_feature_count": 27,
+  "surprisal_missingness_feature_count": 21,
+  "raw_numeric_count": 24,
+  "raw_categorical_columns": [
+    "NAME_CONTRACT_TYPE",
+    "CODE_GENDER",
+    "NAME_INCOME_TYPE",
+    "NAME_EDUCATION_TYPE",
+    "NAME_FAMILY_STATUS",
+    "NAME_HOUSING_TYPE",
+    "OCCUPATION_TYPE",
+    "ORGANIZATION_TYPE"
+  ],
+  "t2_total_feature_count": 36,
+  "stage2b_feature_missingness": [
+    {
+      "feature": "HURDLE_RESIDUAL_PROB__CNT_CHILDREN",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "POSITIVE_LOG_RESIDUAL__CNT_CHILDREN",
+      "n_valid": 51252,
+      "n_missing": 119950,
+      "missing_pct": 70.06343383838974
+    },
+    {
+      "feature": "RESIDUAL__AMT_INCOME_TOTAL",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "RESIDUAL__AMT_CREDIT",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "RESIDUAL__AMT_ANNUITY",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "RESIDUAL__AMT_GOODS_PRICE",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "RESIDUAL__REGION_POPULATION_RELATIVE",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "RESIDUAL__DAYS_BIRTH",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED",
+      "n_valid": 140304,
+      "n_missing": 30898,
+      "missing_pct": 18.04768635880422
+    },
+    {
+      "feature": "RESIDUAL__DAYS_REGISTRATION",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "RESIDUAL__DAYS_ID_PUBLISH",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "RESIDUAL__OWN_CAR_AGE",
+      "n_valid": 58210,
+      "n_missing": 112992,
+      "missing_pct": 65.99922898096985
+    },
+    {
+      "feature": "BINARY_RESIDUAL_PROB__FLAG_EMP_PHONE",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "BINARY_RESIDUAL_PROB__FLAG_WORK_PHONE",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "RESIDUAL__CNT_FAM_MEMBERS",
+      "n_valid": 171200,
+      "n_missing": 2,
+      "missing_pct": 0.0011682106517447227
+    },
+    {
+      "feature": "ORDINAL_RESIDUAL_EXPECTATION__REGION_RATING_CLIENT",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "RESIDUAL__EXT_SOURCE_1",
+      "n_valid": 52274,
+      "n_missing": 118928,
+      "missing_pct": 69.46647819534819
+    },
+    {
+      "feature": "RESIDUAL__EXT_SOURCE_2",
+      "n_valid": 170833,
+      "n_missing": 369,
+      "missing_pct": 0.21553486524690132
+    },
+    {
+      "feature": "RESIDUAL__EXT_SOURCE_3",
+      "n_valid": 116616,
+      "n_missing": 54586,
+      "missing_pct": 31.883973318068715
+    },
+    {
+      "feature": "RESIDUAL__DAYS_LAST_PHONE_CHANGE",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR",
+      "n_valid": 148086,
+      "n_missing": 23116,
+      "missing_pct": 13.502178712865504
+    },
+    {
+      "feature": "HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON",
+      "n_valid": 148086,
+      "n_missing": 23116,
+      "missing_pct": 13.502178712865504
+    },
+    {
+      "feature": "POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON",
+      "n_valid": 24353,
+      "n_missing": 146849,
+      "missing_pct": 85.77528299903038
+    },
+    {
+      "feature": "HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT",
+      "n_valid": 148086,
+      "n_missing": 23116,
+      "missing_pct": 13.502178712865504
+    },
+    {
+      "feature": "POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT",
+      "n_valid": 28273,
+      "n_missing": 142929,
+      "missing_pct": 83.48559012161073
+    },
+    {
+      "feature": "HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR",
+      "n_valid": 148086,
+      "n_missing": 23116,
+      "missing_pct": 13.502178712865504
+    },
+    {
+      "feature": "POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR",
+      "n_valid": 108218,
+      "n_missing": 62984,
+      "missing_pct": 36.78928984474481
+    },
+    {
+      "feature": "BUREAU_MISSINGNESS_SURPRISAL",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "COND_SURPRISAL__NAME_CONTRACT_TYPE",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "COND_SURPRISAL__CODE_GENDER",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "HURDLE_SURPRISAL__CNT_CHILDREN",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "COND_SURPRISAL__NAME_INCOME_TYPE",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "COND_SURPRISAL__NAME_EDUCATION_TYPE",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "COND_SURPRISAL__NAME_FAMILY_STATUS",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "COND_SURPRISAL__NAME_HOUSING_TYPE",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "SENTINEL_SURPRISAL__DAYS_EMPLOYED",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "MISSINGNESS_SURPRISAL__OWN_CAR_AGE",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "BINARY_SURPRISAL__FLAG_EMP_PHONE",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "BINARY_SURPRISAL__FLAG_WORK_PHONE",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "COND_SURPRISAL__OCCUPATION_TYPE",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "ORDINAL_SURPRISAL__REGION_RATING_CLIENT",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "COND_SURPRISAL__ORGANIZATION_TYPE",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "MISSINGNESS_SURPRISAL__EXT_SOURCE_1",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "MISSINGNESS_SURPRISAL__EXT_SOURCE_3",
+      "n_valid": 171202,
+      "n_missing": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "feature": "HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_HOUR",
+      "n_valid": 148086,
+      "n_missing": 23116,
+      "missing_pct": 13.502178712865504
+    },
+    {
+      "feature": "HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_MON",
+      "n_valid": 148086,
+      "n_missing": 23116,
+      "missing_pct": 13.502178712865504
+    },
+    {
+      "feature": "HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_QRT",
+      "n_valid": 148086,
+      "n_missing": 23116,
+      "missing_pct": 13.502178712865504
+    },
+    {
+      "feature": "HURDLE_SURPRISAL__AMT_REQ_CREDIT_BUREAU_YEAR",
+      "n_valid": 148086,
+      "n_missing": 23116,
+      "missing_pct": 13.502178712865504
+    }
+  ],
+  "ext_source_original_missing_counts": {
+    "EXT_SOURCE_1": 118928,
+    "EXT_SOURCE_2": 369,
+    "EXT_SOURCE_3": 54586
+  },
+  "t2_pooled_oof_metrics_recomputed": {
+    "pooled_oof_roc_auc": 0.7426396613887293,
+    "pooled_oof_average_precision": 0.2241194436876612,
+    "pooled_oof_logloss": 0.25054788581494275,
+    "mean_fold_roc_auc": 0.743524515008269,
+    "std_fold_roc_auc": 0.00428942242463889
+  },
+  "t2_fold_metrics_recomputed": [
+    {
+      "fold": 1,
+      "validation_rows": 34241,
+      "saved_auc": 0.7394024969050289,
+      "recomputed_auc": 0.7394024969050289,
+      "saved_ap": 0.2290968112342692,
+      "recomputed_ap": 0.2290968112342692,
+      "saved_logloss": 0.251085669810978,
+      "recomputed_logloss": 0.2510856698109782
+    },
+    {
+      "fold": 2,
+      "validation_rows": 34241,
+      "saved_auc": 0.744039397852309,
+      "recomputed_auc": 0.744039397852309,
+      "saved_ap": 0.2155715325702367,
+      "recomputed_ap": 0.21557153257023678,
+      "saved_logloss": 0.2510812428440568,
+      "recomputed_logloss": 0.2510812428440583
+    },
+    {
+      "fold": 3,
+      "validation_rows": 34240,
+      "saved_auc": 0.7502847712147486,
+      "recomputed_auc": 0.7502847712147486,
+      "saved_ap": 0.2338843172301089,
+      "recomputed_ap": 0.23388431723010897,
+      "saved_logloss": 0.2482950455486517,
+      "recomputed_logloss": 0.2482950455486494
+    },
+    {
+      "fold": 4,
+      "validation_rows": 34240,
+      "saved_auc": 0.7402644624006823,
+      "recomputed_auc": 0.7402644624006823,
+      "saved_ap": 0.2273214676470819,
+      "recomputed_ap": 0.2273214676470819,
+      "saved_logloss": 0.251476629112573,
+      "recomputed_logloss": 0.2514766291125742
+    },
+    {
+      "fold": 5,
+      "validation_rows": 34240,
+      "saved_auc": 0.7436314466685757,
+      "recomputed_auc": 0.7436314466685757,
+      "saved_ap": 0.2194427911006194,
+      "recomputed_ap": 0.21944279110061946,
+      "saved_logloss": 0.2508008104751251,
+      "recomputed_logloss": 0.2508008104751293
+    }
+  ],
+  "fold_validation_sizes": {
+    "1": 34241,
+    "2": 34241,
+    "3": 34240,
+    "4": 34240,
+    "5": 34240
+  },
+  "checks": [
+    {
+      "check": "Stage II-B feature schema",
+      "status": "PASS",
+      "detail": "48 expected feature names found: 27 Residual + 21 Surprisal/Missingness; actual stored order retained"
+    },
+    {
+      "check": "T2 input feature count",
+      "status": "PASS",
+      "detail": "36 total = 24 raw numeric + CREDIT_TERM + 3 indicators + 8 categorical"
+    },
+    {
+      "check": "T2 imputation schema",
+      "status": "PASS",
+      "detail": "row_index, SK_ID_CURR, 3 filled EXT_SOURCE values and 3 missing indicators"
+    },
+    {
+      "check": "Row count",
+      "status": "PASS",
+      "detail": "171,202 rows in train, Stage II-B, and T2 imputation"
+    },
+    {
+      "check": "ID alignment",
+      "status": "PASS",
+      "detail": "SK_ID_CURR matches across all three files; unique in train"
+    },
+    {
+      "check": "TARGET integrity",
+      "status": "PASS",
+      "detail": "TARGET unchanged; defaults=13,821; prevalence=8.072920%"
+    },
+    {
+      "check": "Original predictor integrity",
+      "status": "PASS",
+      "detail": "All 32 original predictors unchanged across 171,202 rows"
+    },
+    {
+      "check": "EXT_SOURCE imputation",
+      "status": "PASS",
+      "detail": "Observed values preserved; imputed values finite and in [0,1]; three missing indicators verified"
+    },
+    {
+      "check": "Stage II-B numerical integrity",
+      "status": "PASS",
+      "detail": "All 48 features numeric or NaN; no +/- infinity detected"
+    },
+    {
+      "check": "T2 OOF alignment",
+      "status": "PASS",
+      "detail": "171,202 OOF rows; SK_ID_CURR/TARGET order matches train.csv; probabilities valid"
+    },
+    {
+      "check": "T2 OOF metric reconstruction",
+      "status": "PASS",
+      "detail": "AUC=0.742640; AP=0.224119; LogLoss=0.250548"
+    },
+    {
+      "check": "T2 five-fold reconstruction",
+      "status": "PASS",
+      "detail": "Saved fold metrics reproduce from OOF predictions under StratifiedKFold(seed=42)"
+    },
+    {
+      "check": "T2 summary JSON",
+      "status": "PASS",
+      "detail": "Saved summary metrics agree with recomputed OOF metrics"
+    }
+  ],
+  "warnings": [],
+  "errors": []
+}

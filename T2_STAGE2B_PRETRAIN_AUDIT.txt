@@ -1,0 +1,65 @@
+========================================================================================
+HOME CREDIT — T2 + STAGE II-B MEAN R123 PRE-TRAINING AUDIT
+========================================================================================
+STATUS: PASS
+Rows: 171,202
+Original raw predictors: 32 (24 numeric + 8 categorical)
+T2 features: 36
+Stage II-B features: 48 (27 Residual + 21 Surprisal/Missingness)
+
+CHECKS
+----------------------------------------------------------------------------------------
+[PASS] Stage II-B feature schema: 48 expected feature names found: 27 Residual + 21 Surprisal/Missingness; actual stored order retained
+[PASS] T2 input feature count: 36 total = 24 raw numeric + CREDIT_TERM + 3 indicators + 8 categorical
+[PASS] T2 imputation schema: row_index, SK_ID_CURR, 3 filled EXT_SOURCE values and 3 missing indicators
+[PASS] Row count: 171,202 rows in train, Stage II-B, and T2 imputation
+[PASS] ID alignment: SK_ID_CURR matches across all three files; unique in train
+[PASS] TARGET integrity: TARGET unchanged; defaults=13,821; prevalence=8.072920%
+[PASS] Original predictor integrity: All 32 original predictors unchanged across 171,202 rows
+[PASS] EXT_SOURCE imputation: Observed values preserved; imputed values finite and in [0,1]; three missing indicators verified
+[PASS] Stage II-B numerical integrity: All 48 features numeric or NaN; no +/- infinity detected
+[PASS] T2 OOF alignment: 171,202 OOF rows; SK_ID_CURR/TARGET order matches train.csv; probabilities valid
+[PASS] T2 OOF metric reconstruction: AUC=0.742640; AP=0.224119; LogLoss=0.250548
+[PASS] T2 five-fold reconstruction: Saved fold metrics reproduce from OOF predictions under StratifiedKFold(seed=42)
+[PASS] T2 summary JSON: Saved summary metrics agree with recomputed OOF metrics
+
+T2 RECOMPUTED OOF METRICS
+----------------------------------------------------------------------------------------
+pooled_oof_roc_auc                  : 0.742639661
+pooled_oof_average_precision        : 0.224119444
+pooled_oof_logloss                  : 0.250547886
+mean_fold_roc_auc                   : 0.743524515
+std_fold_roc_auc                    : 0.004289422
+
+T2 FOLD AUC
+----------------------------------------------------------------------------------------
+Fold 1: AUC=0.739402497 | validation_rows=34,241
+Fold 2: AUC=0.744039398 | validation_rows=34,241
+Fold 3: AUC=0.750284771 | validation_rows=34,240
+Fold 4: AUC=0.740264462 | validation_rows=34,240
+Fold 5: AUC=0.743631447 | validation_rows=34,240
+
+STAGE II-B MISSINGNESS — TOP 12
+----------------------------------------------------------------------------------------
+POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_MON: 85.7753% (146,849 missing)
+POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_QRT: 83.4856% (142,929 missing)
+POSITIVE_LOG_RESIDUAL__CNT_CHILDREN: 70.0634% (119,950 missing)
+RESIDUAL__EXT_SOURCE_1: 69.4665% (118,928 missing)
+RESIDUAL__OWN_CAR_AGE: 65.9992% (112,992 missing)
+POSITIVE_LOG_RESIDUAL__AMT_REQ_CREDIT_BUREAU_YEAR: 36.7893% (62,984 missing)
+RESIDUAL__EXT_SOURCE_3: 31.8840% (54,586 missing)
+VALID_DURATION_LOG_RESIDUAL__DAYS_EMPLOYED: 18.0477% (30,898 missing)
+HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_HOUR: 13.5022% (23,116 missing)
+HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_MON: 13.5022% (23,116 missing)
+HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_QRT: 13.5022% (23,116 missing)
+HURDLE_RESIDUAL_PROB__AMT_REQ_CREDIT_BUREAU_YEAR: 13.5022% (23,116 missing)
+
+EXT_SOURCE MISSING COUNTS
+----------------------------------------------------------------------------------------
+EXT_SOURCE_1: 118,928 missing
+EXT_SOURCE_2: 369 missing
+EXT_SOURCE_3: 54,586 missing
+
+JSON report: /content/drive/MyDrive/Competition/output/tabnet_t2_stage2b_audit/T2_STAGE2B_PRETRAIN_AUDIT.json
+Text report: /content/drive/MyDrive/Competition/output/tabnet_t2_stage2b_audit/T2_STAGE2B_PRETRAIN_AUDIT.txt
+========================================================================================
