@@ -1,0 +1,4 @@
+decision_step,standalone_step_auc,auc_without_this_step,delta_auc_full_minus_without_step,interpretation,mean_pairwise_auc_credit_true_defaults,mean_pairwise_auc_credit_true_nondefaults
+1,0.698719300138,0.704006485995,0.0386331753933,Removal reduces AUC; this step helps conditionally,0.698719300138,0.698719300138
+2,0.632683545741,0.714038115347,0.0286015460412,Removal reduces AUC; this step helps conditionally,0.632683545741,0.632683545741
+3,0.639038124577,0.724237731666,0.018401929723,Removal reduces AUC; this step helps conditionally,0.639038124577,0.639038124577
