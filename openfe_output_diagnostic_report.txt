@@ -1,0 +1,540 @@
+==============================================================================
+OPENFE OUTPUT DIAGNOSTIC
+==============================================================================
+Python: 3.11.18
+Pandas: 2.3.3
+PyArrow available: True
+PyArrow version: 24.0.0
+Expected candidates from generation log: 5,986
+Expected batches from generation log: 94
+OpenFE output directory: C:\Users\UNITECH\Downloads\TABPREP_HOME_CREDIT\output\OPENFE_ORDER1_34_BASE_FEATURES
+
+--- ROOT DIRECTORY FILES ---
+Root-level files: 12
+  base_features_test.parquet | 2.41 MB
+  base_features_train.parquet | 6.01 MB
+  income_mean_by_region_rating.json | 313.00 B
+  openfe_candidate_definitions.csv | 446.08 KB
+  openfe_candidate_trees.pkl | 431.37 KB
+  openfe_generated_features_manifest.csv | 2.21 MB
+  openfe_generated_manifest_progress.csv | 2.22 MB
+  openfe_generation_summary.json | 5.17 KB
+  openfe_input_schema.json | 4.48 KB
+  openfe_output_diagnostic_report.txt | 16.82 KB
+  test_rows.parquet | 718.65 KB
+  train_rows.parquet | 1.85 MB
+
+--- CANDIDATE DEFINITIONS CSV ---
+Path: C:\Users\UNITECH\Downloads\TABPREP_HOME_CREDIT\output\OPENFE_ORDER1_34_BASE_FEATURES\openfe_candidate_definitions.csv
+Size: 446.08 KB
+Columns in header: 4
+Column names:
+  001. candidate_index
+  002. feature_id
+  003. root_operator
+  004. formula
+Sample dtypes (based on up to 8 rows):
+  candidate_index: int64
+  feature_id: object
+  root_operator: object
+  formula: object
+First rows: values intentionally omitted (metadata-only report).
+Rows sampled: 8
+
+--- GENERATED FEATURES MANIFEST CSV ---
+Path: C:\Users\UNITECH\Downloads\TABPREP_HOME_CREDIT\output\OPENFE_ORDER1_34_BASE_FEATURES\openfe_generated_features_manifest.csv
+Size: 2.21 MB
+Columns in header: 16
+Column names:
+  001. candidate_index
+  002. feature_id
+  003. root_operator
+  004. formula
+  005. batch
+  006. openfe_output_dtype
+  007. semantic_type
+  008. saved_dtype
+  009. train_missing_count
+  010. train_missing_rate
+  011. train_nunique
+  012. test_missing_count
+  013. test_missing_rate
+  014. test_nunique
+  015. train_file
+  016. test_file
+Sample dtypes (based on up to 8 rows):
+  candidate_index: int64
+  feature_id: object
+  root_operator: object
+  formula: object
+  batch: int64
+  openfe_output_dtype: object
+  semantic_type: object
+  saved_dtype: object
+  train_missing_count: int64
+  train_missing_rate: float64
+  train_nunique: int64
+  test_missing_count: int64
+  test_missing_rate: float64
+  test_nunique: int64
+  train_file: object
+  test_file: object
+First rows: values intentionally omitted (metadata-only report).
+Rows sampled: 8
+
+--- GENERATION SUMMARY JSON ---
+Path: C:\Users\UNITECH\Downloads\TABPREP_HOME_CREDIT\output\OPENFE_ORDER1_34_BASE_FEATURES\openfe_generation_summary.json
+{
+  "experiment": "HOME_CREDIT_OPENFE_ORDER1_34_BASE_FEATURES",
+  "generator": "OpenFE",
+  "openfe_version": "0.0.12",
+  "feature_order": 1,
+  "candidate_generation_method": "get_candidate_features + transform",
+  "openfe_fit_called": false,
+  "target_passed_to_openfe": false,
+  "target_used_for_feature_selection": false,
+  "raw_original_feature_count": 32,
+  "engineered_seed_features": [
+    "CREDIT_TERM",
+    "INCOME_TO_REGION_MEAN"
+  ],
+  "total_base_feature_count": 34,
+  "rows": {
+    "train": 171202,
+    "test": 61500
+  },
+  "feature_types": {
+    "numerical_including_ordinal": 26,
+    "categorical": 8,
+    "ordinal": 12,
+    "continuous_numerical": 14,
+    "categorical_columns": [
+      "NAME_CONTRACT_TYPE",
+      "CODE_GENDER",
+      "NAME_INCOME_TYPE",
+      "NAME_EDUCATION_TYPE",
+      "NAME_FAMILY_STATUS",
+      "NAME_HOUSING_TYPE",
+      "OCCUPATION_TYPE",
+      "ORGANIZATION_TYPE"
+    ],
+    "ordinal_columns": [
+      "CNT_CHILDREN",
+      "REGION_POPULATION_RELATIVE",
+      "OWN_CAR_AGE",
+      "FLAG_MOBIL",
+      "FLAG_EMP_PHONE",
+      "FLAG_WORK_PHONE",
+      "CNT_FAM_MEMBERS",
+      "REGION_RATING_CLIENT",
+      "AMT_REQ_CREDIT_BUREAU_HOUR",
+      "AMT_REQ_CREDIT_BUREAU_MON",
+      "AMT_REQ_CREDIT_BUREAU_QRT",
+      "AMT_REQ_CREDIT_BUREAU_YEAR"
+    ],
+    "continuous_numerical_columns": [
+      "AMT_INCOME_TOTAL",
+      "AMT_CREDIT",
+      "AMT_ANNUITY",
+      "AMT_GOODS_PRICE",
+      "DAYS_BIRTH",
+      "DAYS_EMPLOYED",
+      "DAYS_REGISTRATION",
+      "DAYS_ID_PUBLISH",
+      "EXT_SOURCE_1",
+      "EXT_SOURCE_2",
+      "EXT_SOURCE_3",
+      "DAYS_LAST_PHONE_CHANGE",
+      "CREDIT_TERM",
+      "INCOME_TO_REGION_MEAN"
+    ]
+  },
+  "seed_feature_definitions": {
+    "CREDIT_TERM": "AMT_CREDIT / AMT_ANNUITY; zero or missing annuity -> NaN",
+    "INCOME_TO_REGION_MEAN": "AMT_INCOME_TOTAL / mean(AMT_INCOME_TOTAL grouped by REGION_RATING_CLIENT); group means fitted on full train only",
+    "regional_income_means": {
+      "1": 241481.43542497614,
+      "2": 161552.16193205013,
+      "3": 152093.0819204415
+    }
+  },
+  "generation": {
+    "candidate_count": 5986,
+    "generated_count": 5986,
+    "batch_size": 64,
+    "number_of_batches": 94,
+    "n_jobs": 2,
+    "resumable": true,
+    "candidate_formulas_unique_count_report_only": 5974,
+    "no_prefiltering_or_selection": true
+  },
+  "important_methodological_notes": [
+    "TARGET was not supplied to OpenFE and no supervised selection was run.",
+    "No missingness filtering was performed.",
+    "No duplicate-feature filtering was performed.",
+    "No correlation filtering was performed.",
+    "No Shadow Feature Selection was performed.",
+    "OpenFE.transform evaluates global operators using concatenated train and test rows.",
+    "For strict CV, GroupBy-derived OpenFE features must be recalculated inside each fold using fold-training rows only.",
+    "INCOME_TO_REGION_MEAN must also be recomputed using each fold's training partition during strict CV.",
+    "Combine outputs are saved as numeric factor codes; semantic_type=categorical_code in manifest.",
+    "All generated candidate definitions are retained, including repeated formulas if any."
+  ],
+  "paths": {
+    "output_dir": "C:\\Users\\UNITECH\\Downloads\\TABPREP_HOME_CREDIT\\output\\OPENFE_ORDER1_34_BASE_FEATURES",
+    "candidate_definitions": "C:\\Users\\UNITECH\\Downloads\\TABPREP_HOME_CREDIT\\output\\OPENFE_ORDER1_34_BASE_FEATURES\\openfe_candidate_definitions.csv",
+    "candidate_trees": "C:\\Users\\UNITECH\\Downloads\\TABPREP_HOME_CREDIT\\output\\OPENFE_ORDER1_34_BASE_FEATURES\\openfe_candidate_trees.pkl",
+    "generated_manifest": "C:\\Users\\UNITECH\\Downloads\\TABPREP_HOME_CREDIT\\output\\OPENFE_ORDER1_34_BASE_FEATURES\\openfe_generated_features_manifest.csv",
+    "progress_manifest": "C:\\Users\\UNITECH\\Downloads\\TABPREP_HOME_CREDIT\\output\\OPENFE_ORDER1_34_BASE_FEATURES\\openfe_generated_manifest_progress.csv",
+    "train_feature_dir": "C:\\Users\\UNITECH\\Downloads\\TABPREP_HOME_CREDIT\\output\\OPENFE_ORDER1_34_BASE_FEATURES\\train_features",
+    "test_feature_dir": "C:\\Users\\UNITECH\\Downloads\\TABPREP_HOME_CREDIT\\output\\OPENFE_ORDER1_34_BASE_FEATURES\\test_features",
+    "base_train": "C:\\Users\\UNITECH\\Downloads\\TABPREP_HOME_CREDIT\\output\\OPENFE_ORDER1_34_BASE_FEATURES\\base_features_train.parquet",
+    "base_test": "C:\\Users\\UNITECH\\Downloads\\TABPREP_HOME_CREDIT\\output\\OPENFE_ORDER1_34_BASE_FEATURES\\base_features_test.parquet",
+    "train_rows": "C:\\Users\\UNITECH\\Downloads\\TABPREP_HOME_CREDIT\\output\\OPENFE_ORDER1_34_BASE_FEATURES\\train_rows.parquet",
+    "test_rows": "C:\\Users\\UNITECH\\Downloads\\TABPREP_HOME_CREDIT\\output\\OPENFE_ORDER1_34_BASE_FEATURES\\test_rows.parquet"
+  }
+}
+
+==============================================================================
+TRAIN BATCH FOLDER
+==============================================================================
+Path: C:\Users\UNITECH\Downloads\TABPREP_HOME_CREDIT\output\OPENFE_ORDER1_34_BASE_FEATURES\train_features
+Files found recursively: 94
+Extension counts:
+  .parquet: 94
+Total size: 786.73 MB
+File names (beginning of sorted list):
+  train_batch_00000.parquet | 7.54 MB
+  train_batch_00001.parquet | 10.37 MB
+  train_batch_00002.parquet | 8.35 MB
+  train_batch_00003.parquet | 7.51 MB
+  train_batch_00004.parquet | 10.99 MB
+  train_batch_00005.parquet | 18.72 MB
+  train_batch_00006.parquet | 15.29 MB
+  train_batch_00007.parquet | 6.85 MB
+  train_batch_00008.parquet | 4.74 MB
+  train_batch_00009.parquet | 14.77 MB
+  train_batch_00010.parquet | 10.07 MB
+  train_batch_00011.parquet | 12.31 MB
+File names (end of sorted list):
+  train_batch_00089.parquet | 1.61 MB
+  train_batch_00090.parquet | 3.00 MB
+  train_batch_00091.parquet | 5.01 MB
+  train_batch_00092.parquet | 6.69 MB
+  train_batch_00093.parquet | 2.15 MB
+
+Detailed schema inspection: up to 3 file(s)
+
+  FILE: train_batch_00000.parquet
+  Size: 7.54 MB
+  Extension: .parquet
+  Format: Parquet
+  Rows: 171,202
+  Columns: 64
+  Row groups: 1
+  Schema (first columns):
+    OFE_000000: float
+    OFE_000001: float
+    OFE_000002: float
+    OFE_000003: float
+    OFE_000004: float
+    OFE_000005: float
+    OFE_000006: float
+    OFE_000007: float
+    OFE_000008: float
+    OFE_000009: float
+    OFE_000010: float
+    OFE_000011: float
+    OFE_000012: float
+    OFE_000013: float
+    OFE_000014: float
+    OFE_000015: float
+    OFE_000016: float
+    OFE_000017: float
+    OFE_000018: float
+    OFE_000019: float
+    OFE_000020: float
+    OFE_000021: float
+    OFE_000022: float
+    OFE_000023: float
+    OFE_000024: float
+    OFE_000025: float
+    OFE_000026: float
+    OFE_000027: float
+    OFE_000028: float
+    OFE_000029: float
+    ... plus 34 columns
+  Small read check: 5 rows x 8 columns read successfully
+
+  FILE: train_batch_00001.parquet
+  Size: 10.37 MB
+  Extension: .parquet
+  Format: Parquet
+  Rows: 171,202
+  Columns: 64
+  Row groups: 1
+  Schema (first columns):
+    OFE_000064: float
+    OFE_000065: float
+    OFE_000066: float
+    OFE_000067: float
+    OFE_000068: float
+    OFE_000069: float
+    OFE_000070: float
+    OFE_000071: float
+    OFE_000072: float
+    OFE_000073: float
+    OFE_000074: float
+    OFE_000075: float
+    OFE_000076: float
+    OFE_000077: float
+    OFE_000078: float
+    OFE_000079: float
+    OFE_000080: float
+    OFE_000081: float
+    OFE_000082: float
+    OFE_000083: float
+    OFE_000084: float
+    OFE_000085: float
+    OFE_000086: float
+    OFE_000087: float
+    OFE_000088: float
+    OFE_000089: float
+    OFE_000090: float
+    OFE_000091: float
+    OFE_000092: float
+    OFE_000093: float
+    ... plus 34 columns
+  Small read check: 5 rows x 8 columns read successfully
+
+  FILE: train_batch_00002.parquet
+  Size: 8.35 MB
+  Extension: .parquet
+  Format: Parquet
+  Rows: 171,202
+  Columns: 64
+  Row groups: 1
+  Schema (first columns):
+    OFE_000128: float
+    OFE_000129: float
+    OFE_000130: float
+    OFE_000131: float
+    OFE_000132: float
+    OFE_000133: float
+    OFE_000134: float
+    OFE_000135: float
+    OFE_000136: float
+    OFE_000137: float
+    OFE_000138: float
+    OFE_000139: float
+    OFE_000140: float
+    OFE_000141: float
+    OFE_000142: float
+    OFE_000143: float
+    OFE_000144: float
+    OFE_000145: float
+    OFE_000146: float
+    OFE_000147: float
+    OFE_000148: float
+    OFE_000149: float
+    OFE_000150: float
+    OFE_000151: float
+    OFE_000152: float
+    OFE_000153: float
+    OFE_000154: float
+    OFE_000155: float
+    OFE_000156: float
+    OFE_000157: float
+    ... plus 34 columns
+  Small read check: 5 rows x 8 columns read successfully
+
+==============================================================================
+TEST BATCH FOLDER
+==============================================================================
+Path: C:\Users\UNITECH\Downloads\TABPREP_HOME_CREDIT\output\OPENFE_ORDER1_34_BASE_FEATURES\test_features
+Files found recursively: 94
+Extension counts:
+  .parquet: 94
+Total size: 302.25 MB
+File names (beginning of sorted list):
+  test_batch_00000.parquet | 2.88 MB
+  test_batch_00001.parquet | 4.10 MB
+  test_batch_00002.parquet | 3.30 MB
+  test_batch_00003.parquet | 2.96 MB
+  test_batch_00004.parquet | 4.35 MB
+  test_batch_00005.parquet | 7.74 MB
+  test_batch_00006.parquet | 5.97 MB
+  test_batch_00007.parquet | 2.58 MB
+  test_batch_00008.parquet | 1.74 MB
+  test_batch_00009.parquet | 5.66 MB
+  test_batch_00010.parquet | 3.90 MB
+  test_batch_00011.parquet | 4.77 MB
+File names (end of sorted list):
+  test_batch_00089.parquet | 622.15 KB
+  test_batch_00090.parquet | 1.10 MB
+  test_batch_00091.parquet | 1.80 MB
+  test_batch_00092.parquet | 2.44 MB
+  test_batch_00093.parquet | 810.67 KB
+
+Detailed schema inspection: up to 3 file(s)
+
+  FILE: test_batch_00000.parquet
+  Size: 2.88 MB
+  Extension: .parquet
+  Format: Parquet
+  Rows: 61,500
+  Columns: 64
+  Row groups: 1
+  Schema (first columns):
+    OFE_000000: float
+    OFE_000001: float
+    OFE_000002: float
+    OFE_000003: float
+    OFE_000004: float
+    OFE_000005: float
+    OFE_000006: float
+    OFE_000007: float
+    OFE_000008: float
+    OFE_000009: float
+    OFE_000010: float
+    OFE_000011: float
+    OFE_000012: float
+    OFE_000013: float
+    OFE_000014: float
+    OFE_000015: float
+    OFE_000016: float
+    OFE_000017: float
+    OFE_000018: float
+    OFE_000019: float
+    OFE_000020: float
+    OFE_000021: float
+    OFE_000022: float
+    OFE_000023: float
+    OFE_000024: float
+    OFE_000025: float
+    OFE_000026: float
+    OFE_000027: float
+    OFE_000028: float
+    OFE_000029: float
+    ... plus 34 columns
+  Small read check: 5 rows x 8 columns read successfully
+
+  FILE: test_batch_00001.parquet
+  Size: 4.10 MB
+  Extension: .parquet
+  Format: Parquet
+  Rows: 61,500
+  Columns: 64
+  Row groups: 1
+  Schema (first columns):
+    OFE_000064: float
+    OFE_000065: float
+    OFE_000066: float
+    OFE_000067: float
+    OFE_000068: float
+    OFE_000069: float
+    OFE_000070: float
+    OFE_000071: float
+    OFE_000072: float
+    OFE_000073: float
+    OFE_000074: float
+    OFE_000075: float
+    OFE_000076: float
+    OFE_000077: float
+    OFE_000078: float
+    OFE_000079: float
+    OFE_000080: float
+    OFE_000081: float
+    OFE_000082: float
+    OFE_000083: float
+    OFE_000084: float
+    OFE_000085: float
+    OFE_000086: float
+    OFE_000087: float
+    OFE_000088: float
+    OFE_000089: float
+    OFE_000090: float
+    OFE_000091: float
+    OFE_000092: float
+    OFE_000093: float
+    ... plus 34 columns
+  Small read check: 5 rows x 8 columns read successfully
+
+  FILE: test_batch_00002.parquet
+  Size: 3.30 MB
+  Extension: .parquet
+  Format: Parquet
+  Rows: 61,500
+  Columns: 64
+  Row groups: 1
+  Schema (first columns):
+    OFE_000128: float
+    OFE_000129: float
+    OFE_000130: float
+    OFE_000131: float
+    OFE_000132: float
+    OFE_000133: float
+    OFE_000134: float
+    OFE_000135: float
+    OFE_000136: float
+    OFE_000137: float
+    OFE_000138: float
+    OFE_000139: float
+    OFE_000140: float
+    OFE_000141: float
+    OFE_000142: float
+    OFE_000143: float
+    OFE_000144: float
+    OFE_000145: float
+    OFE_000146: float
+    OFE_000147: float
+    OFE_000148: float
+    OFE_000149: float
+    OFE_000150: float
+    OFE_000151: float
+    OFE_000152: float
+    OFE_000153: float
+    OFE_000154: float
+    OFE_000155: float
+    OFE_000156: float
+    OFE_000157: float
+    ... plus 34 columns
+  Small read check: 5 rows x 8 columns read successfully
+
+==============================================================================
+TRAIN / TEST BATCH LAYOUT COMPARISON
+==============================================================================
+Train files: 94
+Test files:  94
+Same relative file names: False
+Files only in Train: 94
+  TRAIN ONLY: train_batch_00000.parquet
+  TRAIN ONLY: train_batch_00001.parquet
+  TRAIN ONLY: train_batch_00002.parquet
+  TRAIN ONLY: train_batch_00003.parquet
+  TRAIN ONLY: train_batch_00004.parquet
+  TRAIN ONLY: train_batch_00005.parquet
+  TRAIN ONLY: train_batch_00006.parquet
+  TRAIN ONLY: train_batch_00007.parquet
+  TRAIN ONLY: train_batch_00008.parquet
+  TRAIN ONLY: train_batch_00009.parquet
+Files only in Test: 94
+  TEST ONLY: test_batch_00000.parquet
+  TEST ONLY: test_batch_00001.parquet
+  TEST ONLY: test_batch_00002.parquet
+  TEST ONLY: test_batch_00003.parquet
+  TEST ONLY: test_batch_00004.parquet
+  TEST ONLY: test_batch_00005.parquet
+  TEST ONLY: test_batch_00006.parquet
+  TEST ONLY: test_batch_00007.parquet
+  TEST ONLY: test_batch_00008.parquet
+  TEST ONLY: test_batch_00009.parquet
+Train file count matches expected batch count (94).
+
+==============================================================================
+DIAGNOSTIC FINISHED
+==============================================================================
+No source feature files were modified.
+No target-based filtering or feature selection was performed.
+Customer row values were not printed in this report.
+Report path: C:\Users\UNITECH\Downloads\TABPREP_HOME_CREDIT\output\OPENFE_ORDER1_34_BASE_FEATURES\openfe_output_diagnostic_report.txt
