@@ -1,0 +1,20 @@
+{
+    "input_step2_total_features": 1375,
+    "input_step2_generated_features": 1351,
+    "correlation_candidates": 957,
+    "unique_reference_features": 278,
+    "confirmed_correlation_deletions": 910,
+    "restored_features": 47,
+    "decision_counts": {
+        "CONFIRMED_DELETE": 910,
+        "RESTORE_NOT_CONFIRMED": 47
+    },
+    "final_total_features": 1422,
+    "final_generated_features": 1398,
+    "full_dataset_rows_processed": 171202,
+    "correlation_method": "Pearson",
+    "correlation_threshold": 0.98,
+    "minimum_pairwise_observations": 5000,
+    "pairwise_missing_handling": "complete finite pairs",
+    "target_used": false
+}
