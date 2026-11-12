@@ -1,0 +1,10 @@
+{
+    "file": "C:\\Users\\UNITECH\\Downloads\\TABPREP_HOME_CREDIT\\train_tabprep_oof.csv",
+    "file_size_GB": 4.117509054020047,
+    "rows": 171202,
+    "columns": 2481,
+    "generated_features": 2480,
+    "ID_column_first": true,
+    "TARGET_present": false,
+    "ID_missing": 0,
+    "ID_min": 

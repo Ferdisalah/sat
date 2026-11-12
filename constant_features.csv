@@ -1,0 +1,2 @@
+feature,dtype,missing_count,missing_percent,unique_count,constant,mean,std,min,max,positive_inf,negative_inf
+RSFC_13,numeric,68482,40.00070092639105,1,True,0.0807310110177349,0.0,0.0807310110177349,0.0807310110177349,0,0
