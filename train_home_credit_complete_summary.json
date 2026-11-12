@@ -1,0 +1,23 @@
+{
+    "output_file": "C:\\Users\\UNITECH\\Downloads\\TABPREP_HOME_CREDIT\\train_home_credit_complete.parquet",
+    "rows": 171202,
+    "columns": 1432,
+    "id_column": "SK_ID_CURR",
+    "target_column": "TARGET",
+    "original_numerical_features": 24,
+    "original_categorical_features": 8,
+    "original_features_total": 32,
+    "tabprep_generated_features": 1398,
+    "target_counts": {
+        "0": 157381,
+        "1": 13821
+    },
+    "id_join": "SK_ID_CURR",
+    "original_row_order_preserved": true,
+    "original_feature_values_verified": true,
+    "all_original_ids_matched_once": true,
+    "generated_features_float": true,
+    "target_used_in_feature_generation": false,
+    "compression": "zstd",
+    "file_size_GB": 0.5088
+}
