@@ -1,0 +1,19 @@
+{
+    "step1_input_features": 2434,
+    "protected_original_numerical_features": 24,
+    "generated_input_features": 2410,
+    "constant_generated_removed": 0,
+    "high_missing_generated_removed": 102,
+    "constant_or_missing_unique_removed": 102,
+    "exact_duplicates_removed": 0,
+    "high_correlation_removed": 957,
+    "final_total_features": 1375,
+    "final_generated_features": 1351,
+    "missing_threshold": 0.95,
+    "correlation_threshold": 0.98,
+    "correlation_method": "Pearson",
+    "correlation_sample_size": 50000,
+    "correlation_min_periods": 1000,
+    "random_state": 42,
+    "target_used": false
+}
