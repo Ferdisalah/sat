@@ -1,0 +1,113 @@
+{
+  "experiment": "CatBoost 5-fold retraining on stable Spearman Exact features",
+  "rows": 171202,
+  "stable_feature_count": 227,
+  "categorical_feature_count": 20,
+  "numeric_feature_count": 207,
+  "cv": {
+    "method": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_seed": 42
+  },
+  "catboost_params": {
+    "iterations": 1800,
+    "learning_rate": 0.04,
+    "depth": 6,
+    "l2_leaf_reg": 10,
+    "rsm": 1.0,
+    "random_strength": 1.5,
+    "loss_function": "Logloss",
+    "eval_metric": "AUC",
+    "random_seed": 42,
+    "allow_writing_files": false,
+    "verbose": 200,
+    "thread_count": 8,
+    "bootstrap_type": "Bayesian",
+    "bagging_temperature": 2,
+    "max_ctr_complexity": 3,
+    "task_type": "CPU"
+  },
+  "metrics": {
+    "mean_training_auc": 0.8074926934535647,
+    "std_training_auc": 0.0006766745870293683,
+    "mean_validation_auc": 0.7576962032987297,
+    "std_validation_auc": 0.005008210007347831,
+    "global_oof_auc": 0.7576503552940266,
+    "global_oof_average_precision": 0.23953043729195334,
+    "per_fold": [
+      {
+        "fold": 1,
+        "train_rows": 136961,
+        "validation_rows": 34241,
+        "feature_count": 227,
+        "training_roc_auc": 0.8074656298725308,
+        "validation_roc_auc": 0.7550949267760665,
+        "auc_gap_train_minus_validation": 0.0523707030964643,
+        "training_average_precision": 0.3688420457612761,
+        "validation_average_precision": 0.23950403045590998,
+        "best_iteration": null,
+        "tree_count": 1800
+      },
+      {
+        "fold": 2,
+        "train_rows": 136961,
+        "validation_rows": 34241,
+        "feature_count": 227,
+        "training_roc_auc": 0.8075844460634671,
+        "validation_roc_auc": 0.7587816843488434,
+        "auc_gap_train_minus_validation": 0.04880276171462372,
+        "training_average_precision": 0.3747419445043829,
+        "validation_average_precision": 0.23489430094306227,
+        "best_iteration": null,
+        "tree_count": 1800
+      },
+      {
+        "fold": 3,
+        "train_rows": 136962,
+        "validation_rows": 34240,
+        "feature_count": 227,
+        "training_roc_auc": 0.8067975241004247,
+        "validation_roc_auc": 0.7645173319290062,
+        "auc_gap_train_minus_validation": 0.04228019217141854,
+        "training_average_precision": 0.36845608726019935,
+        "validation_average_precision": 0.2565925456145682,
+        "best_iteration": null,
+        "tree_count": 1800
+      },
+      {
+        "fold": 4,
+        "train_rows": 136962,
+        "validation_rows": 34240,
+        "feature_count": 227,
+        "training_roc_auc": 0.8085630461433715,
+        "validation_roc_auc": 0.7510571420137899,
+        "auc_gap_train_minus_validation": 0.057505904129581564,
+        "training_average_precision": 0.37178312361279947,
+        "validation_average_precision": 0.23161343448923302,
+        "best_iteration": null,
+        "tree_count": 1800
+      },
+      {
+        "fold": 5,
+        "train_rows": 136962,
+        "validation_rows": 34240,
+        "feature_count": 227,
+        "training_roc_auc": 0.8070528210880296,
+        "validation_roc_auc": 0.7590299314259421,
+        "auc_gap_train_minus_validation": 0.04802288966208745,
+        "training_average_precision": 0.37448160093828936,
+        "validation_average_precision": 0.23826984816412386,
+        "best_iteration": null,
+        "tree_count": 1800
+      }
+    ]
+  },
+  "importance": {
+    "method": "PredictionValuesChange",
+    "aggregation": "mean/std/mean-rank across five fold-specific models",
+    "top_n_saved": 40
+  },
+  "methodological_warning": "DIAGNOSTIC ONLY: stable features were selected using TARGET-dependent Shadow Selector outcomes from the same dataset and prior 5-fold CV. This re-evaluation on the same rows is not an independent/unbiased CV estimate. The prior fold-specific OOF score is the appropriate estimate for the full Shadow-selection procedure.",
+  "output_dir": "C:\\Users\\UNITECH\\Downloads\\TABPREP_HOME_CREDIT\\CATBOOST_5FOLD_STABLE_FEATURES_SPEARMAN_EXACT_TOP40_IMPORTANCE"
+}
