@@ -1,0 +1,39 @@
+{
+  "created_at": "2026-11-16T21:56:43.184100",
+  "input_oof_file": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\EXT2_REGION_GAP_IV_AUDIT_CV5_20261116_214137\\OOF_EXT2_REGION_GAP_FEATURES.csv.gz",
+  "input_region_file": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\EXT2_REGION_GAP_IV_AUDIT_CV5_20261116_214137\\OUTER_FOLD_REGION_GAP_DETAILS.csv",
+  "output_directory": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\EXT2_REGION_GAP_IV_AUDIT_CV5_20261116_214137\\POOLED_RELATIVE_POSITION_ANALYSIS",
+  "matched_rows": 27665,
+  "matched_defaults": 1244,
+  "matched_nondefaults": 26421,
+  "matched_default_rate": 0.04496656425085849,
+  "number_of_outer_folds": 5,
+  "number_of_fold_regions": 1497,
+  "relative_position_interval": {
+    "definition": "(EXT_SOURCE_2 - EFFECTIVE_LOWER) / EFFECTIVE_INTERVAL_WIDTH",
+    "domain": [
+      0.0,
+      1.0
+    ],
+    "valid_rows": 27665
+  },
+  "relative_position_pure_core": {
+    "definition": "(EXT_SOURCE_2 - MIN_VALUE) / (MAX_VALUE - MIN_VALUE)",
+    "valid_rows": 27318,
+    "valid_rate": 0.9874570757274534,
+    "outside_pure_core_rows": 347,
+    "zero_width_core_rows": 0,
+    "interpretation": "Sensitivity analysis only. Undefined for zero-width pure cores or customers outside the observed pure-core range."
+  },
+  "iv_binning": {
+    "main": "Tie-preserving unsupervised quantile bins",
+    "quantile_bins": 10,
+    "relative_position_equal_width_bins": 10,
+    "woe": "log(GOOD / BAD)",
+    "good": "TARGET=0",
+    "bad": "TARGET=1",
+    "smoothing": 0.5
+  },
+  "important_note": "This is a descriptive OOF analysis. The relative-position feature is computed from the fold-specific discovery interval. The 2D table describes association conditional on broad EXT_SOURCE_2 quantiles; it is not an independent model-validation result.",
+  "groupby_fix": "Pandas groupby keys are normalized to handle both scalar keys and one-element tuples."
+}
