@@ -1,68 +1,53 @@
 {
-    "experiment": "EXT_SOURCE_2_REGION_STABILITY_BAYESIAN_AUDIT_20261116_170226_486879",
-    "created_utc": "2026-11-16T17:03:25.358979+00:00",
-    "operation": "AUDIT_ONLY_NO_MODEL_TRAINING",
-    "train_path": "/content/drive/MyDrive/Competition/input/train.csv",
-    "rows_total": 171202,
-    "rows_ext2_observed": 170833,
-    "rows_ext2_missing": 369,
-    "observed_nondefaults": 157041,
-    "observed_defaults": 13792,
-    "full_data_default_rate": 0.08072919708881905,
-    "observed_ext2_default_rate": 0.08073381606598257,
-    "region_definition": {
-        "feature": "EXT_SOURCE_2",
-        "pure_class": 0,
-        "excluded_class": 1,
-        "maximal_consecutive_runs_of_exact_sorted_values": true,
-        "bounds": "immediately preceding/following distinct observed values; open interval",
-        "selected_support_rule": "N_NON_DEFAULT > 50",
-        "missing_feature_values_excluded": true
-    },
-    "region_size_thresholds_strictly_greater_than": [
-        50,
-        100,
-        150,
-        200
-    ],
-    "outer_cv": {
-        "n_splits": 5,
-        "shuffle": true,
-        "random_state": 42,
-        "stratified_on_TARGET": true
-    },
-    "fold_region_stability": {
-        "interval_iou_thresholds_reported": [
-            0.25,
-            0.5,
-            0.75
-        ],
-        "matching": "Hungarian one-to-one assignment maximizing total interval IoU",
-        "iou_domain_clipped_to": [
-            0.0,
-            1.0
-        ]
-    },
-    "bayesian_risk": {
-        "formula": "(D_train_region + m * p_train) / (N_train_region + m)",
-        "m_values": [
-            10,
-            20,
-            50
-        ],
-        "prior": "overall TARGET prevalence in the corresponding outer-training fold",
-        "unmatched_validation_customers": "assigned outer-training prior",
-        "region_discovery_defaults_in_training": 0
-    },
-    "adjacent_merging": {
-        "method": "audit consecutive qualifying (>50) regions; count all observed rows in the combined span",
-        "automatic_merge_applied": false,
-        "merged_default_rate_thresholds_reported": [
-            0.01,
-            0.02,
-            0.05
-        ]
-    },
-    "warning": "Full-data regions are descriptive only. Fold validation mappings are learned from the corresponding outer-training fold. The saved validation meta-feature file is audit-only; generating training-ready meta-features for a subsequent classifier CV requires a nested cross-fitting design inside each outer fold.",
-    "output_dir": "/content/drive/MyDrive/Competition/output/CATBOOST_LGBM_XGBOOST_LOCAL_500_NEIGHBOR_INTERACTION/EXT_SOURCE_2_REGION_STABILITY_BAYESIAN_AUDIT_20261116_170226_486879"
+  "run_name": "EXT2_REGION_GAP_IV_AUDIT_CV5_20261116_214137",
+  "created_utc": "2026-11-16T21:42:05.990405+00:00",
+  "train_file": "C:\\Users\\UNITECH\\Downloads\\train.csv",
+  "rows": 171202,
+  "target_counts": {
+    "0": 157381,
+    "1": 13821
+  },
+  "ext2_missing": 369,
+  "dataset_fingerprint": "8ea95943c9c7b535e99def25e2bf5b0df0e4b49727fb6cbb28076f5048c50f97",
+  "outer_cv": {
+    "type": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42
+  },
+  "inner_cv": {
+    "type": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "seed_rule": "RANDOM_SEED + INNER_SEED_OFFSET + OUTER_FOLD"
+  },
+  "region_definition": {
+    "source": "Original observed EXT_SOURCE_2 only",
+    "pure_level": "At least one TARGET=0 and zero TARGET=1 at the exact EXT_SOURCE_2 value",
+    "support_rule": "N_NON_DEFAULT > 50",
+    "nearest_default_rule": "Nearest exact observed EXT_SOURCE_2 level with at least one TARGET=1 below/above the pure run",
+    "gap_below": "MIN_VALUE - DEFAULT_BELOW_VALUE",
+    "gap_above": "DEFAULT_ABOVE_VALUE - MAX_VALUE",
+    "min_gap": "Minimum of finite GAP_BELOW and GAP_ABOVE",
+    "max_gap": "Maximum of finite GAP_BELOW and GAP_ABOVE",
+    "missing_ext2": "Excluded from region discovery and matching"
+  },
+  "iv_settings": {
+    "binning": "Unsupervised quantile bins, preserving identical values within the same bin",
+    "global_quantile_bins": 10,
+    "local_quantile_bins": 5,
+    "woe": "log(GOOD_BIN_DISTRIBUTION / BAD_BIN_DISTRIBUTION)",
+    "good": "TARGET=0",
+    "bad": "TARGET=1",
+    "smoothing": 0.5,
+    "population_scope": "All customers; missing values form a special bin",
+    "matched_scope": "Only customers mapped to a discovered region",
+    "within_region_scope": "EXT_SOURCE_2 IV calculated separately inside each outer-fold region"
+  },
+  "important_interpretation": "The four gap features are region-level constants. Their within-region IV is undefined. EXT_SOURCE_2 IV is therefore calculated within each region.",
+  "leakage_control": "Outer-training-only region discovery for validation mapping; inner cross-fitting for outer-training feature generation; validation TARGET used only for post-hoc diagnostics.",
+  "model_training": false,
+  "imputation": false,
+  "submission_created": false,
+  "output_dir": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\EXT2_REGION_GAP_IV_AUDIT_CV5_20261116_214137"
 }
