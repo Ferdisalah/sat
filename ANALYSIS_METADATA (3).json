@@ -1,0 +1,74 @@
+{
+    "analysis": "EXT_SOURCE within-age-slice Spearman and distribution analysis",
+    "input_file": "/content/drive/MyDrive/Competition/input/train.csv",
+    "requested_age_quantiles": 20,
+    "actual_age_slices": 20,
+    "age_boundaries": [
+        21.00752908966461,
+        25.738535249828885,
+        28.15879534565366,
+        30.132785763175907,
+        32.02464065708419,
+        34.0041067761807,
+        36.00547570157426,
+        37.765913757700204,
+        39.51540041067762,
+        41.30047912388775,
+        43.19780971937029,
+        45.13620807665982,
+        47.20328542094456,
+        49.41820670773443,
+        51.72073921971253,
+        53.89733059548254,
+        56.05201916495551,
+        58.36824093086927,
+        60.73648186173853,
+        63.53456536618754,
+        69.07323750855578
+    ],
+    "age_definition": "-DAYS_BIRTH / 365.25",
+    "features": [
+        "EXT_SOURCE_1",
+        "EXT_SOURCE_2",
+        "EXT_SOURCE_3"
+    ],
+    "target_values": [
+        0,
+        1
+    ],
+    "minimum_correlation_n": 30,
+    "trend_threshold": 0.05,
+    "trend_classification": {
+        "positive": "rho > 0.05",
+        "negative": "rho < -0.05",
+        "near_zero": "-0.05 <= rho <= 0.05",
+        "insufficient_data": "Correlation unavailable or fewer than 30 observed pairs"
+    },
+    "missing_values_policy": "No imputation. Missing EXT_SOURCE values are excluded from correlation and distribution calculations.",
+    "age_slice_construction": "Shared qcut boundaries calculated from the full training population, independently of TARGET.",
+    "multiple_testing": {
+        "within_slice_correlations": "Benjamini-Hochberg correction separately for each FEATURE x TARGET across age slices.",
+        "median_vs_rho_associations": "Benjamini-Hochberg correction across the six FEATURE x TARGET combinations.",
+        "trend_class_tests": "Benjamini-Hochberg correction across the exploratory statistical tests in the comparison output."
+    },
+    "exploratory_analysis_note": "The association between slice medians and within-slice Spearman rho uses age slices as observations, not individual customers. It is descriptive and exploratory, not causal.",
+    "counts": {
+        "original_rows": 171202,
+        "rows_after_valid_target_filter": 171202,
+        "excluded_invalid_target": 0,
+        "missing_age_rows": 0,
+        "rows_with_valid_age": 171202,
+        "target_counts": {
+            "0": 157381,
+            "1": 13821
+        }
+    },
+    "output_files": [
+        "AGE_SLICE_BOUNDARIES_AND_COUNTS.csv",
+        "WITHIN_AGE_SLICE_SPEARMAN_AND_DISTRIBUTION.csv",
+        "EXT_SOURCE_LEVEL_BY_WITHIN_SLICE_TREND_CLASS.csv",
+        "ASSOCIATION_BETWEEN_SLICE_MEDIAN_AND_WITHIN_SLICE_RHO.csv",
+        "SLICE_MEDIAN_DIFFERENCES_ACROSS_TREND_CLASSES.csv",
+        "PLOTS/"
+    ]
+}
