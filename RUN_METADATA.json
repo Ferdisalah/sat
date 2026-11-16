@@ -1,55 +1,68 @@
 {
-  "train_file": "C:\\Users\\UNITECH\\Downloads\\train.csv",
-  "predictions_file": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\output\\raw_credit_term_oof_shap\\RAW_CREDIT_TERM_oof_predictions.csv",
-  "output_dir": "C:\\Users\\UNITECH\\Desktop\\GCI 2026\\competition\\output\\tp_fn_450k_signal_diagnostics",
-  "n_rows": 171202,
-  "fold_ids": [
-    1,
-    2,
-    3,
-    4,
-    5
-  ],
-  "threshold": 0.5,
-  "target_price": 450000.0,
-  "price_absolute_tolerance": 1e-08,
-  "nearby_price_interval_inclusive": [
-    440000.0,
-    460000.0
-  ],
-  "exact_450k_rows": 14400,
-  "numeric_stratifiers": [
-    "EXT_SOURCE_1",
-    "EXT_SOURCE_2",
-    "EXT_SOURCE_3",
-    "CREDIT_TERM",
-    "AMT_ANNUITY",
-    "AMT_CREDIT",
-    "AMT_INCOME_TOTAL",
-    "DAYS_BIRTH",
-    "DAYS_EMPLOYED",
-    "DAYS_REGISTRATION",
-    "DAYS_ID_PUBLISH",
-    "DAYS_LAST_PHONE_CHANGE",
-    "OWN_CAR_AGE",
-    "REGION_POPULATION_RELATIVE",
-    "CREDIT_TO_GOODS_RATIO",
-    "ANNUITY_TO_GOODS_PRICE"
-  ],
-  "categorical_stratifiers": [
-    "REGION_RATING_CLIENT",
-    "NAME_INCOME_TYPE",
-    "OCCUPATION_TYPE",
-    "NAME_EDUCATION_TYPE",
-    "ORGANIZATION_TYPE"
-  ],
-  "quantile_bins_requested": 5,
-  "minimum_cell_rows": 50,
-  "minimum_cell_defaults": 5,
-  "diagnostic_ratios_not_in_baseline": [
-    "CREDIT_TO_GOODS_RATIO",
-    "ANNUITY_TO_GOODS_PRICE"
-  ],
-  "method": "Exact 450K flag x fold-specific feature bins; no model fitting.",
-  "interpretation": "Post-hoc diagnostic association only. The exact 450K hypothesis was selected after inspecting labels; do not treat CV summaries as independent confirmation."
+    "experiment": "EXT_SOURCE_2_REGION_STABILITY_BAYESIAN_AUDIT_20261116_170226_486879",
+    "created_utc": "2026-11-16T17:03:25.358979+00:00",
+    "operation": "AUDIT_ONLY_NO_MODEL_TRAINING",
+    "train_path": "/content/drive/MyDrive/Competition/input/train.csv",
+    "rows_total": 171202,
+    "rows_ext2_observed": 170833,
+    "rows_ext2_missing": 369,
+    "observed_nondefaults": 157041,
+    "observed_defaults": 13792,
+    "full_data_default_rate": 0.08072919708881905,
+    "observed_ext2_default_rate": 0.08073381606598257,
+    "region_definition": {
+        "feature": "EXT_SOURCE_2",
+        "pure_class": 0,
+        "excluded_class": 1,
+        "maximal_consecutive_runs_of_exact_sorted_values": true,
+        "bounds": "immediately preceding/following distinct observed values; open interval",
+        "selected_support_rule": "N_NON_DEFAULT > 50",
+        "missing_feature_values_excluded": true
+    },
+    "region_size_thresholds_strictly_greater_than": [
+        50,
+        100,
+        150,
+        200
+    ],
+    "outer_cv": {
+        "n_splits": 5,
+        "shuffle": true,
+        "random_state": 42,
+        "stratified_on_TARGET": true
+    },
+    "fold_region_stability": {
+        "interval_iou_thresholds_reported": [
+            0.25,
+            0.5,
+            0.75
+        ],
+        "matching": "Hungarian one-to-one assignment maximizing total interval IoU",
+        "iou_domain_clipped_to": [
+            0.0,
+            1.0
+        ]
+    },
+    "bayesian_risk": {
+        "formula": "(D_train_region + m * p_train) / (N_train_region + m)",
+        "m_values": [
+            10,
+            20,
+            50
+        ],
+        "prior": "overall TARGET prevalence in the corresponding outer-training fold",
+        "unmatched_validation_customers": "assigned outer-training prior",
+        "region_discovery_defaults_in_training": 0
+    },
+    "adjacent_merging": {
+        "method": "audit consecutive qualifying (>50) regions; count all observed rows in the combined span",
+        "automatic_merge_applied": false,
+        "merged_default_rate_thresholds_reported": [
+            0.01,
+            0.02,
+            0.05
+        ]
+    },
+    "warning": "Full-data regions are descriptive only. Fold validation mappings are learned from the corresponding outer-training fold. The saved validation meta-feature file is audit-only; generating training-ready meta-features for a subsequent classifier CV requires a nested cross-fitting design inside each outer fold.",
+    "output_dir": "/content/drive/MyDrive/Competition/output/CATBOOST_LGBM_XGBOOST_LOCAL_500_NEIGHBOR_INTERACTION/EXT_SOURCE_2_REGION_STABILITY_BAYESIAN_AUDIT_20261116_170226_486879"
 }
