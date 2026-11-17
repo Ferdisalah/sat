@@ -1,29 +1,44 @@
 {
-  "experiment": "CREDIT_TERM_STAGE1_ANALYSIS",
+  "experiment": "CREDIT_TERM_STAGE1_5_CONTRACT_SEPARATED_ANALYSIS",
+  "input_file": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\CREDIT_TERM_STAGE1_ANALYSIS\\10_customer_level_credit_term_diagnostic.csv",
+  "output_directory": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\CREDIT_TERM_STAGE1_5_CONTRACT_SEPARATED_ANALYSIS",
+  "rows_total": 232702,
+  "train_rows": 171202,
+  "test_rows": 61500,
+  "contract_counts": {
+    "Cash loans": 210782,
+    "Revolving loans": 21920
+  },
+  "credit_term_recomputed_and_validated": true,
   "target_loaded": false,
   "target_used": false,
   "external_data_used": false,
   "model_training_performed": false,
   "feature_engineering_performed": false,
-  "definition": "CREDIT_TERM = AMT_CREDIT / AMT_ANNUITY",
-  "train_file": "C:\\Users\\UNITECH\\Downloads\\train.csv",
-  "test_file": "C:\\Users\\UNITECH\\Downloads\\test (1).csv",
-  "train_rows": 171202,
-  "test_rows": 61500,
-  "combined_rows": 232702,
-  "valid_credit_term_train": 171202,
-  "valid_credit_term_test": 61500,
-  "invalid_credit_term_train": 0,
-  "invalid_credit_term_test": 0,
-  "histogram_bin_counts": [
+  "cash_histogram_bins": [
     40,
     80,
-    120
+    120,
+    200,
+    300
   ],
-  "histogram_quantile_range": [
+  "cash_histogram_quantile_range": [
     0.01,
     0.99
   ],
-  "output_directory": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\CREDIT_TERM_STAGE1_ANALYSIS",
-  "interpretation_warning": "CREDIT_TERM is the ratio AMT_CREDIT / AMT_ANNUITY. It is not confirmed to be the actual number of installments. Histogram peaks and repeated values are exploratory patterns, not proof of contractual loan durations. Multiple combinations of duration and interest rate can produce the same observed ratio."
+  "revolving_expected_annuity_to_credit": 0.05,
+  "revolving_test_tolerances": [
+    1e-10,
+    1e-08,
+    1e-06,
+    1e-05,
+    0.0001,
+    0.001
+  ],
+  "interpretation_notes": [
+    "CREDIT_TERM is a ratio, not automatically the actual number of installments.",
+    "The 5% Revolving hypothesis is tested empirically; it is not assumed to be true.",
+    "Histogram peaks are exploratory and are not proof of contractual durations.",
+    "All contract-specific aggregations are separated by NAME_CONTRACT_TYPE."
+  ]
 }
