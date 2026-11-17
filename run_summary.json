@@ -1,0 +1,29 @@
+{
+  "experiment": "CREDIT_TERM_STAGE1_ANALYSIS",
+  "target_loaded": false,
+  "target_used": false,
+  "external_data_used": false,
+  "model_training_performed": false,
+  "feature_engineering_performed": false,
+  "definition": "CREDIT_TERM = AMT_CREDIT / AMT_ANNUITY",
+  "train_file": "C:\\Users\\UNITECH\\Downloads\\train.csv",
+  "test_file": "C:\\Users\\UNITECH\\Downloads\\test (1).csv",
+  "train_rows": 171202,
+  "test_rows": 61500,
+  "combined_rows": 232702,
+  "valid_credit_term_train": 171202,
+  "valid_credit_term_test": 61500,
+  "invalid_credit_term_train": 0,
+  "invalid_credit_term_test": 0,
+  "histogram_bin_counts": [
+    40,
+    80,
+    120
+  ],
+  "histogram_quantile_range": [
+    0.01,
+    0.99
+  ],
+  "output_directory": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\CREDIT_TERM_STAGE1_ANALYSIS",
+  "interpretation_warning": "CREDIT_TERM is the ratio AMT_CREDIT / AMT_ANNUITY. It is not confirmed to be the actual number of installments. Histogram peaks and repeated values are exploratory patterns, not proof of contractual loan durations. Multiple combinations of duration and interest rate can produce the same observed ratio."
+}
