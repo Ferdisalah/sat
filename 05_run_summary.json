@@ -1,0 +1,38 @@
+{
+  "stage": "Stage 2 — Implied Interest Feasibility Analysis",
+  "input_path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\CREDIT_TERM_STAGE1_ANALYSIS\\10_customer_level_credit_term_diagnostic.csv",
+  "output_dir": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\CREDIT_TERM_STAGE2_IMPLIED_INTEREST_ANALYSIS",
+  "input_rows_read": 232702,
+  "selected_columns": [
+    "AMT_CREDIT",
+    "AMT_ANNUITY",
+    "NAME_CONTRACT_TYPE",
+    "DATASET",
+    "SK_ID_CURR",
+    "CREDIT_TERM"
+  ],
+  "target_read_or_used": false,
+  "external_data_used": false,
+  "model_training_performed": false,
+  "contract_type_analyzed": "Cash loans only",
+  "revolving_rows_excluded_from_stage_2": 21920,
+  "valid_cash_observations": 210782,
+  "invalid_cash_financial_rows_excluded": 0,
+  "candidate_period_range": [
+    1,
+    120
+  ],
+  "candidate_periods_with_at_least_one_eligible_row": 112,
+  "bisection_iterations": 100,
+  "customer_level_rate_export_enabled": false,
+  "customer_level_rate_export_path": null,
+  "credit_term_formula": "T = AMT_CREDIT / AMT_ANNUITY",
+  "implied_rate_equation": "T = (1 - (1+r)^(-n)) / r",
+  "rate_interpretation": "r is per payment period; monthly periodicity is not assumed",
+  "identifiability_warning": "For every positive T and every integer n>T, there is one positive implied r. These conditional rate distributions do not identify the true contractual n by themselves.",
+  "plots": [
+    "C:\\Users\\UNITECH\\Downloads\\outputwpw\\CREDIT_TERM_STAGE2_IMPLIED_INTEREST_ANALYSIS\\plots\\01_eligibility_coverage_vs_periods.png",
+    "C:\\Users\\UNITECH\\Downloads\\outputwpw\\CREDIT_TERM_STAGE2_IMPLIED_INTEREST_ANALYSIS\\plots\\02_implied_rate_quantile_band_vs_periods.png",
+    "C:\\Users\\UNITECH\\Downloads\\outputwpw\\CREDIT_TERM_STAGE2_IMPLIED_INTEREST_ANALYSIS\\plots\\03_train_test_median_rate_comparison.png"
+  ]
+}
