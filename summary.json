@@ -1,139 +1,46 @@
 {
-  "dataset_directory": "C:\\Users\\UNITECH\\Desktop\\zindi competition\\zindi",
-  "output_directory": "C:\\Users\\UNITECH\\Desktop\\zindi competition\\zindi\\analysis_report",
-  "tables": {
-    "Train.csv": {
-      "rows": 7246,
-      "columns": [
-        "ID",
-        "geometry",
-        "metres_per_pixel"
-      ]
-    },
-    "Test.csv": {
-      "rows": 4548,
-      "columns": [
-        "ID",
-        "metres_per_pixel"
-      ]
-    },
-    "SampleSubmission.csv": {
-      "rows": 4548,
-      "columns": [
-        "ID",
-        "geometry",
-        "metres_per_pixel"
-      ]
-    },
-    "Val.csv": null,
-    "id_map.csv": null
-  },
-  "id_checks": {
-    "train_unique": 7246,
-    "test_unique": 4548,
-    "train_test_overlap": 0,
-    "test_sample_set_equal": true
-  },
-  "validation_split": {
-    "validation_source": "not identified",
-    "validation_rows": 0
-  },
-  "geometry_status_counts_train": {
-    "nonempty_geometry": 5527,
-    "empty_geometry": 1719
-  },
-  "geometry_status_counts_validation": {},
-  "empty_or_blank_geometry_count": 1719,
-  "empty_or_blank_geometry_rate": 0.23723433618548165,
-  "invalid_wkt_count": 0,
-  "invalid_geometry_count": 0,
-  "nonempty_geometry_metrics": {
-    "tiles": 5527,
-    "line_parts_total": 13557,
-    "vertices_total": 51771,
-    "total_length_px": 2013884.1796649145,
-    "total_length_per_tile": {
-      "count": 5527,
-      "mean": 364.37202454585025,
-      "std": 206.6645635230616,
-      "min": 0.008,
-      "p25": 230.63345475134588,
-      "median": 334.48218562196195,
-      "p75": 495.35989485860296,
-      "max": 1590.3054631438179
-    },
-    "line_parts_per_tile": {
-      "count": 5527,
-      "mean": 2.4528677401845487,
-      "std": 1.5591528671381045,
-      "min": 1.0,
-      "p25": 1.0,
-      "median": 2.0,
-      "p75": 3.0,
-      "max": 24.0
-    }
-  },
-  "images": {
-    "referenced_ids": 11794,
-    "found": 11794,
-    "missing": 0,
-    "dimension_counts": {
-      "256x256": 11794
-    },
-    "sampled_rgb_stats_count": 1500,
-    "images_with_geometry_outside_bounds": 0
-  },
-  "metres_per_pixel": {
-    "Train.csv": {
-      "column": "metres_per_pixel",
-      "count": 7246,
-      "mean": 0.29469252001104057,
-      "std": 0.005731505011872345,
-      "min": 0.2477,
-      "p25": 0.2953,
-      "median": 0.2953,
-      "p75": 0.2954,
-      "max": 0.2985,
-      "missing": 0,
-      "nonpositive": 0
-    },
-    "Test.csv": {
-      "column": "metres_per_pixel",
-      "count": 4548,
-      "mean": 0.29381723834652596,
-      "std": 0.00875588448978809,
-      "min": 0.2478,
-      "p25": 0.2953,
-      "median": 0.2953,
-      "p75": 0.2954,
-      "max": 0.2985,
-      "missing": 0,
-      "nonpositive": 0
-    }
-  },
-  "preview_counts": {
-    "empty_label_examples": 12,
-    "sparse_road_examples": 12,
-    "dense_road_examples": 12,
-    "random_examples": 12
-  },
-  "checks": [
-    "[PASS] Train IDs are unique: rows=7,246, unique=7,246",
-    "[PASS] Test IDs are unique: rows=4,548, unique=4,548",
-    "[PASS] Train/Test IDs are disjoint: overlap=0",
-    "[PASS] Test IDs equal SampleSubmission IDs: test-only=0, sample-only=0",
-    "[PASS] All training WKT values parsed: invalid=0",
-    "[PASS] All parsed geometries valid: invalid_geometries=0",
-    "[PASS] Training geometry types are line-based: types={'MultiLineString': 7246}",
-    "[PASS] All Train/Test images exist: missing=0; examples=[]",
-    "[PASS] All found images are readable: read_errors=0",
-    "[PASS] Image dimensions are consistent: dimension_counts={'256x256': 11794}",
-    "[PASS] Geometry bounds lie inside corresponding image: outside=0; examples=[]"
+  "data_root": "C:\\Users\\UNITECH\\Desktop\\zindi competition\\zindi",
+  "train_csv": "C:\\Users\\UNITECH\\Desktop\\zindi competition\\zindi\\Train.csv",
+  "test_csv": "C:\\Users\\UNITECH\\Desktop\\zindi competition\\zindi\\Test.csv",
+  "output_dir": "C:\\Users\\UNITECH\\Desktop\\zindi competition\\zindi\\MaGRoad_HOTOSM",
+  "train_rows_total": 7246,
+  "train_rows_processed": 7246,
+  "test_rows": 4548,
+  "images_checked": 11794,
+  "image_size": [
+    256,
+    256
   ],
-  "interpretation_notes": [
-    "Empty or blank OSM geometries are not proof that the image contains no real road; inspect the saved empty-label examples.",
-    "Endpoint-node counts are approximate and use endpoint coordinates rounded to 0.1 native pixels; they are not a complete road-graph topology evaluation.",
-    "This script audits labels and images; it does not calculate the official competition metrics (Buffered Centreline F1, APLS, TOPO F1).",
-    "Image RGB statistics are computed on a reproducible sample of labeled images, controlled by --image-stat-limit."
+  "coordinate_convention": {
+    "source_wkt": "(x,y), image coordinates, origin top-left",
+    "saved_graph": "(row,col)=(y,x), for MaGRoad GraphLabelGenerator",
+    "graph_transform_to_model_xy": "reverse columns, as used by MaGRoad Spacenet loader",
+    "shared_nodes": "merge only identical coordinates after decimal rounding",
+    "geometric_crossings": "not automatically connected unless WKT shares an explicit vertex"
+  },
+  "mask_parameters": {
+    "road_width": 3,
+    "keypoint_radius": 3
+  },
+  "coordinate_round_digits": 6,
+  "empty_geometry_count_processed": 1719,
+  "nonempty_geometry_count_processed": 5527,
+  "graph_nodes_total": 46709,
+  "graph_edges_total": 38205,
+  "endpoint_nodes_total": 21598,
+  "junction_nodes_total": 4135,
+  "outputs": {
+    "train_manifest": "C:\\Users\\UNITECH\\Desktop\\zindi competition\\zindi\\MaGRoad_HOTOSM\\manifests\\train_manifest.csv",
+    "test_manifest": "C:\\Users\\UNITECH\\Desktop\\zindi competition\\zindi\\MaGRoad_HOTOSM\\manifests\\test_manifest.csv",
+    "audit_csv": "C:\\Users\\UNITECH\\Desktop\\zindi competition\\zindi\\MaGRoad_HOTOSM\\audit\\hotosm_magroad_label_audit.csv",
+    "preview_png": "C:\\Users\\UNITECH\\Desktop\\zindi competition\\zindi\\MaGRoad_HOTOSM\\audit\\label_previews.png",
+    "road_masks": "C:\\Users\\UNITECH\\Desktop\\zindi competition\\zindi\\MaGRoad_HOTOSM\\processed",
+    "graph_pickles": "C:\\Users\\UNITECH\\Desktop\\zindi competition\\zindi\\MaGRoad_HOTOSM\\graphs"
+  },
+  "notes": [
+    "Empty geometries are retained as empty graph pickles and all-zero masks.",
+    "The stock MaGRoad SatMapDataset skips empty graph pickles; its DataLoader must be adapted before training so these tiles are retained safely.",
+    "This script prepares labels only. It does not train MaGRoad or define a train/validation split.",
+    "No geometric line intersections are added as graph edges without explicit shared WKT vertices."
   ]
 }
