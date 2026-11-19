@@ -1,0 +1,86 @@
+HOTOSM DATASET ANALYSIS REPORT
+============================================================================
+Dataset directory: C:\Users\UNITECH\Desktop\zindi competition\zindi
+Output directory : C:\Users\UNITECH\Desktop\zindi competition\zindi\analysis_report
+
+1) DATA TABLES
+- Train.csv: 7,246 rows; columns=['ID', 'geometry', 'metres_per_pixel']
+- Test.csv: 4,548 rows; columns=['ID', 'metres_per_pixel']
+- SampleSubmission.csv: 4,548 rows; columns=['ID', 'geometry', 'metres_per_pixel']
+- Val.csv: not found
+- id_map.csv: not found
+
+2) GEOMETRY / GROUND-TRUTH
+- Train geometry status: {'nonempty_geometry': 5527, 'empty_geometry': 1719}
+- Empty or blank Train labels: 1,719 (23.72%)
+- Invalid WKT: 0; invalid Shapely geometries: 0
+- Non-empty line parts: 13,557
+- Non-empty total length: 2013884.18 native pixels
+- Total length per labeled tile: {'count': 5527, 'mean': 364.37202454585025, 'std': 206.6645635230616, 'min': 0.008, 'p25': 230.63345475134588, 'median': 334.48218562196195, 'p75': 495.35989485860296, 'max': 1590.3054631438179}
+
+3) IMAGES
+- Referenced image IDs: 11,794; found: 11,794; missing: 0
+- Image dimensions: {'256x256': 11794}
+- Geometry bounds outside image: 0
+
+4) METRES PER PIXEL
+{
+  "Train.csv": {
+    "column": "metres_per_pixel",
+    "count": 7246,
+    "mean": 0.29469252001104057,
+    "std": 0.005731505011872345,
+    "min": 0.2477,
+    "p25": 0.2953,
+    "median": 0.2953,
+    "p75": 0.2954,
+    "max": 0.2985,
+    "missing": 0,
+    "nonpositive": 0
+  },
+  "Test.csv": {
+    "column": "metres_per_pixel",
+    "count": 4548,
+    "mean": 0.29381723834652596,
+    "std": 0.00875588448978809,
+    "min": 0.2478,
+    "p25": 0.2953,
+    "median": 0.2953,
+    "p75": 0.2954,
+    "max": 0.2985,
+    "missing": 0,
+    "nonpositive": 0
+  }
+}
+
+5) VALIDATION SPLIT
+{
+  "validation_source": "not identified",
+  "validation_rows": 0
+}
+
+6) AUTOMATED CHECKS
+[PASS] Train IDs are unique: rows=7,246, unique=7,246
+[PASS] Test IDs are unique: rows=4,548, unique=4,548
+[PASS] Train/Test IDs are disjoint: overlap=0
+[PASS] Test IDs equal SampleSubmission IDs: test-only=0, sample-only=0
+[PASS] All training WKT values parsed: invalid=0
+[PASS] All parsed geometries valid: invalid_geometries=0
+[PASS] Training geometry types are line-based: types={'MultiLineString': 7246}
+[PASS] All Train/Test images exist: missing=0; examples=[]
+[PASS] All found images are readable: read_errors=0
+[PASS] Image dimensions are consistent: dimension_counts={'256x256': 11794}
+[PASS] Geometry bounds lie inside corresponding image: outside=0; examples=[]
+
+7) OUTPUT FILES
+- summary.json
+- tile_geometry_audit.csv
+- image_audit.csv
+- geometry_distributions.png
+- image_distributions.png
+- examples_empty_labels.png (when any available)
+- examples_sparse_roads.png
+- examples_dense_roads.png
+- examples_random.png
+
+IMPORTANT: inspect empty-label examples manually; an empty OSM geometry is not necessarily an image with no real road.
