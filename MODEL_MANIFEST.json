@@ -1,0 +1,1064 @@
+{
+  "status": "COMPLETE",
+  "config_sha256": "9d4141c8d110ed5623a5fdf78af1422cf0fbf01208a6e4bcde001fa2a4d806f8",
+  "created_at_utc": "2026-11-19T15:41:01.561174+00:00",
+  "inputs": {
+    "train": "C:\\Users\\UNITECH\\Downloads\\train.csv",
+    "test": "C:\\Users\\UNITECH\\Downloads\\test (1).csv"
+  },
+  "model_names": [
+    "catboost_symmetric",
+    "lightgbm",
+    "xgboost"
+  ],
+  "model_count": 15,
+  "optuna_study_database": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\OPTUNA\\STUDIES\\THREE_TREE_MODELS.sqlite3",
+  "best_submission": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\ENSEMBLE\\SUBMISSION_THREE_TREE_EQUAL_WEIGHT.csv",
+  "all_artifacts": [
+    {
+      "stage": "reused_imputation",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_01\\IMPUTED_VALUES.npz",
+      "size_bytes": 3212195,
+      "sha256": "14ad0f151cebdedce512585988f7551a2519d286c2c0f03b2b7dd20e2afb920d"
+    },
+    {
+      "stage": "reused_imputation",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\SCENARIOS\\IMPUTE_EXT_SOURCE_1_2_3\\CHECKPOINTS\\FOLDS\\FOLD_01\\TRAIN_VALID_INDICES.npz",
+      "size_bytes": 260936,
+      "sha256": "d22b31e10e248a837701b717039f1eb817a88c869b0ad63b2f523eb9700d872c"
+    },
+    {
+      "stage": "reused_imputer_model",
+      "fold": 1,
+      "source": "EXT_SOURCE_1",
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_01\\EXT_SOURCE_1\\imputer.cbm",
+      "size_bytes": 2019032,
+      "sha256": "fd98454add78d311de7cb8ff267d621c4e235f526c19cc795e5b815ab6f07605"
+    },
+    {
+      "stage": "reused_imputer_model",
+      "fold": 1,
+      "source": "EXT_SOURCE_2",
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_01\\EXT_SOURCE_2\\imputer.cbm",
+      "size_bytes": 1908572,
+      "sha256": "209d9611137c9b5c3270c01683c9e75f318a31f4bb89438fe256fb90508e77ff"
+    },
+    {
+      "stage": "reused_imputer_model",
+      "fold": 1,
+      "source": "EXT_SOURCE_3",
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_01\\EXT_SOURCE_3\\imputer.cbm",
+      "size_bytes": 2026248,
+      "sha256": "3361d0bcbde07b7825d34301d8229a0ce7dd9e2da9a62ac99260d51b3f3c3522"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\GMM_SEGMENTATION\\FOLD_01\\segmenter.pkl",
+      "size_bytes": 117726,
+      "sha256": "2bddf892153e5ff716d9782a719b82f7c2dd7587692e44c9b2b33f8e8642509b"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\GMM_SEGMENTATION\\FOLD_01\\segmenter_metadata.json",
+      "size_bytes": 557357,
+      "sha256": "c6a917fb32e1b60747b93bdd77bc41d08af84316b96ba09e2cfc2201c50320cc"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\GMM_SEGMENTATION\\FOLD_01\\GMM_CACHE_STATUS.json",
+      "size_bytes": 610,
+      "sha256": "760ed7c88c478010611263c3b4e94ae6b1be5cbdf6871a6d378edc2c928e97c6"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\PREPROCESSING\\FOLD_01\\PREPROCESSING_BUNDLE.pkl",
+      "size_bytes": 7117426,
+      "sha256": "fae4595809ec172317e053be4d5e51756d97514e6522efb9d7b88cec7410c439"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_CACHE\\FOLD_01\\FEATURE_CACHE.pkl",
+      "size_bytes": 151111689,
+      "sha256": "179e1e49d215333c3e199059f74f7638d495d2b2feebea8a74d3e5323bb80ffa"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\CATBOOST_SYMMETRIC\\FOLD_01\\catboost_model.cbm",
+      "size_bytes": 240916,
+      "sha256": "9d24d32fa30ad88dee2b6ad7d0432a4643cfe17f1f040e3437772342c0ec3e16"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\CATBOOST_SYMMETRIC\\FOLD_01\\PREDICTIONS.npz",
+      "size_bytes": 777480,
+      "sha256": "4d819d71ee0528cee2b16846dc003a93d26125ebfcb9c8dfec5f572326d7f154"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\CATBOOST_SYMMETRIC\\FOLD_01\\METRICS.json",
+      "size_bytes": 463,
+      "sha256": "9df6b4c8e9cd1415f11c5fa3b308d6c89d900fbbef9bebeb22304d11e87de0bf"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\CATBOOST_SYMMETRIC\\FOLD_01\\MODEL_METADATA.json",
+      "size_bytes": 2415,
+      "sha256": "0c9cae9f1b8055965c9458814f976d962cb38d3e6aedd8b83502ab4b15b28585"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_IMPORTANCE\\CATBOOST_SYMMETRIC\\FOLD_01_IMPORTANCE.csv",
+      "size_bytes": 1561,
+      "sha256": "ee30e148707790e7b72b69c519f48498419b41bc47404b2f236850c61fc984a1"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\LIGHTGBM\\FOLD_01\\lightgbm_model.txt",
+      "size_bytes": 1783904,
+      "sha256": "6f1bdd48a097a835e573ec018ae46357b06d26205a780f4eac6e9180ea874c12"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\LIGHTGBM\\FOLD_01\\PREDICTIONS.npz",
+      "size_bytes": 777460,
+      "sha256": "69ac1953be34c3a7c9449845e70699a59ab3d59c3365c6f120d9575ed9be4009"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\LIGHTGBM\\FOLD_01\\METRICS.json",
+      "size_bytes": 452,
+      "sha256": "0191dd37c5abb0d6684022461233b10487f219a1d1c2d19d4799f8f0b8b76f00"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\LIGHTGBM\\FOLD_01\\MODEL_METADATA.json",
+      "size_bytes": 2546,
+      "sha256": "e45e34dd5d91726a7978e9f11848119485e5f4ddef3be948744175cc61de028f"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\LIGHTGBM\\FOLD_01\\lightgbm_sklearn_wrapper.pkl",
+      "size_bytes": 1788690,
+      "sha256": "8bed86bd66d57f39145f3dc2491cf3c1755af75684a2019d8a823fa506301416"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_IMPORTANCE\\LIGHTGBM\\FOLD_01_IMPORTANCE.csv",
+      "size_bytes": 1734,
+      "sha256": "d64a3f87322a7380a0d80dd36f0e513e40cace92ea33883500e06c69b2f43bd9"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\XGBOOST\\FOLD_01\\xgboost_model.json",
+      "size_bytes": 2330522,
+      "sha256": "1d3c2c72e1e1bc12092254da669c00a8124b2fbeac5e9de5538e6915874d07c5"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\XGBOOST\\FOLD_01\\PREDICTIONS.npz",
+      "size_bytes": 454021,
+      "sha256": "2cdeba2156aaa87f93c7e5e1b0b3e0585dd05ef64806a75fbde23fe0254122c8"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\XGBOOST\\FOLD_01\\METRICS.json",
+      "size_bytes": 453,
+      "sha256": "dd69427408437f62c4bf365e5b23f7f058a828d333b72d755a1301f8f48ecf5b"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\XGBOOST\\FOLD_01\\MODEL_METADATA.json",
+      "size_bytes": 2525,
+      "sha256": "cfa883979d5e067f3e0cd9055fea4fa9b40923cb1fb463b48e5c3edd7d317e72"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\XGBOOST\\FOLD_01\\xgboost_sklearn_wrapper.pkl",
+      "size_bytes": 2048260,
+      "sha256": "e23584d85b8bf23a71751585dbbb85b3503cd7cf0fcfd36025356c2f2957f680"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 1,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_IMPORTANCE\\XGBOOST\\FOLD_01_IMPORTANCE.csv",
+      "size_bytes": 1808,
+      "sha256": "e554d24db633e3b24ec77615457087ce288353c0de053c5af81f14650078d39c"
+    },
+    {
+      "stage": "reused_imputation",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_02\\IMPUTED_VALUES.npz",
+      "size_bytes": 3212383,
+      "sha256": "36977b722aed705fc3f239f21f9f96176e42a4c731744218945d43a0c28ddaeb"
+    },
+    {
+      "stage": "reused_imputation",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\SCENARIOS\\IMPUTE_EXT_SOURCE_1_2_3\\CHECKPOINTS\\FOLDS\\FOLD_02\\TRAIN_VALID_INDICES.npz",
+      "size_bytes": 260940,
+      "sha256": "7e0dc7d69dedc479862ba69bc6d70b052d7467f3ca985073974d2464b4499102"
+    },
+    {
+      "stage": "reused_imputer_model",
+      "fold": 2,
+      "source": "EXT_SOURCE_1",
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_02\\EXT_SOURCE_1\\imputer.cbm",
+      "size_bytes": 1979384,
+      "sha256": "518ce717016d2ca21712f104ed75d838eb145c55f5690fc5b5e9e8210a2f20dd"
+    },
+    {
+      "stage": "reused_imputer_model",
+      "fold": 2,
+      "source": "EXT_SOURCE_2",
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_02\\EXT_SOURCE_2\\imputer.cbm",
+      "size_bytes": 1910620,
+      "sha256": "7ad14a9dbb41a3156d939fee3e9b7e68c996729e483eb6b1dc9a0d9ba22afebe"
+    },
+    {
+      "stage": "reused_imputer_model",
+      "fold": 2,
+      "source": "EXT_SOURCE_3",
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_02\\EXT_SOURCE_3\\imputer.cbm",
+      "size_bytes": 1981244,
+      "sha256": "8ca982138e2a47a546366b7f5acd76ed807e56b96e5720439e8cfb731a1cb79e"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\GMM_SEGMENTATION\\FOLD_02\\segmenter.pkl",
+      "size_bytes": 117595,
+      "sha256": "eff70580143ba1b5d289664887c27f3b68f38e517f0bccd2c06194841257f89f"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\GMM_SEGMENTATION\\FOLD_02\\segmenter_metadata.json",
+      "size_bytes": 557703,
+      "sha256": "398024fa79a1817d73ada90406995ab82d69ebf11ef75605975938749f0c90fd"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\GMM_SEGMENTATION\\FOLD_02\\GMM_CACHE_STATUS.json",
+      "size_bytes": 610,
+      "sha256": "247f385ce888efa275723ad1f3748f8124a0efb8d56dcc3f71a2fcb1aec27a57"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\PREPROCESSING\\FOLD_02\\PREPROCESSING_BUNDLE.pkl",
+      "size_bytes": 7117493,
+      "sha256": "67091f56381e869cf0486fff1f88d2012382bbc2555953eecda766855d64ce03"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_CACHE\\FOLD_02\\FEATURE_CACHE.pkl",
+      "size_bytes": 151111987,
+      "sha256": "ec2cb65340a371d790240b06fe26537d129783cf30c6e8daf672289697a3b42a"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\CATBOOST_SYMMETRIC\\FOLD_02\\catboost_model.cbm",
+      "size_bytes": 421180,
+      "sha256": "1cca0d973a491ec87df1e62cb1b8c3da520c1f2c26860d75976eae7f8b3270c5"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\CATBOOST_SYMMETRIC\\FOLD_02\\PREDICTIONS.npz",
+      "size_bytes": 777488,
+      "sha256": "8a412ccc936f3258e2e6c14154554b3543904220cbd4bed51c35ed17fa96b2da"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\CATBOOST_SYMMETRIC\\FOLD_02\\METRICS.json",
+      "size_bytes": 461,
+      "sha256": "a76c2f1d5aba7e68d373baebe17cecf2bee41ee480917f6ab8aa52cba4a5cddb"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\CATBOOST_SYMMETRIC\\FOLD_02\\MODEL_METADATA.json",
+      "size_bytes": 2412,
+      "sha256": "e2f2b0a215ec457b5aac9fe796c71c4b1f3dd06151c0aa0f0a4ece3f1ea8cc7d"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_IMPORTANCE\\CATBOOST_SYMMETRIC\\FOLD_02_IMPORTANCE.csv",
+      "size_bytes": 1563,
+      "sha256": "a9556fa5d57388c5e4f10b94c798ffd4fd10ae2c9b1d6ad5bd7a0a37b58ab6f0"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\LIGHTGBM\\FOLD_02\\lightgbm_model.txt",
+      "size_bytes": 1395836,
+      "sha256": "aa5b4ad5920d19a37d9b70ea506f415c5e9d86bb06239a6738bc1de8a8d40570"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\LIGHTGBM\\FOLD_02\\PREDICTIONS.npz",
+      "size_bytes": 777428,
+      "sha256": "90d730feb1c54e144d11368f044e385414f7794cf0d7732029f8e0e7a0468a90"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\LIGHTGBM\\FOLD_02\\METRICS.json",
+      "size_bytes": 453,
+      "sha256": "5ffab5475b3719bb480d559773248c1b1f6c4e2c3e60f39a1895911ad459ceb7"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\LIGHTGBM\\FOLD_02\\MODEL_METADATA.json",
+      "size_bytes": 2547,
+      "sha256": "7c387d08017ff10e706b116b42c95a43a522d1869bb919b1c23854ab492b0650"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\LIGHTGBM\\FOLD_02\\lightgbm_sklearn_wrapper.pkl",
+      "size_bytes": 1400692,
+      "sha256": "b61e0741996fbba46f330ee59ebb3e824013a2c0610bc466ef3ab3c83207a345"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_IMPORTANCE\\LIGHTGBM\\FOLD_02_IMPORTANCE.csv",
+      "size_bytes": 1721,
+      "sha256": "56b8c56025fa7de373f379b6a8c2a95fd5393e8e560f35160680b53c6ffe3cdc"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\XGBOOST\\FOLD_02\\xgboost_model.json",
+      "size_bytes": 983454,
+      "sha256": "e1930c54ad2dad8164defd6d5733ab7dbd5f6032ccefec7479affac07cfcdb55"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\XGBOOST\\FOLD_02\\PREDICTIONS.npz",
+      "size_bytes": 453852,
+      "sha256": "d9885a29290793ebc8fa251232278e808362fbed454a2fe41e142bb5b61d935a"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\XGBOOST\\FOLD_02\\METRICS.json",
+      "size_bytes": 451,
+      "sha256": "c1f6ea9c045e22fd7c3f1bec13066e5b2e98082ec2a5d8e4f96605256b5acbeb"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\XGBOOST\\FOLD_02\\MODEL_METADATA.json",
+      "size_bytes": 2525,
+      "sha256": "e8b80a029d4a41d7d097e511b7f2029d92c24f5697c26c28e3a5f60d6b7ca3b1"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\XGBOOST\\FOLD_02\\xgboost_sklearn_wrapper.pkl",
+      "size_bytes": 888773,
+      "sha256": "5938e04b0efb2cb32625690d9d4ed94e3ce5054b5f5b44f3afd9ccb1246411a8"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 2,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_IMPORTANCE\\XGBOOST\\FOLD_02_IMPORTANCE.csv",
+      "size_bytes": 1793,
+      "sha256": "e68d76ec114dfb9516534c7a2f6d139dcb4fc7ac6b36134325c183c47ed38466"
+    },
+    {
+      "stage": "reused_imputation",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_03\\IMPUTED_VALUES.npz",
+      "size_bytes": 3212350,
+      "sha256": "fd51f5fd6f18270a0ff620610999209ea1475d60ce271bf571c2844c727cb722"
+    },
+    {
+      "stage": "reused_imputation",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\SCENARIOS\\IMPUTE_EXT_SOURCE_1_2_3\\CHECKPOINTS\\FOLDS\\FOLD_03\\TRAIN_VALID_INDICES.npz",
+      "size_bytes": 260921,
+      "sha256": "60e86d71b6fb7e89381383c3edeeed035fc5b46fb0b322e90cdc2cf1b4c224b2"
+    },
+    {
+      "stage": "reused_imputer_model",
+      "fold": 3,
+      "source": "EXT_SOURCE_1",
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_03\\EXT_SOURCE_1\\imputer.cbm",
+      "size_bytes": 2006080,
+      "sha256": "4b73483f65ec75b70bacc094a591441b3daaba3070837cda715e2ca7ba24a75f"
+    },
+    {
+      "stage": "reused_imputer_model",
+      "fold": 3,
+      "source": "EXT_SOURCE_2",
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_03\\EXT_SOURCE_2\\imputer.cbm",
+      "size_bytes": 1823264,
+      "sha256": "7d05e90fdcaf39e219e765ad7fed4e14229de16483e3af8f08dedfd77a033d6e"
+    },
+    {
+      "stage": "reused_imputer_model",
+      "fold": 3,
+      "source": "EXT_SOURCE_3",
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_03\\EXT_SOURCE_3\\imputer.cbm",
+      "size_bytes": 1896308,
+      "sha256": "978962076def7bd788e2f53f21284b6e2be3494b01181d93fe170b95da702fbc"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\GMM_SEGMENTATION\\FOLD_03\\segmenter.pkl",
+      "size_bytes": 117606,
+      "sha256": "deec69f8652963428746eef116b715b092cde9f86a2de316920790636549eb22"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\GMM_SEGMENTATION\\FOLD_03\\segmenter_metadata.json",
+      "size_bytes": 557728,
+      "sha256": "6a13327af1ea3e65e5463126063dd05b9c55a351f0a82213913f091f627b55d0"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\GMM_SEGMENTATION\\FOLD_03\\GMM_CACHE_STATUS.json",
+      "size_bytes": 610,
+      "sha256": "8736db83c6ebe801516be6f87266f0d1e3ac1a93be6aa2cf6470300de20905ae"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\PREPROCESSING\\FOLD_03\\PREPROCESSING_BUNDLE.pkl",
+      "size_bytes": 7117548,
+      "sha256": "80a2c301a6837c5652bf3e44be22716ba4a5d00c651ffbbdf53d76bb5e8c9310"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_CACHE\\FOLD_03\\FEATURE_CACHE.pkl",
+      "size_bytes": 151112047,
+      "sha256": "52a19ad33e5b8f3b24ef3ad94a89e2346a0da890a547edf579872c569e62a489"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\CATBOOST_SYMMETRIC\\FOLD_03\\catboost_model.cbm",
+      "size_bytes": 213792,
+      "sha256": "8355a7262b1ec6216d12a450e4a158a639130a9deef39d0968c9a100ed95da8f"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\CATBOOST_SYMMETRIC\\FOLD_03\\PREDICTIONS.npz",
+      "size_bytes": 777470,
+      "sha256": "03c86dcfa27d62e7816af69366f1a73eaa6b81c389c5d94ef0ea273d30fbdeae"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\CATBOOST_SYMMETRIC\\FOLD_03\\METRICS.json",
+      "size_bytes": 462,
+      "sha256": "e5a05a637da728a60c30cf992597209b045c07a053c6a76514edf053fa77fe1a"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\CATBOOST_SYMMETRIC\\FOLD_03\\MODEL_METADATA.json",
+      "size_bytes": 2414,
+      "sha256": "65650b1ff7708a93669f899a2eef4298a51ca6d6e36077b593baf8289e745dc1"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_IMPORTANCE\\CATBOOST_SYMMETRIC\\FOLD_03_IMPORTANCE.csv",
+      "size_bytes": 1562,
+      "sha256": "0092983d85b23db6724755344d0c0b79c709f78403f0c7239df7cd6e2ab9c940"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\LIGHTGBM\\FOLD_03\\lightgbm_model.txt",
+      "size_bytes": 2244823,
+      "sha256": "d8b318a705550d2faa7f5eac5943a1a57c8e16882e36a2dd7a7fde10a4a5b9b0"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\LIGHTGBM\\FOLD_03\\PREDICTIONS.npz",
+      "size_bytes": 777521,
+      "sha256": "eac191880a7b9c88357ade57609ae3425c7dc2a121c23727e5e14e2c0c1e50aa"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\LIGHTGBM\\FOLD_03\\METRICS.json",
+      "size_bytes": 453,
+      "sha256": "0d0fc5ecf78b8e01370e6611966cf710785cc8258d0b1538a21a2839c07334f8"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\LIGHTGBM\\FOLD_03\\MODEL_METADATA.json",
+      "size_bytes": 2548,
+      "sha256": "310486d7caac873af019c5ec893435884bca8894e8c5fd9b295ad42e644cc393"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\LIGHTGBM\\FOLD_03\\lightgbm_sklearn_wrapper.pkl",
+      "size_bytes": 2249692,
+      "sha256": "f6590a9273c87e6a4416e057f2fcbdd2d08b82edefdc762bc4770ba62b1c8826"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_IMPORTANCE\\LIGHTGBM\\FOLD_03_IMPORTANCE.csv",
+      "size_bytes": 1711,
+      "sha256": "c7a9d14e3cc28331b74be847ef0a1099b1eabbc3d2c93192e30331c25e8afcad"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\XGBOOST\\FOLD_03\\xgboost_model.json",
+      "size_bytes": 2638690,
+      "sha256": "964b83ef48afbdb744f83d15db3710d130260e38bac48f012c93bd8d605830b5"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\XGBOOST\\FOLD_03\\PREDICTIONS.npz",
+      "size_bytes": 453918,
+      "sha256": "b4d91fea886a9080cc6315a094ba88b155767bacfb8ebb20f660ad3819ca0af9"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\XGBOOST\\FOLD_03\\METRICS.json",
+      "size_bytes": 450,
+      "sha256": "ac3951fbc755c383654debdecaf8b873f85a8b7e8bc17380ee2f0d74b061c84c"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\XGBOOST\\FOLD_03\\MODEL_METADATA.json",
+      "size_bytes": 2519,
+      "sha256": "5f3ea08df989087de1887264a6382515f8e950c99c5143dcd10929d59bbe6ac1"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\XGBOOST\\FOLD_03\\xgboost_sklearn_wrapper.pkl",
+      "size_bytes": 2115643,
+      "sha256": "fe34bec4e8cd14976e75313dbc683362bd4d52d1e5026e4640f064ac706ef9ae"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 3,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_IMPORTANCE\\XGBOOST\\FOLD_03_IMPORTANCE.csv",
+      "size_bytes": 1818,
+      "sha256": "036928e39e7bc860dab874e25c28710f56421f4210d36a52a8a65b3b9da14d77"
+    },
+    {
+      "stage": "reused_imputation",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_04\\IMPUTED_VALUES.npz",
+      "size_bytes": 3212310,
+      "sha256": "86a3ba723ed3fdb564d70c79d6933b1bfa1a5af724af23c95c35a462ad02f4b6"
+    },
+    {
+      "stage": "reused_imputation",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\SCENARIOS\\IMPUTE_EXT_SOURCE_1_2_3\\CHECKPOINTS\\FOLDS\\FOLD_04\\TRAIN_VALID_INDICES.npz",
+      "size_bytes": 260949,
+      "sha256": "98495de0199b9ba317643358c7df2a50e2648971ba1fad60d100346a8e0743e7"
+    },
+    {
+      "stage": "reused_imputer_model",
+      "fold": 4,
+      "source": "EXT_SOURCE_1",
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_04\\EXT_SOURCE_1\\imputer.cbm",
+      "size_bytes": 1946624,
+      "sha256": "e7f781aac758a0d7214496a343d7d8143d199e1f8b86b167e159aca5d6e906d6"
+    },
+    {
+      "stage": "reused_imputer_model",
+      "fold": 4,
+      "source": "EXT_SOURCE_2",
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_04\\EXT_SOURCE_2\\imputer.cbm",
+      "size_bytes": 1953060,
+      "sha256": "2ad18f04e520c4d1bb4b495914160c2a18af843a08b7f5147f6c103e6143d155"
+    },
+    {
+      "stage": "reused_imputer_model",
+      "fold": 4,
+      "source": "EXT_SOURCE_3",
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_04\\EXT_SOURCE_3\\imputer.cbm",
+      "size_bytes": 1935052,
+      "sha256": "bf79a9245efa404acd1dc11f72599569603e6688740820fe9e5cde6737f68182"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\GMM_SEGMENTATION\\FOLD_04\\segmenter.pkl",
+      "size_bytes": 117871,
+      "sha256": "f3c042c6213d859fbebd5672e0036b5167e081ebad47b2aa39e1a4fcc4b3abe0"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\GMM_SEGMENTATION\\FOLD_04\\segmenter_metadata.json",
+      "size_bytes": 557661,
+      "sha256": "2a6cac5044eb9eb27324d46a2a3c87ad7cee23eea909f167bfdacd3ac66140da"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\GMM_SEGMENTATION\\FOLD_04\\GMM_CACHE_STATUS.json",
+      "size_bytes": 610,
+      "sha256": "52079870fd2f19351b6e3986165a39662d6b34b3ecb8fb5a232b05b25a37b1ba"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\PREPROCESSING\\FOLD_04\\PREPROCESSING_BUNDLE.pkl",
+      "size_bytes": 7117548,
+      "sha256": "3afe33c96e60d792ff15b4847f1ad3b2c0e2d4a4c196ce452d2751881503e891"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_CACHE\\FOLD_04\\FEATURE_CACHE.pkl",
+      "size_bytes": 151112047,
+      "sha256": "b2285ede6a7737e9f9bb114652535766a2f48e54de4ed43b890bab46c0e0685a"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\CATBOOST_SYMMETRIC\\FOLD_04\\catboost_model.cbm",
+      "size_bytes": 336136,
+      "sha256": "16eb5da327d59d6f05275224a8793b839b0214ab8306807bb0dc39fa3411db1f"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\CATBOOST_SYMMETRIC\\FOLD_04\\PREDICTIONS.npz",
+      "size_bytes": 777515,
+      "sha256": "48125e1e3bf76ae7d04f70915a127c181d0f2c1cdb9f1526017bbe77de65d5fd"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\CATBOOST_SYMMETRIC\\FOLD_04\\METRICS.json",
+      "size_bytes": 463,
+      "sha256": "07dd65d23a8565deff14e80e2389ea846fe3cb237331833bd15bcaf0c9bb0902"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\CATBOOST_SYMMETRIC\\FOLD_04\\MODEL_METADATA.json",
+      "size_bytes": 2414,
+      "sha256": "f15fd85ae649b407b6026215781200eeab8008aab822271e356fe0d604e8ed70"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_IMPORTANCE\\CATBOOST_SYMMETRIC\\FOLD_04_IMPORTANCE.csv",
+      "size_bytes": 1574,
+      "sha256": "2f91f05341ecea556c796e15d488aa8352457defa391d70e06f38cadcf4d81b4"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\LIGHTGBM\\FOLD_04\\lightgbm_model.txt",
+      "size_bytes": 2017373,
+      "sha256": "ac16a9003e2b83e88139329d5e8048c74071f782a54878e006f6b15bb2b6ef6c"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\LIGHTGBM\\FOLD_04\\PREDICTIONS.npz",
+      "size_bytes": 777410,
+      "sha256": "c86ae341582cb53ca94d7efcd0ed1443ca5a2fca529df720bd10aac859478f8e"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\LIGHTGBM\\FOLD_04\\METRICS.json",
+      "size_bytes": 453,
+      "sha256": "fae9a4421813425e504b4e92b7f1fd0f7cdcdd76338393936aefeb988e73e9f0"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\LIGHTGBM\\FOLD_04\\MODEL_METADATA.json",
+      "size_bytes": 2547,
+      "sha256": "7c8ac48fbfd5e8123dbf7d703eff878ecc2f9636eb3930fe2a6bd683dc47aed7"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\LIGHTGBM\\FOLD_04\\lightgbm_sklearn_wrapper.pkl",
+      "size_bytes": 2022244,
+      "sha256": "e1f546e1a89ef77fbd625d47ee45cc7392bb42f3f4dece283e7fcd6471113977"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_IMPORTANCE\\LIGHTGBM\\FOLD_04_IMPORTANCE.csv",
+      "size_bytes": 1733,
+      "sha256": "84b8eff47629eaf5b63a8d1f57f7b50658c13f5ce162a7d7ae2e5d313e699869"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\XGBOOST\\FOLD_04\\xgboost_model.json",
+      "size_bytes": 1911945,
+      "sha256": "98e6d127b836ebb29b30144e553887b44923da585d6ab96549f9610dd92942e3"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\XGBOOST\\FOLD_04\\PREDICTIONS.npz",
+      "size_bytes": 453965,
+      "sha256": "c9f0fe2ad5c48bd6b99b848b5d54be233ba7694203754b76780a20da2b1a2be6"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\XGBOOST\\FOLD_04\\METRICS.json",
+      "size_bytes": 451,
+      "sha256": "7a83b8ef599324281cd921a79914f669f094aa19ea934b089a573cf224ff73b2"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\XGBOOST\\FOLD_04\\MODEL_METADATA.json",
+      "size_bytes": 2521,
+      "sha256": "389cba5b285e2edfb16436c74ad44e75e21f2a8e8ca243195a93014316ebde1b"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\XGBOOST\\FOLD_04\\xgboost_sklearn_wrapper.pkl",
+      "size_bytes": 1713494,
+      "sha256": "4b3063eccd2ebd14326d68415746b5eb17a24969a37a0f831597fb4bf5646ca3"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 4,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_IMPORTANCE\\XGBOOST\\FOLD_04_IMPORTANCE.csv",
+      "size_bytes": 1810,
+      "sha256": "0569a130104e4d30656a1a5563a82a060bd19c81c8d8e0cab95aaa80e0ea9775"
+    },
+    {
+      "stage": "reused_imputation",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_05\\IMPUTED_VALUES.npz",
+      "size_bytes": 3212303,
+      "sha256": "518cc3a6dd6ddf4f8bc8d488d7ecf1c00fcf04ac6c396f78aeb38990b56c6673"
+    },
+    {
+      "stage": "reused_imputation",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\SCENARIOS\\IMPUTE_EXT_SOURCE_1_2_3\\CHECKPOINTS\\FOLDS\\FOLD_05\\TRAIN_VALID_INDICES.npz",
+      "size_bytes": 260951,
+      "sha256": "1a4e24d2edb541d364dd12e08ccb0521aa6102626988b1f3ce128c9001169c5a"
+    },
+    {
+      "stage": "reused_imputer_model",
+      "fold": 5,
+      "source": "EXT_SOURCE_1",
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_05\\EXT_SOURCE_1\\imputer.cbm",
+      "size_bytes": 1962492,
+      "sha256": "35e68fe8150af408c69e9606d1f9835bd7755f1f09ffc60dfdb5d375a9541fea"
+    },
+    {
+      "stage": "reused_imputer_model",
+      "fold": 5,
+      "source": "EXT_SOURCE_2",
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_05\\EXT_SOURCE_2\\imputer.cbm",
+      "size_bytes": 1852000,
+      "sha256": "9cc06a4e606a93fde9286c0204de8a0cd32444e5f0db2646dd86db80ce6ca2be"
+    },
+    {
+      "stage": "reused_imputer_model",
+      "fold": 5,
+      "source": "EXT_SOURCE_3",
+      "path": "C:\\Users\\UNITECH\\Downloads\\CATBOOST_FULLDATA_TWO_RATIO_FEATURES_EXT_SOURCE_IMPUTATION_GRID\\IMPUTATION_MODELS\\FOLD_05\\EXT_SOURCE_3\\imputer.cbm",
+      "size_bytes": 1900532,
+      "sha256": "1877ec3407a651b5d4ebb3a912ae1e33f68d5a62acd5fce94e96a7d8c0f5cd44"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\GMM_SEGMENTATION\\FOLD_05\\segmenter.pkl",
+      "size_bytes": 117823,
+      "sha256": "719586930afadab559cde26954df65909e0a753c99440cc875738035efbba4d7"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\GMM_SEGMENTATION\\FOLD_05\\segmenter_metadata.json",
+      "size_bytes": 557812,
+      "sha256": "5f454f0ac1564bd31458310cca94be1983b8ebf81b5d6cc5f234307bfbb7c4a9"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\GMM_SEGMENTATION\\FOLD_05\\GMM_CACHE_STATUS.json",
+      "size_bytes": 610,
+      "sha256": "8e77f81f667f49d9c0f5271ab40a73f85a5bbb7479a8e12654477e9a7e02985b"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\PREPROCESSING\\FOLD_05\\PREPROCESSING_BUNDLE.pkl",
+      "size_bytes": 7117518,
+      "sha256": "ab1794be1134bf65b645f88fb6bf0fcc2c31532a7b7797a84bb73911714f618e"
+    },
+    {
+      "stage": "preprocessing_or_gmm",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_CACHE\\FOLD_05\\FEATURE_CACHE.pkl",
+      "size_bytes": 151111927,
+      "sha256": "f196d0fda526a6094afac44cd0a8a35a31cc398b75d9248dadb9b33a999852c1"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\CATBOOST_SYMMETRIC\\FOLD_05\\catboost_model.cbm",
+      "size_bytes": 134404,
+      "sha256": "957bfa64322d2ce5a639327a0cf7d2dde0d57a748cf598fc8705f548245accc8"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\CATBOOST_SYMMETRIC\\FOLD_05\\PREDICTIONS.npz",
+      "size_bytes": 777512,
+      "sha256": "c94ac4b2b4edd2a77c410ef3d397a09e704602afa6fd9c66f24349a2b4f165a0"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\CATBOOST_SYMMETRIC\\FOLD_05\\METRICS.json",
+      "size_bytes": 462,
+      "sha256": "0dc37b2e0a7167d27b6c73a53a421e5685aeda28e6c9c90f26e4206a7db5ec61"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\CATBOOST_SYMMETRIC\\FOLD_05\\MODEL_METADATA.json",
+      "size_bytes": 2414,
+      "sha256": "be5103d23cca3555eb8c66f5ab16063c7bb6b2413845f09d87b013a7a1042503"
+    },
+    {
+      "stage": "classification",
+      "model": "catboost_symmetric",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_IMPORTANCE\\CATBOOST_SYMMETRIC\\FOLD_05_IMPORTANCE.csv",
+      "size_bytes": 1583,
+      "sha256": "86f548912efcc6bfd1733e2bc183b7620f957a79354866ff896e47bae5d14164"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\LIGHTGBM\\FOLD_05\\lightgbm_model.txt",
+      "size_bytes": 1965374,
+      "sha256": "450d0f5cf11b8a80a7ca25250811d91e4f0220b4ecfdb0be924e8cda1f9a7cd5"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\LIGHTGBM\\FOLD_05\\PREDICTIONS.npz",
+      "size_bytes": 777544,
+      "sha256": "aa84b9125a4c451dcc4c9780a4d6cacbc78a0b7c24aab4e177063ba2c3a47cd3"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\LIGHTGBM\\FOLD_05\\METRICS.json",
+      "size_bytes": 454,
+      "sha256": "8f566f9b80b9ea2e8d3e3c17abf915da0440eaf22c7f284ff4120e0293253dad"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\LIGHTGBM\\FOLD_05\\MODEL_METADATA.json",
+      "size_bytes": 2548,
+      "sha256": "c8bf6e6e4f21f05691913648a6d85ba04877d959173074aee8f5e28434d9a98d"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\LIGHTGBM\\FOLD_05\\lightgbm_sklearn_wrapper.pkl",
+      "size_bytes": 1970215,
+      "sha256": "37a9576765c52c1399c117b708d9a4c5a46575e202ebabff29dba08b09049dc9"
+    },
+    {
+      "stage": "classification",
+      "model": "lightgbm",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_IMPORTANCE\\LIGHTGBM\\FOLD_05_IMPORTANCE.csv",
+      "size_bytes": 1712,
+      "sha256": "2dfb3caf9d69215c39f8937a9548a8c23a6b6dba87e818dc5672b1d6bf007cd3"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\XGBOOST\\FOLD_05\\xgboost_model.json",
+      "size_bytes": 1698785,
+      "sha256": "c5dbfb31f58947a1087a3515cdb5f19f8ef63b2d33ce50941b67524f8b4eb52a"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\XGBOOST\\FOLD_05\\PREDICTIONS.npz",
+      "size_bytes": 454183,
+      "sha256": "fbe2877fa0ea3bb6d645fc3e81d3ba85291d56829f40eba72212919b73e920f6"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FOLD_PREDICTIONS\\XGBOOST\\FOLD_05\\METRICS.json",
+      "size_bytes": 451,
+      "sha256": "81710f57ef609aac9b659e985ab04816f8ad3a7063554252e623009eddd2832a"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\XGBOOST\\FOLD_05\\MODEL_METADATA.json",
+      "size_bytes": 2525,
+      "sha256": "a3ec58a1340ca3bc135d6dd192ff1baedb8be2467e76b42c81b486be5b47c9ae"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\CLASSIFICATION_MODELS\\XGBOOST\\FOLD_05\\xgboost_sklearn_wrapper.pkl",
+      "size_bytes": 1741151,
+      "sha256": "0b2a0c38ffc3875d0b8a7e7a41e722dca7200838c5b871209809454e934dfb6e"
+    },
+    {
+      "stage": "classification",
+      "model": "xgboost",
+      "fold": 5,
+      "path": "C:\\Users\\UNITECH\\Downloads\\outputwpw\\HOME_CREDIT_THREE_TREE_OPTUNA_GPU_IMPUTED_EXT_SOURCE_1_2_3_FAMILLY_DHOUSE4151\\FEATURE_IMPORTANCE\\XGBOOST\\FOLD_05_IMPORTANCE.csv",
+      "size_bytes": 1797,
+      "sha256": "95c429775a93994ac5fd542c4788d859f23d8db6ca0abdf50ed34249fbc6e66b"
+    }
+  ]
+}
