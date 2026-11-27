@@ -1,0 +1,4 @@
+Variable,Definition
+ID,"Unique tile identifier, also the image file name (images/<ID>.png)."
+geometry,"Road centrelines of the tile (OpenStreetMap highways) as a WKT MULTILINESTRING in tile pixel coordinates: x = column, y = row, origin at the top-left corner, both from 0 to the tile size (256 here), lines clipped to the tile. MULTILINESTRING EMPTY when the tile has no mapped road."
+metres_per_pixel,Ground size of one pixel in metres (0.25 to 0.30 in this data); use it to convert pixels to metres.
